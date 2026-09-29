@@ -1,0 +1,116 @@
+---
+pagetitle: "Examples of how optimisation decisions are made"
+---
+
+# Examples of how optimisation decisions are made {#examples-of-how-optimisation-decisions-are-made}
+
+Here, I want to provide a few thoughts about how decisions on optimisation were reached. These are not comprehensive case studies and there is some repetition of information about COVID here from other chapters. Unlike other chapters, this one is largely a personal view and I'm sure many experts may see this differently.
+
+I will talk about COVID and influenza. For polio and yellow fever endorsements, see the relevant case studies to understand how decisions were reached. I would have liked to also investigate the case of mpox further (to understand how the FDA's approval of lower dose was triggered), but when writing this chapter I have not been able to schedule meetings with relevant experts.
+
+## COVID: fractional dosing {#covid-fractional-dosing}
+
+**Clinical research on lower doses.** In 2021, there was a lot of interest in this topic from clinical researchers. There were maybe a dozen groups we identified that were working on this. While there was a lot of trials in wealthy countries, LMICs were also well-represented and the researchers typically had some ties to and support from local decision makers to explore this. From first hand experience, there was interest in, among others, Brazil, Colombia, Thailand, Indonesia, Nigeria.
+
+At a workshop in Chicago we had several clinical research groups discussing and presenting their results and in an unsystematic review in 2021, we identified about 40 trials with data on fractional dosing. Typically these would be immunogenicity trials with small arms of 10-100 subjects. In Viana in Brazil, half doses of AstraZeneca vaccine were tested in an observational study (\>20,000 half doses), with positive results. [Open Phil supported a trial in Nigeria](https://www.openphilanthropy.org/grants/nigerian-institute-of-medical-research-covid-19-fractional-dosing-trial/).
+
+I explained in the biology section why lowering booster doses is usually seen as a better/safer bet. With that in mind, CEPI explored lower doses of boosters and [designed a platform trial around](https://cepi.net/cepi-opens-call-evaluate-fractional-covid-19-booster-and-third-shots-part-efforts-stretch-global) [this](https://cepi.net/cepi-opens-call-evaluate-fractional-covid-19-booster-and-third-shots-part-efforts-stretch-global). It's hard to untangle if any of these studies impacted subsequent decisions, but Moderna did eventually lower doses.
+
+**Understanding benefits and policy outreach.** Back in 2021 I believe there were only three groups of researchers who published on benefits of fractionation.[^1] I described rationale and results in other chapters. I worked on this together with a couple of colleagues (economists) at Michael Kremer's lab at University of Chicago and Michael himself. I believe our group was the only one that mainly focused on reaching out to decision makers.
+
+**Regulators and pharma.** As far as I am aware, regulators approving vaccines did not request for vaccine makers to conduct any additional immunogenicity studies. In 2021 vaccine makers did not have financial incentives to recommend using lower doses of their vaccines. Contracts were signed in advance, guaranteeing large volume purchases (specified as number of doses), so recommending going to lower doses would simply slash their profits.[^2]
+
+**Decision makers.** We presented our paper to WHO SAGE twice and even had a chance to pitch this idea to WHO DG in person. We talked to several decision makers at national level, including heads of medical research councils and health ministers. Generally, I got an impression from conversations in LMICs that officials were interested in pursuing this on an individual basis, but needed more research (immunogenicity) and outside support to adopt lower doses. But it's obviously hard to generalise from several conversations.
+
+## COVID: extended gaps between two doses {#covid-extended-gaps-between-two-doses}
+
+A decision that *did* happen was the UK increasing spacing between doses of COVID vaccines. Other countries then followed. A few thoughts on how the decision was reached in the UK:
+
+- The main relevant endorsement that the UK's government likely relied on was by [Joint Committee on Vaccination and Immunisation](https://www.gov.uk/government/groups/joint-committee-on-vaccination-and-immunisation#meetings-agenda-and-minutes). JCVI publishes minutes of its meetings; for extending doses they published [a short note](https://app.box.com/s/iddfb4ppwkmtjusir2tc/file/759357623956) that showed evidence on immunogenicity and efficacy of one dose, not public health benefit. A few weeks later they also published [rudimentary modelling](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/955846/annex-b-comparison-between-1-and-2-dose-prioritisation-for-a-fixed-number-of-doses.pdf) supporting this decision.[^3]
+
+- JCVI is a relatively close-knit group of excellent vaccine researchers. Based on their experience, it was likely seen as "natural" that extending gaps *could* stimulate immune response. Even without any additional modelling, this was enough to reach a decision to extend from 3-4 to 12 weeks.
+
+- In first half of 2021 many countries followed, e.g. Canada opted for 16 weeks, as did Spain for under 60s. Germany went with 6 weeks, India with 12-16, same with Thailand. But given some of the initial opposition (see below), UK's decision was crucial. In many countries, including the UK, the gaps were then shortened (e.g. to 8 weeks) when supply constraints eased and risk surged again.
+
+A few words on arguments against, a few of which I think are worth citing verbatim:
+
+- WHO advised against this. British Medical Association protested the decision. I think it sums up why doctors should not be solely responsible for public health. Choice quotes: "if that was the right thing to do then we would see other nations following suit", "UK should adopt this best practice based on international professional opinion"; it was called unreasonable, unfair on patients, and too logistically difficult to do (because of rescheduling appointments). But most voices in the UK were supportive.
+
+- Less so in the US. [FDA advised against it](https://www.fda.gov/news-events/press-announcements/fda-statement-following-authorized-dosing-schedules-covid-19-vaccines) as "premature and not rooted solidly in the available evidence". "These are all reasonable questions to consider and evaluate in clinical trials."
+
+- [This STAT article](https://www.statnews.com/2021/01/04/britain-takes-a-gamble-with-covid-19-vaccines-upping-the-stakes-for-the-rest-of-us/), with opinions from a lot of sceptical experts, also summarises the opposition, e.g. "they are also effectively turning that country into a living laboratory. The moves are based on small slices of evidence mined from "subsets of subsets" of participants in clinical trials, as one expert described it for STAT"
+
+## COVID: why gaps and not lower doses? {#covid-why-gaps-and-not-lower-doses}
+
+If gaps were optimised, was it not also *practically* possible to switch to lower doses based on the evidence already available in early 2021? Probably not. As we've seen throughout this report, dosing decisions for initial doses are more complicated from biological viewpoint and fractionation requires more programmatic considerations. For a new disease without established correlates of protection this was a very tall order. However, what factors could have enabled a different decision? A few ideas:
+
+- Generating more clinical evidence: capacity for running more comprehensive immunogenicity trials for lower doses existed in 2020, but it was not used; trials of lower doses happened mainly in 2021. I presume this could also be achieved through more pressure from regulators on vaccine makers.
+
+- Establishing correlates of protection and rate of waning of protection
+
+- A highly-motivated country willing to be the first mover
+
+- A pre-existing example of fractionation in a pandemic setting. Perhaps also a pre-defined transparent decision making framework around this
+
+- Someone within the global health establishment to champion this idea effectively
+
+- More coordination among small-scale trials of lower doses (platform design) and/or living synthesis of evidence
+
+- Global pool of doses and lab resources to run trials in places that were willing to implement this idea
+
+## Another decision making example: fractionation for influenza in Canada {#another-decision-making-example-fractionation-for-influenza-in-canada}
+
+A few years back Canada's NITAG, National Advisory Committee on Immunization (NACI), undertook an evaluation of fractional doses of influenza vaccine with both IM and ID delivery and recommended against it. [Justification is available online and worth reading if interested in influenza (it is a short document)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10826877/). I will provide a short commentary on a few aspects of it that I found interesting.
+
+I should say up front that I will be using this document as a strawman. I have not interviewed the authors and I may be trivialising aspects of what ultimately was a complex decision. So please think of this as a purposefully simplified example. I think it is an important one, because it highlights the gap between the kind of evidence I discuss throughout this report and information that decision makers are interested in.
+
+NACI concluded that for IM fractionation, there is [weak evidence](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8450963/) and therefore it should not be used. No real quibbles here, it's common sense that further lowering vaccine effectiveness for flu is not a good idea. See also the note on influenza in modeling health benefits of optimal dosing.
+
+For ID delivery, there are many studies and the meta-analysis found no significant differences. In the subset of the older adults, also no differences. As I discussed in the chapter on how change in dosing is implemented in practice, there is also a large meta-analysis on ID vs IM vaccination, with 30 flu studies (Schnyder et al. 2020), which generally favoured ID. However, the recommendation was to not use ID for two main reasons.
+
+### Limited evidence? {#limited-evidence}
+
+First, "although there is some limited evidence on the use of fractional ID doses in adults ≥65 years of age, including those with chronic health conditions, there is no evidence of fractional dosing in other adult high risk-groups." I am not sure whether that's a reasonable worry or just more status quo bias.
+
+Broadly, the problems I have with this are:
+
+- **Unclear evidentiary standards and totalising approach.** For which groups do they think evidence is not sufficient? If these groups are reasonably well-defined, why not give full doses to the high-risk individuals? We already have a practice in many countries where for 65+ we give "high" dose and "standard" dose to the rest of population. But here it seems the choices are either fractionation for everyone or not at all.
+
+- **Highly conservative approach to evidence overall.** We can only consider interventions that are shown to be non-inferior in head-to-head randomised trials, with uninformative and informative priors. We cannot extrapolate evidence: e.g. if we have studies on seroprotection against H1N1 and H2N3, we cannot synthesise them to increase statistical power. Seemingly we need to treat each subpopulation and each strain as if they were completely separate problems. Ditto for dose-response: even if 3 micrograms are shown to work very well, we must remain agnostic about whether 6 mcg will. (This is an overall critique of systematic reviews, not this report.)
+
+- **No public health benefits perspective.** There is no modeling health benefits of optimal dosing. Here, it seems the whole decision is based on reviews of individual-level benefits. What if the average effect is blunted by 10%, but you can vaccinate three times as many people?
+
+I hasten to add that not all decision makers follow these standards. But, unfortunately, I think it's quite common in the broader world of evaluating health technologies.
+
+### Low feasibility? {#low-feasibility}
+
+Second, there are "several feasibility issues" with ID administration. They actually read like a good summary of issues that I covered in the note on how change in dosing is implemented in practice; I can cite some of them directly:
+
+- "only possible when influenza immunizations have been packaged as multi-dose vials and not as pre-filled syringes" and "multi-dose vials are not always available midway in the season"
+
+- "requires a different gauge needle" and "multi-dose vials (which are not always available midway in the season if supplies run low)"
+
+- "significant training" required to get vaccinators ready to deliver ID injections
+
+- most studies "used micro-needle injectors for administration, which are not yet authorized or widely available in Canadian settings"
+
+- fractionation would "require a novel communication and consent plan for any off-label dosing if it were adopted"
+
+- implementation would require monitoring of supplies as multi-dose vials will run (and the program has to be modified)
+
+These are valid concerns, but also an example of status quo bias: there is no cost-benefit analysis, just a description of how things are. A somewhat unkind summary would be: "since things are different to how they would need to be, this is not feasible".
+
+References
+
+Schnyder, Jenny L., Cornelis A. De Pijper, Hannah M. Garcia Garrido, Joost G. Daams, Abraham Goorhuis, Cornelis Stijnis, Frieder Schaumburg, and Martin P. Grobusch. 2020. "Fractional Dose of Intradermal Compared to Intramuscular and Subcutaneous Vaccination - A Systematic Review and Meta-Analysis." *Travel Medicine and Infectious Disease* 37: 101868. <https://doi.org/10.1016/j.tmaid.2020.101868>.
+
+[^1]: First, one that I was part of, which was started off as an informal group of economists, named Accelerating Health Technologies and eventually largely headed by Michael Kremer. Second, Ben Cowling (University of Hong Kong) and several others advocated for fractionation in [Nature Medicine](https://www.nature.com/articles/s41591-021-01440-4) and [modelled using it in India](https://www.nature.com/articles/s41591-022-01736-z). A few researchers from LUMC also supported dose sparing in [Lancet Global Health](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(22)00075-4/fulltext).
+
+[^2]: I believe (but this is only based on various conversations and may be completely off) that they did not want to cooperate with researchers who wanted to conduct additional efficacy trials or to investigate alternative doses.
+
+[^3]: (This is all minor, but to all who are interested:) not to give an impression that the idea originated in JCVI or that they were the only relevant advisors on the matter. Switch to 12 weeks was authorised by MHRA and communicated to vaccinators by UK's chief medical officers on 31 Dec 2020. [SAGE](https://www.gov.uk/government/collections/scientific-evidence-supporting-the-government-response-to-coronavirus-covid-19), which was an advisory group specifically for COVID, also spoke in favour. SAGE meetings featured a lot of modeling and are available online. Other decision makers, whose involvement is not clear; Chief Medical Officer and Chief Scientific Adviser to the gov't, as well as the vaccine task force likely played the role here. We know that they both were highly receptive to public health arguments and worked directly with epidemiological modellers.
+
+## Further reading
+
+- [How large are health benefits from optimisation?](population-benefits.qmd)
+- [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)

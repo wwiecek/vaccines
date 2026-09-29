@@ -1,0 +1,37 @@
+/* Keep presentation changes here; report text lives in the QMD files. */
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+main table {
+  font-size: 0.94rem;
+}
+
+@media (max-width: 700px) {
+  main table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media print {
+  .navbar, .sidebar, #quarto-margin-sidebar, .page-footer,
+  .anchorjs-link, .quarto-search-button {
+    display: none !important;
+  }
+
+  body, main {
+    color: #000;
+    background: #fff;
+  }
+
+  main a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  main img, main table, main figure {
+    break-inside: avoid;
+  }
+}

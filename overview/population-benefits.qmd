@@ -1,0 +1,186 @@
+---
+pagetitle: "How large are health benefits from optimisation?"
+---
+
+# How large are health benefits from optimisation? {#how-large-are-health-benefits-from-optimisation}
+
+In this section I try to develop a sense of how large benefits of optimal regimens can be. I cover three things. First, I briefly talk about what types of optimisation are of interest to decision makers and how it is modelled. Second, I talk through some notable estimates in the literature, to give us a sense of how large benefits can be. Third, I point out some reasons for skepticism. I then try to summarise what we know.
+
+*To keep the length of references manageable, I provide references for what I consider the most worthwhile reading material. Relatively less important papers are referenced as URLs.*
+
+## What is vaccine optimisation {#what-is-vaccine-optimisation}
+
+As mentioned at start, within this investigation I focus on changing dosage and gaps, which I sometimes refer to as "optimisation". However, the public health decision makers and advisory boards (e.g. WHO SAGE, [NITAGs](https://en.wikipedia.org/wiki/National_Immunization_Technical_Advisory_Group)) think about that term more broadly. I think it is instructive to understand their perspective.
+
+Note that in this section I am mainly interested in situations where there is already something like a default policy, rather than the scale of benefits from optimising during vaccine development, which I discuss separately.
+
+In general, decision makers can consider for optimisation:
+
+- allocation/population (who gets vaccinated and in what order: e.g. designating high risk groups or high-risk areas, ring vaccination etc.),
+
+- dose,
+
+- gaps between doses,
+
+- timing of vaccinations: relative to age (e.g. rotavirus vaccine to maximise protection during high risk period), epidemics (especially seasonal, e.g. flu, malaria) or timing of other vaccines (e.g. to use multivalent vaccines or bundle several different vaccines at the same time),
+
+- combining with other interventions (for controlling spread of epidemics, achieved through combination with NPIs, antivirals), use of multi-dose vials or other delivery technologies.
+
+Each of these can be considered with or without constraints, meaning either a fixed budget or a finite supply of vaccine. I ignore modeling on how to minimise costs alone, but of course a lot of cost modeling is done to find optimal ways of meeting vaccine coverage targets.
+
+We can optimise for different objectives: an obvious one is minimising deaths, but people may also want to pursue a strategy which avoids reaching hospital capacity, reduces infections, avoids wastage, or minimises some form of economic burden.[^1]
+
+Optimisation is achieved through epidemiological models, typically classical compartmental models of mathematical epidemiology.[^2] The main feature of these models is their ability to account for dynamic risk of infections and the impact of vaccination on "flattening the curve". The models are either fitted to retrospective data (to consider vaccination counterfactuals) or are simply theoretical simulations, with parameters drawn from previous epidemics. Then either several counterfactuals are generated and compared according to the objective.
+
+## What magnitude of impact can optimisation have? {#what-magnitude-of-impact-can-optimisation-have}
+
+Here are some practical examples, just to give some sense of what kind of impact these strategies can have, according to their authors. This is a very rough characterisations of the following papers and the numbers are of course not comparable, because I am summarising very different types of estimates. I am also leaving out some common limitations of these models, I will talk about them in the next section.
+
+### Targeting and timing vaccinations {#targeting-and-timing-vaccinations}
+
+First, there is group and age prioritisation. Typically we choose between vaccinating transmitting individuals vs the ones at higher risk of severe outcomes.
+
+- For example, for influenza it has long been a practice to vaccinate the elderly and debate over whether to vaccinate schoolchildren. A [model](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001527) suggested that there is 10% extra benefit from targeting children (ages 5-17); this type of modelling helped inform the decision to offer flu vaccine to schoolchildren in England and Wales.
+
+- For COVID, most authors sensibly suggested targeting individuals at high risk of mortality. But it's interesting to see what the magnitude of impact was. In Bilgin et al. (2023) deaths reduced by about a third if prioritising the highest risk groups. Prioritisation model by Bubar et al. (2021) was another very lucid example of COVID case. They show that averted deaths can go from 33% to 50% in severe epidemics (so, benefits increase by about a half), although for smaller epidemics there is much less, sometimes zero, difference.
+
+- For malaria, [this vaccine rollout paper](https://pubmed.ncbi.nlm.nih.gov/33253211/) shows how optimal geographical allocation of malaria vaccine under supply constraint can have considerable impacts (although not easy to summarise in this instance). A lot of similar modeling is done routinely.
+
+Another type of optimisation considers timing. Thompson et al. (2022) model that aligning RTS,S vaccination (the primary series of 3 doses) to season, rather than age, could avert 25%-75% additional cases. That is because efficacy of malaria vaccine decreases from 80% after 3 doses to \~30% over 12 months (which also shows why 4th dose is needed). This is an impressive figure, but, as we will discuss later, this type of optimisation has to be carefully considered against other practical factors of implementing a mass vaccination programme.
+
+These are interesting and important examples of the type that decision makers pay close attention to. I started with it because I also wanted to cite some numbers for the magnitude of improvement that are relevant in these problems, although, once again, this is only a very rough summary. I now move to the models of gaps and dosing, which are the focus of this doc.
+
+### Increasing gaps {#increasing-gaps}
+
+This topic got a lot of coverage during COVID, given an early finding that immune responses could be more potent when gaps were extended. I discuss this mechanism in the note on biology of optimal dosing and here only cover the models of benefits. There are also some results for cholera vaccine, which are very timely in 2024 due to ongoing shortage of that vaccine.
+
+### COVID vaccines: 12-week gaps {#covid-vaccines-12-week-gaps}
+
+For cases such as COVID, a simple rule of thumb model here may suffice (as was perhaps evidenced by national advisory boards quickly moving to extended gaps): extending the gaps allows for a short-term doubling of coverage (all "second" doses are used to immunise new individuals). If the high-risk population is several times larger than the short-term vaccination capacity, then benefits may double even without taking into account impact on stopping transmission. And unlike fractional dosing, the logistical constraints do not apply.
+
+Many analyses of public health impacts of extending time between two doses were produced and they largely confirmed large benefits of this approach. In one more recent example (unlike many other papers, based on retrospective analysis), Imai et al. (2023) estimated that extending the second dose from 3 to 12 weeks averted 60k hospitalisations and 10k deaths in the first 9 months of 2021 in England. This would mean a roughly 20% increase in hospitalisations and deaths averted. These large gains were generally matched by other models I am aware of. [^3]
+
+### Cholera: prioritising single dose during shortages {#cholera-prioritising-single-dose-during-shortages}
+
+Oral cholera vaccine is typically given in two doses, 1-6 weeks apart. There are [persistent shortages](https://www.vox.com/world-politics/24146657/cholera-outbreaks-vaccines-who-gavi-disease-conflict) which are ongoing even now and during outbreaks in South Sudan (2015), Zambia (2016) a decision was made to switch to a single dose until more supply became available.
+
+There has been some modeling of benefits of single dose vaccination, first by Azman et al. (2015) and more recently by Leung, Eaton, and Matrajt (2022) who suggest that 20-80% more deaths can be averted during outbreaks by using the optimal one dose strategy instead of two doses (but maintaining two doses reserved for children under five, for whom the vaccine is less effective). This is based on three different actual outbreak settings. These results appear promising, but I have not seen them receive much attention and the crucial parameter for these models, effectiveness of single dose relative to two doses, needs more data.
+
+### Optimising dosing {#optimising-dosing}
+
+I discuss using lower vaccine doses for COVID, yellow fever and mpox in individual case studies. Each of these has some accompanying modeling on benefits of fractionation; here I recap their magnitudes of benefits. Another important example is influenza, where the option considered is usually to increase dosage in the elderly (as much as 5-fold increase in the amount of antigen). Something similar could be done in COVID, too. I have not found much fractionation modeling for other diseases.
+
+### Fractionation to spare doses: COVID, yellow fever, mpox {#fractionation-to-spare-doses-covid-yellow-fever-mpox}
+
+For fractionation, the basic result in some modeling studies is that benefits are inversely proportional to fractionation, multiplied by vaccine effectiveness. For example, if you can vaccinate 5x more people but there is a 20% chance that the lower dose does not work (and the full dose always does), the benefits are 4 times higher, assuming it's OK to ignore "leakiness" and sterilising immunity: more on that below.
+
+Therefore a simple principle that some papers mention is that an n-fold increase in the speed of vaccination is worthwhile as long as efficacy does not decrease more than n-fold. But as with other cases, this has to be verified within models that consider infectious disease epidemiology.
+
+For COVID, I give more context in case study of fractional dosing of COVID vaccines. Focusing on models only, Więcek et al. (2022) (hey, that's me!) find that a large share of deaths can be averted. This is just a hypothetical simulation study, but with reasonably realistic parameters. We can think of this model generically as one where we can choose between a slower, high efficacy vaccine (e.g. full dose) and faster, lower efficacy vaccine (e.g. through fractionation). If there is no drop in efficacy from fractionation, then doubling speed of vaccination averts between quarter and half of deaths (depending on the intensity of the epidemic). But there are limits to the usefulness of fractional dose: for example, the model suggests that switching from a 70% to a 2x faster 35% effective dose would increase mortality. This is because benefits from spreading coverage more broadly are outweighed by less protection among those most at risk.[^4]
+
+For mpox, Dimitrov, Adamson, and Matrajt (2023) projected up to 70% fewer infections if there was a large supply constraint and good vaccine efficacy from fractional dose (both assumptions turned out to be correct, I believe).
+
+A simple modeling paper by Wu et al. (2016) projected large numbers of infections averted from fracitonal dosing of yellow fever vaccine, using data from vaccination campaign in Kinshasa, with up to about 60% reductions in infection attack rate if (as was subsequently shown to be the case) VE did not decrease by much.
+
+There is also an older example of modeling on how to optimally use a stockpile of flu vaccine during pandemics by Riley, Wu, and Leung (2007). The authors found that it is optimal to spread coverage and the optimal solution would reduce infections by roughly 5-10 p.p. (which in relative terms would mean up to 20% fewer cases).[^5]
+
+### Age- and risk-specific dosing: COVID and influenza {#age--and-risk-specific-dosing-covid-and-influenza}
+
+**COVID.** The models above assume optimal dosing is a binary problem: you either vaccinate with the standard dose or give a lower one to everyone. But this is not quite right: we routinely give lower doses to children. It would be not just wasteful, but potentially very harmful to give the same dose of COVID vaccine to infants. On the other end of the scale, we know that immune response weakens with age.
+
+In a work-in-progress paper I am working on with some colleagues (not yet public), we find that for an epidemic like COVID (steep risk profile, fast transmission), when vaccine supply is small, the extra benefits of age-optimal dosing are rather small: it's OK to simply find the optimal fractional dose that covers most of the high-risk population.
+
+This optimal dosing was not part of a wider discussion in 2021, but the mindset of heterogneous risks was reflected in the discussions about extending gaps between doses. There was talk by modellers about initially giving two doses to high risk individuals and a single dose to the rest of the population ([example of a single dose paper](https://www.nature.com/articles/s41467-021-23761-1)). There was also a conversation on giving one dose to people who had a confirmed infection, since that was sufficient to mount good immune response.
+
+**Influenza.** But part of the reason for these small extra benefits from switching to age-specific dosing is that COVID vaccines work pretty well in the first place (or at least we assumed so in our models). This is not the case for flu and so it's worthwhile to mention it here as an example of increasing doses having positive effects.
+
+There is an issue of vaccine mismatch due to viral drift, where the vaccine is poorly protective in everyone in a given season. These cases probably need to be resolved on the vaccine development side. But in cases where there is a match, the vaccines can still have low effectiveness and short durability, especially in the elderly. Small increases in vaccine effectiveness would help avoid many severe outcomes ([here](https://academic.oup.com/cid/article/70/12/2496/5538868?login=false) is a simple calculation). A high dose influenza vaccine is recommended for \>65 year olds, at least in the US. A [Phase 3 RCT](https://www.nejm.org/doi/full/10.1056/NEJMoa1315727) estimated that it reduces risk by about a quarter compared to standard dose (then trivalent, now quadrivalent). I have not seen good modeling papers that confirm health benefits, but it should be obvious that if efficacy increases, there are large health gains. I've seen some discussion of two-dose vaccination could also help.
+
+## Some limitations of typical models of benefits {#some-limitations-of-typical-models-of-benefits}
+
+There are several limitations that are common to many models of benefits, including many (probably most) that I cited. And all of these limitations apply to the two main optimisation problems we are interested in here, i.e. dosing and schedules, although their impact will vary case-by-case.
+
+### Efficacy against disease or infection? Sterilising immunity {#efficacy-against-disease-or-infection-sterilising-immunity}
+
+This one is probably obvious to any reader of this document, but it's worth spelling out. As Derek Lowe nicely put it, "there are vaccines and there are vaccines". By efficacy we typically mean efficacy against *symptomatic* disease, which obviously can be measured more easily than infection. Additionally, some vaccines can eliminate pathogens before they could infect and replicate within the host.
+
+This is not the case for influenza or SARS-CoV-2, which drift and mutate into new variants. To predict benefits of vaccines we have to make some assumptions on how efficacy against disease can translate to breaking transmission, i.e. efficacy against infection. But data that we have on this is not as comprehensive as on efficacy against disease.[^6] In broad terms, this is likely the most valuable of the missing pieces of information that would allow the modellers better assess benefits.
+
+### Wastage, logistics, feasible speed-up from optimisation {#wastage-logistics-feasible-speed-up-from-optimisation}
+
+When considering fractionation or extending gaps, there is obviously potential for wastage. First, I discussed various dosing-related problems (splitting vials, dead volume in syringes, difficulties in intradermal dosing) in the note on how change in dosing is implemented in practice. Then there are logistical constraints: if considering a counterfactual of faster vaccination (through expanding supply, more equitable distribution, lower doses, better schedules), is there sufficient capacity to deliver these additional shots? This is something that modelling tends to purposefully ignore, typically due to lack of data or because it's highly context-specific.
+
+### Behaviour change {#behaviour-change}
+
+Typically counterfactual scenarios in epidemiological models assume the same behaviour of agents over time, i.e. people making virus-transmitting contacts over time at the same rate. The effect of vaccination is simply through modifying the risk of these contacts. Some models also include dynamic non-pharmaceutical interventions, e.g. lockdowns or school closures. But it's rare for models to include behavioural change in response to changing risk. A classic example in that category is people engaging in more risky behaviour after vaccination. Ignoring this can obviously overstate benefits of (faster) vaccination.[^7]
+
+### Exacerbating epidemics {#exacerbating-epidemics}
+
+Earlier, I cited a paper on targeting school children for flu vaccination. Another paper by [De Boer et al](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1471-x) estimates costs per QALY of childhood influenza vaccinations in the Netherlands, finding an overall *increase* in seasons with higher incidence of flu. It's based on a model that is quite simple relative to others we discussed here, but the general principle can be found in other papers.[^8]
+
+Where vaccine-induced protection wanes over time (and where there is no constant revaccination), mass vaccination may simply be a way of pushing more cases forward in time. This is of course very valuable, but inasmuch as the decision maker cares about long-term impacts, they may have to (1) simulate longer periods, (2) consider long-term revaccination dynamics, (3) be explicit about temporal discounts.
+
+### Leaky vaccines {#leaky-vaccines}
+
+This one is somewhat related to sterilising immunity. Yellow fever modelling paper by Wu et al. (2016) makes an important distinction between all-or-nothing and "leaky" vaccines. In the former case a 50% effective vaccine means that 50% of people develop total immunity and the rest get no benefit. In the latter, all people have 50% chance of avoiding infection on contact. Typically, for a new vaccine/pathogen we do not know which one is closer to the truth: this type of knowledge requires e.g. human challenge studies.
+
+The latter hypothetical is worse, because everyone can still get infected, just more slowly, whereas in the all-or-nothing case the epidemic eventually runs out of steam as the susceptible population shrinks/herd immunity develops. This means that the benefits of fractional dosing can be overstated when there are steep decreases in efficacy. This critique extends to [our paper on COVID vaccines](https://pubmed.ncbi.nlm.nih.gov/35131899/)!
+
+### Selection pressure {#selection-pressure}
+
+Compared to "standard" vaccination, delaying doses or giving smaller doses of a vaccine increases the number of individuals with partial immunity, which could increase the rate of viral escape from immunity. This happens because at moderate levels of immunity (1) the virus is under pressure to evolve, but (2) it can still replicate enough to generate new (escape) variants. Saad-Roy et al. (2021) discuss this issue specifically with COVID vaccines' delayed 2nd dose in mind.[^9] But Cobey et al. (2021) posit that dose-sparing regimes may in fact lower the risk, by slowing transmission. I agree with that assessment, but it's important to note that any such debate is very pathogen-specific and this is a very important risk to consider.
+
+### How much of a problem are these? {#how-much-of-a-problem-are-these}
+
+My highly subjective assessment is that it makes sense to discount the benefits by 10-20% for wastage and behaviour change each, unless models include it. For sterilising immunity and the last three, an assessment is needed on a disease-by-disease basis. For many vaccines that are highly effective and/or where supply constraints may ease over time, these concerns will have little or no impact on final magnitude of benefits. It is worth remembering that we are more likely to consider fractionation in cases where there is little loss in efficacy (that was the case in all of our case studies) and the models typically look at much starker trade-offs.
+
+However, this quick tour of optimisation models leaves us with one big question: how do decision makers actually interact with models? I will try to address this in a separate section.
+
+### References {#references-3}
+
+Azman, Andrew S., Francisco J. Luquero, Iza Ciglenecki, Rebecca F. Grais, David A. Sack, and Justin Lessler. 2015. "The Impact of a One-Dose Versus Two-Dose Oral Cholera Vaccine Regimen in Outbreak Settings: A Modeling Study." *PLOS Medicine* 12 (8): e1001867. <https://doi.org/10.1371/journal.pmed.1001867>.
+
+Bilgin, Gizem Mayis, Kamalini Lokuge, Ernest Jabbie, Syarifah Liza Munira, and Kathryn Glass. 2023. "COVID-19 Vaccination Strategies in Settings with Limited Rollout Capacity: A Mathematical Modelling Case Study in Sierra Leone." *BMC Public Health* 23 (1): 2466. <https://doi.org/10.1186/s12889-023-17374-0>.
+
+Bubar, Kate M., Kyle Reinholt, Stephen M. Kissler, Marc Lipsitch, Sarah Cobey, Yonatan H. Grad, and Daniel B. Larremore. 2021. "Model-Informed COVID-19 Vaccine Prioritization Strategies by Age and Serostatus." *Science* 371 (6532): 916--21. <https://doi.org/10.1126/science.abe6959>.
+
+Cobey, Sarah, Daniel B. Larremore, Yonatan H. Grad, and Marc Lipsitch. 2021. "Concerns about SARS-CoV-2 Evolution Should Not Hold Back Efforts to Expand Vaccination." *Nature Reviews Immunology* 21 (5): 330--35. <https://doi.org/10.1038/s41577-021-00544-9>.
+
+Dimitrov, Dobromir, Blythe Adamson, and Laura Matrajt. 2023. "Evaluation of Mpox Vaccine Dose-Sparing Strategies." *PNAS Nexus* 2 (5): pgad095. <https://doi.org/10.1093/pnasnexus/pgad095>.
+
+Imai, Natsuko, Thomas Rawson, Edward S. Knock, Raphael Sonabend, Yasin Elmaci, Pablo N. Perez-Guzman, Lilith K. Whittles, et al. 2023. "Quantifying the Effect of Delaying the Second COVID-19 Vaccine Dose in England: A Mathematical Modelling Study." *The Lancet Public Health* 8 (3): e174--83. <https://doi.org/10.1016/S2468-2667(22)00337-1>.
+
+Leung, Tiffany, Julia Eaton, and Laura Matrajt. 2022. "Optimizing One-Dose and Two-Dose Cholera Vaccine Allocation in Outbreak Settings: A Modeling Study." *PLoS Neglected Tropical Diseases* 16 (4): e0010358. <https://doi.org/10.1371/journal.pntd.0010358>.
+
+Riley, Steven, Joseph T. Wu, and Gabriel M. Leung. 2007. "Optimizing the Dose of Pre-Pandemic Influenza Vaccines to Reduce the Infection Attack Rate." *PLOS Medicine* 4 (6): e218. <https://doi.org/10.1371/journal.pmed.0040218>.
+
+Saad-Roy, Chadi M., Sinead E. Morris, C. Jessica E. Metcalf, Michael J. Mina, Rachel E. Baker, Jeremy Farrar, Edward C. Holmes, et al. 2021. "Epidemiological and Evolutionary Considerations of SARS-CoV-2 Vaccine Dosing Regimes." *Science* 372 (6540): 363--70. <https://doi.org/10.1126/science.abg8663>.
+
+Thompson, Hayley A., Alexandra B. Hogan, Patrick G. T. Walker, Peter Winskill, Issaka Zongo, Issaka Sagara, Halidou Tinto, et al. 2022. "Seasonal Use Case for the RTS,S/AS01 Malaria Vaccine: A Mathematical Modelling Study." *The Lancet Global Health* 10 (12): e1782--92. <https://doi.org/10.1016/S2214-109X(22)00416-8>.
+
+Więcek, Witold, Amrita Ahuja, Esha Chaudhuri, Michael Kremer, Alexandre Simoes Gomes, Christopher M. Snyder, Alex Tabarrok, and Brandon Joel Tan. 2022. "Testing Fractional Doses of COVID-19 Vaccines." *Proceedings of the National Academy of Sciences* 119 (8). <https://doi.org/10.1073/pnas.2116932119>.
+
+Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fractional Dosing of Yellow Fever Vaccine to Extend Supply: A Modelling Study." *Lancet (London, England)* 388 (10062): 2904--11. <https://doi.org/10.1016/S0140-6736(16)31838-4>.
+
+[^1]: In some cases, decision makers try to solve the inverse problem: what level of coverage has to be achieved to eliminate certain pathogens or maintain herd immunity.
+
+[^2]: Sometimes agent-based models are used for fine-tuning certain decisions. They may not be necessary for estimating the magnitude of benefits, but they can be much better at predicting complex behaviours. A classic example is [this flu paper by Ferguson et al](https://www.nature.com/articles/nature04017), model from which was also the basis of early COVID modelling in the UK.
+
+[^3]: These other examples include an [early simulation model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7808325/) 20-30% reduction in cases; [modeling to optimise gaps](https://www.pnas.org/doi/full/10.1073/pnas.2104640118) that generally supported increasing gaps from 3-4 weeks to 8-12 and [similar work in England](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8437233/); another widely cited [agent-based model](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001211) found very large increases with severely constrained supply. A [country-specific model for European middle-income countries](https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(22)00074-6/fulltext) found about 10% decrease in burden from moving to longer gaps.
+
+[^4]: I am aware of one more effort to model fractionation of COVID vaccines, where modeling was also done specifically for India, in two more specific modeling papers: [one](https://www.nature.com/articles/s41591-022-01736-z) and [two](https://www.cell.com/med/fulltext/S2666-6340(23)00061-2); this was combined with cost-effectiveness analysis and considered booster campaigns, which our paper did not.
+
+[^5]: There is also \[another model for dosing during influenza pandemics\], which also recommends low doses, but I have not had time to review it.
+
+[^6]: This was famously a big controversy around COVID-19 vaccines, with a mix of conspiracy theorists and right-leaning commentators complaining about how the promise of vaccines breaking transmission was used to "force" vaccines on everyone, e.g. via COVID passports. This author will refrain from commenting on that issue, but there is a nice, [comprehensive fact check from Reuters](https://www.reuters.com/fact-check/preventing-transmission-never-required-covid-vaccines-initial-approval-pfizer-2024-02-12/) on that issue.
+
+[^7]: This problem affects models of retrospective data most often: the modellers will typically derive transmission dynamics over time and then generate counterfactuals by modifying only one factor of interest (e.g. rate of vaccination), *ceteris paribus*.
+
+[^8]: For example, in [our paper on impact of accelerating COVID vaccinations](https://www.medrxiv.org/content/10.1101/2023.06.16.23291442v2) , which mainly focused on late 2020 in the US and the UK, we always found considerable increases in health burdens in the subsequent waves in 2021. Predictably, this effect was highly dependent on how quickly protection wanes and we did not assume any changes to booster campaigns.
+
+[^9]: They use a more complicated compartmental model that also encapsulates some points about exacerbating dynamics and leaky vaccines we made above, which makes it a worthwhile read.
+
+## Further reading
+
+- [Examples of how optimisation decisions are made](decision-making.qmd)
+- [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)

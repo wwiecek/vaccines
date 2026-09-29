@@ -1,0 +1,126 @@
+---
+pagetitle: "Case study: fractional dosing of COVID vaccines"
+---
+
+# Case study: fractional dosing of COVID vaccines {#case-study-fractional-dosing-of-covid-vaccines}
+
+***Important note:** this is the first case study I drafted for this report and it's a bit dated/too basic; I wanted to focus on other new material rather than refresh it. Other sections of the report have much more relevant information on COVID, so I'd simply encourage reading other sections first. **Lastly, this is about 2021; I talk about the important case of lowering doses of boosters for Moderna mRNA vaccines elsewhere in the report.***
+
+## Scale of shortage of COVID vaccines {#scale-of-shortage-of-covid-vaccines}
+
+COVID has caused over 774 million confirmed cases and a death toll currently (early 2024) estimated at 29 million excess deaths. Despite safe and effective vaccines being available since December 2020, the estimated number of excess deaths was particularly high in 2021, at 13 million (44% of the total death toll), and remained high in 2022 (7.4 million), especially in countries with low vaccination rates.
+
+The rapid rollout of vaccines[^1] saved tens of millions of lives - one paper estimates between 13.7 million and 31.4 million deaths were averted during the first year of vaccination alone (Watson et al. 2022).[^2]
+
+Due to the scale of the pandemic and the novelty of the vaccines, supply constraints were inevitable. The vaccine supply chain was complex and plagued with bottlenecks on key inputs, [ranging from bioreactor bags to plant extracts](https://www.bmj.com/content/375/bmj.n2375). High income countries, which tended to secure vaccine supply by signing contracts early, had given 1.67 vaccine doses per person by the end of 2021, rising to 2.22 by the end of 2022; for low income countries these figures were 0.10 and 0.35, respectively.
+
+In an effort to increase vaccine access in low- and middle-income countries (LMICs), the COVAX initiative was launched in April 2020, coordinated by UNICEF, Gavi, CEPI, and the WHO. The initiative pooled funds from wealthier nations and organisations to buy vaccines in bulk and distribute them across participating countries: by its close in December 2023, 146 countries had received doses. Unfortunately, recipient countries (largely LMICs) often got their vaccines late and in insufficient numbers. Considerable quantities of doses donated via COVAX were wasted because they were donated close to their expiration dates.[^3]
+
+## Potential rationale for fractional dosing {#potential-rationale-for-fractional-dosing}
+
+In this section I focus on the perspective of dose-response relationship on neutralising antibodies and vaccine efficacy against disease. I talk about COVID more broadly in biology of optimal dosing.
+
+Unlike some other situations in which fractional dosing has been used, for COVID it was likely that there would be decrease in individual efficacy when using lower doses. Yet fractional dosing offered a potential solution to the shortages and wastage. It could have accelerated vaccinations globally and all countries could have benefitted from more supply.
+
+In Więcek et al. (2022) together with co-authors we attempted to summarise individual-level biological evidence for fractional dosing as it stood in 2021 and conducted epidemiological modeling. (The conclusions in the rest of this section are largely drawn from that paper.) In Phase 1/2 clinical trials, different doses of several vaccines were tested.[^4] There was no statistical difference between the immune responses (in the sense of neutralising antibody, NAb, titres) provoked by fractional doses of certain vaccines and the larger standard doses.[^5]
+
+The strong, predictive relationship between NAb levels and vaccine efficacy was emphasised soon after vaccine approvals, e.g. by Khoury et al. (2021). Taking this strong relationship as a given, we hypothesised that fractional doses of some vaccines were likely more efficacious than some of the standard doses of other vaccines that were approved at that point.
+
+We used an epidemiological model to simulate a range of pandemic scenarios where vaccinations are constrained by supply shortages.[^6] We found that even under conservative assumptions the fractional dosing regimes resulted in both fewer infections and fewer deaths in vast majority of scenarios. The differences could be very large, reducing deaths even by 50% under some conditions, but the magnitude of benefits really depended on the scenario.
+
+Another epidemiological model by Du et al. (2023) estimated the cost-effectiveness of using fractional booster doses in India.[^7] They found that fractional booster doses could yield health-related net monetary benefits of up to \$11bn over 200 days, compared to full (unfractionated) booster doses.[^8]
+
+Yang et al. (2022) conducted a systematic review and meta-analysis of dose-finding results (including trials of fractional vs standard doses), estimating the dose-response relationship in terms of antibody response. They also predicted vaccine efficacy based on immune responses. They find that fractional doses of mRNA and protein subunit vaccines are likely to induce immune responses that result in over 50% efficacy against COVID, including its variants.
+
+## How could fractional dosing be implemented in clinical practice? {#how-could-fractional-dosing-be-implemented-in-clinical-practice}
+
+Similarly to other case studies I present, there are practical difficulties associated with fractional dosing, which vary depending on the implementation method used. Advisory groups would have to assess how many times vials can safely be punctured and whether smaller volumes can consistently be drawn into syringes. Healthcare workers would likely have to be trained to administer fractional shots safely. Adjusting the fill and finish process could involve a significant short-term cost (in terms of both time and money) due to the scale of vaccine manufacturing and the complexity of supply chains and delivery systems. Other bottlenecks in supply chains are also likely to impede the expansion of vaccinations: there was a shortage of glassware such as vials and syringes during the COVID pandemic.
+
+However, these issues were completely parallel to what we describe in the yellow fever and polio case studies, suggesting that they could be overcome.
+
+## Other solutions to shortages {#other-solutions-to-shortages}
+
+One potential solution to vaccine shortages is simply to increase supply capacity. But during COVID, despite huge worldwide demand, there was an acute shortage for around a year - vaccine manufacturers couldn't increase production fast enough. This cost many lives. In India, the number of vaccine doses per 100 people was 0.0 in January 2021, only rising to 23.2 by the end of June 2021 (compared to 115.4 in the UK). Between April and June 2021 inclusive, estimated excess deaths per 100,000 rose from under 100 to just under 260 in India, compared to a decline from just over 170 to under 165 in the UK. Similar cases of low vaccination rates followed by high mortality occurred across LMICs.
+
+Another option is to improve incentives and vaccine market design. (Josh: do I also mention the fact that vaccine trials are optimised for individual outcomes (maximise benefit:risk ratio) rather than public health outcomes?
+
+And how licencing process is first past the post, so main reward for producers is being the first to develop a vaccine meeting the target profile, which discourages experimentation during the development process and after the licence is granted)
+
+Castillo et al. (2021) estimates that there is a huge gap between the private value and the social value of an additional vaccine course. The former, in terms of the price manufacturers receive, is between \$6 and \$40. The latter is between \$500 and \$1000. This huge positive externality means that vaccines are massively underprovided by manufacturers relative to the social optimum - government intervention is required to address this. However, large-scale government support for vaccination development, manufacturing, and rollout were already in place in many countries during the pandemic.[^9] They were vital for expanding vaccination supply, yet shortages remained. 
+
+Another strategy is dose spacing - increasing the intervals between doses. In the first half of 2021, many countries, at the suggestion of their national immunisation advisory groups, undertook this strategy, in order to conserve limited vaccine supplies and expand protection to more people (using a "first doses first" strategy). However, the emergence of new virus strains, against which single doses were less efficacious, as well as the gradual easing of supply shortages, curtailed the use of dose-spacing strategies.
+
+## Gaps in evidence {#gaps-in-evidence}
+
+Implementation of fractional dosing was perhaps not feasible for several reasons. I discuss policy questions in a separate note. Here I start with clinical aspects only, summarising what information was and wasn't available.
+
+As mentioned above, we only have Phase 1/2 evidence for fractional doses, and even these trials had small sample sizes. The model in Khoury et al. (2021) underpins the assumptions of fractional dosing's efficacy. It identifies a strong predictive relationship between neutralising antibody levels and vaccine efficacy for standard doses, however, neutralising antibodies (NAbs) are only one aspect of immune response. At the time, there was debate on how closely NAbs correlated with disease protection. There is currently no clinical data on how fractional dosing may impact cell-mediated immunity, which is especially associated with durable protection from severe disease.[^10]
+
+There is also a lack of evidence on the duration of fractional doses' effectiveness. "Duration of Effectiveness of Vaccines Against SARS-CoV-2 Infection and COVID-19 Disease: Results of a Systematic Review and Meta-Regression - The Lancet" (n.d.) finds that, on average, vaccine efficacy or effectiveness against both infection and symptomatic COVID disease drops by over 20 percentage points from 1 month to 6 months. For effectiveness/efficacy against severe disease, that figure was 10 percentage points.[^11] Fractional doses could plausibly have worse drop-offs in protection over time. This uncertainty has implications for assessing the public health benefits of fractional dosing. Specifically, fractional doses could merely prolong life until the next pandemic wave (possibly of a more infectious variant), where protection drops off and the death toll rises.[^12]
+
+Another concern is that, if fractional doses offer less protection (i.e. only partial immunity), selection pressure could rise, resulting in the emergence of more infectious and vaccine-resistant variants. (I also talk about this more in modelling health benefits of optimal dosing.) Cobey et al. (2021), however, claims that preliminary evidence indicates fractional dosing (and other dose-sparing strategies) would actually reduce the risk of vaccine-resistant variants emerging. As long as vaccines provide some protection from resistant variants, the reduction in prevalence (number of cases) and incidence (rate of new cases) is likely to reduce the rate of variant emergence and the speed of adaptation. In other words, the public health-level benefits are likely to outweigh the risk of vaccine-induced evolution. However, modelling this to get an idea of how the risks trade off against the benefits is complicated; we discuss some attempts in another note.
+
+Other concerns include how the effects of fractional doses may vary across demographic groups (particularly vulnerable groups such as immunocompromised or elderly individuals), and the magnitude of the positive effect of a reduction in the incidence of side effects from smaller doses.
+
+However, for at least one vaccine, the consensus was that the original standard dose was set high: the original recommended dose for the Moderna vaccine was 100μg.[^13] This later changed to 50 μg.[^14]
+
+### References {#references-4}
+
+Ball, Philip. 2020. "The Lightning-Fast Quest for COVID Vaccines --- and What It Means for Other Diseases." *Nature* 589 (7840): 16--18. <https://doi.org/10.1038/d41586-020-03626-1>.
+
+Castillo, Juan Camilo, Amrita Ahuja, Susan Athey, Arthur Baker, Eric Budish, Tasneem Chipty, Rachel Glennerster, et al. 2021. "Market Design to Accelerate COVID-19 Vaccine Supply." *Science* 371 (6534): 1107--9. <https://doi.org/10.1126/science.abg0889>.
+
+Cobey, Sarah, Daniel B. Larremore, Yonatan H. Grad, and Marc Lipsitch. 2021. "Concerns about SARS-CoV-2 Evolution Should Not Hold Back Efforts to Expand Vaccination." *Nature Reviews Immunology* 21 (5): 330--35. <https://doi.org/10.1038/s41577-021-00544-9>.
+
+Du, Zhanwei, Lin Wang, Yuan Bai, Shuo Feng, Sabareesh Ramachandran, Wey Wen Lim, Eric H. Y. Lau, Anup Malani, and Benjamin J. Cowling. 2023. "Cost Effectiveness of Fractional Doses of COVID-19 Vaccine Boosters in India." *Med* 4 (3): 182--190.e3. <https://doi.org/10.1016/j.medj.2023.02.001>.
+
+"Duration of Effectiveness of Vaccines Against SARS-CoV-2 Infection and COVID-19 Disease: Results of a Systematic Review and Meta-Regression - The Lancet." n.d. https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)00152-0/fulltext. Accessed February 13, 2024.
+
+Khoury, David S., Deborah Cromer, Arnold Reynaldi, Timothy E. Schlub, Adam K. Wheatley, Jennifer A. Juno, Kanta Subbarao, Stephen J. Kent, James A. Triccas, and Miles P. Davenport. 2021. "Neutralizing Antibody Levels Are Highly Predictive of Immune Protection from Symptomatic SARS-CoV-2 Infection." *Nature Medicine* 27 (7): 1205--11. <https://doi.org/10.1038/s41591-021-01377-8>.
+
+Thanh Le, Tung, Zacharias Andreadakis, Arun Kumar, Raúl Gómez Román, Stig Tollefsen, Melanie Saville, and Stephen Mayhew. 2020. "The COVID-19 Vaccine Development Landscape." *Nature Reviews Drug Discovery* 19 (5): 305--6. <https://doi.org/10.1038/d41573-020-00073-5>.
+
+"U.S. COVID-19 Vaccine Product Information CDC." 2023. https://www.cdc.gov/vaccines/covid-19/info-by-product/index.html.
+
+Watson, Oliver J., Gregory Barnsley, Jaspreet Toor, Alexandra B. Hogan, Peter Winskill, and Azra C. Ghani. 2022. "Global Impact of the First Year of COVID-19 Vaccination: A Mathematical Modelling Study." *The Lancet Infectious Diseases* 22 (9): 1293--1302. <https://doi.org/10.1016/S1473-3099(22)00320-6>.
+
+Więcek, Witold, Amrita Ahuja, Esha Chaudhuri, Michael Kremer, Alexandre Simoes Gomes, Christopher M. Snyder, Alex Tabarrok, and Brandon Joel Tan. 2022. "Testing Fractional Doses of COVID-19 Vaccines." *Proceedings of the National Academy of Sciences* 119 (8). <https://doi.org/10.1073/pnas.2116932119>.
+
+Więcek, Witold, David Johnston, Tomas Dulka, Danny Toomey, and Enlli Lewis. 2023. "Vaccines at Velocity: Evaluating Potential Lives Saved by Earlier Vaccination in the COVID-19 Pandemic." medRxiv. <https://doi.org/10.1101/2023.06.16.23291442>.
+
+Wu, Nana, Keven Joyal-Desmarais, Paula A. B. Ribeiro, Ariany Marques Vieira, Jovana Stojanovic, Comfort Sanuade, Doro Yip, and Simon L. Bacon. 2023. "Long-Term Effectiveness of COVID-19 Vaccines Against Infections, Hospitalisations, and Mortality in Adults: Findings from a Rapid Living Systematic Evidence Synthesis and Meta-Analysis up to December, 2022." *The Lancet Respiratory Medicine* 11 (5): 439--52. <https://doi.org/10.1016/S2213-2600(23)00015-2>.
+
+Yang, Bingyi, Xiaotong Huang, Huizhi Gao, Nancy H. Leung, Tim K. Tsang, and Benjamin J. Cowling. 2022. "Immunogenicity, Efficacy, and Safety of SARS-CoV-2 Vaccine Dose Fractionation: A Systematic Review and Meta-Analysis." *BMC Medicine* 20 (1): 409. <https://doi.org/10.1186/s12916-022-02600-0>.
+
+[^1]: The genetic sequence of SARS-CoV-2 was published on 11 January 2020, and the first vaccine human clinical testing began 2 months later, on 16 March. The first vaccine that underwent large-scale clinical trials was approved on 2 December 2020, representing an unprecedented speed of vaccine development. Previously, the fastest development, from viral sampling to approval, was a mumps vaccine in the 1960s which took 4 years. For an overview of COVID vaccine development, see Thanh Le et al. (2020), Ball (2020).
+
+[^2]: This model by a team at Imperial College is quite subjective (especially as it's hard to design a realistic no-vaccination counterfactual) and it's not possible to estimate these quantities precisely, but it does underline the huge magnitude of benefits of vaccination.
+
+[^3]: COVAX aimed to deliver 2 billion doses by the end of 2021. By the end of the scheme 2 years later, that number had still not been reached. Over 100 million COVAX doses were rejected in December 2021 alone, largely because [they were delivered too close to their expiration date](https://www.reuters.com/business/healthcare-pharmaceuticals/more-than-100-million-covid-19-vaccines-rejected-by-poorer-nations-dec-unicef-2022-01-13/). This was especially problematic in LMICs due to poorer logistics and storage systems (including refrigeration). In February 2022, there were over 1.6 million expired doses in the vaccine stocks of 19 African countries ([source](https://www.reuters.com/business/healthcare-pharmaceuticals/exclusive-short-astrazeneca-shelf-life-complicates-covid-vaccine-rollout-worlds-2022-02-16/)). In November 2021, around 1 million doses expired in Nigeria alone ([source](https://www.reuters.com/business/healthcare-pharmaceuticals/exclusive-up-1-million-covid-vaccines-wasted-nigeria-last-month-2021-12-08/)).
+
+[^4]: These dose-ranging studies included doses that were both larger and smaller than standard doses. They had small sample sizes, ranging from 15 to 190 participants.
+
+[^5]: Indeed, the fractional doses of some vaccines exceeded the NAb response of other approved vaccines. For example, the 50% dose of Moderna's vaccine (the best-studied vaccine in terms of dose-ranging) produced a higher NAb response than the standard doses of Oxford/AstraZeneca's, COVAXin's, Johnson & Johnson's, and Pfizer's.
+
+[^6]: We looked at different scenarios where we varied many key assumptions: efficacy of the standard dose against death and infection, ratio of efficacy of fractional dose to standard dose, epidemic growth rate, and fraction of dose. We assumed that speed of vaccination is inversely proportional to dose, i.e. 1/4 dose also means that four times more doses can be administered each day.
+
+[^7]: Their paper specifically examines the AstraZeneca vaccine. The epidemiological model is age-stratified and incorporates the AstraZeneca vaccine's efficacy drop-off over time.
+
+[^8]: The health-related net monetary benefit of using ⅛ fractional boosters relative to standard boosters is estimated to be \$6bn and \$2bn under slow and fast transmission scenarios, respectively. If delivery costs can be divided by fractionation, these figures are \$11bn and \$2bn, respectively. Note, however, that these central estimates have wide confidence intervals that incorporate negative values.
+
+[^9]: The best known funding programme was the US federal government's Operation Warp Speed, which gave billions of dollars in funding to pharma companies to develop vaccines. It also invested in manufacturing capacity for each vaccine candidate during their development to scale up potential future production. Operation Warp Speed also involved public and private partnerships for vaccine development. The UK government also provided billions of pounds in funding for the vaccine rollout.
+
+[^10]: Więcek et al. (2022) argue that, due to the connection between cell-mediated immunity and protection from severe disease, there is unlikely to be a large dropoff in protection from severe disease when fractional dosing is used.
+
+[^11]: The authors find that 81% of vaccine effectiveness/estimates remains above 70% after 6 months. Wu et al. (2023), published almost exactly a year later, found vaccine effectiveness fell, within a year, by 21, 13, and 5 percentage points for infections, hospitalisations, and mortality, respectively. These figures were for all COVID strains, including delta and omicron.
+
+[^12]: This "rebound" mechanism is discussed in Więcek et al. (2023), in the more general context of earlier vaccination. The authors use a model to estimate how many deaths would be averted by earlier vaccinations. However, extending the time horizon of their model can actually result in an increased number of deaths relative to the status quo, due to the model's sensitivity to the duration of vaccine protection and the "rebound effect": reductions in mortality in the initial wave are offset by higher cases and mortality in later waves.
+
+[^13]:
+
+[^14]: "U.S. COVID-19 Vaccine Product Information CDC" (2023): see "Moderna At-a-Glance".
+
+## Further reading
+
+- [Examples of how optimisation decisions are made](../overview/decision-making.qmd)
+- [How large are health benefits from optimisation?](../overview/population-benefits.qmd)

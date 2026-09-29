@@ -1,0 +1,74 @@
+---
+pagetitle: "Case study: inactivated polio vaccine"
+---
+
+# Case study: inactivated polio vaccine {#case-study-inactivated-polio-vaccine}
+
+There is no cure for polio, but mass vaccination since the mid-20th century has eradicated the disease in many countries. Since 1988 the goal has been a complete eradication of polio. This was achieved using the live-attenuated (Sabin) oral polio vaccination (OPV)[^1]; for an overview see Tevi-Benissan et al. (2017). However, OPV can undergo genetic changes during intestinal replication, resulting in vaccine derived polioviruses and is capable of causing paralytic polio[^2]. 
+
+A viable alternative to OPV which does not suffer from that problem is an inactivated polio vaccine (IPV). However, producing IPV requires careful biosafety measures, which makes it more expensive. Okayasu et al. (2017) report that supply was less than half of the initial commitment made in 2014. Around that time, IPV cost (procured via UNICEF) was 20 times higher than OPV. The total costs of including IPV in routine immunisation (alone or in combination with OPV) are roughly 3-5 times higher than OPV.[^3] For cost projections that I cite see Thompson and Kalkowska (2021). 
+
+This means that most countries use a combination of (varying number of doses) OPV and "supplement" it with IPV, as has been recommended by the WHO since 2013, ideally with two doses of IPV.[^4] This increased demand has led to higher costs: the last WHO's Global Polio Eradication Initiative budget was about USD 1 bln per year. More importantly, it led to a continuing shortage of IPV in middle and low income countries, which have been ongoing since the middle of 2010's.
+
+## Why was fractionation needed? How is it done? {#why-was-fractionation-needed-how-is-it-done}
+
+The long-term solution to this shortage is to establish a local capacity to produce IPV from attenuated Sabin strains, which requires less stringent safety precautions as the conventional production of IPV. We will return to that below. In parallel a new version of OPV (nOPV) was developed and WHO and UNICEF are working to expand supply of OPV (Bandyopadhyay and Zipursky 2023).[^5]
+
+During the period of transition to new OPV, using fractional doses of IPV (fIPV) has been a common solution to supply shortages (Roland W. Sutter and Zaffran 2019). The WHO SAGE supported the development of the fIPV approach for several years and has endorsed its use since 2016, the same time that countries were recommended to introduce one dose of IPV in the polio vaccination. 
+
+Fractionation of polio vaccine has been tested in the past and even used in 1950s in Denmark.[^6] Therefore there was already good reason to believe it would be a viable alternative to standard doses and the WHO SAGE also had several years to collect additional data. 
+
+The fractionation of IPV (fIPV) is two 1/5 doses intradermally compared to a single intramuscular dose. This is done using a BCG needle, but can also use an injection device (adapter or jet injector), which I will discuss in how change in dosing is implemented in practice.[^7]
+
+## What were the results? What is the current state of the polio vaccinations? {#what-were-the-results-what-is-the-current-state-of-the-polio-vaccinations}
+
+Shortage of IPV seems to have started at least in 2014, with a lot of reports of global shortages in 2016. Back in 2016 the hope was that it would be resolved in about two years. However, that means that several birth cohorts in many countries missed immunisation with IPV. A 2019 report projected shortages would occur for another few years.[^8] However, this seems to have been resolved in the last few years. Per [UNICEF 2023 update](https://www.unicef.org/supply/media/19101/file/UNICEF-VIC2023-Session22-Polioupdate-UNICEF_rev-2023.pdf) there is now sufficient supply for countries to give two doses of IPV from five different manufacturers.
+
+Meanwhile, [Sri Lanka](https://pubmed.ncbi.nlm.nih.gov/30136665/), India, Bangladesh, Nepal, Cuba, Ecuador, Oman, Somalia, Gambia (and possibly more countries, as I have not searched systematically) have all used fractional dosing of IPV. 
+
+New data suggest that the fIPV approach also improved immunogenicity: [a literature review from 2017](https://pubmed.ncbi.nlm.nih.gov/28434691/) identified four studies which showed large improvements in seroconversion and antibody titers. More recently, we can find [similarly positive findings from Ecuador](https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(22)00052-7/fulltext), evidence that antibodies decline similarly for fractional doses and full doses ([here](https://academic.oup.com/jid/article/223/7/1214/5892949)) and for superiority of 2 fIPV doses over 1 full IPV dose in India (here). A 2021 meta-analysis confirmed its efficacy across 14 studies (Mashunye et al. 2021). [^9]
+
+Generally immunological studies conducted during rollouts seem to conclude that fIPV was a viable alternative: [Sri Lanka](https://academic.oup.com/jid/article/218/12/1876/5049361?login=false), [Bangladesh](https://pubmed.ncbi.nlm.nih.gov/35575051/), [Gambia](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(21)00497-6/fulltext), [Somalia](https://bmcglobalpublichealth.biomedcentral.com/articles/10.1186/s44263-024-00044-7), [Oman](https://www.nejm.org/doi/full/10.1056/NEJMoa0909383), although I have not read them. On the cost side, based on detailed review by Thompson and Kalkowska (2021) it seems that switching to fractional doses had a potential to reduce the total cost of polio immunizations by about 40% (a rough approximation by me; I use past tense as these costs are dynamic, depending on supply/demand).
+
+While on the way to eradication, polio continues to affect even wealthy countries: in 2022 US and Israel found type 2 vaccine-derived poliovirus and UK and Canada found it in in environmental samples. There are recent stories of cases in e.g. [Mozambique](https://www.gavi.org/vaccineswork/stopping-outbreak-its-tracks-polio-response-mozambique) and [Burundi](https://www.gavi.org/vaccineswork/after-30-polio-free-years-burundi-fights-paralysing-virus).
+
+### References {#references-5}
+
+Bandyopadhyay, Ananda S., and Simona Zipursky. 2023. "A Novel Tool to Eradicate an Ancient Scourge: The Novel Oral Polio Vaccine Type 2 Story." *The Lancet Infectious Diseases* 23 (2): e67--71. <https://doi.org/10.1016/S1473-3099(22)00582-5>.
+
+Jarrahian, Courtney, Daniel Myers, Ben Creelman, Eugene Saxon, and Darin Zehrung. 2017. "Vaccine Vial Stopper Performance for Fractional Dose Delivery of Vaccines." *Human Vaccines & Immunotherapeutics* 13 (7): 1666--68. <https://doi.org/10.1080/21645515.2017.1301336>.
+
+Mashunye, Thandiwe R., Duduzile E. Ndwandwe, Kopano R. Dube, Muki Shey, Mary Shelton, and Charles S. Wiysonge. 2021. "Fractional Dose Compared with Standard Dose Inactivated Poliovirus Vaccine in Children: A Systematic Review and Meta-Analysis." *The Lancet Infectious Diseases* 21 (8): 1161--74. <https://doi.org/10.1016/S1473-3099(20)30693-9>.
+
+Okayasu, Hiromasa, Carolyn Sein, Diana Chang Blanc, Alejandro Ramirez Gonzalez, Darin Zehrung, Courtney Jarrahian, Grace Macklin, and Roland W. Sutter. 2017. "Intradermal Administration of Fractional Doses of Inactivated Poliovirus Vaccine: A Dose-Sparing Option for Polio Immunization." *The Journal of Infectious Diseases* 216 (Suppl 1): S161--67. <https://doi.org/10.1093/infdis/jix038>.
+
+Sutter, Roland W, and Stephen L Cochi. 2019. "Inactivated Poliovirus Vaccine Supply Shortage: Is There Light at the End of the Tunnel?" *The Journal of Infectious Diseases* 220 (10): 1545--46. <https://doi.org/10.1093/infdis/jiy739>.
+
+Sutter, Roland W., and Michel Zaffran. 2019. "Addressing the Inactivated Poliovirus Vaccine Shortage." *The Lancet* 393 (10191): 2569--71. <https://doi.org/10.1016/S0140-6736(19)30766-4>.
+
+Tevi-Benissan, Carol, Joseph Okeibunor, Gaël Maufras du Châtellier, Afework Assefa, Joseph Nsiari-Muzenyi Biey, Dah Cheikh, Messeret Eshetu, et al. 2017. "Introduction of Inactivated Poliovirus Vaccine and Trivalent Oral Polio Vaccine/Bivalent Oral Polio Vaccine Switch in the African Region." *The Journal of Infectious Diseases* 216 (Suppl 1): S66--75. <https://doi.org/10.1093/infdis/jiw616>.
+
+Thompson, Kimberly M., and Dominika A. Kalkowska. 2021. "Potential Future Use, Costs, and Value of Poliovirus Vaccines." *Risk Analysis* 41 (2): 349--63. <https://doi.org/10.1111/risa.13557>.
+
+[^1]: Sabin's oral vaccine (live attenuated) was designed to prevent vaccine-induced polio which Salk's vaccine (killed virus) caused more of; it's worth reading its short history here
+
+[^2]: The risk of this occurring is very low (1 in 1,000,000). OPV and IPV also have distinct advantages, e.g. different properties in breaking transmission, with IPV (which, unlike OPV, mainly provides humoral immunity) being unable to stop the spread of polio. I simplify here by referring to "OPV" whereas in reality we differentiate between several OPVs, which can target various combinations of three serotypes of polio; (wild) type 2 has been eradicated, therefore countries have been moving from trivalent to bivalent OPV. Meanwhile IPV can be made from wild types or from Sabin strains, more on that in the text. But all of that is incidental to our discussion of IPV.
+
+[^3]: I simplify things to make them legible: there are about two dozen different immunisation strategies, most of which combine a version of OPV with an IPV over several doses.
+
+[^4]: This was recommended as part of the switch away from old OPV, which happened circa 2016.
+
+[^5]: The [Sabin strain IPV](https://doi.org/10.1093/infdis/jiy736) was developed by Sinovac with support from the Gates Foundation and is currently undergoing [Phase IV clinical trials](https://pubmed.ncbi.nlm.nih.gov/37127526/). The WHO prequalified the vaccine for use in June of 2022 press release and some countries had already licensed it for use.
+
+[^6]: (Okayasu et al. 2017): "Trials conducted between 1957 and 1979 ... as well as pilot studies ... in India in the 1990s, found that, when provided as the primary series or as a booster dose, an intradermal fIPV dose of 0.1 mL (one fifth of the full 0.5-mL dose) induced a similar immune response as a full intramuscular dose. Despite these promising results, fIPV was not widely adopted except in Denmark, where it was the standard method of IPV vaccination in the mid-1950s."
+
+[^7]: fIPV also requires extra punctures of vials, from 10 to 50 times, since the vials are 2-10 doses; Jarrahian et al. (2017) assessed that this is okay to do.
+
+[^8]: Some contemporary reports on shortages (mostly for completeness). In several countries a vaccine-derived poliovirus occurred after 2016 following the switch in immunisation practice (Somalia, DRC, Nigeria), see Roland W. Sutter and Cochi (2019). Shortage in India: [link 1](https://www.business-standard.com/india-news/shortage-of-polio-vaccines-leads-to-cancellation-of-nation-wide-vaccination-123052400633_1.html) and [link 2](https://theprint.in/health/no-polio-national-immunization-day-this-yr-due-to-vaccine-shortage-govt-to-focus-on-high-risk-areas/1589496/). Intermittent supply of polio vaccine in Ghana (due to insufficient supply): [link 1](https://www.voanews.com/a/child-immunization-vaccine-shortage-hits-ghana-/6981057.html) and [link 2](https://www.gavi.org/vaccineswork/ghana-game-post-pandemic-immunisation-catch-being-hobbled-vaccine-shortages) mention shortage of all vaccines, including OPV.
+
+[^9]: Conversely, data suggest that a single fractional dose is inferior to a single standard dose.
+
+## Further reading
+
+- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
+- [Practical aspects of changing dose: syringes, vials, and intradermal delivery](../overview/practical-implementation.qmd)

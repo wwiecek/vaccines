@@ -1,0 +1,30 @@
+---
+pagetitle: "Conclusions and next steps"
+---
+
+# Conclusions and next steps {#conclusions-and-next-steps}
+
+Two main points emerge from the notes I compiled:
+
+1.  Optimal use of vaccines could have large impacts in particular situations, often working as a complement to market design. Because the biological mechanisms involved are pretty general, there are many candidate vaccines. Both vaccine development and decision making on immunisations are likely not optimal.
+
+2.  Optimisation is technologically feasible, but under the status quo can be prohibitively expensive and politically undesirable.
+
+What are the solutions? An obvious, but also pie-in-the-sky, solution would be systemic, aimed at redesigning the paradigm of evidence generation and decision making. In broad strokes, that means (1) conducting faster and cheaper trials on relevant questions and (2) public health decision making that is responsive to new evidence and comfortable with risk-benefit analysis under uncertainty. Effecting even small change to either of these is of course an incredibly complex problem. At the same time, this may be the most worthwhile task.
+
+Instead, I focus on an at-the-margins approach of making many isolated contributions to this problem by a funder spending money wisely to sponsor individual initiatives or pieces of research. What kind of difference could such a funder make?
+
+I suggest a few projects that apply across many vaccines/diseases (see previous section for disease-specific recommendations). I divide this list into
+
+- six projects that could be implemented soon,
+
+- six extra areas to investigate (which could translate to some projects),
+
+- six pathways to future change (things that seem feasible to do, but they need more info).
+
+## Further reading
+
+- [Four potential projects that could be done right now](projects.qmd)
+- [What I still don’t understand](knowledge-gaps.qmd)
+- [What to do next](future-pathways.qmd)
+- [Five reasons to be negative about these proposals](reservations.qmd)

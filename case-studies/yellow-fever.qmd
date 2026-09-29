@@ -1,0 +1,90 @@
+---
+pagetitle: "Case study: yellow fever"
+---
+
+# Case study: yellow fever {#case-study-yellow-fever}
+
+Yellow fever (YF) is endemic in most of Sub-Saharan Africa and South America (tropics and sub-tropics. YF is transmitted by *Aedes aegypti* and has a high reproductive number. There are 200,000 cases per year, 90% in Africa, with up to 80,000 deaths, although [estimates](https://pubmed.ncbi.nlm.nih.gov/24800812/) are imprecise.
+
+WHO recommends vaccinating infants (9-12 months, given together with measles vaccine) against YF in endemic countries. It's a simple live attenuated 17D vaccine (in use since 1938, developed by Max Thiler at Rockefeller Foundation), costing about a dollar per dose.
+
+A single dose is good enough due to antibodies produced being sufficient to provide immunity for the rest of your life. Hence YF is a good candidate for fractionation (see the classification in biology of optimal dosing). The vaccine works almost perfectly: seroconversion rate is almost 100% and immunity develops fast (7-10 days).
+
+## Supply shortages during outbreaks {#supply-shortages-during-outbreaks}
+
+There has been a renewed push to increase vaccinations this century in high risk places due to increases in numbers of cases. WHO is leading a campaign to eliminate YF epidemics by 2026.[^1][^2] The global population at risk is 900 mln, with 2/3rds of it in Africa.
+
+Countries (e.g. recently Nigeria) have been adding YF vaccination to their routine immunizations. YF vaccines are manufactured using the "traditional" process which involves eggs (yielding 300-400 doses per egg), which is slow and makes it difficult for manufacturers to rapidly increase supply due to the rate limiting reliance on eggs in the manufacturing process (Vannice, Wilder-Smith, and Hombach 2018).
+
+The supply grew from 20mln around 2000 to 90mln in 2016 and then \>150mln in 2019, 2020.[^3] However, the demand still outstripped it: Montalvo Zurbia-Flores, Rollier, and Reyes-Sandoval (2022) reports that yearly shortage is something about 60 mln doses on average.
+
+The bulk of existing supply goes to routine immunisation and preventive mass vaccination. That demand is typically met and [UNICEF also stockpiles several million doses each year for outbreak](https://www.unicef.org/supply/media/19051/file/VIC-MarketUpdate-Poster-YFV-2023.pdf). However, stockpiles are typically not sufficient, especially given logistical constraints. Lindsey et al. (2022) summarise the situation well. In 2016, there was a major YF outbreak in Angola that spread to the Democratic Republic of Congo (DRC) and threatened to spread to China as well via expatriate workers who traveled home. The outbreak required 30 million people to be vaccinated as quickly as possible, which promptly exhausted available supplies. Also in that period another outbreak was observed in coastal Brazil, where YF had not been observed for nearly 80 years. Same authors note that more outbreaks occurred in dozen African countries in 2021 and early 2022 alone.
+
+To reiterate, the issue is not just one of insufficient stockpiles, but also timeliness: when outbreaks occur, it's hard for sufficient number of doses to reach the at-risk population even when sufficient supply exists "on paper", due to logistics and wastage.
+
+## Role of fractional dosing {#role-of-fractional-dosing}
+
+The WHO recommended use of FD vaccines to control YF outbreaks in 2016 (WHO n.d.). The rationale for using fractional dosing (FD) for YF outbreaks largely arose from a pressing sense of pragmatism. Due to the high effectiveness of the yellow fever vaccine, fractional dosing was seen as a common sense solution. Their rationale for recommending FD was largely based on 3 randomised controlled trials performed between 2008 and 2014 that explored the efficacy of fractional doses compared to full doses of YF vaccines.[^4] Each of these three trials found that fractional doses were non-inferior to full dose vaccines in immunogenicity, though all trials did share the same limitation of small sample size. Despite the limitations of the references available, the WHO approved use of FD in response to the multiple pressing YF outbreaks around the world in 2016, with the caveat that FD should only be used during outbreaks where vaccine supplies are limited. 
+
+FD proven a suitable solution to mass vaccination during the outbreaks of 2016, with more than 7 million people in the DRC vaccinated in 1 week (Roozen, Roukens, and Roestenberg 2022) and 17 million people vaccinated in Brazil ([source](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32520-4/fulltext)). These results were hardly surprising, given that average doses of YF vaccine are 12-40 times more potent than the WHO's recommended minimum (Vannice, Wilder-Smith, and Hombach 2018). 
+
+Some modeling was also done to understand if future outbreaks could be similarly controlled with FD, e.g. by Wu et al. (2016) . I discuss it in section on modeling population benefits.
+
+## How is fractionation implemented? {#how-is-fractionation-implemented}
+
+Dose: Full dose is 0.5mL, distributed in a 2, 5, 10 and 20-dose vial. Fractional dose is 0.1mL. Route: While intradermal delivery was assessed, the WHO recommendation and clinical practice is for subcutaneous or intramuscular delivery. There are some programmatic considerations[^5] for FD but its use in mass vaccination is entirely feasible. Vial stopper performance was also assessed as sufficient (Jarrahian et al. 2017).
+
+Fractional dose was recommended for vaccines from all manufacturers, but we know that they differ in their potency. However, there appears to be a lot of headway in terms of dosage needed to reach the WHO recommended threshold. [^6]
+
+## Other solutions to shortages {#other-solutions-to-shortages-1}
+
+It's possible that using market design to increase supply of the existing YF vaccine. While I have not researched this, given low cost of the vaccine it's likely that there was a market failure. However, the current technological process means that setting up additional capacity is difficult. I have not established whether with increased procurement in recent years the risk of shortages has declined, but given the logistical constraints in outbreaks, it's unlikely that this can be solved simply by market design.
+
+As Montalvo Zurbia-Flores, Rollier, and Reyes-Sandoval (2022) report, "Many vaccine platforms have been investigated to circumvent some YF-LAV restrictions, albeit none seem to fulfil all the requirements. Inactivated, DNA and poxvirus-based viral vector vaccines examined so far may avoid the risk inherent of live-attenuated vaccines but require the administration of multiple doses to achieve the same level of protective long-lasting immunity. Thus, further alternative strategies are still needed to improve YF vaccination and intervene in future outbreak emergencies."
+
+## Evidence gaps and future role for fractionation {#evidence-gaps-and-future-role-for-fractionation}
+
+Why would we not switch to fractional doses as the default choice, not just in shortages? Overall data that emerged in recent years are positive, but while the standard dose has been in use for over 80 years, for fractional dose there is still not enough long-term evidence and data in specific subpopulations. These evidence gaps are a subject of ongoing debate: Hansen, Staples, and Barrett (2023) summarise them in good detail. Roukens and Visser (2023) and Montalvo Zurbia-Flores, Rollier, and Reyes-Sandoval (2022) also provide summary of newer findings.
+
+WHO position (2017) was that children under two and people-living-with-HIV should receive a standard dose until further evidence becomes available. Recent studies have shown promising results in these two populations, but have also identified lower antibodies levels in FD compared to full dose: [study 1](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32520-4/fulltext) and [study 2](https://pubmed.ncbi.nlm.nih.gov/37127045/). The clinical relevance of these lower antibody levels is unclear. (Also, in some way this is a reassuring example of tailoring the dose to individual, which we will discuss elsewhere.)
+
+An additional complication of FD is the wide variance in potency of YF manufactured doses. While we mentioned that the WHO pre-qualified vaccines have high potency, the range is very large: from 1,995 log10 IU to 2,511,886 log10 IU (WHO n.d.). This raises the question if all WHO-prequalified YF vaccines are suitable for fractional dosing, or if some are more appropriate than others. Here, too, we do not know how this correlates with durability of immunity, onset of immunity or seroconversion.
+
+### References {#references-6}
+
+Hansen, Clairissa A., J. Erin Staples, and Alan D. T. Barrett. 2023. "Fractional Dosing of Yellow Fever Live Attenuated 17D Vaccine: A Perspective." *Infection and Drug Resistance* 16: 7141--54. <https://doi.org/10.2147/IDR.S370013>.
+
+Jarrahian, Courtney, Daniel Myers, Ben Creelman, Eugene Saxon, and Darin Zehrung. 2017. "Vaccine Vial Stopper Performance for Fractional Dose Delivery of Vaccines." *Human Vaccines & Immunotherapeutics* 13 (7): 1666--68. <https://doi.org/10.1080/21645515.2017.1301336>.
+
+Lindsey, Nicole P., Jennifer Horton, Alan D. T. Barrett, Maurice Demanou, Thomas P. Monath, Oyewale Tomori, Michel Van Herp, et al. 2022. "Yellow Fever Resurgence: An Avoidable Crisis?" *Npj Vaccines* 7 (1): 1--3. <https://doi.org/10.1038/s41541-022-00552-3>.
+
+Montalvo Zurbia-Flores, Gerardo, Christine S Rollier, and Arturo Reyes-Sandoval. 2022. "Re-Thinking Yellow Fever Vaccines: Fighting Old Foes with New Generation Vaccines." *Human Vaccines & Immunotherapeutics* 18 (1): 1895644. <https://doi.org/10.1080/21645515.2021.1895644>.
+
+Ndeffo-Mbah, Martial L, and Abhishek Pandey. 2020. "Global Risk and Elimination of Yellow Fever Epidemics." *The Journal of Infectious Diseases* 221 (12): 2026--34. <https://doi.org/10.1093/infdis/jiz375>.
+
+Roozen, Geert V. T., Anna H. E. Roukens, and Meta Roestenberg. 2022. "COVID-19 Vaccine Dose Sparing: Strategies to Improve Vaccine Equity and Pandemic Preparedness." *The Lancet Global Health* 10 (4): e570--73. <https://doi.org/10.1016/S2214-109X(22)00075-4>.
+
+Roukens, Anna H. E., and Leo G. Visser. 2023. "Fractional Dose Yellow Fever Vaccination, Coming of Age." *The Lancet Infectious Diseases* 23 (8): 889--90. <https://doi.org/10.1016/S1473-3099(23)00205-0>.
+
+Vannice, Kirsten, Annelies Wilder-Smith, and Joachim Hombach. 2018. "Fractional-Dose Yellow Fever Vaccination --- Advancing the Evidence Base." *New England Journal of Medicine* 379 (7): 603--5. <https://doi.org/10.1056/NEJMp1803433>.
+
+WHO. n.d. "Fractional Dose Yellow Fever Vaccine as a Dose-Sparing Option for Outbreak Response." https://www.who.int/publications-detail-redirect/WHO-YF-SAGE-16-1. Accessed January 19, 2024.
+
+Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fractional Dosing of Yellow Fever Vaccine to Extend Supply: A Modelling Study." *Lancet (London, England)* 388 (10062): 2904--11. <https://doi.org/10.1016/S0140-6736(16)31838-4>.
+
+[^1]: Lindsey et al. (2022) report: *"the multi-partner global Eliminate Yellow Fever Epidemics (EYE) Strategy was established in 2017 to improve detection, outbreak preparedness, and response. The EYE Strategy has 3 main objectives: (1) to protect at-risk populations through immunization; (2) to prevent international spread of the disease through vaccinating high-risk workers, enforcing International Health Regulations and supporting the development of resilient urban centers; and to contain outbreaks rapidly by improving surveillance and timely access to validated diagnostic tests and emergency vaccines."*
+
+[^2]: Urbanisation in Africa is a factor, due to increasing risk of large outbreaks in cities, where it's hard to break transmission and burden would obviously be much higher. To stop epidemics, WHO recommends coverage of 80%, but modeling suggests 90%-95% in some places (esp. in Africa, urban areas) Ndeffo-Mbah and Pandey (2020)\] 
+
+[^3]: Supply (per Wikipedia): "As of 2013, there were four WHO-qualified manufacturers: Bio-Manguinhos in Brazil (with the [Oswaldo Cruz Foundation](https://en.wikipedia.org/wiki/Oswaldo_Cruz_Foundation)), [Institute Pasteur](https://en.wikipedia.org/wiki/Institute_Pasteur) in Dakar, Senegal, the Federal State Unitary Enterprise of Chumakov Institute in Russia, and [Sanofi Pasteur](https://en.wikipedia.org/wiki/Sanofi_Pasteur), the French pharmaceutical company. Two other manufacturers supply domestic markets: Wuhan Institute of Biological Products in China and [Sanofi Pasteur](https://en.wikipedia.org/wiki/Sanofi_Pasteur) in the United States"
+
+[^4]: [one](https://www.acpjournals.org/doi/10.7326/M18-1529), [two](https://pubmed.ncbi.nlm.nih.gov/23364472/) and [three](https://pubmed.ncbi.nlm.nih.gov/25022840/)
+
+[^5]: (Section 10 [here](https://iris.who.int/bitstream/handle/10665/246236/WHO-YF-SAGE-16.1-eng.pdf?sequence=1)): "Due to the limited heat stability of YF vaccine after reconstitution, opened multi-dose vials of YF vaccine must be kept between +2°C and +8°C, and must be discarded at the end of the immunization session, or within six hours of opening".
+
+[^6]: Vannice, Wilder-Smith, and Hombach (2018): *"This decision was based on simple math. WHO-prequalified yellow fever vaccines are highly potent, with average doses between 12,874 and 43,651 international units (IU) --- far above the WHO's recommended minimum of 1000 IU. In principle, the quantity of vaccine virus in fractional doses of standard vaccine would therefore still exceed the WHO's minimum requirement"*. In studies reported by Roukens and Visser (2023) the standard dose of Russian-manufactured vaccine had a dose 67 times higher than the WHO recommended threshold for immunising dose, while the Senegalese vaccine was 7 times the threshold.
+
+## Further reading
+
+- [How large are health benefits from optimisation?](../overview/population-benefits.qmd)
+- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)

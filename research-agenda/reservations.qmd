@@ -1,0 +1,23 @@
+---
+pagetitle: "Five reasons to be negative about these proposals"
+---
+
+# Five reasons to be negative about these proposals {#five-reasons-to-be-negative-about-these-proposals}
+
+There are many criticisms at many levels that can be mentioned here, but I wanted to reiterate five points that I may have not made sufficiently in my notes:
+
+- New technologies may blunt the value of fractionation in the longer term. New vaccine platforms will deliver better vaccines, cheaply and with supply difficulties. Increasingly, the move toward combination vaccines and pre-filled syringes may close the window for the type of fractionation I focussed on here.
+
+- Optimisation is always just a complement to maximising supply and coverage. And its uncertain (to me) what effect changes to dosing would have on costs and supply.
+
+- There is no immediate exciting research that I was able to identify. E.g. none of my interviewees or sources that I read had a specific suggestion for an optimisation study that needed to be funded urgently. All the projects discussed are a form of gradualism.
+
+- It will always be hard to meet the threshold of certainty that decision makers require. For example, even with a much more comprehensive research agenda on optimisation of COVID vaccines in 2020-2021, I still suspect that data on lower doses would not be deemed sufficient.
+
+- Any optimisation is difficult and doesn't work in isolation. If trying to speed up vaccinations, the law of the minimum kicks in: sometimes there are other logistical, administrative, programmatic constraints. You have to plan for all of these things in order to make a difference.
+
+I think that's all! Thanks for reading, this has been really nice to work on.
+
+The rest of this document is an appendix containing my four case studies.
+
+Appendix: four case studies

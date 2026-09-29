@@ -1,0 +1,25 @@
+---
+pagetitle: "About"
+---
+
+# About {#about}
+
+*This is the first draft of a shallow investigation report commissioned by Open Philanthropy. If you have access to it, I'll be very grateful for comments and suggestions, which you can make directly in this doc.*
+
+*This is a public document (although I have not posted it anywhere) and you're welcome to cite it.*
+
+*The purpose of this doc is to serve as a general introduction of the topic of optimal dosing/schedules of vaccines. It is not a research proposal or a policy document, but rather a tool for those who are exploring this as a cause area.*
+
+*It is structured as follows: first, I start with a short overview: what it sets out to do and why, what I've learned, and what my tentative recommendations are. I tried to keep the executive summary very non-technical.*
+
+*I then flesh out the factual claims and analysis throughout this document in a dozen separate chapters. I wrote each of them as a separate note, so you can read them as needed and in no particular order. In fact, the chapters were written in parallel and only merged afterwatds. I aimed to keep each chapter to 3,000 words.*
+
+*I am very grateful to Open Philanthropy for commissioning this investigation. It\'s been a fantastic experience to set aside enough time to finally read and write about this topic, as well as to interview experts. On a more meta level, I discovered over and over that optimisation (especially of dose) is really understudied relative to other topics in vaccines.*
+
+*Special thanks to my research assistants Danny Toomey and Josh Muthu, who helped on case studies and some of the early chapters. I am not naming any of my interviewees in this first draft, as I have not sought their approval or comments on this text, but most of the good ideas in this report come from them.*
+
+*Lastly, an important statement of ignorance: in case you're not familiar with my work, my academic background is in statistics and infectious disease modelling. I thought it important for this report to look at the optimisation issue holistically, all the way from biology to decision making. However, I am not an immunologist or a clinical researcher or a public health expert and I do not want to claim expertise on these topics. I am very thankful for all corrections.*
+
+Witold Więcek
+
+June 2024

@@ -1,0 +1,42 @@
+---
+pagetitle: "Introducing four case studies"
+---
+
+# Introducing four case studies {#introducing-four-case-studies}
+
+I include four recent case studies where optimal dosing has been implemented or seriously considered (focusing on fractionation). Reading the individual sections containing case studies first will be more informative and give you more background. However, it is not an essential place to start, so for now I just summarise them in very basic terms, so that readers who want to skip them can move to sections on biology, implementation, benefits etc.
+
+It's best to categorise these case studies by use case. I focus on four diseases here to give enough context for what follows, but I will discuss about fifteen different diseases throughout this document.
+
+## For new pandemic vaccines {#for-new-pandemic-vaccines}
+
+In a pandemic of a novel pathogen, a shortage of vaccines is virtually inevitable. In these cases fractional doses may yield better public health outcomes by increasing the number of people who can be vaccinated in the short term, even if the fractional doses are less efficacious. An obvious guiding example of this is [fractional dosing of COVID vaccines](covid.qmd#case-study-fractional-dosing-of-covid-vaccines):
+
+COVID was an easy target for vaccination and fractionation: vaccines were highly effective and neutralising antibodies correlated with protection from disease. Extrapolating from avaialble data[^1] suggested that the first highly effective vaccines, especially mRNA ones, would offer good protection from severe disease even at smaller doses. When this information was combined with epidemiological modeling (showing up to 50% reductions in mortality in some scenarios), fractionation appeared to be a highly effective public health solution: large increases in speed of vaccinations were worth trading off against small decreases in efficacy.
+
+However, despite some positive evidence and interest from various groups, there was no coordinated push for fractional dosing for the initial two doses in 2021. Eventually, Moderna lowered doses for boosters of mRNA-1273 and considered lower dosing for the new mRNA-1283 vaccine. I return to these examples later in the report when discussing biology and implementation.
+
+At the same time extending gaps between doses (from 3-4 weeks to about 3 months) was also considered and implemented in some countries. Immunological data showed that (1) first dose already led to some protection, (2) longer gaps between doses often led to more robust immune responses, although at the time these decisions were made, there was a lot of uncertainty. In retrospect, these trade-offs were worth it.
+
+## In acute shortages in outbreaks and epidemics {#in-acute-shortages-in-outbreaks-and-epidemics}
+
+There are two guiding examples for this category. First, [fractional dosing of yellow fever vaccine](yellow-fever.qmd#case-study-yellow-fever). It's cheap and easy to make YF vaccine, but stockpile is not sufficient (or accessible enough) to quickly act against outbreaks, which have been occurring. Moreover, the supply was outstripped by demand due to use in routine vaccination in more and more countries. YF is a prime candidate for fractional dosing due to how well the vaccine works. 1/5 dose appears to be entirely sufficient. Fractional dosing was successfully used in outbreaks since 2016, but there is still a debate about what long-term effects of fully switching to fractional dosing would be.
+
+Another example is [fractional dosing of mpox vaccine](mpox.qmd#case-study-mpox-vaccine). During 2022-23 emergency even wealthy countries only had enough stockpiles to vaccinate a third or quarter of those at risk. Fractionation of mpox vaccine was approved by the FDA (and then in Europe), rather than recommended by the WHO. The decision was made on the basis of a single Phase 2 study of intradermal vaccination. Use of two fractional doses does appear to have been the right choice and this case is also very interesting due to how quickly the decision was reached.
+
+## When there are intermittent/prolonged global shortages and cost considerations {#when-there-are-intermittentprolonged-global-shortages-and-cost-considerations}
+
+Not all shortages are due to outbreaks, as we can see in the case study of [fractional dosing of polio vaccine](polio.qmd#case-study-inactivated-polio-vaccine). Polio has almost been eradicated, yet the ongoing effort requires hundreds of millions of vaccinations per year. Including inactivated polio vaccine (IPV) in routine immunisation, done to avoid vaccine-derived polio, has increased costs and led to shortages in supply. Two 20% IPV doses have been shown to be sufficient. Fractionation was recommended and adopted by many countries at scale while waiting for extra capacity and new vaccines. It also offered some cost savings (e.g. 40% reductions in overall cost of IPV vaccination).
+
+## Optimising to improve vaccination {#optimising-to-improve-vaccination}
+
+The examples above are about dose sparing: increasing public health benefits and cost-effectiveness. However, we also want to optimise vaccines to improve individual-level protection. Here we don't really have great recent examples: usually vaccines improve when a better alternative is developed, rather than by improving how an existing one is used. As we will see, this is not because there isn't a lot of potential for improvement. One example for this is work being done on malaria vaccines, but that is still ongoing. Therefore I discuss it in the section on biology.
+
+[^1]: Data were immunological data fromPhase 2 trials, but famously also from AstraZeneca Phase 3 trial, which accidentally administered lower doses to some patients.
+
+## Further reading
+
+- [Case study: fractional dosing of COVID vaccines](covid.qmd)
+- [Case study: mpox vaccine](mpox.qmd)
+- [Case study: inactivated polio vaccine](polio.qmd)
+- [Case study: yellow fever](yellow-fever.qmd)

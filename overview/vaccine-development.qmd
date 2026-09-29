@@ -1,0 +1,104 @@
+---
+pagetitle: "Vaccine development perspective"
+---
+
+# Vaccine development perspective {#vaccine-development-perspective}
+
+In the chapter on biology of optimal dosing I spoke about some of the mechanisms relevant to optimisation, but largely taking the perspective of already-existing vaccines. But what happens when a new candidate vaccine is developed, tested in animals, first tested in humans, and then goes through multi-stage clinical development? At each stage, how are the decisions made on what doses and schedules to use? If that process is efficient, we would expect newly-approved vaccines to be close to optimal. But we know from the case studies, that this isn't always the case. Therefore it's worth to describe this process.
+
+## Dose setting for (cancer) drugs: some interesting parallels {#dose-setting-for-cancer-drugs-some-interesting-parallels}
+
+I start not with infectious diseases, but with cancer, because it will help fix a few ideas and has some interesting parallels with the project of vaccine optimisation.
+
+A lot of attention is paid to dose-finding in oncology. For older cancer drugs, the clinical development would focus on identifying maximum tolerated dose (MTD). This makes sense for something like chemotherapy (and indeed many, probably most, drugs), where it's safe to assume that higher doses will be better at treating disease, but also increasingly (very) toxic.
+
+In practice, once reaching first-in-humans trials (more on which below), this choice would be done with a very rudimentary dose escalation approach, e.g. a ["3+3" algorithm](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2684552/), which was valued for its simplicity: you'd give a drug to three patients at the time and (roughly) keep escalating the dose until observing toxic reaction in two patients. Nowadays developers thankfully opt for adaptive measurement, such as ["continual reassessment"](https://ascopubs.org/doi/10.1200/EDBK_319783) method, assigning patients to dose where value of information is highest. Whatever methods are used, there is vast literature and detailed guidance from the regulators on how to do it.
+
+But the MTD approach only makes sense so long as the response and toxicity actually go up with increasing dose (and ideally, for a statistician, they go up *steeply*, because you can only test in a few humans). This is usually not the case for more complicated modern cancer drugs, such as immunotherapies. They target cancers more specifically, working through more complicated mechanisms and traditional methods are bound to suggest doses that are too high. Increasingly, then, the drug developers make use of complex PK/PD modeling to decide which doses move to large-stage trials.[^1]
+
+It took a long time to make this change. One suspects that a lot of this development was motivated by very high costs of developing these drugs.[^2] Choosing what dose/regimen to go into Phase III trial with is a multi-billion dollar decision.
+
+However, some of the impulse to do this also seems to come from the FDA.[^3] There is a short new (Jan 2023) [draft guidance document on optimal dosing in development of cancer drugs](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/optimizing-dosage-human-prescription-drugs-and-biological-products-treatment-oncologic-diseases).[^4] It's a short document which is not binding, so none of it may translate into clinical research. However, the FDA does not issue a lot of such documents, so it's still worth noting language that is pretty strong:
+
+- dosage optimisation should happen *prior* to approval; developers should justify their dosage choices, lest the FDA deem that the chosen dose exposes patients to "significant and unreasonable risk"
+
+- "expedited program (e.g., breakthrough therapy designation) is not a sufficient justification to avoid identifying an optimal dosage(s)"
+
+- dosages should be evaluated in parallel-dosage trial, which does not have to be powered for non-inferiority of different doses, but should allow assessment of activity and tolerability: I will return to this important point at the end of my report
+
+- "Perceived difficulty in manufacturing multiple dose strengths is an insufficient rationale for not comparing multiple dosages in clinical trials"
+
+Lastly, it's also worth mentioning that fractionation of these new oncology drugs (often immunotherapies) is also a very important and up-to-date topic and there is mounting evidence that you can have high efficacy even with small doses.[^5]
+
+> **Dosing vaccines vs dosing drugs** As a reminder, dose setting for vaccines is not really dependent on body weight, whereas for drugs the main consideration is often size and weight of specific organs. This is logical, since vaccines work in lymph nodes and rely on presentation of a small amount of antigen, with the immune system doing the rest of work of producing antibodies. Hence focus on pharmacokinetics for drugs, but not for vaccines, unless they are delivered orally. We still use lower doses in children, but this is due to their immune systems being more sensitive, not weight considerations.
+
+## General practice in vaccines: first-in-humans and dose escalation {#general-practice-in-vaccines-first-in-humans-and-dose-escalation}
+
+Back to vaccines. Here, both state-of-the-art and regulatory guidance seem quite different. Let's start with the latter. EMA has more developed "Clinical evaluation of new vaccines" guidelines than the FDA, it seems, but they have little to say about doses: pg 9 simply states that "a range" of doses should be tested in trials and advises to do extra work for viral vectors (for reasons I discuss in biology section).
+
+This is not to knock the regulators, but, to a large extent, a reflection of how much more complicated dose finding in biologics, especially vaccines, is. A typical approach is to use a heuristic on starting dose of a vaccine which is platform-specific and based on experience with similar vaccines.[^6]
+
+Of course both drugs and vaccines use animal testing before first-in-humans testing. However, while for drugs we determine doses by using [allometric scaling](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4804402/) (based on well-developed calculators of interspecies differences in organ sizes, metabolism, additional safety factors etc), dosing vaccines in e.g. mice provides little information on (or is harder to translate to) the appropriate dose in humans is; adjuvants complicate this further (Davis 2008). In the vaccination literature allometric scaling is mainly mentioned in the context of simulation models, more on which in a moment; in practice it seems that researchers just choose doses in humans based on experience; sometimes the same dose is used in humans as in mice, sometimes the factor is 100.[^7]
+
+Once the starting dose for human trial is chosen, vaccine developers will escalate dose in small cohorts. The range to escalate over and the rungs of the escalation ladder, also seem to be chosen based on heuristics.\[\^desc\] For example, in Moderna SARS-CoV-2 phase 1, which tested 25, 100, and 250 mcg, section "Justification for dose" simply states that other mRNA trials (for other diseases) tested 10-300 mcg.[^8]
+
+The choice of the schedule and dose that continues in large-scale trials then also seems to be largely expert-driven and domain-specific, with the ultimate goal being proving safety and efficacy (set in [target product profiles](https://www.who.int/observatories/global-observatory-on-health-research-and-development/analyses-and-syntheses/target-product-profile/who-target-product-profiles) and consultations with regulators). These goals typically focus on individual-level benefits, not public health benefits, for two reasons. First, proving efficacy against transmission (rather than disease) is harder to do. Second, it's harder to extrapolate from breaking transmission to public health benefits, especially for a new pathogen.
+
+At this last stage of clinical development, economic/strategic considerations also enter the picture. Continuing with our example, Moderna chose 100 mcg going into Phase 3, compared to 30 mcg in Pfizer vaccine; it's likely that big part of that decision was in order to "position" mRNA-1273 as the gold standard of efficacy, ahead of vaccines that were being developed by Pfizer, AZ, and Novavax.[^9] This approach of going forward with maximum tolerated dose makes sense especially if mechanism of protection is not well characterised.
+
+Overall, it's hard to establish how close or far from optimal these choices are, because developers don't test doses comprehensively. I will return to some ideas on how to explore this at the end of this report.
+
+As I discussed in biology of optimal dosing, the approach to dosing of boosters is different than to prime series. The conclusion to Moderna's mRNA vaccine story (so far) illustrates this nicely. With mRNA-1283, Moderna is now pivoting to using 10 mcg booster (10x lower then original dosing of mRNA-1273), with Phase 3 trial (N=11,400) [showing non-inferior efficacy against disease](https://investors.modernatx.com/news/news-details/2024/Moderna-Announces-Positive-Phase-3-Efficacy-Data-for-mRNA-1283-the-Companys-Next-Generation-COVID-19-Vaccine/default.aspx) in June 2024. Phase 1 study [showed comparable immunogenicity at 10, 30 and 100 mcg](https://www.medrxiv.org/content/10.1101/2022.10.18.22281050v1).
+
+The new COVID boosters no longer use the spike protein of the "original" virus, since including it was shown to give *weaker* protection against the variants. Moderna's new vaccine uses mRNA coding for just two parts of the protein ([NTD-RBD](https://www.science.org/doi/10.1126/scitranslmed.adf4100)) and is also more stable at higher temperatures.
+
+## Role of modelling {#role-of-modelling}
+
+Part of the reason why I brought up models in oncology earlier in this section is that there is now some literature on using model-based approaches in vaccine development. There are more precise definitions and related terms, such as quantitative systems pharmacology or immunostimulation/immunodynamics, but overall this means creating analogous mathematical and statistical modeling tools as in drug development.
+
+I should start by noting that (1) the literature on this seems to be limited and (2) I previously worked in this type of environment (in fact, with some colleagues that I will cite here), so as a statistician and modeller I am primed to emphasise these approaches. I already mentioned the main critique in the chapter on biology of optimal dosing: the models are hard to validate, because we can't directly measure the modelled parameters. When we see these models applied to retrospective data, we should be suspicious: after all, the researchers themselves are incentivised to big up their claims, because advising pharma on multi-billion R&D projects is itself a lucrative budget.
+
+However, these approaches hold a lot of promise, not least because the alternative is to use purely heuristic-based decision making. We know from drug development, that modelling dose-response can be worthwhile. Desikan et al. (2024) provide the best and most up-to-date overview of the idea of model-informed vaccine development that is suitable for non-modellers.[^10] can be used for choosing dose for first-in-humans, then choice of doses (and trial design, as well as go-no-go decisions), or for extrapolation across populations.
+
+In simple terms, what is proposed here is to supplement the subjective, experience-driven parts of development with models. From my perspective (and a bit of experience in drug development) another big potential advantage of these approaches is that they allow us to synthesise (sometimes sequentially generated) information from various sources in a single coherent source. For example: preclinical studies in different animals, phase 1, data from other similar vaccines or different vaccines using the same platform etc. etc.
+
+But for a model to improve on human heuristics, it needs better data: data that needs to be compiled from papers (e.g. dose-response curve for similar vaccines), assuming it ever gets published. It's hard to give an opinion on how much these models can improve on the current state of the field without seeing particular applications and underlying data.
+
+### Peaking and saturating curves {#peaking-and-saturating-curves}
+
+An important facet of these modeling papers is that, especially in papers by the group at LSHTM (Benest, Rhodes, White et al), dose-response is either "peaking" (bell-shaped) rather than "saturating" (S-shaped) as dose increases.
+
+In other words, for some vaccines when we increase doses the immune response may diminish, which was the starting point of discussion for the chapter on biology of optimal dosing. However, while I don't think this is strictly speaking a controversial statement, a typical expectation for most vaccinologists when dealing with primary vaccination series is that the curve is saturating, as far as I am aware, so I don't want to overemphasise this without going into some very specific examples.
+
+However, the authors *do* seem to make some specific claims. As per title of one of these papers, "Response Type and Host Species May Be Sufficient to Predict Dose-Response Curve Shape for Adenoviral Vector Vaccines" But based on my cursory reading of these papers, these are based on very limited data and I think more expert input would be needed to evaluate the role this could actually play in vaccine development.
+
+## References {#references-1}
+
+Davis, Heather L. 2008. "Novel Vaccines and Adjuvant Systems: The Utility of Animal Models for Predicting Immunogenicity in Humans." *Human Vaccines* 4 (3): 246--50. <https://doi.org/10.4161/hv.4.3.5318>.
+
+Desikan, Rajat, Massimiliano Germani, Piet H. van der Graaf, and Mindy Magee. 2024. "A Quantitative Clinical Pharmacology-Based Framework For Model-Informed Vaccine Development." *Journal of Pharmaceutical Sciences* 113 (1): 22--32. <https://doi.org/10.1016/j.xphs.2023.10.043>.
+
+[^1]: This is not too relevant, but for context: I mean kind of physiological modeling of pharmacokinetics (to understand how dosing regimen/schedule impacts concentrations of the drug in organs of the body) and pharmacodynamics (how the drug then acts on e.g. tumours). We can do this, because we know much about relevant molecules, physiology, and tumours in order to model all three of these things. We can also measure many of the relevant parameters directly. It's harder to do this for vaccines, although I will talk about parallel world of immunosimulation a bit later in this section.
+
+[^2]: There is a cultural aspect here, too: trial decisions like this have to work across different disciplines, with clinical pharmacologists working together with modellers and statisticians. Medical people of course favour simple procedures they can implement in the lab. Statisticians often favour over-complicated ones.
+
+[^3]: In the report often use the FDA in my examples. Of course a lot of vaccine development also happens in Europe, but to a large extent things here are similar, unless I explicitly emphasise some differences. Beyond that, a lot of clinical research happens in China, but on that topic I can only confess my ignorance and move on.
+
+[^4]: See also the accompanying [paper](https://pubmed.ncbi.nlm.nih.gov/36095296/), but it is more general interest than of relevance to vaccines.
+
+[^5]: Many of these drugs have high receptor occupancy and long half-life, so it's logical that for some patients you can consider decreasing both frequency and dose. Similarly to vaccines and adjuvants, we increasingly use new cancer drugs as combination treatments, which obviously impacts their dosing.
+
+[^6]: For example, [for new mRNA vaccines](https://www.nature.com/articles/s41587-022-01294-2) we are likely to see dosages in tens of mcg regardless of whether it's a new influenza or SARS-CoV-2 vaccine. Different technologies have different units: for viral vectors we count number of virus particles, for live vaccines it's cell culture infectious doses. It also depends on what we can measure; e.g. see [here](https://en.wikipedia.org/wiki/Virus_quantification). BTW, once again, while there is [an FDA guidance on maximum safe dose in first-in-humans trials](https://www.fda.gov/media/72309/download), it opens by saying that it is not applicable to vaccines.
+
+[^7]: In case you're surprised by this: I did not expect the researchers to use a factor of 1 neither, but that's what I was told by one of the interviewees!
+
+[^8]: Elsewhere: "Moderna's decision for dosing was based on their previous experience with a bird-flu vaccine candidate rather than quantitative dose optimization." (Desikan et al. 2024) It's standard for all clinical trials to include such a justification, since all clinical study protocols largely follow the same template. Unfortunately, usually these are not made public, so we know what doses are tested, but we cannot check justification for any trial. Pfizer phase 1 trial, which also made protocol available, followed similar logic. Although starting to test at 3 mcg, but anticipating that 10-fold higher doses would be required for potent response.
+
+[^9]: You can also go too low: famously, CureVac, a German biotech decided to go into trials with 12 mcg of mRNA that did not modify uracil (highest dose that had acceptable reactogenicity) [and failed](https://www.science.org/content/article/what-went-wrong-curevac-s-highly-anticipated-new-mrna-vaccine-covid-19).
+
+[^10]: This is all pretty generic. The "toolbox" includes "statistical models for vaccine dose/efficacy predictions, semi-empirical immunostimulatory/immunodynamics (IS-ID or IS/ID) models, model-based meta-analysis (MBMA), agent-based immune models, bioinformatics and artificial intelligence/machine learning based methods, mechanistic ordinary differential equation based vaccine models, including quantitative systems pharmacology (QSP) models, and virtual clinical trial simulations".
+
+## Further reading
+
+- [Biology of optimal dosing](biology.qmd)
+- [Four potential projects that could be done right now](../research-agenda/projects.qmd)

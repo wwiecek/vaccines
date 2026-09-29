@@ -1,0 +1,170 @@
+---
+pagetitle: "Finding targets for optimisation; disease-specific summaries"
+---
+
+# Finding targets for optimisation; disease-specific summaries {#finding-targets-for-optimisation-disease-specific-summaries}
+
+## Is it *worth it* to optimise any vaccine? {#is-it-worth-it-to-optimise-any-vaccine}
+
+To begin to answer this question, synthesising information from all previous sections, I first create a longlist of questions that we should ask before exploring optimisation for any vaccine/disease combination. **These are not sufficient conditions, nor are they necessary.** We should think of them as so-called "enablers": the more of these conditions are obtained, the more we should consider prioritising a given vaccine for optimisation.
+
+## Table 2: factors that make a vaccine worth optimising {#table-2-factors-that-make-a-vaccine-worth-optimising}
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ***Individual benefits***                                                                                                                                                                                                  | ***Population benefits***                                                                                                       | ***Feasible implementation***                                                                                                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Can the vaccine be optimised in a way that increases efficacy/safety for some individuals?                                                                                                                                 | Assuming individual benefits, are there large societal benefits from optimisation?                                              | Would this work in the real world, especially in the contexts that benefit most (e.g. LICs)?                                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Positive results already exist** on alternative doses/schedules OR **limited testing was done** **before** (i.e. there are no negative results)                                                                          | **Supply is limited in the short term** and this can't be resolved through economic means (e.g. cholera in 2024)                | **Path to adoption**: decision makers are willing to support this (e.g. polio) or there is fast regulatory path (e.g. emergency use authorisation, like mpox in 2022)                                |
+|                                                                                                                                                                                                                            |                                                                                                                                 |                                                                                                                                                                                                      |
+| There are **existing correlates of protection**                                                                                                                                                                            | There is **need to quickly expand coverage** (e.g. mpox in 2024)                                                                | There is **programmatic and logistical feasibility** to optimising                                                                                                                                   |
+|                                                                                                                                                                                                                            |                                                                                                                                 |                                                                                                                                                                                                      |
+| It's **fast to generate more data** on different schedules, e.g. we can use human challenge studies (e.g. influenza)                                                                                                       | **Promising modelling results**: showing reductions in burden from optimisation or generally from (quickly) increasing coverage | It's **possible to (quickly) measure effects** where this change is rolled out (e.g. there is a good surveillance or a healthcare records system that allows for a case-control effectiveness study) |
+|                                                                                                                                                                                                                            |                                                                                                                                 |                                                                                                                                                                                                      |
+| **Favourable immune memory profile**; for example, vaccine requires boosters (e.g. COVID-19 in 2020-2021) OR has high response at current regimen (e.g. yellow fever); see *Table 1: immune memory and optimisation goals* |                                                                                                                                 |                                                                                                                                                                                                      |
++============================================================================================================================================================================================================================+=================================================================================================================================+======================================================================================================================================================================================================+
+
+## Short assessments for most common diseases {#short-assessments-for-most-common-diseases}
+
+Next, I try to synthetise what I learned while writing this report grouped by disease, limiting myself to three bullet point summary per each. I provide tentative recommendations.
+
+I look at about 15 common diseases that we vaccinate against. This is not a complete list and does not include some important vaccines in development, I think of it as a good starting point for further investigations, so some of the recommendations here are about gaps in my own knowledge.
+
+*I do not provide any references in this chapter, but stick to hyperlinks to papers, because there is a lot of material here and a lot of it is not articles, but webpages anyway. Just one last reminder that I am not an expert on these diseases.*
+
+These are in no particular order.
+
+### polio {#polio}
+
+- I discuss fractionation of polio vaccine in fractional dosing of polio vaccine, where I talk about switch from trivalent to bivalent OPV and supplementation with (fractional) IPV. It appears that the shortage of IPV has been managed successfully through expansion of supply.
+
+- Fractionation was carried out in many countries and immunogenicity of fIPV was deemed sufficient, making this a useful supply.
+
+Recommendation: nothing to be done for polio, but it would be great to learn more about rollout in LMICs, as a case study for future programs that require fractionation/ID delivery. I have not had time to do it for this report.
+
+### cholera {#cholera}
+
+- Oral cholera vaccine is typically given in two doses, 1-6 weeks apart. There are [persistent shortages](https://www.vox.com/world-politics/24146657/cholera-outbreaks-vaccines-who-gavi-disease-conflict) (the linked article is a good source for why that is unlikely to be resolved soon despite new developments) and during outbreaks in South Sudan (2015), Zambia (2016) a decision was made to switch to a single dose until more supply became available.
+
+- I talk about cholera in modeling health benefits of optimal dosing; one model suggests that 20-80% more deaths can be averted during outbreaks by using the optimal one dose strategy instead of two doses, although not late during outbreaks.
+
+- More primary research is needed.[^1] Vaccine effectiveness can be good (76%, although not in children), but it wanes over time. A new article on [effectiveness estimates from DRC vaccinations in 2020](https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(23)00742-9/fulltext) suggest that there is good protection up to three years following one dose.[^2] Also promising research on boosting 2-3 years later, with lower dose [here](https://pubmed.ncbi.nlm.nih.gov/31703936/) and [here](https://pubmed.ncbi.nlm.nih.gov/31879124/) and some on [single lower](https://pubmed.ncbi.nlm.nih.gov/36959054/) [dose](https://pubmed.ncbi.nlm.nih.gov/36959054/), but this is likely just proof of concept and I have not looked into this deeper.
+
+Recommendation: Given persistent and hard to resolve shortage, this should be one of the main targets for further investigation. There is definitely interest in optimal dosing and schedules, but is the relevant research happening fast enough?
+
+### mpox {#mpox}
+
+- There is a case study on fractional dosing of mpox vaccine
+
+- This case is fascinating by comparison to polio, yellow fever or COVID, because it featured a rapid FDA approval for lower dose and a successful rollout in a high-income country. This seems to have worked well.
+
+Recommendation: It feels like mpox has enough interest and research support. However, it may be a crucial case study for other diseases. It would be good to understand the decision making process in the US, interviewing FDA and CDC staff about criteria that were used to recommend lower doses and how this impacts future plans.
+
+### rotavirus {#rotavirus}
+
+- There are four WHO prequalified rotavirus vaccines.[^3] Given in 2-3 oral vaccine doses, rotavirus vaccine has been successfully rolled out in the last decade in many countries.
+
+- Global coverage is only around 50% and the market is currently assessed to be at risk due to dependence of supply largely on one manufacturer, but there are new RV in the pipeline and alternative suppliers.[^4]
+
+- Estimates of effect differ between LICs and HICs. See [here](https://ourworldindata.org/rotavirus-vaccine): "not only is the immediate vaccine efficacy lower -- 98% in low child mortality countries versus 66% in high child mortality countries -- but also the vaccine efficacy decreases faster in high child mortality countries over time". So it has to be considered in the right setting. In case of shortages, there is some protection from single dose and enough evidence to switch to single dose during shortages: see this [paper](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(19)30412-7/fulltext#%20)
+
+Recommendation: it feels like dose sparing it would only be justifiable in acute shortages and the main solution right now is to improve market efficiency and to research more effective RVs. For existing vaccines, are decision makers considering rotavirus dose sparing? What evidence should be generated in advance? It would require connecting with some experts on rotavirus specifically.
+
+### yellow fever {#yellow-fever}
+
+- There is a case study on fractional dosing of yellow fever vaccine. Fractional doses were used to control outbreaks starting in 2016.
+
+- Overall fractionation has been proven as a tool for managing outbreaks and it seems the consensus has shifted to the point where it's seen as a viable strategy by decision makers.
+
+Recommendation: Fractionation could be investigated as a cost-saving option. This would probably require interviews with experts. Other than that it seems this is a fixed problem.
+
+### tuberculosis {#tuberculosis}
+
+- For childhood vaccination there is long-lasting protection from intradermal vaccination with BCG and probably there isn't much room for improvement, especially considering that new TB vaccines are in development.
+
+- For new TB vaccines (e.g. M72, which launched a large Phase 3 trial earlier this year), optimisation based on immune response data will be difficult, because mechanism of protection is complicated and there are no established CoP's. According to new Gavi strategy, TB vaccines have a very high effect in DALY terms, compared to other vaccines. Therefore it's worth considering them.[^5]
+
+Recommendation: (1) investigate how doses were chosen in TB vaccines that are currently in development; (2) interact with groups working on TB immune response to understand the current state of research into correlates of protection.
+
+### hepatitis B, DTP, Hib, MMR {#hepatitis-b-dtp-hib-mmr}
+
+- These paediatric vaccines are often combined into multivalent vaccines. They all work well: DTP and MMR avert all deaths, hepatitis B (HBV) \>80%; the focus must be on keeping coverage high. Some optimisation possible on timing of doses since several doses are needed, but I have not looked into it further.[^6]
+
+- Old DTP (DTwP) vaccine had a discussion on fractionation in 1980s; at a glance fractional doses were shown to work well in avoiding adverse events while still offering good protection, but there were worries about pertussis effectiveness. I imagine for newer DTaP vaccines, where the adverse events are less of a concern, the only reason to move to lower doses would be to reduce costs. The new vaccines are also known to be less effective.
+
+- As far as I am aware, no fractionation was done for HBV or Hib vaccine[^7] I have not had time to look into hep C developments while writing this report.
+
+Recommendation: It feels like for these the focus has to be on keeping coverage high (or improving HBV e.g. via adjuvants, to cover the last 10% of the population that do not mount immune response), but I did not have time to investigate this more or interview experts.
+
+### pneumococcus {#pneumococcus}
+
+- Pneumococcus conjugate vaccines (PCVs) in children are the success story for advance market commitments.[^8] The financing scheme ensured a low price and allowed Gavi to deliver PCV to over 200-300 mln children in the last decade. However, countries are transitioning out of Gavi supported PCV program ([source](https://www.gavi.org/types-support/vaccine-support/pneumococcal)) and the global coverage is at about 50%; more countries also need to introduce PCV. Cost of PCV for countries not included in the Gavi scheme (which I saw reported as about five-fold higher) is one of the main barriers.[^9]
+
+- This has motivated some research in recent years. Note that I have not had time to look the research the following research myself. There is [a trial in Niger led by Epicentre (MSF)](https://epicentre.msf.org/en/our-projects/pneumococcal-disease-fractional-dose-pcv). It's likely completed, but I have not investigated it further. Then there is [a review in Vaccine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7613540/) which identifies fractionation as a promising method for dose sparing. The same group very recently conducted a trial in Kenya (via KEMRI) and identified 40% dose of Pfizer's PCV as a promising target, this is currently a [preprint](https://www.medrxiv.org/content/10.1101/2024.01.24.24301730v1) The paper explicitly states this is tested as a cost-saving measure for countries that are transitioning out of Gavi-supported PCV program, but I do not know how widely considered these schemes are.
+
+- Based on WHO position paper and [SAGE WG](https://www.who.int/groups/strategic-advisory-group-of-experts-on-immunization/working-groups/pneumococcal-vaccines), I think there is an ongoing interest in both fractional dosing and optimisation of vaccine schedules.
+
+Recommendation: (1) investigate whether the primary research on dosing and schedules is progressing fast enough, (2) connect with researchers to understand if there is any modelling for health and cost impacts of optimisation
+
+### rabies, shingles {#rabies-shingles}
+
+- Rabies vaccine is expensive. There is evidence on effectiveness of intradermal delivery with lower doses ([Schnyder et al](https://pubmed.ncbi.nlm.nih.gov/32898704/) compile over 30 studies) which can reduce costs 2-5 times. [WHO endorses ID vaccination with lower doses](https://www.who.int/teams/control-of-neglected-tropical-diseases/rabies/pep-recommendations) as post-exposure prophylaxis, but it is not seen as default.
+
+- Shingles is even more expensive. It does not have mortality burden, but it is very painful. Fractionation looks promising based on [the only trial ever](https://pubmed.ncbi.nlm.nih.gov/27061887/).[^10] Whether the large cost savings from fractionation of zoster vaccine are worth it depends on vaccine economics. Decision makers should investigate this further and it feels cheap to fund this research, but it has small implications in terms of DALYs.
+
+Recommendation: given associated burden, these two items may be "nice to haves" compared to others on the list in terms of health burden: (1) varicella zoster ID trial and (2) understanding why rabies vaccine intradermal delivery is not treated as default. Not essential, but cost savings may be very large, so in the context of fixed budgets the impact may be large.
+
+### COVID vaccines {#covid-vaccines}
+
+I provide a case study on fractional dosing of COVID vaccines and use COVID as a running example in chapters on modelling benefits and biology. The potential for optimisation is very large, but the SARS-CoV-2 R&D is by far the most resource-intensive R&D domain in vaccine development. New boosters from Moderna have already dropped doses by a factor of 10.
+
+Recommendation: I don't think there is a research agenda for COVID specifically, but there is value in detailed retrospective analysis of conditions needed for endorsement of lower doses in pandemic. See some ideas in [decision making on optimal dosing](../overview/decision-making.qmd#examples-of-how-optimisation-decisions-are-made).
+
+### influenza {#influenza}
+
+- Seasonal influenza vaccines are reformulated annually based on predicted circulating strains. Vaccine effectiveness varies year to year due to strain match and individual factors. For routine vaccination, the main topics childhood vaccination, higher dosage in the elderly, development of new vaccines.
+
+- There has been a lot of research on intradermal vaccination in flu. See [Section 3.3 of Schnyder et al](https://www.sciencedirect.com/science/article/pii/S1477893920303641) for a good overview of data from over 30 studies published post-2000 which compare IM to ID and clearly indicate that there is a dose sparing potential from switching to ID doses.
+
+- A lot of dose sparing solutions were investigated following the 2009 H1N1 pandemic.[^11] There are some strategic plans for pandemics which stockpile antigens for particular strains and adjuvants, but I have not been able to find good references for this; it was only mentioned to me by one of experts.
+
+Recommendation: Understand national strategies against pandemic influenza, as these are potentially important. Then some relevant research could also be supported.
+
+### malaria {#malaria}
+
+- RTS,S is being rolled out, typically with 3 initial doses and 4th dose later. [Difficulties with malaria vaccine rollout](https://www.ft.com/content/0f19c56f-69ab-4898-9f7e-c6dcb7c34a95) have been reported on widely. There are supply and demand problems and logistical issues (cold chain storage is required, children need to be followed up for all four doses). That means that optimising schedules or manipulating doses is very valuable, but also has to happen against the backdrop of all these issues. Worth looking at new [WHO position paper (May 2024)](https://www.who.int/publications/i/item/who-wer-9919-225-248).
+
+- RTS,S has moderate efficacy. In [modeling health benefits of optimal dosing](../overview/population-benefits.qmd#how-large-are-health-benefits-from-optimisation) I gave examples of how timing of 4th dose appropriately could increase benefits by 25-75%. There is a lot of research on delayed fractional dose. I also talk about mechanisms in [biology of optimal dosing](../overview/biology.qmd#biology-of-optimal-dosing).
+
+- Given low effectiveness of what's currently available, new vaccines may be crucial.[^12] There are [over 50 vaccine candidates](https://www.nature.com/articles/d41573-023-00119-4), [six in clinical trials](https://www.bio.org/sites/default/files/2024-01/The-State-of-Innovation-in-Vaccines-and-Prophylactic-Antibodies-for-Infectious-Diseases.pdf), but malaria is a tough target, especially given limited correlates of protection. It's also worth also remembering that RTS,S was developed in 1980s; the focus in malaria should be on market design, as per this [excellent summary](https://worksinprogress.co/issue/why-we-didnt-get-a-malaria-vaccine-sooner/).
+
+Recommendation: there has been a lot of focus on improving malaria vaccines and their rollout. I'm unsure about this one and I'd recommend talking to experts.
+
+[^1]: Wellcome and UK's FCDO has sponsored a lot of cholera research, including optimisation and vaccine research, in a project called [Joint Initiative on Epidemic Preparedness for Cholera](https://wellcome.org/news/joint-initiative-research-epidemic-preparedness-and-response-how-it-works).
+
+[^2]: It's not the only source of data, but probably the best one; per the study paper: "To date, there has been one randomised trial conducted in Bangladesh between 2014 and 2016, and seven observational studies conducted between 2009 and 2016 in Guinea, Haiti, India, Malawi, Sudan, Zambia, and Tanzania (Zanzibar), reporting effectiveness estimates of a single dose of the current generation of kOCVs. Aside from the trial in Bangladesh, all estimates were based on secondary analyses that the studies were not powered to estimate."
+
+[^3]: There are 12 different presentations of four vaccines, all given orally in 2-3 doses. 3/4 of all vaccinations use GSK's RV1 in 1-dose tube, which has the advantage of coming in two doses only and no cold storage requirements, but there are now competitors with good shelf life, multidose vials, and no cold chain requirements.
+
+[^4]: [UNICEF's 2022 report on supply and demand](https://www.unicef.org/supply/media/10841/file/Rotavirus-Vaccine-Supply-Demand-Update-January-2022.pdf) is a great summary. A lot of research is already supported by BMGF.
+
+[^5]: It's also worth noting that for the subunit H56 TB vaccine candidate, development of which [stopped at Phase 2](https://health.uct.ac.za/satvi/articles/2023-12-19-development-candidate-tuberculosis-vaccine-h56ic31-ended-based-early-data-prevention-recurrence-por), there were a couple of modeling papers on non-peaking dose-response; see [Billeskov et al](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2017.01973/full) and [Rhodes et al](https://www.sciencedirect.com/science/article/pii/S0264410X16309951?via%3Dihub). In other words, more antigen led to *worse* immune responses. (See also: biology of optimal dosing)
+
+[^6]: MMR is delivered subcut, others are intramuscular. I believe a lot of microneedle papers from the last decade are on the two toxoid vaccines (i.e. DT in DTP)
+
+[^7]: There are a lot of papers on timing of hep B vaccine. See introduction [here](https://doi.org/10.1002/jmv.27848) which lists 15 papers. The study itself suggests that in adults there is flexibility in timing of 2nd and 3rd dose of vaccine, but this is not too important for this investigation, since seroprotection rates are high.
+
+[^8]: There are three PCVs in LMICs: two with 10 serotypes (GSK, SII; similar but not the same) and 13 (Pfizer/Wyeth). The latter accounts for over 90% of vaccinations. All vaccines are 3 doses, given intramuscularly. There are now also some newer versions approved with more serotypes (15, 20-valent). I focus on children here, there is also pneumococcal polysaccharide vaccine (PPSV). PCV is primarily used in children, while PPSV is used in adults and has different serotypes.
+
+[^9]: See [Gavi website article](https://www.gavi.org/types-support/vaccine-support/pneumococcal) on the transitioning out and \[UNICEF report on supply and demand from 2020\] (I could not find a newer one) for a lot of useful statistics. See especially the graph on page 6 on the growing demand.
+
+[^10]: One of the interviewees estimated a very rough cost of such a trial for this at 250,000 EUR for 100 participants. The difficulty with conducting such a trial is that read-out of immune response results can't easily be done in a lab by the researchers.
+
+[^11]: Notably, Canada's NITAG, National Advisory Committee on Immunization, undertook an [evaluation of fractional doses of influenza vaccine with both IM and ID delivery](https://www.canada.ca/en/public-health/services/reports-publications/canada-communicable-disease-report-ccdr/monthly-issue/2023-49/issue-4-april-2023/naci-recommendations-fractional-influenza-vaccine-dosing.html) and recommended against it. I include a long commentary on it in the note on decision making on optimal dosing.
+
+[^12]: Mechanism of protection currently relies on high titres of antibodies, but it only takes one sporozoite entering liver for the disease to then develop. One of the researchers interviewed for the report was excited by a prospect of a vaccine with modified parasite, which would give T-cell immunity against liver stage. See the chapter on biology of optimal dosing for more context.
+
+## Further reading
+
+- [Introducing four case studies](../case-studies/index.qmd)
+- [Four potential projects that could be done right now](../research-agenda/projects.qmd)

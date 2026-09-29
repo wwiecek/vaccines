@@ -1,0 +1,54 @@
+---
+pagetitle: "Case study: mpox vaccine"
+---
+
+# Case study: mpox vaccine {#case-study-mpox-vaccine}
+
+In a sudden public health emergency caused by mpox in 2022-23 there was not enough supply of the only mpox vaccine (Jynneos/Imvanex, made by Bavarian Nordic) to immunise the at-risk population (men who have sex with men). Unlike other case studies presented, this affected all countries, e.g., in the US over 3mln doses were needed to vaccinate high-risk population and the estimated shortage was 50%. UK had a stockpile of 50,000 and moved to order 150,000 ([source](https://ukhsa.blog.gov.uk/2022/10/28/answering-questions-on-monkeypox-vaccination/)). It's safe to assume that in other countries the shortages would be larger.
+
+Jynneos/Imvanex (live smallpox and mpox vaccine) was initially approved for SC injection in two doses. The fractional dosing approach is to give two 1/5 doses (0.1mL instead of 0.5mL) intradermally. This is a "regular" vaccination, just done at 5-15 degree angle and using a smaller needle and syringe.
+
+**What was done in 2022**
+
+In August 2022 FDA gave emergency use authorization (EUA) for this FD based on [the only RCT](https://www.sciencedirect.com/science/article/pii/S0264410X15008762) from 2015 (n=300, comparing 0.1mL ID arm to 0.5mL IM); immunogenicity was deemed "nearly identical," as was safety ([source](https://www.fda.gov/media/160785/download)). A few things to note:
+
+- However, there are no defined correlates of protection against mpox, i.e. we don't actually know how well mpox virus-neturalising antibodies protect against disease or transmission, so this was definitely a decision made with considerable uncertainty.
+
+- Note that this was an actual EUA for this specific mode of application. This is in contrast to other recommendations which are made not by drug regulators and constitute off-label vaccine use guidelines.
+
+- CEO of Bavarian Nordic [wrote](https://www.documentcloud.org/documents/22130371-220809-bavarian-nordic-letter) to the FDA comissioner to raise some concerns about using small sample to make decisions
+
+- EMA's Emergency Task Force [advised](https://www.ema.europa.eu/en/news/emas-emergency-task-force-advises-intradermal-use-imvanex-jynneos-against-monkeypox) use of FD based on the same data. [UKHSA piloted use of FD](https://www.gov.uk/government/news/monkeypox-vaccines-to-be-piloted-in-smaller-but-equally-effective-doses) and UK's JCVI recommended use of intradermal doses.
+
+- UK's pilot was also because they wanted to resolve programmatic issues
+
+In parallel there was a debate on First Doses First. In the US FDA advised states against it, while some experts suggested that [it may work](https://www.verywellhealth.com/one-dose-monkeypox-vaccine-6260184).
+
+**What we learned since 2022**
+
+Following the public health emergency we learned that:
+
+- Based on an immunogenicity study (N=225), the antibody titres were similar between SC full dose and ID 1/5 dose two weeks after second dose; 1/10th ID dose was inferior ([source](https://www.nih.gov/news-events/news-releases/lower-dose-mpox-vaccine-safe-generates-six-week-antibody-response-equivalent-standard-regimen)).
+
+- 2 fractional doses are superior to one SC standard dose and no different to 2 SC standard doses per [this NEJM study](https://www.nejm.org/doi/10.1056/NEJMc2306239) (N=145).
+
+- A large mpox vaccination effectiveness study (case-control design, N = 2,193 cases, 8,319 controls) found lower effectiveness of one dose compared to two doses (VE = 36% with one, 66% with two doses) but no comparison of effectiveness of ID vs SC administration route as the study was not powered to detect them.
+
+- Studies also note that a very important determinant of immune response is previous smallpox immunisation. There has been some discussion about general level of antibodies following two doses being low and therefore need for a third dose of vaccine in the future.
+
+- Data from US roll-out suggests that both options are well-tolerated, although ID has more local reactions. People complete their 2 doses at same rates regardless of ID vs SC.
+
+It seems that generally the conclusion is that this worked well, but there isn't yet enough evidence about ID to make strong conclusions.
+
+**Modelling**
+
+In retrospect fractionation was very likely the right decision, but what about public health benefits assessment at the time?
+
+Only modeling in the public domain that I am aware of has been done by Dimitrov et al. This is adaptation of a compartmental epidemiological model (a very typical approach) applied to a population in Seattle, by experienced modellers; I discuss it in modeling health benefits of optimal dosing. I was told by one of the authors that this did not drive any policy.
+
+However, there has been a lot of modelling of mpox outbreaks in the US done by a group at CDC led by Ian Spicknall, e.g. [here](https://www.cdc.gov/mmwr/volumes/72/wr/mm7221a1.htm). I am uncertain what role the modelling has played in the decisions and it would be good to understand that.
+
+## Further reading
+
+- [Practical aspects of changing dose: syringes, vials, and intradermal delivery](../overview/practical-implementation.qmd)
+- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)

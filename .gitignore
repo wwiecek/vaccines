@@ -1,0 +1,6 @@
+/_site/
+/.quarto/
+/Shallow investigation into vaccine optimisation (draft).md
+__pycache__/
+*.pyc
+**/*.quarto_ipynb

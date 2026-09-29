@@ -1,0 +1,13 @@
+# Optimal dosing and schedules of vaccines
+
+*A draft investigation by Witold Więcek, June 2024.*
+
+The purpose of this report is to serve as a general introduction to the optimal dosing and scheduling of vaccines. Its notes can be read in any order.
+
+Start with the [executive summary](overview/index.qmd), or go directly to a topic:
+
+- [Overview](overview/index.qmd): biology, vaccine development, implementation, population benefits and decision-making.
+- [Vaccines](vaccines/index.qmd): short assessments of individual diseases and vaccines.
+- [Case studies](case-studies/index.qmd): COVID, mpox, polio and yellow fever.
+- [Research agenda](research-agenda/index.qmd): possible projects, knowledge gaps, future pathways and reservations.
+- [About](about/index.qmd): the report's scope, background and acknowledgements.
