@@ -100,7 +100,7 @@ Second, there are "several feasibility issues" with ID administration. They actu
 
 These are valid concerns, but also an example of status quo bias: there is no cost-benefit analysis, just a description of how things are. A somewhat unkind summary would be: "since things are different to how they would need to be, this is not feasible".
 
-References
+## References {#references-7}
 
 Schnyder, Jenny L., Cornelis A. De Pijper, Hannah M. Garcia Garrido, Joost G. Daams, Abraham Goorhuis, Cornelis Stijnis, Frieder Schaumburg, and Martin P. Grobusch. 2020. "Fractional Dose of Intradermal Compared to Intramuscular and Subcutaneous Vaccination - A Systematic Review and Meta-Analysis." *Travel Medicine and Infectious Disease* 37: 101868. <https://doi.org/10.1016/j.tmaid.2020.101868>.
 

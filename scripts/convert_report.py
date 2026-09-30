@@ -152,6 +152,8 @@ def render_page(path, page_blocks):
     rendered = re.sub(r"\[([^\[\]]+)\]\{\.underline\}", r"\1", rendered)
     # Google Docs supplied these placeholder targets without real URLs.
     rendered = re.sub(r"\[([^\[\]]+)\]\(about:blank\)", r"\1", rendered)
+    if path == "overview/decision-making.qmd":
+        rendered = re.sub(r"(?m)^References$", "## References {#references-7}", rendered)
     if path in RELATED:
         links = [f"- [{titles[p]}]({os.path.relpath(p, Path(path).parent)})"
                  for p in RELATED[path]]

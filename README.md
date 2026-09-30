@@ -1,6 +1,6 @@
 # Vaccine optimisation report website
 
-This is a Quarto website built from *Shallow investigation into vaccine optimisation (draft).docx*. The DOCX is the source for the report text; the QMD pages are organised as standalone notes. `index.qmd` is the hand-edited landing page; `styles.css` contains presentation rules. Report footnotes appear in the right margin beside their references.
+This is a Quarto website built from *Shallow investigation into vaccine optimisation (draft).docx*. The DOCX is the source for the report text; the QMD pages are organised as standalone notes. `index.qmd` is the hand-edited landing page; `styles.css` contains presentation rules. The top menus link to report chapters, while "On this page" links to headings within an article. `includes/footnote-placement.html` aligns margin footnotes with their references on wide screens; on narrow screens, the notes follow their paragraphs.
 
 Run `quarto render` from the repository root to build `_site/`. Run `python3 scripts/convert_report.py` to repeat the Pandoc conversion from the DOCX. The converter rewrites generated report QMD pages, so edit it or the source DOCX before rerunning it if content changes need to persist. It does not rewrite the landing page.
 

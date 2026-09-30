@@ -1,0 +1,71 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.querySelector("main.content");
+  if (!main || document.querySelector(".landing")) return;
+
+  const pairs = [...main.querySelectorAll("a.footnote-ref")]
+    .map(ref => [ref, document.getElementById(ref.hash.slice(1))])
+    .filter(([, note]) => note?.parentElement?.matches(
+      ".column-margin.column-container"));
+  if (!pairs.length) return;
+
+  for (const [, note] of pairs) {
+    if (note.getBoundingClientRect().height <= 168) continue;
+    const content = document.createElement("div");
+    content.className = "margin-note-content";
+    content.id = `${note.id}-content`;
+    while (note.firstChild) content.append(note.firstChild);
+    note.append(content);
+    note.classList.add("is-collapsible");
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "margin-note-toggle";
+    toggle.setAttribute("aria-controls", content.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "Read full note";
+    toggle.addEventListener("click", () => {
+      const expanded = note.classList.toggle("is-expanded");
+      toggle.setAttribute("aria-expanded", String(expanded));
+      toggle.textContent = expanded ? "Show less" : "Read full note";
+      schedule();
+    });
+    note.append(toggle);
+  }
+
+  function align() {
+    main.style.paddingBottom = "";
+    for (const [, note] of pairs) note.style.transform = "";
+    if (innerWidth < 768) return;
+
+    let previousBottom = 0;
+    for (const [ref, note] of pairs) {
+      const referenceTop = ref.getBoundingClientRect().top + scrollY;
+      const noteTop = note.getBoundingClientRect().top + scrollY;
+      const targetTop = Math.max(referenceTop, previousBottom + 12);
+      note.style.transform = `translateY(${Math.max(0, targetTop - noteTop)}px)`;
+      previousBottom = note.getBoundingClientRect().bottom + scrollY;
+    }
+
+    const mainBottom = main.getBoundingClientRect().bottom + scrollY;
+    if (previousBottom > mainBottom) {
+      main.style.paddingBottom = `${Math.ceil(previousBottom - mainBottom + 24)}px`;
+    }
+  }
+
+  let pending = false;
+  function schedule() {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(() => {
+      pending = false;
+      align();
+    });
+  }
+
+  addEventListener("load", schedule);
+  addEventListener("resize", schedule);
+  document.fonts?.ready.then(schedule);
+  schedule();
+});
+</script>

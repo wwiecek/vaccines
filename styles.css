@@ -14,6 +14,26 @@ a { text-underline-offset: 4px; }
 .navbar-brand { font-weight: 750; letter-spacing: -.04em; }
 .navbar .nav-link { font-size: .86rem; }
 .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--mint) !important; }
+.navbar .dropdown-menu {
+  min-width: 15rem;
+  padding: .4rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  box-shadow: 0 14px 28px #10232d24;
+}
+.navbar .dropdown-item {
+  color: var(--ink);
+  border-radius: 2px;
+  font-size: .84rem;
+  padding: .55rem .7rem;
+}
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item.active {
+  color: var(--navy);
+  background: #d4eee5;
+}
 
 /* Article pages use the left column for contents and the right for footnotes. */
 #quarto-content { padding-top: 3.5rem; }
@@ -74,9 +94,76 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
   font-size: .76rem;
   line-height: 1.55;
 }
+.column-margin.column-container > [id^="fn"] {
+  background: #e7ede6;
+  border-left: 2px solid #88b8aa;
+  border-radius: 0 2px 2px 0;
+  padding: .65rem .8rem .7rem;
+  margin-bottom: .8rem;
+}
+.column-margin.column-container > [id^="fn"]:target {
+  border-left-color: var(--link);
+  box-shadow: 0 0 0 1px #88b8aa;
+}
+.column-margin.column-container > [id^="fn"] p { margin: 0; }
+.column-margin.column-container > [id^="fn"] sup {
+  color: var(--link);
+  font-size: .7rem;
+  font-weight: 750;
+}
+.column-margin .is-collapsible:not(.is-expanded) .margin-note-content {
+  max-height: 5.8em;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(#000 75%, transparent);
+  mask-image: linear-gradient(#000 75%, transparent);
+}
+.margin-note-toggle {
+  display: block;
+  padding: 0;
+  margin-top: .45rem;
+  border: 0;
+  background: transparent;
+  color: var(--link);
+  font: 700 .68rem system-ui, sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .column-margin .is-collapsible .margin-note-content {
+    max-height: none;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .margin-note-toggle { display: none; }
+}
 aside.footnotes, .margin-sidebar .footnotes { border-top: 1px solid var(--rule); padding-top: .55rem; }
 .footnote-ref { color: var(--link); font-family: system-ui, sans-serif; font-size: .7em; font-weight: 700; }
 .footnote-back { color: var(--link); }
+
+/* Keep the source lists visually distinct from the article text. */
+main.content section[id^="references"] {
+  margin: 3.5rem 0 2.5rem;
+  padding: 1.5rem 2rem 1.8rem;
+  background: #e8ede6;
+  border-top: 3px solid #86aea2;
+}
+main.content section[id^="references"] h2,
+main.content section[id^="references"] h3 {
+  margin: 0 0 1.4rem;
+  font-size: 1.75rem;
+}
+main.content section[id^="references"] p {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  font: .86rem/1.58 system-ui, sans-serif;
+}
+main.content section[id^="references"] p:last-child { margin-bottom: 0; }
+main.content section[id^="references"] a { overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+  main.content section[id^="references"] { padding: 1.2rem; }
+}
 
 #reading-progress {
   position: fixed;
