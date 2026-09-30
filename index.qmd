@@ -1,13 +1,93 @@
-# Optimal dosing and schedules of vaccines
+---
+pagetitle: "Fractional dosing of vaccines"
+page-layout: full
+toc: false
+---
 
-*A draft investigation by Witold Więcek, June 2024.*
+```{=html}
+<div class="landing">
+  <header class="landing-hero">
+    <div class="landing-inner">
+      <p class="eyebrow">A research report by Witold Więcek</p>
+      <div class="hero-grid">
+        <h1>Fractional dosing <em>of vaccines</em></h1>
+        <div class="hero-aside">
+          <p>What if a different vaccine dose or schedule could protect
+            more people?</p>
+          <a class="hero-link" href="overview/index.html">
+            Read the executive summary <span aria-hidden="true">↗</span>
+          </a>
+          <p class="hero-meta">An investigation into evidence,
+            implementation, and the limits of optimisation.<br>
+            Draft · June 2024</p>
+        </div>
+      </div>
+      <div class="hero-rule">
+        <span>Evidence and mechanisms</span>
+        <span>Case studies</span>
+        <span>Research priorities</span>
+      </div>
+    </div>
+  </header>
 
-The purpose of this report is to serve as a general introduction to the optimal dosing and scheduling of vaccines. Its notes can be read in any order.
+  <section class="landing-index" aria-labelledby="explore-title">
+    <div class="landing-inner">
+      <div class="index-head">
+        <p class="eyebrow">Explore the report</p>
+        <h2 id="explore-title">Where to begin</h2>
+      </div>
+      <div class="chapter-grid">
+        <a class="chapter" href="overview/index.html">
+          <span class="chapter-number">01 / Overview</span>
+          <h3>Why change the dose?</h3>
+          <p>Biology, development, delivery, and population benefit.</p>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="chapter" href="vaccines/index.html">
+          <span class="chapter-number">02 / Vaccines</span>
+          <h3>Where might it matter?</h3>
+          <p>Short assessments across infectious diseases.</p>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="chapter" href="case-studies/index.html">
+          <span class="chapter-number">03 / Case studies</span>
+          <h3>What has been tried?</h3>
+          <p>COVID, mpox, polio, and yellow fever.</p>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="chapter" href="research-agenda/index.html">
+          <span class="chapter-number">04 / Research agenda</span>
+          <h3>What should we test?</h3>
+          <p>Possible projects, gaps, and reasons for scepticism.</p>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-Start with the [executive summary](overview/index.qmd), or go directly to a topic:
-
-- [Overview](overview/index.qmd): biology, vaccine development, implementation, population benefits and decision-making.
-- [Vaccines](vaccines/index.qmd): short assessments of individual diseases and vaccines.
-- [Case studies](case-studies/index.qmd): COVID, mpox, polio and yellow fever.
-- [Research agenda](research-agenda/index.qmd): possible projects, knowledge gaps, future pathways and reservations.
-- [About](about/index.qmd): the report's scope, background and acknowledgements.
+  <section class="landing-guide" aria-labelledby="guide-title">
+    <div class="landing-inner guide-grid">
+      <div>
+        <p class="eyebrow">The central question</p>
+        <h2 id="guide-title">A fixed supply need not mean a fixed number
+          of people protected.</h2>
+        <p>Dose, timing, and delivery affect individual immune responses
+          and the reach of a vaccination programme. Finding better regimens
+          requires biological evidence, practical feasibility, and decisions
+          that weigh population benefits against uncertainty.</p>
+      </div>
+      <nav class="guide-links" aria-label="Read the overview">
+        <a href="overview/biology.html">Biology <span aria-hidden="true">↗</span></a>
+        <a href="overview/vaccine-development.html">Vaccine development
+          <span aria-hidden="true">↗</span></a>
+        <a href="overview/practical-implementation.html">Practical implementation
+          <span aria-hidden="true">↗</span></a>
+        <a href="overview/population-benefits.html">Population benefits
+          <span aria-hidden="true">↗</span></a>
+        <a href="overview/decision-making.html">Decision-making
+          <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </section>
+</div>
+```

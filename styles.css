@@ -1,37 +1,128 @@
-/* Keep presentation changes here; report text lives in the QMD files. */
-main img {
-  max-width: 100%;
-  height: auto;
+/* Editorial palette and reading layout. Report prose remains in the QMD files. */
+:root {
+  --ink: #203137;
+  --navy: #10232d;
+  --paper: #f4f2ea;
+  --mint: #a5d8cb;
+  --rule: #c8d0c9;
+  --link: #087b72;
 }
 
-main table {
-  font-size: 0.94rem;
-}
+body { background: var(--paper); color: var(--ink); }
+a { text-underline-offset: 4px; }
+.navbar { background: var(--navy) !important; border-bottom: 1px solid #456068; }
+.navbar-brand { font-weight: 750; letter-spacing: -.04em; }
+.navbar .nav-link { font-size: .86rem; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--mint) !important; }
 
-@media (max-width: 700px) {
-  main table {
-    display: block;
-    overflow-x: auto;
-  }
+/* Article pages use the left column for contents and the right for footnotes. */
+#quarto-content { padding-top: 3.5rem; }
+main.content { font-family: Georgia, "Times New Roman", serif; font-size: 1.09rem; line-height: 1.77; }
+main.content h1, main.content h2, main.content h3, main.content h4 {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.14;
 }
+main.content h1 { font-size: clamp(2.8rem, 4.8vw, 4.7rem); margin-bottom: 2.4rem; }
+main.content h2 { font-size: clamp(2rem, 3vw, 2.65rem); margin-top: 3.5rem; }
+main.content h3 { font-size: 1.65rem; margin-top: 2.5rem; }
+main.content p, main.content li { overflow-wrap: break-word; }
+main.content p { margin-bottom: 1.35rem; }
+main.content a { color: var(--link); text-decoration-color: #8cc0b2; }
+main.content blockquote {
+  margin: 2rem 0;
+  padding: .9rem 1.4rem;
+  border-left: 3px solid #5cae9c;
+  background: #e4ebe4;
+  font-size: 1.08rem;
+}
+main.content img { max-width: 100%; height: auto; }
+main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
 
+#TOC, #quarto-margin-sidebar { font-family: system-ui, sans-serif; font-size: .78rem; }
+#TOC .toc-title { color: #647572; font-size: .69rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+#TOC a { color: #63716e; border-left-color: transparent; }
+#TOC a.active, #TOC a:hover { color: var(--ink); border-left-color: var(--link); }
+.column-margin, aside.footnotes, .margin-sidebar .footnotes {
+  color: #52615f;
+  font-family: system-ui, sans-serif;
+  font-size: .76rem;
+  line-height: 1.55;
+}
+aside.footnotes, .margin-sidebar .footnotes { border-top: 1px solid var(--rule); padding-top: .55rem; }
+.footnote-ref { color: var(--link); font-family: system-ui, sans-serif; font-size: .7em; font-weight: 700; }
+.footnote-back { color: var(--link); }
+
+/* The landing page combines Editorial colours with Minimal's open type layout. */
+body:has(.landing) #quarto-content { padding: 0; }
+body:has(.landing) main.content { max-width: none; padding: 0; margin: 0; }
+body:has(.landing) #quarto-document-content { padding: 0; }
+.landing { font-family: system-ui, sans-serif; }
+.landing a { text-decoration: none; }
+.landing-inner { max-width: 1500px; margin: 0 auto; padding-left: 5.5%; padding-right: 5.5%; }
+.landing .eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+.landing-hero { background: var(--navy); color: #f5f2e9; padding: 5.2rem 0 0; }
+.landing-hero .eyebrow { color: var(--mint); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(250px, .72fr); gap: 6%; align-items: end; padding: 3.7rem 0 5.5rem; }
+main.content .landing h1 { color: #f5f2e9; font: 400 clamp(4.7rem, 9vw, 9.5rem)/.91 Georgia, "Times New Roman", serif; letter-spacing: -.075em; margin: 0; }
+main.content .landing h1 em { color: var(--mint); font-weight: 400; }
+.hero-aside { border-left: 1px solid #69858a; padding: .6rem 0 .2rem 2rem; }
+.hero-aside > p:first-child { max-width: 23rem; font-size: clamp(1.2rem, 1.9vw, 1.65rem); line-height: 1.4; margin: 0 0 2rem; }
+main.content .landing .hero-link { color: var(--navy); background: #d4eee5; display: inline-flex; gap: 1.5rem; align-items: center; padding: .85rem 1.15rem; font-size: .85rem; font-weight: 750; }
+main.content .landing .hero-link:hover { background: #f5f2e9; color: var(--navy); }
+.hero-meta { color: #b2c5c4; font-size: .78rem; line-height: 1.6; margin: 2.5rem 0 0; }
+.hero-rule { border-top: 1px solid #536a70; display: flex; gap: 2rem; justify-content: space-between; padding: 1.25rem 0; color: #bacbca; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.landing-index { background: #ecebe5; padding: 5.5rem 0 6.5rem; }
+.index-head { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid #b9c1ba; padding-bottom: 1.3rem; margin-bottom: 1rem; }
+.index-head .eyebrow { margin: 0; color: #60857d; }
+main.content .landing h2, main.content .landing h3 { color: inherit; font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.045em; }
+.index-head h2 { font-size: clamp(2.5rem, 4vw, 3.7rem); margin: 0; }
+.chapter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+main.content .landing .chapter { min-height: 18.5rem; display: flex; flex-direction: column; padding: 1.3rem; color: var(--ink); background: #f8f7f1; border: 1px solid #d8dcd5; transition: transform .2s, background .2s; }
+main.content .landing .chapter:hover { color: var(--ink); background: white; transform: translateY(-3px); }
+.chapter-number { color: #647b75; font-size: .68rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+.chapter h3 { font-size: clamp(1.7rem, 2.2vw, 2.5rem); line-height: 1.08; margin: auto 0 .8rem; }
+.chapter p { color: #5b6c68; font-size: .81rem; line-height: 1.5; margin: 0; }
+.chapter-arrow { align-self: end; font-size: 1.4rem; }
+.landing-guide { background: #dfe6de; padding: 6.5rem 0; }
+.guide-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; }
+.landing-guide .eyebrow { color: #4b756b; }
+.landing-guide h2 { font-size: clamp(2.6rem, 4.2vw, 4.3rem); line-height: 1.07; margin: 1rem 0 1.5rem; }
+.landing-guide p:not(.eyebrow) { max-width: 43rem; color: #52635e; font-size: 1rem; line-height: 1.65; }
+.guide-links { align-self: center; border-top: 1px solid #8aa99c; }
+.guide-links a { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #8aa99c; padding: 1rem 0; color: var(--ink); font: 400 1.3rem Georgia, serif; }
+.guide-links a:hover { color: var(--link); }
+.guide-links span { font: 700 .9rem system-ui, sans-serif; }
+
+@media (max-width: 1000px) {
+  .hero-grid { grid-template-columns: 1fr .75fr; }
+  main.content .landing h1 { font-size: clamp(4.2rem, 9vw, 7rem); }
+  .chapter-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  #quarto-content { padding-top: 1.5rem; }
+  main.content { font-size: 1rem; }
+  main.content h1 { margin-bottom: 1.8rem; }
+  .landing-hero { padding-top: 3.3rem; }
+  .hero-grid, .guide-grid { display: block; }
+  .hero-grid { padding: 2.5rem 0 3.5rem; }
+  main.content .landing h1 { font-size: clamp(3.8rem, 13vw, 6rem); }
+  .hero-aside { margin-top: 3rem; }
+  .hero-rule { flex-wrap: wrap; gap: .7rem 1.3rem; }
+  .landing-index, .landing-guide { padding: 4rem 0; }
+  .guide-links { margin-top: 3rem; }
+}
+@media (max-width: 480px) {
+  .index-head { display: block; }
+  .index-head h2 { margin: .6rem 0 0; }
+  .chapter-grid { grid-template-columns: 1fr; }
+  .chapter { min-height: 13rem; }
+  main.content table { display: block; overflow-x: auto; }
+}
 @media print {
-  .navbar, .sidebar, #quarto-margin-sidebar, .page-footer,
-  .anchorjs-link, .quarto-search-button {
-    display: none !important;
-  }
-
-  body, main {
-    color: #000;
-    background: #fff;
-  }
-
-  main a {
-    color: #000;
-    text-decoration: underline;
-  }
-
-  main img, main table, main figure {
-    break-inside: avoid;
-  }
+  .navbar, #TOC, .page-footer, .anchorjs-link { display: none !important; }
+  body, main { color: #000; background: #fff; }
+  main.content img, main.content table, main.content figure { break-inside: avoid; }
 }

@@ -10,9 +10,9 @@ project:
     - about/*.qmd
 
 website:
-  title: "Vaccine optimisation"
+  title: "Fractional dosing of vaccines"
   navbar:
-    background: light
+    background: dark
     collapse: true
     left:
       - text: Home
@@ -30,56 +30,20 @@ website:
   search:
     location: navbar
     type: overlay
-  sidebar:
-    - title: Overview
-      style: docked
-      contents:
-        - text: Executive summary
-          href: overview/index.qmd
-        - text: Biology
-          href: overview/biology.qmd
-        - text: Vaccine development
-          href: overview/vaccine-development.qmd
-        - text: Practical implementation
-          href: overview/practical-implementation.qmd
-        - text: Population benefits
-          href: overview/population-benefits.qmd
-        - text: Decision-making
-          href: overview/decision-making.qmd
-    - title: Case studies
-      style: docked
-      contents:
-        - text: Introducing the case studies
-          href: case-studies/index.qmd
-        - text: COVID
-          href: case-studies/covid.qmd
-        - text: Mpox
-          href: case-studies/mpox.qmd
-        - text: Polio
-          href: case-studies/polio.qmd
-        - text: Yellow fever
-          href: case-studies/yellow-fever.qmd
-    - title: Research agenda
-      style: docked
-      contents:
-        - text: Conclusions and next steps
-          href: research-agenda/index.qmd
-        - text: Projects / next steps
-          href: research-agenda/projects.qmd
-        - text: Knowledge gaps
-          href: research-agenda/knowledge-gaps.qmd
-        - text: Future pathways
-          href: research-agenda/future-pathways.qmd
-        - text: Reasons for scepticism
-          href: research-agenda/reservations.qmd
-
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    toc-location: right
+    toc-location: left
     toc-depth: 3
     anchor-sections: true
     number-sections: false
+    reference-location: margin
+    page-layout: article
+    grid:
+      sidebar-width: 190px
+      body-width: 740px
+      margin-width: 270px
+      gutter-width: 36px
     link-external-newwindow: true
