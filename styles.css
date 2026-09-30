@@ -41,10 +41,33 @@ main.content blockquote {
 main.content img { max-width: 100%; height: auto; }
 main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
 
-#TOC, #quarto-margin-sidebar { font-family: system-ui, sans-serif; font-size: .78rem; }
-#TOC .toc-title { color: #647572; font-size: .69rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
-#TOC a { color: #63716e; border-left-color: transparent; }
-#TOC a.active, #TOC a:hover { color: var(--ink); border-left-color: var(--link); }
+#quarto-sidebar, #quarto-margin-sidebar {
+  background: var(--paper) !important;
+  color: var(--ink);
+  box-shadow: none;
+}
+#TOC {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, sans-serif;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+#TOC #toc-title {
+  color: #647572;
+  font: 750 .69rem/1.4 system-ui, sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+#TOC .nav-link {
+  color: #596a66 !important;
+  font: 500 .78rem/1.4 system-ui, sans-serif;
+  border-left-color: transparent;
+}
+#TOC .nav-link.active, #TOC .nav-link:hover {
+  color: var(--link) !important;
+  border-left-color: var(--link) !important;
+}
 .column-margin, aside.footnotes, .margin-sidebar .footnotes {
   color: #52615f;
   font-family: system-ui, sans-serif;
@@ -55,8 +78,22 @@ aside.footnotes, .margin-sidebar .footnotes { border-top: 1px solid var(--rule);
 .footnote-ref { color: var(--link); font-family: system-ui, sans-serif; font-size: .7em; font-weight: 700; }
 .footnote-back { color: var(--link); }
 
+#reading-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--mint);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
 /* The landing page combines Editorial colours with Minimal's open type layout. */
 body:has(.landing) #quarto-content { padding: 0; }
+body:has(.landing) #title-block-header { display: none; }
 body:has(.landing) main.content { max-width: none; padding: 0; margin: 0; }
 body:has(.landing) #quarto-document-content { padding: 0; }
 .landing { font-family: system-ui, sans-serif; }
@@ -72,6 +109,17 @@ main.content .landing h1 em { color: var(--mint); font-weight: 400; }
 .hero-aside > p:first-child { max-width: 23rem; font-size: clamp(1.2rem, 1.9vw, 1.65rem); line-height: 1.4; margin: 0 0 2rem; }
 main.content .landing .hero-link { color: var(--navy); background: #d4eee5; display: inline-flex; gap: 1.5rem; align-items: center; padding: .85rem 1.15rem; font-size: .85rem; font-weight: 750; }
 main.content .landing .hero-link:hover { background: #f5f2e9; color: var(--navy); }
+main.content .landing .pdf-link {
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  color: #d4eee5;
+  font-size: .82rem;
+  font-weight: 650;
+  text-decoration: underline;
+}
+main.content .landing .pdf-link:hover { color: #fff; }
 .hero-meta { color: #b2c5c4; font-size: .78rem; line-height: 1.6; margin: 2.5rem 0 0; }
 .hero-rule { border-top: 1px solid #536a70; display: flex; gap: 2rem; justify-content: space-between; padding: 1.25rem 0; color: #bacbca; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
 .landing-index { background: #ecebe5; padding: 5.5rem 0 6.5rem; }

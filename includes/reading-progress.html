@@ -1,0 +1,33 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector(".landing")) return;
+
+  const progress = document.createElement("div");
+  progress.id = "reading-progress";
+  progress.setAttribute("role", "progressbar");
+  progress.setAttribute("aria-label", "Reading progress");
+  progress.setAttribute("aria-valuemin", "0");
+  progress.setAttribute("aria-valuemax", "100");
+  document.body.append(progress);
+
+  let pending = false;
+  function update() {
+    const total = document.documentElement.scrollHeight - innerHeight;
+    progress.hidden = total <= 0;
+    const percent = total > 0 ? Math.min(100, 100 * scrollY / total) : 100;
+    progress.style.transform = `scaleX(${percent / 100})`;
+    progress.setAttribute("aria-valuenow", String(Math.round(percent)));
+    pending = false;
+  }
+  function requestUpdate() {
+    if (!pending) {
+      pending = true;
+      requestAnimationFrame(update);
+    }
+  }
+  addEventListener("scroll", requestUpdate, { passive: true });
+  addEventListener("resize", requestUpdate);
+  addEventListener("load", requestUpdate);
+  update();
+});
+</script>

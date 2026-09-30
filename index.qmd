@@ -1,5 +1,7 @@
 ---
 pagetitle: "Fractional dosing of vaccines"
+title: "Fractional dosing of vaccines"
+title-block-style: none
 page-layout: full
 toc: false
 ---
@@ -16,6 +18,10 @@ toc: false
             more people?</p>
           <a class="hero-link" href="overview/index.html">
             Read the executive summary <span aria-hidden="true">↗</span>
+          </a>
+          <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf"
+             type="application/pdf" download>
+            Download the complete report (PDF) <span aria-hidden="true">↓</span>
           </a>
           <p class="hero-meta">An investigation into evidence,
             implementation, and the limits of optimisation.<br>

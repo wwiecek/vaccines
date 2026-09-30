@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - downloads/fractional-dosing-of-vaccines.pdf
   render:
     - index.qmd
     - overview/*.qmd
@@ -34,6 +36,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body: includes/reading-progress.html
     toc: true
     toc-location: left
     toc-depth: 3
