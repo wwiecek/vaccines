@@ -568,3 +568,29 @@ main.content .implementation-figure {
   .navbar .nav-link { font-size: .76rem; padding-inline: .35rem; }
   .navbar .navbar-brand { font-size: .9rem; }
 }
+
+/* A continuation in the PDF's reading order, shown only on the website. */
+.next-section {
+  margin-top: 3rem; padding: 1.4rem 1.6rem;
+  border-top: 2px solid #86aea2; background: #e4ebe4;
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+.next-section small { display: block; margin-bottom: .4rem; color: #52615f; }
+.next-section a { font-weight: 600; }
+@media (max-width: 767px) {
+  .navbar .navbar-brand { font-size: .84rem; letter-spacing: -.025em; }
+  .navbar .navbar-brand-container { margin-right: .3rem !important; min-width: 0; }
+  body:not(:has(.landing)) #quarto-content { padding-top: 1.1rem; }
+  body:not(:has(.landing)) main.content { padding-top: 0; margin-top: 0; }
+  body:not(:has(.landing)) #title-block-header:empty { display: none; }
+  body:not(:has(.landing)) main.content h1 {
+    font-size: 1.9rem; margin-top: 0; margin-bottom: 1rem;
+  }
+  main.content .note-disclaimer { margin-top: .6rem; padding: 1rem 1.2rem; }
+  main.content .mobile-note {
+    background: #e7ede6; border-left: 2px solid #88b8aa;
+    padding: .65rem .8rem; margin: 0 0 1.2rem;
+    font: .76rem/1.55 system-ui, sans-serif; color: #52615f;
+  }
+  main.content .mobile-note p { margin: 0; }
+}

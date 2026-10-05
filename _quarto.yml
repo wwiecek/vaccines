@@ -70,6 +70,7 @@ format:
     css: styles.css
     include-after-body:
       - includes/reading-progress.html
+      - includes/next-section.html
       - includes/footnote-placement.html
     toc: true
     toc-location: left

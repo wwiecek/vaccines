@@ -8,25 +8,7 @@ import re
 import subprocess
 from pathlib import Path
 
-
-# This is the chapter order in the original report Markdown. Keep the four
-# case studies at the end, after the research agenda.
-pages = [
-    "about/index.qmd",
-    "overview/index.qmd",
-    "case-studies/index.qmd",
-    "overview/biology.qmd",
-    "overview/vaccine-development.qmd",
-    "overview/practical-implementation.qmd",
-    "overview/population-benefits.qmd",
-    "overview/decision-making.qmd",
-    "vaccines/index.qmd",
-    "research-agenda/index.qmd",
-    "case-studies/covid.qmd",
-    "case-studies/mpox.qmd",
-    "case-studies/polio.qmd",
-    "case-studies/yellow-fever.qmd",
-]
+from report_order import pages
 
 missing = [page for page in pages if not Path(page).is_file()]
 if missing:
@@ -72,9 +54,14 @@ Path("downloads").mkdir(exist_ok=True)
 subprocess.run([
     "pandoc", "-f", "markdown", "-t", "pdf",
     "--pdf-engine=xelatex", "--resource-path=.",
-    "--toc", "--toc-depth=2", "--metadata=title:Optimal dosing of vaccines",
+    "--toc", "--toc-depth=2", "--number-sections",
+    "--lua-filter=scripts/pdf-format.lua",
+    "--include-in-header=includes/pdf-style.tex",
+    "--metadata=title:Optimal dosing of vaccines",
     "--metadata=author:Witold Więcek", "--metadata=date:Revised autumn 2026",
-    "-V", "geometry:margin=25mm", "-V", "fontsize=11pt",
+    "-V", "geometry:margin=25mm", "-V", "secnumdepth=3",
+    "-V", "colorlinks=true", "-V", "linkcolor=ReportGreen",
+    "-V", "urlcolor=ReportGreen", "-V", "fontsize=11pt",
     "-V", "mainfont=DejaVu Serif", "-V", "sansfont=DejaVu Sans",
     "-o", "downloads/fractional-dosing-of-vaccines.pdf",
 ], input="\\clearpage\n\n" + "\n\n".join(chapters) + "\n",

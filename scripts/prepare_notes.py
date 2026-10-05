@@ -3,8 +3,11 @@
 Run after DOCX conversion, or directly from the project root.
 """
 
+import json
 import re
 from pathlib import Path
+
+from report_order import pages
 
 
 AGENDA_SECTIONS = {
@@ -84,6 +87,15 @@ def prepare_notes():
                         "(now Coefficient Giving) or the Center for Global "
                         "Development.\n")
         page.write_text(content)
+
+    # Keep the website's linear reading route in the complete report's order.
+    route = []
+    for page in pages:
+        title = re.search(r"(?m)^# (.+?) \{#", Path(page).read_text())[1]
+        route.append({"path": page.replace(".qmd", ".html"), "title": title})
+    template = Path("includes/next-section-template.html").read_text()
+    Path("includes/next-section.html").write_text(
+        template.replace("REPORT_ORDER", json.dumps(route, ensure_ascii=False)))
 
 
 if __name__ == "__main__":

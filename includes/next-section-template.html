@@ -1,0 +1,18 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const route = REPORT_ORDER;
+  const current = route.findIndex(page => location.pathname.endsWith("/" + page.path));
+  if (current < 0 || current === route.length - 1) return;
+  const next = route[current + 1];
+  const nav = document.createElement("nav");
+  nav.className = "next-section";
+  nav.setAttribute("aria-label", "Continue reading");
+  const label = document.createElement("small");
+  label.textContent = "Next in the report";
+  const link = document.createElement("a");
+  link.href = "../" + next.path;
+  link.textContent = next.title + " →";
+  nav.append(label, link);
+  document.querySelector("main.content").append(nav);
+});
+</script>

@@ -1,0 +1,15 @@
+% A distinct, breakable reference section using standard LaTeX primitives.
+\definecolor{ReportGreen}{HTML}{087B72}
+\definecolor{ReferenceRule}{HTML}{86AEA2}
+\newenvironment{reportreferences}{%
+  \par\addvspace{18pt}{\color{ReferenceRule}\hrule height .7pt}
+  \nobreak\vspace{6pt}\small\sffamily
+  \setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+}{\par\vspace{6pt}{\color{ReferenceRule}\hrule height .4pt}\addvspace{12pt}}
+
+% Reserve enough space in the contents for two-digit section numbers.
+\makeatletter
+\renewcommand{\l@section}[2]{%
+  \@dottedtocline{1}{0em}{2.6em}{\bfseries #1}{\bfseries #2}}
+\renewcommand{\l@subsection}[2]{\@dottedtocline{2}{2.6em}{3.5em}{#1}{#2}}
+\makeatother

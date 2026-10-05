@@ -1,0 +1,18 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const route = [{"path": "about/index.html", "title": "About"}, {"path": "overview/index.html", "title": "Executive summary"}, {"path": "case-studies/index.html", "title": "Introducing four case studies"}, {"path": "overview/biology.html", "title": "Biology of optimal dosing"}, {"path": "overview/vaccine-development.html", "title": "Vaccine development perspective"}, {"path": "overview/practical-implementation.html", "title": "Practical aspects of changing dose: syringes, vials, and intradermal delivery"}, {"path": "overview/population-benefits.html", "title": "How large are health benefits from optimisation?"}, {"path": "overview/decision-making.html", "title": "Examples of how optimisation decisions are made"}, {"path": "vaccines/index.html", "title": "Finding targets for optimisation; disease-specific summaries"}, {"path": "research-agenda/index.html", "title": "Research agenda"}, {"path": "case-studies/covid.html", "title": "Case study: fractional dosing of COVID vaccines"}, {"path": "case-studies/mpox.html", "title": "Case study: mpox vaccine"}, {"path": "case-studies/polio.html", "title": "Case study: inactivated polio vaccine"}, {"path": "case-studies/yellow-fever.html", "title": "Case study: yellow fever"}];
+  const current = route.findIndex(page => location.pathname.endsWith("/" + page.path));
+  if (current < 0 || current === route.length - 1) return;
+  const next = route[current + 1];
+  const nav = document.createElement("nav");
+  nav.className = "next-section";
+  nav.setAttribute("aria-label", "Continue reading");
+  const label = document.createElement("small");
+  label.textContent = "Next in the report";
+  const link = document.createElement("a");
+  link.href = "../" + next.path;
+  link.textContent = next.title + " →";
+  nav.append(label, link);
+  document.querySelector("main.content").append(nav);
+});
+</script>

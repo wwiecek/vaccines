@@ -31,7 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   if (!pairs.length) return;
 
+  const homes = new Map();
   for (const [, note] of pairs) {
+    const home = document.createComment("Margin note position");
+    note.before(home);
+    homes.set(note, home);
     const content = document.createElement("div");
     content.className = "margin-note-content";
     content.id = `${note.id}-content`;
@@ -58,11 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
     main.style.paddingBottom = "";
     for (const [, note] of pairs) note.style.transform = "";
     if (innerWidth < 768) {
-      for (const [, note] of pairs) {
+      const paragraphNotes = new Map();
+      for (const [ref, note] of pairs) {
+        const paragraph = ref.closest("p, li") || ref.parentElement;
+        const previous = paragraphNotes.get(paragraph) || paragraph;
+        previous.after(note);
+        paragraphNotes.set(paragraph, note);
+        note.classList.add("mobile-note");
         note.classList.remove("is-collapsible");
         note.querySelector("button").hidden = true;
       }
       return;
+    }
+    for (const [, note] of pairs) {
+      homes.get(note).after(note);
+      note.classList.remove("mobile-note");
     }
 
     const referenceTops = pairs.map(([ref]) =>
