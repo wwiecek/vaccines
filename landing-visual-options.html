@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Visual options · Optimal dosing of vaccines — landing page preview</title>
+  <style>
+    /* Separate layout proposal; all presentation is contained in this file. */
+    :root {
+      --navy: #10232d;
+      --paper: #f4f2ea;
+      --mint: #a5d8cb;
+      --ink: #203137;
+      --rule: #c8d0c9;
+      --link: #087b72;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: system-ui, sans-serif;
+    }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--mint); outline-offset: 5px;
+    }
+    .skip-link {
+      position: absolute; top: -100px; left: 20px; z-index: 10;
+      padding: 12px; background: var(--paper); color: var(--navy);
+    }
+    .skip-link:focus { top: 12px; }
+    .topbar {
+      background: var(--navy); color: var(--paper);
+      border-bottom: 1px solid #456068;
+    }
+    .navbar {
+      width: 100%; margin: auto; min-height: 65px;
+      padding: 12px 3%; display: flex; align-items: center; gap: 20px;
+    }
+    .brand {
+      font-size: 16px; font-weight: 750; letter-spacing: -.04em;
+      text-decoration: none;
+    }
+    .navbar { flex-wrap: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
+    .nav-links > a[href="_site/vaccines/index.html"]::before {
+      content: '·'; margin: 0 16px 0 4px; color: var(--mint);
+    }
+    .nav-links > a, .nav-links summary {
+      font-size: 12px; white-space: nowrap; text-decoration: none; cursor: pointer;
+      color: #c6d1d1;
+    }
+    .nav-links .active { background: #34504e; border-radius: 3px; padding: .45rem; }
+    .nav-links .active, .nav-links a:hover, .nav-links summary:hover {
+      color: var(--mint);
+    }
+    .nav-links details { position: relative; }
+    .nav-links summary { list-style: none; }
+    .nav-links summary::-webkit-details-marker { display: none; }
+    .nav-links summary::after { content: '⌄'; margin-left: 6px; }
+    .dropdown {
+      position: absolute; top: 30px; left: -12px; z-index: 5;
+      min-width: 250px; padding: 7px; background: var(--paper);
+      border: 1px solid var(--rule); border-radius: 2px;
+      box-shadow: 0 14px 28px #10232d24;
+    }
+    .dropdown a {
+      display: block; padding: 10px; font-size: 14px;
+      text-decoration: none; color: var(--ink);
+    }
+    .dropdown a:hover { background: #d4eee5; color: var(--navy); }
+    .menu-toggle {
+      display: none; margin-left: auto; padding: 8px 12px;
+      border: 1px solid #69858a; border-radius: 2px;
+      background: transparent; color: var(--paper); font: inherit;
+      cursor: pointer;
+    }
+    .layout {
+      width: 100%; margin: auto;
+      display: grid; grid-template-columns: minmax(0, 1.85fr) repeat(2, minmax(0, 1.075fr));
+      min-height: calc(100svh - 152px);
+    }
+    .intro {
+      padding: clamp(36px, 4vw, 60px) clamp(24px, 3vw, 60px)
+        clamp(36px, 4vw, 60px) clamp(68px, 8.4vw, 164px);
+      background: var(--navy); color: var(--paper);
+    }
+    .eyebrow {
+      margin: 0 0 27px; color: var(--mint);
+      font-size: 11px; font-weight: 750; line-height: 1.7;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 0; max-width: none;
+      font: 400 clamp(28px, 3.05vw, 60px)/1.1 Georgia, serif;
+      letter-spacing: -.065em;
+      white-space: nowrap;
+      margin-right: calc(-1 * clamp(24px, 3vw, 60px));
+    }
+    h1 em { color: var(--mint); font-weight: 400; }
+    h1 span { margin-left: .12em; }
+    .subtitle {
+      max-width: none; margin: 24px 0 25px;
+      font-size: clamp(14px, 1.38vw, 25px); line-height: 1.4;
+      white-space: nowrap;
+      margin-right: calc(-1 * clamp(24px, 3vw, 60px));
+    }
+    .summary-button {
+      display: inline-flex; align-items: center; gap: 24px;
+      padding: 13px 17px; background: #d4eee5; color: var(--navy);
+      font-size: 13px; font-weight: 750; text-decoration: none;
+    }
+    .summary-button:hover { background: var(--paper); }
+    .letter {
+      max-width: 680px; margin-top: 31px;
+      font-size: clamp(16px, 1.15vw, 18px); line-height: 1.6;
+      font-style: italic;
+      color: #d5dfdc;
+    }
+    .letter p { margin: 0 0 15px; }
+    .letter .signature {
+      margin: 18px 0 24px; color: var(--mint); font-style: normal;
+    }
+    .pdf-block { padding-top: 19px; border-top: 1px solid #536a70; }
+    .pdf-link {
+      display: inline-flex; gap: 22px; color: #d4eee5;
+      font-size: 14px; font-weight: 650;
+    }
+    .pdf-link:hover { color: white; }
+    .pdf-note {
+      max-width: 430px; margin: 10px 0 0;
+      color: #b2c5c4; font-size: 12px; line-height: 1.6;
+    }
+    .basics, .further { padding: clamp(36px, 4vw, 66px) 30px 35px; }
+    .basics {
+      padding-left: clamp(40px, 4.8vw, 92px);
+      padding-right: clamp(40px, 4.8vw, 92px); background: #dfe6de;
+    }
+    .further {
+      padding-left: calc(30px + 2vw);
+      padding-right: clamp(76px, 8vw, 154px); background: #ecebe5;
+    }
+    .basics .eyebrow, .further .eyebrow { color: #4b756b; }
+    h2 {
+      margin: 0 0 30px;
+      font: 400 clamp(28px, 2.45vw, 38px)/1.1 Georgia, serif;
+      letter-spacing: -.045em;
+    }
+    .section-links { border-top: 1px solid #8aa99c; }
+    .section-links a {
+      display: grid; grid-template-columns: 1fr auto; align-items: baseline;
+      gap: 7px 14px; padding: 16px 0; border-bottom: 1px solid #8aa99c;
+      font: 400 clamp(20px, 1.7vw, 27px)/1.2 Georgia, serif;
+      letter-spacing: -.025em; text-decoration: none;
+    }
+    .topic-description {
+      grid-column: 1 / -1; color: #52635e;
+      font: 400 13.5px/1.45 system-ui, sans-serif; letter-spacing: normal;
+    }
+    .section-note {
+      margin: -3px 0 12px; color: #596a66;
+      font-size: 13px; line-height: 1.45;
+    }
+    .section-links a:hover, .small-links a:hover, .target-link:hover {
+      color: var(--link);
+    }
+    .arrow { flex-shrink: 0; font: 500 14px system-ui, sans-serif; }
+    .target-link {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; padding-bottom: 24px; margin-bottom: 27px;
+      border-bottom: 1px solid #b9c1ba;
+      font: 400 23px/1.2 Georgia, serif;
+      letter-spacing: -.025em; text-decoration: none;
+    }
+    .further h2 { margin-bottom: 14px; font-size: 25px; }
+    .small-links { display: grid; }
+    .small-links a {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; padding: 9px 0; font-size: 14px; line-height: 1.45;
+      text-decoration: none;
+    }
+    .research { margin-top: 30px; padding-top: 25px; border-top: 1px solid #b9c1ba; }
+    .footer {
+      width: 100%; margin: auto; min-height: 86px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px 30px; padding: 24px 6vw 24px 7vw;
+      border-top: 2px solid #88b8aa; background: var(--navy);
+      color: #b2c5c4; font-size: 12px; line-height: 1.6;
+    }
+    .footer p { margin: 0; }
+    .footer p:first-child { color: var(--mint); white-space: nowrap; }
+    .footer p:last-child { max-width: 780px; text-align: right; }
+    @media (max-width: 1100px) {
+      .navbar { gap: 24px; }
+      .nav-links { gap: 15px; }
+      .brand { font-size: 17px; }
+    }
+    @media (min-width: 1101px) and (max-height: 900px) {
+      .intro, .basics, .further { padding-top: 30px; padding-bottom: 30px; }
+      .eyebrow { margin-bottom: 18px; }
+      .subtitle { margin: 18px 0 20px; }
+      .letter { margin-top: 24px; font-size: 16px; line-height: 1.55; }
+      .letter p { margin-bottom: 12px; }
+      .letter .signature { margin: 14px 0 19px; }
+      .pdf-block { padding-top: 16px; }
+      .section-links a { padding: 13px 0; }
+      .target-link { padding-bottom: 14px; margin-bottom: 16px; }
+      .further h2 { margin-bottom: 10px; }
+      .small-links a { padding-top: 6px; padding-bottom: 6px; }
+      .research { margin-top: 18px; padding-top: 14px; }
+    }
+    @media (min-width: 1101px) and (max-height: 760px) {
+      .intro, .basics, .further { padding-top: 23px; padding-bottom: 23px; }
+      .eyebrow { margin-bottom: 14px; }
+      .subtitle { margin: 14px 0 16px; }
+      .summary-button { padding-top: 11px; padding-bottom: 11px; }
+      .letter { margin-top: 18px; line-height: 1.5; }
+      .basics h2 { margin-bottom: 22px; }
+      .section-links a { padding: 11px 0; }
+      .topic-description { font-size: 13px; line-height: 1.4; }
+      .letter p { margin-bottom: 10px; }
+      .letter .signature { margin: 12px 0 15px; }
+      .pdf-block { padding-top: 12px; }
+      .target-link { margin-bottom: 12px; }
+      .small-links a { padding-top: 4px; padding-bottom: 4px; }
+    }
+    @media (max-width: 1100px) {
+      .navbar { flex-wrap: wrap; padding: 14px 5%; gap: 16px; }
+      .brand { flex: 1; min-width: 0; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; width: 100%; align-items: stretch; gap: 0;
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links > a, .nav-links summary { display: block; padding: 12px 0; }
+      .dropdown { position: static; box-shadow: none; margin-bottom: 8px; }
+      .layout { display: block; min-height: auto; }
+      .intro, .basics, .further { padding: 40px 7%; }
+      h1 { font-size: clamp(54px, 10vw, 80px); white-space: normal; margin-right: 0; }
+      h1 em, h1 span { display: block; }
+      h1 span { margin-left: 0; }
+      .subtitle { font-size: 21px; white-space: normal; margin-right: 0; }
+      .letter { font-size: 17px; }
+      .topic-description { font-size: 15px; }
+      .section-note { font-size: 14px; }
+      .eyebrow { margin-bottom: 22px; }
+      h2 { max-width: 350px; font-size: 36px; }
+      .section-links a { font-size: 25px; padding: 20px 0; }
+      .small-links a { padding: 12px 0; font-size: 16px; }
+      .further h2 { font-size: 29px; }
+      .target-link { font-size: 26px; }
+      .footer { flex-direction: column; align-items: flex-start; padding: 22px 7%; }
+      .footer p:last-child { text-align: left; }
+    }
+    @media (max-width: 380px) {
+      .brand { max-width: 210px; font-size: 16px; }
+      .menu-toggle { padding: 7px 9px; font-size: 14px; }
+      h1 { font-size: 50px; }
+      .subtitle { font-size: 19px; }
+      .summary-button { gap: 16px; font-size: 12px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      a { transition: color .15s, background-color .15s; }
+    }
+  /* This comparison is a standalone design study; none of these visuals is live. */
+.visual-study { margin-top: 26px; padding-top: 18px; border-top: 1px solid #88b8aa55; color: #245c56; }
+.intro .visual-study { color: var(--mint); border-color: #a5d8cb40; }
+.visual-study .visual-label { font: 700 10px/1.5 system-ui,sans-serif; letter-spacing: .13em; text-transform: uppercase; margin: 0 0 8px; opacity: .8; }
+.intro .visual-study svg { max-height: 155px; }
+.visual-study svg { display: block; width: 100%; height: auto; overflow: visible; }
+.visual-study svg text { fill: currentColor; font: 11px system-ui,sans-serif; letter-spacing: .02em; }
+.visual-study .visual-caption { margin: 9px 0 0; font: 11px/1.5 system-ui,sans-serif; opacity: .75; }
+.visual-study .visual-range { display: flex; align-items: center; gap: 12px; margin-top: 8px; font: 11px system-ui,sans-serif; }
+.visual-study input { width: 100%; min-width: 0; accent-color: #88b8aa; cursor: pointer; }
+.visual-study output { white-space: nowrap; min-width: 2.8em; text-align: right; }
+.study-controls { position: fixed; z-index: 100; bottom: 16px; right: 16px; padding: 13px 16px; background: #f4f2eaf5; border: 1px solid #88b8aa; box-shadow: 0 5px 22px #10232d20; border-radius: 5px; color: var(--ink); max-width: calc(100vw - 32px); font: 12px/1.4 system-ui,sans-serif; }
+.study-controls .control-heading { display: flex; align-items: center; gap: 20px; justify-content: space-between; margin-bottom: 8px; }
+.study-controls strong { font-weight: 650; }
+.study-controls .option-buttons { display: flex; gap: 6px; }
+.study-controls button, .study-controls select { border: 1px solid #a8bab1; border-radius: 3px; padding: 5px 9px; background: transparent; color: var(--ink); font: inherit; cursor: pointer; }
+.study-controls button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--mint); }
+.study-controls .control-bottom { display: flex; align-items: center; gap: 10px; margin-top: 9px; flex-wrap: wrap; }
+.study-controls #study-name { font-size: 11px; color: #526b65; margin-top: 8px; }
+.study-controls #motion-toggle { margin-left: auto; }
+@media (max-width: 1100px) { .visual-study { max-width: 540px; } }
+@media (max-width: 500px) { .study-controls { padding: 10px 12px; left: 12px; right: 12px; bottom: 12px; max-width: none; } .study-controls .control-heading { gap: 8px; } .study-controls button { padding: 5px 8px; } }
+@media print { .study-controls { display: none; } }
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="landing-preview.html">Optimal dosing of vaccines</a>
+      <button class="menu-toggle" type="button" aria-expanded="false"
+              aria-controls="nav-links" hidden>Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a class="active" href="landing-preview.html" aria-current="page">Home</a>
+        <a href="_site/about/index.html">About</a>
+        <a href="_site/overview/index.html">Summary</a>
+        <a href="_site/overview/biology.html">Biology</a>
+        <a href="_site/overview/vaccine-development.html">Development</a>
+        <a href="_site/overview/practical-implementation.html">Implementation</a>
+        <a href="_site/overview/population-benefits.html">Benefits</a>
+        <a href="_site/overview/decision-making.html">Decision-making</a>
+        <a href="_site/vaccines/index.html">Vaccines</a>
+        <details>
+          <summary>Case studies</summary>
+          <div class="dropdown">
+            <a href="_site/case-studies/index.html">Introducing the case studies</a>
+            <a href="_site/case-studies/covid.html">COVID</a>
+            <a href="_site/case-studies/mpox.html">Mpox</a>
+            <a href="_site/case-studies/polio.html">Polio</a>
+            <a href="_site/case-studies/yellow-fever.html">Yellow fever</a>
+          </div>
+        </details>
+        <details>
+          <summary>Research agenda</summary>
+          <div class="dropdown">
+            <a href="_site/research-agenda/index.html#conclusions-and-next-steps">Conclusions and next steps</a>
+            <a href="_site/research-agenda/index.html#four-potential-projects-that-could-be-done-right-now">Projects</a>
+            <a href="_site/research-agenda/index.html#what-i-still-dont-understand">Knowledge gaps</a>
+            <a href="_site/research-agenda/index.html#what-to-do-next">Future pathways</a>
+            <a href="_site/research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+  <main class="layout" id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A research investigation by Witold Więcek</p>
+      <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
+      <p class="subtitle">Changing vaccine doses to protect more people</p>
+      <a class="summary-button" href="_site/overview/index.html">
+        Read the executive summary <span aria-hidden="true">↗</span>
+      </a>
+      <div class="letter">
+        <p>For many vaccines, supply is often insufficient to vaccinate everyone
+          who needs them. Optimising doses has saved lives during outbreaks,
+          but both the science and decision-making around optimisation remain
+          poorly understood. I hope these notes are helpful to people interested
+          in working on this problem.</p>
+        <p>This is a shallow investigation into the optimal use of vaccines,
+          written in early 2024, with some subsequent revisions.</p>
+        <p class="signature">Witold Więcek</p>
+      </div>
+      <div class="pdf-block">
+        <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf"
+           type="application/pdf" download>
+          Read the whole report as PDF <span aria-hidden="true">↓</span>
+        </a>
+        <p class="pdf-note">The PDF contains the same information as this website.
+          Choose whichever format you prefer.</p>
+      </div>
+    </section>
+    <section class="basics" aria-labelledby="basics-title">
+      <p class="eyebrow">Understand the problem</p>
+      <h2 id="basics-title">Basics of optimal dosing</h2>
+      <nav class="section-links" aria-label="Basics of optimal dosing">
+        <a href="_site/overview/biology.html"><span>Biology</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Why can a lower dose prove just as effective?
+            Dose response, correlates of protection, and increasing gaps between doses.</span></a>
+        <a href="_site/overview/vaccine-development.html"><span>Vaccine development</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">How do we determine the optimal dose during trials?
+            Dose selection models and vaccine makers’ incentives.</span></a>
+        <a href="_site/overview/practical-implementation.html"><span>Practical implementation</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Syringes, vials, intradermal delivery: how to deliver lower doses.</span></a>
+        <a href="_site/overview/population-benefits.html"><span>Population benefits</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">What models say about the potential to save lives.
+            Epidemiological modelling and the impact of delivering doses earlier in an outbreak.</span></a>
+        <a href="_site/overview/decision-making.html"><span>Decision-making</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Practical examples of why changing doses is difficult,
+            even during outbreaks. Public health bodies, WHO, and programmatic feasibility.</span></a>
+      </nav>
+    </section>
+    <aside class="further" aria-label="Targets, case studies and research agenda">
+      <p class="eyebrow">Explore the evidence</p>
+      <a class="target-link" href="_site/vaccines/index.html">
+        Finding targets for optimisation <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <section aria-labelledby="cases-title">
+        <h2 id="cases-title">Case studies</h2>
+        <p class="section-note">Examples of doses modified to expand coverage.</p>
+        <nav class="small-links" aria-label="Case studies">
+          <a href="_site/case-studies/covid.html">COVID <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/mpox.html">Mpox <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/polio.html">Polio <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/yellow-fever.html">Yellow fever <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+      <section class="research" aria-labelledby="research-title">
+        <h2 id="research-title">Research agenda</h2>
+        <p class="section-note">Practical next steps.</p>
+        <nav class="small-links" aria-label="Research agenda">
+          <a href="_site/research-agenda/index.html#conclusions-and-next-steps">Conclusions and next steps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#four-potential-projects-that-could-be-done-right-now">Potential projects <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#what-i-still-dont-understand">Knowledge gaps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#what-to-do-next">Future pathways <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+    </aside>
+  </main>
+  <footer class="footer">
+    <p>© 2026 Witold Więcek</p>
+    <p>Based on research projects funded by Open Philanthropy (now Coefficient Giving)
+      and the Center for Global Development.<br>
+      This document is a product of independent research and does not represent
+      the views of these organisations.</p>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('#nav-links');
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    const menus = document.querySelectorAll('.nav-links details');
+    menus.forEach(menu => menu.addEventListener('toggle', () => {
+      if (menu.open) menus.forEach(other => {
+        if (other !== menu) other.open = false;
+      });
+    }));
+    document.addEventListener('click', event => {
+      menus.forEach(menu => {
+        if (!menu.contains(event.target)) menu.open = false;
+      });
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const openMenu = [...menus].find(menu => menu.open);
+      if (openMenu) {
+        openMenu.open = false;
+        openMenu.querySelector('summary').focus();
+      } else if (links.classList.contains('is-open')) {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Menu';
+        toggle.focus();
+      }
+    });
+  </script>
+<aside class="study-controls" aria-label="Compare landing-page visual options">
+  <div class="control-heading"><strong>Visual studies</strong><div class="option-buttons" role="group" aria-label="Choose visual option">
+    <button data-option="0" aria-label="1: Dose and response" aria-pressed="true">1</button>
+    <button data-option="1" aria-label="2: Four syringe designs" aria-pressed="false">2</button>
+    <button data-option="2" aria-label="3: A limited supply" aria-pressed="false">3</button>
+    <button data-option="3" aria-label="4: Time between doses" aria-pressed="false">4</button>
+    <button data-option="4" aria-label="5: A curve with uncertainty" aria-pressed="false">5</button>
+  </div></div>
+  <div id="study-name" aria-live="polite"></div>
+  <div class="control-bottom"><label for="study-placement">Place</label><select id="study-placement"><option value="suggested">Suggested column</option><option value="intro">Below PDF</option><option value="basics">Below basics</option><option value="further">Below evidence</option></select><button id="motion-toggle" aria-pressed="false">Pause motion</button></div>
+</aside>
+<script>
+(() => {
+  const options = [
+    {name: 'Dose and response', place: 'intro', caption: 'An illustrative curve; not estimates for a particular vaccine.'},
+    {name: 'Four syringe designs', place: 'basics', caption: '1 Standard · 2 Extended plunger · 3 Low-space needle · 4 Fixed needle. Schematic cross-sections.'},
+    {name: 'A limited supply', place: 'intro', caption: 'A visual thought experiment about dose size and coverage, not a dosing recommendation.'},
+    {name: 'Time between doses', place: 'further', caption: 'Dose size is only one part of a vaccination schedule.'},
+    {name: 'A curve, with uncertainty', place: 'intro', caption: 'A schematic family of possible responses. The shaded band is illustrative.'}
+  ];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let selected = 0, running = !reduced.matches, elapsed = 0, last = 0, frame;
+  const controls = document.querySelector('.study-controls');
+  const placement = document.querySelector('#study-placement');
+  const motion = document.querySelector('#motion-toggle');
+  const host = document.createElement('div');
+  host.className = 'visual-study';
+  const curve = x => 1 / (1 + Math.exp(-11 * (x - .42)));
+  const pt = (x, y = curve(x)) => [24 + 416 * x, 153 - 122 * y];
+  const path = (fn = curve) => Array.from({length: 81}, (_, i) => {
+    const [x,y] = pt(i/80, fn(i/80)); return `${i ? 'L' : 'M'}${x.toFixed(2)},${y.toFixed(2)}`;
+  }).join(' ');
+  const svg = (content, height = 190) => `<svg viewBox="0 0 470 ${height}" role="img" aria-label="${options[selected].name}">${content}</svg>`;
+  const axes = `<g fill="none" stroke="currentColor" stroke-width=".7" opacity=".2"><path d="M24 25V154H440"/><path d="M24 113H440M24 72H440" stroke-dasharray="2 7"/></g><text x="24" y="17">response</text><text x="440" y="179" text-anchor="end">dose →</text>`;
+  function draw() {
+    cancelAnimationFrame(frame); elapsed = 0; last = 0;
+    const option = options[selected];
+    const column = document.querySelector(`.${placement.value === 'suggested' ? option.place : placement.value}`);
+    if (column.classList.contains('basics')) column.querySelector('.section-links').before(host);
+    else column.append(host);
+    let art = '', control = '';
+    if (selected === 0) {
+      art = svg(axes + `<path d="${path()}" fill="none" stroke="currentColor" stroke-width="2.2"/><path id="dose-guide" fill="none" stroke="currentColor" opacity=".45" stroke-dasharray="3 5"/><circle id="dose-halo" r="10" fill="currentColor" opacity=".13"/><circle id="dose-point" r="4" fill="currentColor"/>`);
+      control = `<label class="visual-range">Dose <input id="visual-input" aria-label="Position along the dose response curve" type="range" min="0" max="100" value="50"><output id="visual-value">50%</output></label>`;
+    } else if (selected === 1) {
+      const types = ['Standard', 'Long plunger', 'Low-space needle', 'Fixed needle'];
+      const drawings = types.map((name,i) => {
+        const x = 40 + i * 112;
+        const tip = i === 3 ? 62 : 38;
+        const needleBase = i >= 2 ? 80 : 88;
+        return `<g transform="translate(${x},0)" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M24 12V${tip}M24 ${tip}h-7l-4 9v${needleBase-9}h-5v9h32v-9h-5V${tip+9}l-4-9Z"/><path d="M5 ${needleBase}h38v66H5ZM0 ${needleBase}h48M0 154h48M15 154v15h18v-15"/><path d="M10 103h9M10 114h6M10 125h9M10 136h6" opacity=".45"/><path d="M8 142h32v10H8Z" fill="currentColor" opacity=".25"/>${i===1?'<path d="M21 142V91h6v51Z" fill="currentColor" opacity=".25"/>':''}<path d="M24 ${tip+3}V${i===3?92:needleBase-3}" stroke-width="3" opacity=".55"/>${i===0?'<path d="M16 87l8-13 8 13Z" fill="currentColor" opacity=".4"/>':i===1?'<path d="M16 87l8-13 8 13-5 5v-5h-6v5Z" fill="currentColor" opacity=".4"/>':i===2?'<path d="M21 78h6v10h-6Z" fill="currentColor" opacity=".4"/>':'<path d="M20 90h8v3h-8Z" fill="currentColor" opacity=".4"/>'}<path d="M55 12V169M52 12h6M52 169h6" stroke-dasharray="2 4" opacity=".25"/><text x="24" y="194" text-anchor="middle" stroke="none" style="font-size:9px">${i+1}</text></g>`;
+      }).join('');
+      art = svg(`<defs><pattern id="blueprint-grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="currentColor" stroke-width=".4" opacity=".1"/></pattern></defs><rect width="470" height="178" fill="url(#blueprint-grid)"/>${drawings}`, 208);
+    } else if (selected === 2) {
+      const people = Array.from({length:24},(_,i)=>`<g class="coverage-person" data-order="${i}" transform="translate(${176+(i%8)*35},${34+Math.floor(i/8)*48})" fill="currentColor"><circle cx="0" cy="0" r="4"/><path d="M-7 9Q0 4 7 9V23H-7Z"/></g>`).join('');
+      art = svg(`<g stroke="currentColor" fill="none" stroke-width="1.4"><rect x="32" y="43" width="62" height="85" rx="8"/><path d="M42 43V25h42v18M40 63h46"/><path d="M43 95h41M64 75v40" opacity=".35"/><path d="M109 85H145m-6-5 6 5-6 5" opacity=".5"/></g><text x="64" y="156" text-anchor="middle">one supply</text>${people}<text x="438" y="179" text-anchor="end">more people →</text>`);
+      control = `<label class="visual-range">Split <input id="visual-input" aria-label="Schematic dose divisions" type="range" min="1" max="4" value="2" step="1"><output id="visual-value">½ dose</output></label>`;
+    } else if (selected === 3) {
+      art = svg(`<path d="M28 115H441" fill="none" stroke="currentColor" opacity=".3"/><path id="timing-response" fill="none" stroke="currentColor" stroke-width="1.7" opacity=".65"/><circle cx="65" cy="115" r="5" fill="currentColor"/><circle id="second-dose" cy="115" r="5" fill="currentColor"/><text x="65" y="144" text-anchor="middle">first dose</text><text id="second-label" y="144" text-anchor="middle">second dose</text><text x="441" y="177" text-anchor="end">time →</text>`);
+      control = `<label class="visual-range">Gap <input id="visual-input" aria-label="Illustrative spacing between two doses" type="range" min="150" max="390" value="280"><output id="visual-value">→</output></label>`;
+    } else {
+      const upper = path(x=>Math.min(1,curve(x)+.1));
+      const lower = Array.from({length:81},(_,i)=>{const[x,y]=pt(1-i/80,Math.max(0,curve(1-i/80)-.1));return `L${x},${y}`;}).join(' ');
+      art = svg(axes+`<path d="${upper} ${lower}Z" fill="currentColor" opacity=".1"/><path d="${path()}" fill="none" stroke="currentColor" stroke-width="1.8"/>`+[-.05,.05].map((shift,i)=>`<path class="uncertain-curve" d="${path(x=>1/(1+Math.exp(-11*(x-.42+shift))))}" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5" opacity=".3"/>`).join('')+`<path id="sweep-line" d="M200 25V154" fill="none" stroke="currentColor" opacity=".3"/><circle id="dose-point" r="3.5" fill="currentColor"/>`);
+    }
+    host.innerHTML = `<p class="visual-label">${option.name}</p>${art}${control}<p class="visual-caption">${option.caption}</p>`;
+    document.querySelector('#study-name').textContent = `${selected+1} / 5 · ${option.name}`;
+    controls.querySelectorAll('[data-option]').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===selected)));
+    const input = host.querySelector('#visual-input');
+    input?.addEventListener('input',()=>{if(selected===0){running=false;syncMotion();}update(Number(input.value));});
+    update(selected===0||selected===4?50:selected===2?2:280);
+    syncMotion(); frame=requestAnimationFrame(animate);
+  }
+  function update(value) {
+    if (selected===0 || selected===4) {
+      const [x,y]=pt(value/100);
+      host.querySelector('#dose-point').setAttribute('cx',x);host.querySelector('#dose-point').setAttribute('cy',y);
+      if(selected===0){host.querySelector('#dose-halo').setAttribute('cx',x);host.querySelector('#dose-halo').setAttribute('cy',y);host.querySelector('#dose-guide').setAttribute('d',`M${x} 154V${y}H24`);host.querySelector('#visual-input').value=value;host.querySelector('#visual-value').textContent=Math.round(value)+'%';}
+      else host.querySelector('#sweep-line').setAttribute('d',`M${x} 25V154`);
+    } else if (selected===2) {
+      host.querySelectorAll('.coverage-person').forEach((person,i)=>person.setAttribute('opacity',i<value*6?'.8':'.12'));
+      host.querySelector('#visual-value').textContent=value===1?'full dose':`1/${value} dose`;
+    } else if (selected===3) {
+      host.querySelector('#second-dose').setAttribute('cx',value);host.querySelector('#second-label').setAttribute('x',value);
+      host.querySelector('#timing-response').setAttribute('d',`M65 114C85 108 86 46 106 46S145 105 ${value} 105C${value+20} 90 ${value+12} 27 ${value+30} 27S${value+50} 58 440 76`);
+    }
+  }
+  function syncMotion(){motion.setAttribute('aria-pressed',String(!running));motion.textContent=running?'Pause motion':'Play motion';motion.disabled=selected!==0&&selected!==4;}
+  function animate(time){if(last&&running&&!document.hidden)elapsed+=Math.min(time-last,100);last=time;if(running&&(selected===0||selected===4))update(50-43*Math.cos(elapsed/16000*Math.PI*2));frame=requestAnimationFrame(animate);}
+  controls.querySelectorAll('[data-option]').forEach((button,i)=>button.addEventListener('click',()=>{selected=i;draw();}));
+  placement.addEventListener('change',draw);
+  motion.addEventListener('click',()=>{running=!running;syncMotion();});
+  reduced.addEventListener('change',()=>{running=!reduced.matches;syncMotion();});
+  draw();
+})();
+</script>
+
+</body>
+</html>

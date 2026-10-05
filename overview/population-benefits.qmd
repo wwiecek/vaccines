@@ -1,8 +1,10 @@
 ---
-pagetitle: "How large are health benefits from optimisation?"
+pagetitle: "Health benefits from optimisation"
 ---
 
-# How large are health benefits from optimisation? {#how-large-are-health-benefits-from-optimisation}
+# Health benefits from optimisation {#how-large-are-health-benefits-from-optimisation}
+
+*[What models say about the potential to save lives]{.note-subtitle}*
 
 {{< include ../includes/note-disclaimer.qmd >}}
 
@@ -184,5 +186,5 @@ Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fracti
 
 ## Further reading
 
-- [Examples of how optimisation decisions are made](decision-making.qmd)
+- [How optimisation decisions are made](decision-making.qmd)
 - [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)

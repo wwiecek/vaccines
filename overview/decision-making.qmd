@@ -1,8 +1,10 @@
 ---
-pagetitle: "Examples of how optimisation decisions are made"
+pagetitle: "How optimisation decisions are made"
 ---
 
-# Examples of how optimisation decisions are made {#examples-of-how-optimisation-decisions-are-made}
+# How optimisation decisions are made {#examples-of-how-optimisation-decisions-are-made}
+
+*[Why changing doses is difficult, even during outbreaks]{.note-subtitle}*
 
 {{< include ../includes/note-disclaimer.qmd >}}
 
@@ -114,5 +116,5 @@ Schnyder, Jenny L., Cornelis A. De Pijper, Hannah M. Garcia Garrido, Joost G. Da
 
 ## Further reading
 
-- [How large are health benefits from optimisation?](population-benefits.qmd)
+- [Health benefits from optimisation](population-benefits.qmd)
 - [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)

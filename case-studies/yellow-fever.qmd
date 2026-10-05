@@ -88,5 +88,5 @@ Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fracti
 
 ## Further reading
 
-- [How large are health benefits from optimisation?](../overview/population-benefits.qmd)
+- [Health benefits from optimisation](../overview/population-benefits.qmd)
 - [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)

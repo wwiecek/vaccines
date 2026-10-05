@@ -124,5 +124,5 @@ Yang, Bingyi, Xiaotong Huang, Huizhi Gao, Nancy H. Leung, Tim K. Tsang, and Benj
 
 ## Further reading
 
-- [Examples of how optimisation decisions are made](../overview/decision-making.qmd)
-- [How large are health benefits from optimisation?](../overview/population-benefits.qmd)
+- [How optimisation decisions are made](../overview/decision-making.qmd)
+- [Health benefits from optimisation](../overview/population-benefits.qmd)

@@ -18,6 +18,29 @@ AGENDA_SECTIONS = {
 }
 
 
+NOTE_TITLES = {
+    "Practical aspects of changing dose: syringes, vials, and intradermal...":
+        "Practical aspects of changing dose",
+    "Practical aspects of changing dose: syringes, vials, and intradermal delivery":
+        "Practical aspects of changing dose",
+    "How large are health benefits from optimisation?":
+        "Health benefits from optimisation",
+    "Examples of how optimisation decisions are made":
+        "How optimisation decisions are made",
+}
+NOTE_SUBTITLES = {
+    "overview/biology.qmd": "Why can a lower dose prove just as effective?",
+    "overview/vaccine-development.qmd":
+        "How do we determine the optimal dose during trials?",
+    "overview/practical-implementation.qmd":
+        "Syringes, vials and intradermal delivery",
+    "overview/population-benefits.qmd":
+        "What models say about the potential to save lives",
+    "overview/decision-making.qmd":
+        "Why changing doses is difficult, even during outbreaks",
+}
+
+
 def prepare_notes():
     agenda = Path("research-agenda/index.qmd")
     if Path("research-agenda/projects.qmd").exists():
@@ -60,7 +83,17 @@ def prepare_notes():
                  *Path("research-agenda").glob("*.qmd"),
                  *Path("about").glob("*.qmd")]:
         content = page.read_text()
-        content = re.sub(r"Table [12]:", "Table:", content)
+        for old, new in NOTE_TITLES.items():
+            content = content.replace(old, new)
+        content = re.sub(r"Table(?: [12])?: ?", "", content)
+        for title in ["immune memory and optimisation goals",
+                      "factors that make a vaccine worth optimising"]:
+            content = content.replace(title, title[0].upper() + title[1:])
+        subtitle = NOTE_SUBTITLES.get(str(page))
+        if subtitle and "{.note-subtitle}" not in content:
+            content = re.sub(r"(?m)^(# .+)$",
+                             r"\1\n\n*[" + subtitle + "]{.note-subtitle}*",
+                             content, count=1)
         if page == Path("vaccines/index.qmd"):
             # Converted grid-table column boundaries are inconsistent. Use a
             # pipe table so every criterion remains in its intended column.

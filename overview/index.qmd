@@ -52,17 +52,17 @@ I also investigate the perspective of development of new vaccines. How do resear
 
 When moving to large scale trials, generally there seem to be strong commercial incentives to go with the highest tolerated dose. Lastly, I found some literature on using mathematical and statistical models to improve development process, including dosing choices; this is promising, but right now their role in development is limited.
 
-> Section: [Practical aspects of changing dose: syringes, vials, and intradermal...](practical-implementation.qmd#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery)
+> Section: [Practical aspects of changing dose](practical-implementation.qmd#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery)
 
 For fractionation, there are practical considerations around syringes, vial usage, administration techniques and training to deliver doses. Most crucially, precision dosing requires a particular type of syringe and/or needle. How many doses can be extracted depends on the size of vials. Intradermal (ID) delivery is often used for lower doses, because it can elicit strong immune responses with smaller amounts of antigen, but it's more difficult to carry out. Several technologies have been developed to address this, including adapters for regular syringes, new-generation jet injectors, but cost-effectiveness and feasibility of these needs to be investigated further.
 
-> Section: [How large are health benefits from optimisation?](population-benefits.qmd#how-large-are-health-benefits-from-optimisation)
+> Section: [Health benefits from optimisation](population-benefits.qmd#how-large-are-health-benefits-from-optimisation)
 
 Solutions that can speed up access to vaccines have an obvious potential to save significant numbers of lives or infections and, by proxy, help avoid or shorten lockdowns and associated economic burden in pandemics. These conclusions are backed by an array of epidemiological models. I look at a range of modelling papers to get a general sense of the magnitude of benefits that different types of optimisation can yield.
 
 There is often a very simple rule of thumb: for vaccines where protection from disease is all-or-nothing (you either get protection or you don't), it makes sense to use lower doses if fold reduction in dose exceeds fold reduction in protection in disease. In practice this has to be weighed against factors such as individual willingness to get vaccinated with a less potent vaccine on the one hand and epidemiological effects (vaccine may break transmission) on the other.
 
-> Section: [Examples of how optimisation decisions are made](decision-making.qmd#examples-of-how-optimisation-decisions-are-made)
+> Section: [How optimisation decisions are made](decision-making.qmd#examples-of-how-optimisation-decisions-are-made)
 
 However, in the real world this type of benefit modelling is often moot: rather than focusing on trade-offs, the regulators and public health decision makers demand no loss of individual efficacy and safety. This disconnect is more pronounced for fractionation and less for extending gaps. I try to discuss the factors driving decision makers by showing three examples. I make some tentative points on what more I think would be needed to change their mind.
 
@@ -86,7 +86,7 @@ It is obviously important to consider systemic changes and economic incentives. 
 
 What makes for a good target?
 
-I briefly synthesise information from all earlier sections in [Table: factors that make a vaccine worth optimising](../vaccines/index.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
+I briefly synthesise information from all earlier sections in [Factors that make a vaccine worth optimising](../vaccines/index.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
 
 +-----------------------------------------------------------------------+---------------------------------------+----------------------------------------------------+
 | Individual benefits                                                   | Population benefits                   | Feasible implementation                            |

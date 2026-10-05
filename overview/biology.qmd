@@ -4,6 +4,8 @@ pagetitle: "Biology of optimal dosing"
 
 # Biology of optimal dosing {#biology-of-optimal-dosing}
 
+*[Why can a lower dose prove just as effective?]{.note-subtitle}*
+
 {{< include ../includes/note-disclaimer.qmd >}}
 
 ## Basic rationale {#basic-rationale}
@@ -72,7 +74,7 @@ There are three more concepts that bear at least mentioning, but which I did not
 
 To better illustrate some of these points and to move focus away from solely COVID, let's look at another example that shows increasing gaps and smaller doses at the same time can lead to better responses. That is the case in RTS,S and malaria. As nicely summarised in a short editorial by McCall, Yap, and Bousema (2020), the series of the initial three RTS,S doses may work better if the third dose was smaller and delayed by several months. They provide a summary of some possible mechanisms. I am not able to parse it, but it seems that cellular immunity plays a role too in fractionation.[^13] I should note, however, that it was not clear whether the improved response was due to fractionation, delay, or both (perhaps the consensus has changed since). The affinity maturation explanation may also apply here, but overall it really is a very detailed, complicated, and not well-established mechanism: see the beginning of discussion in (Das et al. 2021).[^14]
 
-## Table: immune memory and optimisation goals {#table-1-immune-memory-and-optimisation-goals}
+## Immune memory and optimisation goals {#table-1-immune-memory-and-optimisation-goals}
 
 Given the above, can we classify vaccines/diseases according to how lower doses are expected to perform? Clearly the mechanisms that favour lower doses or alternative vaccination regimens are highly variable, depending on pathogen/antigen/epitope complexity, the type of immune machinery that they produce, and history of natural exposures. For COVID, it has been sufficient for vaccines to present a spike protein antigen and neutralising antibodies correlated well to protection from disease. This meant that some generalisable inferences about impact of lowering doses could be made even early on in the pandemic. 
 

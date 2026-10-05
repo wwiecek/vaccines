@@ -73,4 +73,4 @@ Thompson, Kimberly M., and Dominika A. Kalkowska. 2021. "Potential Future Use, C
 ## Further reading
 
 - [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
-- [Practical aspects of changing dose: syringes, vials, and intradermal delivery](../overview/practical-implementation.qmd)
+- [Practical aspects of changing dose](../overview/practical-implementation.qmd)

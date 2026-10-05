@@ -10,7 +10,7 @@ pagetitle: "Finding targets for optimisation; disease-specific summaries"
 
 To begin to answer this question, synthesising information from all previous sections, I first create a longlist of questions that we should ask before exploring optimisation for any vaccine/disease combination. **These are not sufficient conditions, nor are they necessary.** We should think of them as so-called "enablers": the more of these conditions are obtained, the more we should consider prioritising a given vaccine for optimisation.
 
-## Table: factors that make a vaccine worth optimising {#table-2-factors-that-make-a-vaccine-worth-optimising}
+## Factors that make a vaccine worth optimising {#table-2-factors-that-make-a-vaccine-worth-optimising}
 
 | ***Individual benefits*** | ***Population benefits*** | ***Feasible implementation*** |
 | --- | --- | --- |
@@ -18,7 +18,7 @@ To begin to answer this question, synthesising information from all previous sec
 | **Positive results already exist** on alternative doses/schedules OR **limited testing was done** **before** (i.e. there are no negative results) | **Supply is limited in the short term** and this can't be resolved through economic means (e.g. cholera in 2024) | **Path to adoption**: decision makers are willing to support this (e.g. polio) or there is fast regulatory path (e.g. emergency use authorisation, like mpox in 2022) |
 | There are **existing correlates of protection** | There is **need to quickly expand coverage** (e.g. mpox in 2024) | There is **programmatic and logistical feasibility** to optimising |
 | It's **fast to generate more data** on different schedules, e.g. we can use human challenge studies (e.g. influenza) | **Promising modelling results**: showing reductions in burden from optimisation or generally from (quickly) increasing coverage | It's **possible to (quickly) measure effects** where this change is rolled out (e.g. there is a good surveillance or a healthcare records system that allows for a case-control effectiveness study) |
-| **Favourable immune memory profile**; for example, vaccine requires boosters (e.g. COVID-19 in 2020-2021) OR has high response at current regimen (e.g. yellow fever); see *Table: immune memory and optimisation goals* |  |  |
+| **Favourable immune memory profile**; for example, vaccine requires boosters (e.g. COVID-19 in 2020-2021) OR has high response at current regimen (e.g. yellow fever); see *Immune memory and optimisation goals* |  |  |
 
 ## Short assessments for most common diseases {#short-assessments-for-most-common-diseases}
 

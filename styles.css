@@ -594,3 +594,24 @@ main.content .implementation-figure {
   }
   main.content .mobile-note p { margin: 0; }
 }
+
+/* Note titles form a distinct heading above the quieter subtitle. */
+body:not(:has(.landing)) main.content h1 { color: #245c56; }
+main.content p:has(.note-subtitle) {
+  margin: -1.1rem 0 1.8rem;
+  font: 1.05rem/1.5 system-ui, sans-serif; color: #526b65;
+}
+@media (min-width: 992px) {
+  body:not(:has(.landing)) main.content h1 {
+    font-size: clamp(2.8rem, 3.25vw, 3.25rem); text-align: center;
+  }
+  main.content p:has(.note-subtitle) { text-align: center; }
+}
+@media (min-width: 1200px) {
+  body:not(:has(.landing)) main.content h1 { margin-left: -90px; }
+}
+@media (max-width: 767px) {
+  main.content p:has(.note-subtitle) { margin: -.2rem 0 1.2rem; font-size: .95rem; }
+}
+body:has(.landing) main.content { margin-bottom: 0 !important; }
+body:has(.landing) #quarto-content { padding-bottom: 0 !important; }

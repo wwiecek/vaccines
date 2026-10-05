@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sidebar || !main) return;
     sidebar.style.setProperty("--toc-offset", "0px");
     if (innerWidth < 992) return;
-    const firstText = main.querySelector("p:not(.note-disclaimer p)");
+    const firstText = main.querySelector("p:not(.note-disclaimer p):not(:has(.note-subtitle))");
     if (!firstText) return;
     const content = document.querySelector("#quarto-content");
     const offset = firstText.getBoundingClientRect().top -

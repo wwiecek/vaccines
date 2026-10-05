@@ -1,8 +1,10 @@
 ---
-pagetitle: "Practical aspects of changing dose: syringes, vials, and intradermal delivery"
+pagetitle: "Practical aspects of changing dose"
 ---
 
-# Practical aspects of changing dose: syringes, vials, and intradermal delivery {#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery}
+# Practical aspects of changing dose {#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery}
+
+*[Syringes, vials and intradermal delivery]{.note-subtitle}*
 
 {{< include ../includes/note-disclaimer.qmd >}}
 

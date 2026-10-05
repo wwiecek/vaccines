@@ -52,5 +52,5 @@ However, there has been a lot of modelling of mpox outbreaks in the US done by a
 
 ## Further reading
 
-- [Practical aspects of changing dose: syringes, vials, and intradermal delivery](../overview/practical-implementation.qmd)
+- [Practical aspects of changing dose](../overview/practical-implementation.qmd)
 - [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
