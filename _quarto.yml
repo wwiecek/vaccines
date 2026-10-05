@@ -17,20 +17,21 @@ website:
   navbar:
     background: dark
     collapse: true
+    collapse-below: xl
     left:
       - text: Home
         href: index.qmd
       - text: About
         href: about/index.qmd
-      - text: Executive summary
+      - text: Summary
         href: overview/index.qmd
       - text: Biology
         href: overview/biology.qmd
-      - text: Vaccine development
+      - text: Development
         href: overview/vaccine-development.qmd
-      - text: Practical implementation
+      - text: Implementation
         href: overview/practical-implementation.qmd
-      - text: Population benefits
+      - text: Benefits
         href: overview/population-benefits.qmd
       - text: Decision-making
         href: overview/decision-making.qmd

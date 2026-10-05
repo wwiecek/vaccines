@@ -58,6 +58,16 @@ def prepare_notes():
                  *Path("about").glob("*.qmd")]:
         content = page.read_text()
         content = re.sub(r"Table [12]:", "Table:", content)
+        if page == Path("vaccines/index.qmd"):
+            # Converted grid-table column boundaries are inconsistent. Use a
+            # pipe table so every criterion remains in its intended column.
+            match = re.search(r"(?m)^\+-.*?^\+=[^\n]*\+", content, re.S)
+            if match:
+                rows = ["| " + " | ".join(cell.strip() for cell in line.split("|")[1:-1]) + " |"
+                        for line in match[0].splitlines()
+                        if line.startswith("|") and line.replace("|", "").strip()]
+                rows.insert(1, "| --- | --- | --- |")
+                content = content[:match.start()] + "\n".join(rows) + content[match.end():]
         for slug, anchor in AGENDA_SECTIONS.items():
             content = re.sub(
                 rf"research-agenda/{slug}\.qmd(?:#([^)]*))?",

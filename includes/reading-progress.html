@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector("#quarto-header");
     const headerBottom = Math.max(0, navbar?.getBoundingClientRect().bottom || 0);
     progress.style.setProperty("--progress-top", `${headerBottom}px`);
+    document.documentElement.style.setProperty("--progress-top", `${headerBottom}px`);
     const total = document.documentElement.scrollHeight - innerHeight;
     progress.hidden = total <= 0;
     const percent = total > 0 ? Math.min(100, 100 * scrollY / total) : 100;

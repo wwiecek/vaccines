@@ -35,21 +35,22 @@
     }
     .navbar {
       width: 100%; margin: auto; min-height: 65px;
-      padding: 12px 3%; display: flex; align-items: center; gap: 32px;
+      padding: 12px 3%; display: flex; align-items: center; gap: 20px;
     }
     .brand {
-      font-size: 19px; font-weight: 750; letter-spacing: -.04em;
+      font-size: 16px; font-weight: 750; letter-spacing: -.04em;
       text-decoration: none;
     }
-    .navbar { flex-wrap: wrap; }
-    .nav-links { display: flex; align-items: center; gap: 16px; width: 100%; flex-wrap: wrap; }
+    .navbar { flex-wrap: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
     .nav-links > a[href="_site/vaccines/index.html"]::before {
       content: '·'; margin: 0 16px 0 4px; color: var(--mint);
     }
     .nav-links > a, .nav-links summary {
-      font-size: 14px; text-decoration: none; cursor: pointer;
+      font-size: 12px; white-space: nowrap; text-decoration: none; cursor: pointer;
       color: #c6d1d1;
     }
+    .nav-links .active { background: #34504e; border-radius: 3px; padding: .45rem; }
     .nav-links .active, .nav-links a:hover, .nav-links summary:hover {
       color: var(--mint);
     }
@@ -273,11 +274,11 @@
       <div class="nav-links" id="nav-links">
         <a class="active" href="landing-preview.html" aria-current="page">Home</a>
         <a href="_site/about/index.html">About</a>
-        <a href="_site/overview/index.html">Executive summary</a>
+        <a href="_site/overview/index.html">Summary</a>
         <a href="_site/overview/biology.html">Biology</a>
-        <a href="_site/overview/vaccine-development.html">Vaccine development</a>
-        <a href="_site/overview/practical-implementation.html">Practical implementation</a>
-        <a href="_site/overview/population-benefits.html">Population benefits</a>
+        <a href="_site/overview/vaccine-development.html">Development</a>
+        <a href="_site/overview/practical-implementation.html">Implementation</a>
+        <a href="_site/overview/population-benefits.html">Benefits</a>
         <a href="_site/overview/decision-making.html">Decision-making</a>
         <a href="_site/vaccines/index.html">Vaccines</a>
         <details>

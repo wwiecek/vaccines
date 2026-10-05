@@ -12,7 +12,8 @@ body { background: var(--paper); color: var(--ink); }
 a { text-underline-offset: 4px; }
 .navbar { background: var(--navy) !important; border-bottom: 1px solid #456068; }
 .navbar-brand { font-weight: 750; letter-spacing: -.04em; }
-.navbar .nav-link { font-size: .86rem; }
+.navbar .nav-link { font-size: .82rem; border-radius: 3px; }
+.navbar .nav-link.active { background: #34504e; }
 .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--mint) !important; }
 .navbar .dropdown-menu {
   min-width: 15rem;
@@ -46,7 +47,10 @@ main.content h1, main.content h2, main.content h3, main.content h4 {
   line-height: 1.14;
   overflow-wrap: anywhere;
 }
-main.content h1 { font-size: clamp(2.8rem, 4.8vw, 4.7rem); margin-bottom: 2.4rem; }
+main.content h1 { font-size: clamp(2.1rem, 3vw, 2.9rem); margin-bottom: 2.4rem; }
+@media (min-width: 1200px) {
+  body:not(:has(.landing)) main.content h1 { width: calc(100% + 180px); }
+}
 main.content h2 { font-size: clamp(2rem, 3vw, 2.65rem); margin-top: 3.5rem; }
 main.content h3 { font-size: 1.65rem; margin-top: 2.5rem; }
 main.content p, main.content li { overflow-wrap: break-word; }
@@ -78,17 +82,17 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
 @media (min-width: 992px) {
   #quarto-sidebar {
     padding: 0 0 0 8px !important;
+    top: calc(var(--progress-top, 0px) + 24px) !important;
     height: fit-content !important;
     margin-top: var(--toc-offset, 0px);
   }
-  .navbar > .container-fluid { flex-wrap: wrap !important; }
-  .navbar .navbar-brand-container {
-    order: 1; margin-left: 0 !important; margin-right: auto !important;
-  }
-  #quarto-header #quarto-search { order: 2 !important; margin-left: auto; }
-  .navbar .quarto-navbar-tools { order: 3; }
-  .navbar #navbarCollapse { order: 5; flex-basis: 100%; }
-  .navbar .navbar-nav { flex-wrap: wrap; gap: .1rem .3rem; }
+}
+@media (min-width: 1200px) {
+  .navbar > .container-fluid { flex-wrap: nowrap !important; }
+  .navbar .navbar-brand-container { margin-right: 1rem !important; }
+  .navbar .navbar-brand { font-size: 1rem; }
+  .navbar .navbar-nav { flex-wrap: nowrap; gap: 0; }
+  .navbar .nav-link { white-space: nowrap; padding-inline: .45rem; }
   .navbar .nav-item:has(> a[href$="vaccines/index.html"]) {
     display: flex; align-items: center; margin-left: .5rem;
   }
@@ -242,10 +246,10 @@ main.content section[id^="references"] a { overflow-wrap: anywhere; }
 }
 
 /* Full-width landing page; retain Quarto navigation and search. */
-body:has(.landing) #quarto-content { padding: 0; display: block; }
+body:has(.landing) #quarto-content { padding: 0 !important; display: block; }
 body:has(.landing) #title-block-header { display: none; }
 body:has(.landing) main.content {
-  display: block; width: 100%; max-width: none; padding: 0; margin: 0;
+  display: block; width: 100%; max-width: none; padding: 0 !important; margin: 0;
 }
 main.content .landing { display: block; font-family: system-ui, sans-serif; line-height: normal; }
 main.content .landing .page-columns > * { grid-column: auto; }
@@ -553,4 +557,14 @@ main.content .landing .summary-button {
   .navbar, #TOC, .page-footer, .anchorjs-link { display: none !important; }
   body, main { color: #000; background: #fff; }
   main.content img, main.content table, main.content figure { break-inside: avoid; }
+}
+
+/* Keep the source-resolution implementation diagrams within the prose. */
+main.content .implementation-figure {
+  width: 80%; max-width: 680px; margin-inline: auto;
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar .nav-link { font-size: .76rem; padding-inline: .35rem; }
+  .navbar .navbar-brand { font-size: .9rem; }
 }

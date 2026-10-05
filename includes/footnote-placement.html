@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   for (const image of main.querySelectorAll("img")) {
     const figure = image.closest(".quarto-figure") || image.parentElement;
-    figure.classList.add("wide-media");
+    figure.classList.add(location.pathname.endsWith("/practical-implementation.html")
+      ? "implementation-figure" : "wide-media");
     image.style.width = "100%";
     image.style.height = "auto";
   }
