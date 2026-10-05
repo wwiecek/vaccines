@@ -13,3 +13,10 @@ After any factual edit to the notes, run `python3 scripts/build_report_pdf.py` a
 The GitHub Actions workflow rebuilds the PDF from the QMD pages before rendering and deploying `_site/` on every push to `main`. This keeps the published download current even if a local PDF rebuild was missed. In the repository's GitHub Pages settings, choose **GitHub Actions** as the publishing source. The workflow can also be started manually.
 
 The original loose Markdown export is excluded from the render list. It remains in the working tree as a comparison copy and is not part of the site.
+
+The upgraded implementation illustrations are preserved at full resolution in
+`assets/syringes.png` and `assets/layers.png`. The website uses `assets/image1.png`
+and `assets/image3.png`, each below 200 kB. Run
+`python3 scripts/optimise_illustrations.py` (requires Pillow) after replacing an
+original to regenerate these web versions. DOCX conversion preserves these
+replacements; the PDF uses the full-resolution originals.

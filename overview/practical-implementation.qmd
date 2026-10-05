@@ -14,9 +14,9 @@ In the case studies of polio and yellow fever fractionation we saw that a standa
 
 Most vaccines are injected. Disposable plastic syringes have been in use since the 1960s. The traditional design has a high dead volume, meaning that there is a lot of space at the end of the syringe where the injected substance can remain, and so the injected volume is also less precise. Low dead space syringe (LDSS) was invented at first for precise insulin injections. You can also use a low dead space *needle* (LDSN) instead to reduce wastage. The different methods are show below.[^1]
 
-![](../assets/image1.png){width="4.296692913385827in" height="2.3590758967629046in"}
+![](../assets/image1.png){width="5.5in" fig-alt="Four syringe and needle designs showing progressively less dead volume."}
 
-*Left to right: syringe and needle designs with progressively less dead volume (red area); copied from [here](https://arc-w.nihr.ac.uk/research/projects/low-versus-high-dead-space-syringes-user-preferences-and-attitudes/). Second from left: extended plunger; third from left: low dead space needle in high dead space syringe. Rightmost: precision syringe used for e.g. insulin injections.*
+*Left to right: syringe and needle designs with progressively less dead volume (red area); adapted from [here](https://arc-w.nihr.ac.uk/research/projects/low-versus-high-dead-space-syringes-user-preferences-and-attitudes/). Second from left: extended plunger; third from left: low dead space needle in high dead space syringe. Rightmost: precision syringe used for e.g. insulin injections.*
 
 How much of a difference can use of better syringes make in practice? A flu study with 10-dose vials estimated wastage of 2-19% (Strauss et al. 2006), but it's clearly a highly case-specific estimate. The topic saw much interest in early 2021 with the discovery that additional doses of COVID vaccines could be obtained from vials with LDSS/N. In a very nice and comprehensive quantitative study, Le Daré et al. (2021) showed that you could obtain 1-2 extra doses per vial (vials were 5-11 doses) for each of the four vaccines available in early 2021; I recommend looking at the main figure in that study. It's also instructive to see [a video of vaccine preparation and drawing an extra dose from Pfizer COVID vaccine](https://www.youtube.com/watch?v=zRHWWRRnVXo) vial to understand the extra skill involved. Overall, the healthcare workers would try (and usually succeed) in drawing these extra doses.
 
@@ -54,7 +54,7 @@ In addition to wastage, there is also the issue of vial stoppers. Each vial has 
 
 Typically, injectable vaccines are delivered into the muscle (often inactivated vaccines) or subcutaneously (often live vaccines). Intradermal injections are routinely used for the BCG vaccine (using a specialised needle and syringe). The basic technique of ID injection (originally developed for TB) is to use an oblique angle when piercing the skin, like so:
 
-![](../assets/image3.png){width="4.186370297462817in" height="2.3781211723534557in"}
+![](../assets/image3.png){width="5.5in" fig-alt="Diagram comparing injection angles and depths across skin layers."}
 
 Using ID injections targets dermis layer of the skin, which is rich in antigen-presenting cells and facilitates vaccines reaching lymph nodes. This means ID can elicit broad and lasting responses using both innate and adaptive immunity. For this reason, it is seen as a natural choice for fractionation, since it can lead to a more potent immune response at lower doses compared to SC or IM delivery. Schnyder et al. (2020) provide a fantastic overview of ID vs IM/SC studies up to 2020.[^7]
 

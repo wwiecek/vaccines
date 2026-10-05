@@ -39,6 +39,11 @@ for number, page in enumerate(pages, 1):
                      lambda match: f"[^chapter-{number}-{match.group(1)}]",
                      content)
     content = content.replace("../assets/", "assets/")
+    # Use the untouched originals for print; the site loads compressed PNGs.
+    for web, original in [("image1.png", "syringes.png"),
+                          ("image3.png", "layers.png")]:
+        if Path("assets", original).is_file():
+            content = content.replace(f"assets/{web}", f"assets/{original}")
 
     def internal_link(match):
         target = os.path.normpath(Path(page).parent / match.group(1))

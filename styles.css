@@ -647,3 +647,7 @@ main.content .landing .response-point { fill: var(--mint); }
 }
 main.content .note-attribution p { margin: 0 0 .5rem; }
 main.content .note-attribution p:first-child { color: #526b65; }
+
+@media (max-width: 767px) {
+  main.content .implementation-figure { width: 100%; }
+}

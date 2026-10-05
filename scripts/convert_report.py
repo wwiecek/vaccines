@@ -82,7 +82,13 @@ with zipfile.ZipFile(SOURCE) as archive:
     Path("assets").mkdir(exist_ok=True)
     for name in archive.namelist():
         if name.startswith("word/media/"):
-            Path("assets", Path(name).name).write_bytes(archive.read(name))
+            filename = Path(name).name
+            replacement = {"image1.png": "syringes.png",
+                           "image3.png": "layers.png"}.get(filename)
+            if (replacement and Path("assets", replacement).is_file() and
+                    Path("assets", filename).is_file()):
+                continue
+            Path("assets", filename).write_bytes(archive.read(name))
 
 titles = {}
 for path, start, _ in PAGES:
