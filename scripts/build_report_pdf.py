@@ -22,10 +22,6 @@ pages = [
     "overview/decision-making.qmd",
     "vaccines/index.qmd",
     "research-agenda/index.qmd",
-    "research-agenda/projects.qmd",
-    "research-agenda/knowledge-gaps.qmd",
-    "research-agenda/future-pathways.qmd",
-    "research-agenda/reservations.qmd",
     "case-studies/covid.qmd",
     "case-studies/mpox.qmd",
     "case-studies/polio.qmd",
@@ -50,6 +46,11 @@ for number, page in enumerate(pages, 1):
     content = re.sub(r"\A---\n.*?\n---\n", "", content, count=1,
                      flags=re.DOTALL)
 
+    content = content.replace(
+        "{{< include ../includes/note-disclaimer.qmd >}}",
+        Path("includes/note-disclaimer.qmd").read_text().strip())
+    content = content.replace("::: {.note-disclaimer}", "").replace("\n:::", "")
+
     # Each web page has its own footnote sequence. Prefix labels before
     # concatenating pages so the PDF retains every distinct note.
     content = re.sub(r"\[\^([^\]\n]+)\]",
@@ -71,9 +72,10 @@ Path("downloads").mkdir(exist_ok=True)
 subprocess.run([
     "pandoc", "-f", "markdown", "-t", "pdf",
     "--pdf-engine=xelatex", "--resource-path=.",
-    "--toc", "--toc-depth=2", "--metadata=title:Fractional dosing of vaccines",
-    "--metadata=author:Witold Więcek", "--metadata=date:June 2024",
+    "--toc", "--toc-depth=2", "--metadata=title:Optimal dosing of vaccines",
+    "--metadata=author:Witold Więcek", "--metadata=date:Revised autumn 2026",
     "-V", "geometry:margin=25mm", "-V", "fontsize=11pt",
     "-V", "mainfont=DejaVu Serif", "-V", "sansfont=DejaVu Sans",
     "-o", "downloads/fractional-dosing-of-vaccines.pdf",
-], input="\n\n".join(chapters) + "\n", text=True, check=True)
+], input="\\clearpage\n\n" + "\n\n".join(chapters) + "\n",
+   text=True, check=True)

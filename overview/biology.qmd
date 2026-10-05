@@ -4,6 +4,8 @@ pagetitle: "Biology of optimal dosing"
 
 # Biology of optimal dosing {#biology-of-optimal-dosing}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 ## Basic rationale {#basic-rationale}
 
 There are five groups of factors that determine the vaccine's effect. The first and most obvious to focus on is the antigen. Then there are (2) the mode of delivery, i.e. how the antigen is "packaged", but also where it is delivered[^1], (3) vaccination regimen/schedule, (4) adjuvants, (5) host factors (e.g. age). For simplicity, I will start discussing the lower doses and then touch on points 2-5 as we go.[^2]

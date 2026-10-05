@@ -3,24 +3,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main.content");
   if (!main || document.querySelector(".landing")) return;
 
+  for (const table of main.querySelectorAll("table")) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-scroll wide-media";
+    table.before(wrapper);
+    wrapper.append(table);
+    for (const row of table.querySelectorAll("tbody tr")) {
+      if (!row.textContent.trim() && !row.querySelector("img")) row.remove();
+    }
+  }
+  for (const image of main.querySelectorAll("img")) {
+    const figure = image.closest(".quarto-figure") || image.parentElement;
+    figure.classList.add("wide-media");
+    image.style.width = "100%";
+    image.style.height = "auto";
+  }
+
+  const seen = new Set();
   const pairs = [...main.querySelectorAll("a.footnote-ref")]
     .map(ref => [ref, document.getElementById(ref.hash.slice(1))])
-    .filter(([, note]) => note?.parentElement?.matches(
-      ".column-margin.column-container"));
+    .filter(([, note]) => {
+      if (!note?.parentElement?.matches(".column-margin.column-container") ||
+          seen.has(note)) return false;
+      seen.add(note);
+      return true;
+    });
   if (!pairs.length) return;
 
   for (const [, note] of pairs) {
-    if (note.getBoundingClientRect().height <= 168) continue;
     const content = document.createElement("div");
     content.className = "margin-note-content";
     content.id = `${note.id}-content`;
     while (note.firstChild) content.append(note.firstChild);
     note.append(content);
-    note.classList.add("is-collapsible");
 
     const toggle = document.createElement("button");
     toggle.type = "button";
     toggle.className = "margin-note-toggle";
+    toggle.hidden = true;
     toggle.setAttribute("aria-controls", content.id);
     toggle.setAttribute("aria-expanded", "false");
     toggle.textContent = "Read full note";
@@ -36,15 +56,71 @@ document.addEventListener("DOMContentLoaded", () => {
   function align() {
     main.style.paddingBottom = "";
     for (const [, note] of pairs) note.style.transform = "";
-    if (innerWidth < 768) return;
+    if (innerWidth < 768) {
+      for (const [, note] of pairs) {
+        note.classList.remove("is-collapsible");
+        note.querySelector("button").hidden = true;
+      }
+      return;
+    }
 
+    const referenceTops = pairs.map(([ref]) =>
+      ref.getBoundingClientRect().top + scrollY);
+    const obstacles = [...main.querySelectorAll(".wide-media")]
+      .map(element => element.getBoundingClientRect());
     let previousBottom = 0;
-    for (const [ref, note] of pairs) {
-      const referenceTop = ref.getBoundingClientRect().top + scrollY;
-      const noteTop = note.getBoundingClientRect().top + scrollY;
-      const targetTop = Math.max(referenceTop, previousBottom + 12);
-      note.style.transform = `translateY(${Math.max(0, targetTop - noteTop)}px)`;
-      previousBottom = note.getBoundingClientRect().bottom + scrollY;
+
+    for (let i = 0; i < pairs.length; i++) {
+      const [, note] = pairs[i];
+      const content = note.querySelector(".margin-note-content");
+      const toggle = note.querySelector("button");
+      note.classList.remove("is-collapsible");
+      toggle.hidden = true;
+      const style = getComputedStyle(note);
+      const lineHeight = parseFloat(getComputedStyle(content).lineHeight);
+      const padding = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+      const naturalHeight = content.getBoundingClientRect().height;
+      const noteRect = note.getBoundingClientRect();
+      const noteTop = noteRect.top + scrollY;
+      let targetTop = Math.max(referenceTops[i], previousBottom + 12, noteTop);
+
+      // Keep notes outside tables/figures that extend into their margin.
+      const blockers = obstacles.filter(rect => rect.right > noteRect.left);
+      for (const rect of blockers) {
+        if (targetTop >= rect.top + scrollY - 12 &&
+            targetTop < rect.bottom + scrollY + 12) {
+          targetTop = rect.bottom + scrollY + 12;
+        }
+      }
+      let nextTop = referenceTops[i + 1] ?? Infinity;
+      for (const rect of blockers) {
+        if (rect.top + scrollY > targetTop) {
+          nextTop = Math.min(nextTop, rect.top + scrollY);
+        }
+      }
+      const available = nextTop - targetTop - padding - 12;
+      const needsPreview = naturalHeight > lineHeight * 10 + 1 ||
+        naturalHeight > available;
+      if (needsPreview) {
+        // Leave room for the button; very close references still need shifting.
+        const lines = Math.max(3, Math.min(10,
+          Math.floor((available - 26) / lineHeight)));
+        if (naturalHeight > lines * lineHeight + 1) {
+          note.style.setProperty("--note-preview-height", `${lines * lineHeight}px`);
+          note.classList.add("is-collapsible");
+          toggle.hidden = false;
+        }
+      }
+      // An expanded note can move later notes, but must never cover a table.
+      let height = note.getBoundingClientRect().height;
+      for (const rect of blockers) {
+        if (targetTop < rect.bottom + scrollY + 12 &&
+            targetTop + height > rect.top + scrollY - 12) {
+          targetTop = rect.bottom + scrollY + 12;
+        }
+      }
+      note.style.transform = `translateY(${targetTop - noteTop}px)`;
+      previousBottom = targetTop + height;
     }
 
     const mainBottom = main.getBoundingClientRect().bottom + scrollY;
@@ -62,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
       align();
     });
   }
-
   addEventListener("load", schedule);
   addEventListener("resize", schedule);
   document.fonts?.ready.then(schedule);

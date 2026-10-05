@@ -44,6 +44,7 @@ main.content h1, main.content h2, main.content h3, main.content h4 {
   font-weight: 400;
   letter-spacing: -.04em;
   line-height: 1.14;
+  overflow-wrap: anywhere;
 }
 main.content h1 { font-size: clamp(2.8rem, 4.8vw, 4.7rem); margin-bottom: 2.4rem; }
 main.content h2 { font-size: clamp(2rem, 3vw, 2.65rem); margin-top: 3.5rem; }
@@ -112,7 +113,7 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
   font-weight: 750;
 }
 .column-margin .is-collapsible:not(.is-expanded) .margin-note-content {
-  max-height: 5.8em;
+  max-height: var(--note-preview-height);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(#000 75%, transparent);
   mask-image: linear-gradient(#000 75%, transparent);
@@ -127,6 +128,45 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
   font: 700 .68rem system-ui, sans-serif;
   text-decoration: underline;
   cursor: pointer;
+}
+.margin-note-toggle[hidden] { display: none; }
+
+/* Date and scope of the evidence, consistently shown on every note. */
+main.content .note-disclaimer {
+  margin: -1rem 0 2.2rem;
+  padding: 1.1rem 1.4rem;
+  border-left: 3px solid var(--mint);
+  background: var(--navy);
+  color: #d5dfdc;
+  font: .87rem/1.6 system-ui, sans-serif;
+}
+main.content .note-disclaimer p { margin: 0; }
+
+/* Tables and figures can use the right margin on desktop. */
+main.content table {
+  width: 100%; border-collapse: collapse; line-height: 1.5;
+  background: #f8f7f1; border-top: 2px solid #86aea2;
+}
+main.content table th {
+  background: #dfe6de; color: var(--ink); text-align: left;
+}
+main.content table td, main.content table th {
+  padding: .85rem 1rem; border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+main.content table tbody tr:nth-child(even) { background: #eef1e9; }
+main.content table p:last-child { margin-bottom: 0; }
+main.content figure img { width: 100%; height: auto; }
+main.content figure figcaption { font: .83rem/1.5 system-ui, sans-serif; }
+@media (min-width: 1200px) {
+  body:not(:has(.landing)) main.content .wide-media {
+    width: calc(100% + 240px); max-width: none;
+  }
+}
+@media (max-width: 767px) {
+  main.content table { font-size: .8rem; }
+  main.content table td, main.content table th { padding: .6rem; }
+  main.content .table-scroll { overflow-x: auto; }
 }
 @media (max-width: 767px) {
   .column-margin .is-collapsible .margin-note-content {
@@ -178,83 +218,313 @@ main.content section[id^="references"] a { overflow-wrap: anywhere; }
   pointer-events: none;
 }
 
-/* The landing page combines Editorial colours with Minimal's open type layout. */
-body:has(.landing) #quarto-content { padding: 0; }
+/* Full-width landing page; retain Quarto navigation and search. */
+body:has(.landing) #quarto-content { padding: 0; display: block; }
 body:has(.landing) #title-block-header { display: none; }
-body:has(.landing) main.content { max-width: none; padding: 0; margin: 0; }
-body:has(.landing) #quarto-document-content { padding: 0; }
-.landing { font-family: system-ui, sans-serif; }
-.landing a { text-decoration: none; }
-.landing-inner { max-width: 1500px; margin: 0 auto; padding-left: 5.5%; padding-right: 5.5%; }
-.landing .eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-.landing-hero { background: var(--navy); color: #f5f2e9; padding: 5.2rem 0 0; }
-.landing-hero .eyebrow { color: var(--mint); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(250px, .72fr); gap: 6%; align-items: end; padding: 3.7rem 0 5.5rem; }
-main.content .landing h1 { color: #f5f2e9; font: 400 clamp(4.7rem, 9vw, 9.5rem)/.91 Georgia, "Times New Roman", serif; letter-spacing: -.075em; margin: 0; }
-main.content .landing h1 em { color: var(--mint); font-weight: 400; }
-.hero-aside { border-left: 1px solid #69858a; padding: .6rem 0 .2rem 2rem; }
-.hero-aside > p:first-child { max-width: 23rem; font-size: clamp(1.2rem, 1.9vw, 1.65rem); line-height: 1.4; margin: 0 0 2rem; }
-main.content .landing .hero-link { color: var(--navy); background: #d4eee5; display: inline-flex; gap: 1.5rem; align-items: center; padding: .85rem 1.15rem; font-size: .85rem; font-weight: 750; }
-main.content .landing .hero-link:hover { background: #f5f2e9; color: var(--navy); }
-main.content .landing .pdf-link {
-  display: flex;
-  width: fit-content;
-  gap: 1rem;
-  margin-top: 1.2rem;
-  color: #d4eee5;
-  font-size: .82rem;
-  font-weight: 650;
-  text-decoration: underline;
+body:has(.landing) main.content {
+  display: block; width: 100%; max-width: none; padding: 0; margin: 0;
 }
-main.content .landing .pdf-link:hover { color: #fff; }
-.hero-meta { color: #b2c5c4; font-size: .78rem; line-height: 1.6; margin: 2.5rem 0 0; }
-.hero-rule { border-top: 1px solid #536a70; display: flex; gap: 2rem; justify-content: space-between; padding: 1.25rem 0; color: #bacbca; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
-.landing-index { background: #ecebe5; padding: 5.5rem 0 6.5rem; }
-.index-head { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid #b9c1ba; padding-bottom: 1.3rem; margin-bottom: 1rem; }
-.index-head .eyebrow { margin: 0; color: #60857d; }
-main.content .landing h2, main.content .landing h3 { color: inherit; font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.045em; }
-.index-head h2 { font-size: clamp(2.5rem, 4vw, 3.7rem); margin: 0; }
-.chapter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
-main.content .landing .chapter { min-height: 18.5rem; display: flex; flex-direction: column; padding: 1.3rem; color: var(--ink); background: #f8f7f1; border: 1px solid #d8dcd5; transition: transform .2s, background .2s; }
-main.content .landing .chapter:hover { color: var(--ink); background: white; transform: translateY(-3px); }
-.chapter-number { color: #647b75; font-size: .68rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
-.chapter h3 { font-size: clamp(1.7rem, 2.2vw, 2.5rem); line-height: 1.08; margin: auto 0 .8rem; }
-.chapter p { color: #5b6c68; font-size: .81rem; line-height: 1.5; margin: 0; }
-.chapter-arrow { align-self: end; font-size: 1.4rem; }
-.landing-guide { background: #dfe6de; padding: 6.5rem 0; }
-.guide-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; }
-.landing-guide .eyebrow { color: #4b756b; }
-.landing-guide h2 { font-size: clamp(2.6rem, 4.2vw, 4.3rem); line-height: 1.07; margin: 1rem 0 1.5rem; }
-.landing-guide p:not(.eyebrow) { max-width: 43rem; color: #52635e; font-size: 1rem; line-height: 1.65; }
-.guide-links { align-self: center; border-top: 1px solid #8aa99c; }
-.guide-links a { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #8aa99c; padding: 1rem 0; color: var(--ink); font: 400 1.3rem Georgia, serif; }
-.guide-links a:hover { color: var(--link); }
-.guide-links span { font: 700 .9rem system-ui, sans-serif; }
+main.content .landing { display: block; font-family: system-ui, sans-serif; line-height: normal; }
+main.content .landing .page-columns > * { grid-column: auto; }
+main.content .landing .layout > * { grid-column: auto !important; }
+main.content .landing h2 { border-bottom: 0; padding-bottom: 0; color: inherit; }
+main.content .landing .basics, main.content .landing .further { color: var(--ink); }
+main.content .landing .pdf-link { text-decoration: underline; }
 
-@media (max-width: 1000px) {
-  .hero-grid { grid-template-columns: 1fr .75fr; }
-  main.content .landing h1 { font-size: clamp(4.2rem, 9vw, 7rem); }
-  .chapter-grid { grid-template-columns: repeat(2, 1fr); }
+
+main.content .landing a {
+  color: inherit; text-underline-offset: 4px;
 }
-@media (max-width: 760px) {
-  #quarto-content { padding-top: 1.5rem; }
-  main.content { font-size: 1rem; }
-  main.content h1 { margin-bottom: 1.8rem; }
-  .landing-hero { padding-top: 3.3rem; }
-  .hero-grid, .guide-grid { display: block; }
-  .hero-grid { padding: 2.5rem 0 3.5rem; }
-  main.content .landing h1 { font-size: clamp(3.8rem, 13vw, 6rem); }
-  .hero-aside { margin-top: 3rem; }
-  .hero-rule { flex-wrap: wrap; gap: .7rem 1.3rem; }
-  .landing-index, .landing-guide { padding: 4rem 0; }
-  .guide-links { margin-top: 3rem; }
+main.content .landing a:focus-visible, main.content .landing button:focus-visible, main.content .landing summary:focus-visible {
+  outline: 3px solid var(--mint); outline-offset: 5px;
 }
-@media (max-width: 480px) {
-  .index-head { display: block; }
-  .index-head h2 { margin: .6rem 0 0; }
-  .chapter-grid { grid-template-columns: 1fr; }
-  .chapter { min-height: 13rem; }
-  main.content table { display: block; overflow-x: auto; }
+
+main.content .landing .layout {
+  width: 100%; margin: auto; display: grid;
+  grid-template-columns: minmax(0, 1.85fr) repeat(2, minmax(0, 1.075fr));
+  min-height: calc(-152px + 100svh);
+}
+main.content .landing .intro {
+  padding: clamp(36px, 4vw, 60px) clamp(24px, 3vw, 60px) clamp(36px, 4vw, 60px) clamp(68px, 8.4vw, 164px);
+  background: var(--navy); color: var(--paper);
+}
+main.content .landing .eyebrow {
+  margin: 0px 0px 27px; color: var(--mint); font-size: 11px; font-weight: 750;
+  line-height: 1.7; letter-spacing: 0.13em; text-transform: uppercase;
+}
+main.content .landing h1 {
+  color: var(--paper); margin: 0px calc(-1 * clamp(24px, 3vw, 60px)) 0px 0px;
+  max-width: none; font: 400 clamp(28px, 3.05vw, 60px) / 1.1 Georgia, serif;
+  letter-spacing: -0.065em; white-space: nowrap;
+}
+main.content .landing h1 em {
+  color: var(--mint); font-weight: 400;
+}
+main.content .landing h1 span {
+  margin-left: 0.12em;
+}
+main.content .landing .subtitle {
+  max-width: none; margin: 24px calc(-1 * clamp(24px, 3vw, 60px)) 25px 0px;
+  font-size: clamp(14px, 1.38vw, 25px); line-height: 1.4; white-space: nowrap;
+}
+main.content .landing .summary-button {
+  display: inline-flex; align-items: center; gap: 24px; padding: 13px 17px;
+  background: rgb(212, 238, 229); color: var(--navy); font-size: 13px; font-weight: 750;
+  text-decoration: none;
+}
+main.content .landing .summary-button:hover {
+  background: var(--paper);
+}
+main.content .landing .letter {
+  max-width: 680px; margin-top: 31px; font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.6; font-style: italic; color: rgb(213, 223, 220);
+}
+main.content .landing .letter p {
+  margin: 0px 0px 15px;
+}
+main.content .landing .letter .signature {
+  margin: 18px 0px 24px; color: var(--mint); font-style: normal;
+}
+main.content .landing .pdf-block {
+  padding-top: 19px; border-top: 1px solid rgb(83, 106, 112);
+}
+main.content .landing .pdf-link {
+  display: inline-flex; gap: 22px; color: rgb(212, 238, 229); font-size: 14px;
+  font-weight: 650;
+}
+main.content .landing .pdf-link:hover {
+  color: white;
+}
+main.content .landing .pdf-note {
+  max-width: 430px; margin: 10px 0px 0px; color: rgb(178, 197, 196); font-size: 12px;
+  line-height: 1.6;
+}
+main.content .landing .basics, main.content .landing .further {
+  padding: clamp(36px, 4vw, 66px) 30px 35px;
+}
+main.content .landing .basics {
+  padding-left: clamp(40px, 4.8vw, 92px); padding-right: clamp(40px, 4.8vw, 92px);
+  background: rgb(223, 230, 222);
+}
+main.content .landing .further {
+  padding-left: calc(30px + 2vw); padding-right: clamp(76px, 8vw, 154px);
+  background: rgb(236, 235, 229);
+}
+main.content .landing .basics .eyebrow, main.content .landing .further .eyebrow {
+  color: rgb(75, 117, 107);
+}
+main.content .landing h2 {
+  margin: 0px 0px 30px; font: 400 clamp(28px, 2.45vw, 38px) / 1.1 Georgia, serif;
+  letter-spacing: -0.045em;
+}
+main.content .landing .section-links {
+  border-top: 1px solid rgb(138, 169, 156);
+}
+main.content .landing .section-links a {
+  display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 7px 14px;
+  padding: 16px 0px; border-bottom: 1px solid rgb(138, 169, 156);
+  font: 400 clamp(20px, 1.7vw, 27px) / 1.2 Georgia, serif; letter-spacing: -0.025em;
+  text-decoration: none;
+}
+main.content .landing .topic-description {
+  grid-column: 1 / -1; color: rgb(82, 99, 94);
+  font: 400 13.5px / 1.45 system-ui, sans-serif; letter-spacing: normal;
+}
+main.content .landing .section-note {
+  margin: -3px 0px 12px; color: rgb(89, 106, 102); font-size: 13px; line-height: 1.45;
+}
+main.content .landing .section-links a:hover, main.content .landing .small-links a:hover, main.content .landing .target-link:hover {
+  color: var(--link);
+}
+main.content .landing .arrow {
+  flex-shrink: 0; font: 500 14px system-ui, sans-serif;
+}
+main.content .landing .target-link {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding-bottom: 24px; margin-bottom: 27px;
+  border-bottom: 1px solid rgb(185, 193, 186); font: 400 23px / 1.2 Georgia, serif;
+  letter-spacing: -0.025em; text-decoration: none;
+}
+main.content .landing .further h2 {
+  margin-bottom: 14px; font-size: 25px;
+}
+main.content .landing .small-links {
+  display: grid;
+}
+main.content .landing .small-links a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 9px 0px; font-size: 14px; line-height: 1.45; text-decoration: none;
+}
+main.content .landing .research {
+  margin-top: 30px; padding-top: 25px; border-top: 1px solid rgb(185, 193, 186);
+}
+main.content .landing .footer {
+  width: 100%; margin: auto; min-height: 86px; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px 30px; padding: 24px 6vw 24px 7vw;
+  border-top: 2px solid rgb(136, 184, 170); background: var(--navy);
+  color: rgb(178, 197, 196); font-size: 12px; line-height: 1.6;
+}
+main.content .landing .footer p {
+  margin: 0px;
+}
+main.content .landing .footer p:first-child {
+  color: var(--mint); white-space: nowrap;
+}
+main.content .landing .footer p:last-child {
+  max-width: 780px; text-align: right;
+}
+
+@media (min-width: 1101px) and (max-height: 900px) {
+  main.content .landing .intro, main.content .landing .basics, main.content .landing .further {
+  padding-top: 30px; padding-bottom: 30px;
+}
+main.content .landing .eyebrow {
+  margin-bottom: 18px;
+}
+main.content .landing .subtitle {
+  margin: 18px 0px 20px;
+}
+main.content .landing .letter {
+  margin-top: 24px; font-size: 16px; line-height: 1.55;
+}
+main.content .landing .letter p {
+  margin-bottom: 12px;
+}
+main.content .landing .letter .signature {
+  margin: 14px 0px 19px;
+}
+main.content .landing .pdf-block {
+  padding-top: 16px;
+}
+main.content .landing .section-links a {
+  padding: 13px 0px;
+}
+main.content .landing .target-link {
+  padding-bottom: 14px; margin-bottom: 16px;
+}
+main.content .landing .further h2 {
+  margin-bottom: 10px;
+}
+main.content .landing .small-links a {
+  padding-top: 6px; padding-bottom: 6px;
+}
+main.content .landing .research {
+  margin-top: 18px; padding-top: 14px;
+  }
+}
+@media (min-width: 1101px) and (max-height: 760px) {
+  main.content .landing .intro, main.content .landing .basics, main.content .landing .further {
+  padding-top: 23px; padding-bottom: 23px;
+}
+main.content .landing .eyebrow {
+  margin-bottom: 14px;
+}
+main.content .landing .subtitle {
+  margin: 14px 0px 16px;
+}
+main.content .landing .summary-button {
+  padding-top: 11px; padding-bottom: 11px;
+}
+main.content .landing .letter {
+  margin-top: 18px; line-height: 1.5;
+}
+main.content .landing .basics h2 {
+  margin-bottom: 22px;
+}
+main.content .landing .section-links a {
+  padding: 11px 0px;
+}
+main.content .landing .topic-description {
+  font-size: 13px; line-height: 1.4;
+}
+main.content .landing .letter p {
+  margin-bottom: 10px;
+}
+main.content .landing .letter .signature {
+  margin: 12px 0px 15px;
+}
+main.content .landing .pdf-block {
+  padding-top: 12px;
+}
+main.content .landing .target-link {
+  margin-bottom: 12px;
+}
+main.content .landing .small-links a {
+  padding-top: 4px; padding-bottom: 4px;
+  }
+}
+@media (max-width: 1100px) {
+
+
+main.content .landing .layout {
+  display: block; min-height: auto;
+}
+main.content .landing .intro, main.content .landing .basics, main.content .landing .further {
+  padding: 40px 7%;
+}
+main.content .landing h1 {
+  font-size: clamp(54px, 10vw, 80px); white-space: normal; margin-right: 0px;
+}
+main.content .landing h1 em, main.content .landing h1 span {
+  display: block;
+}
+main.content .landing h1 span {
+  margin-left: 0px;
+}
+main.content .landing .subtitle {
+  font-size: 21px; white-space: normal; margin-right: 0px;
+}
+main.content .landing .letter {
+  font-size: 17px;
+}
+main.content .landing .topic-description {
+  font-size: 15px;
+}
+main.content .landing .section-note {
+  font-size: 14px;
+}
+main.content .landing .eyebrow {
+  margin-bottom: 22px;
+}
+main.content .landing h2 {
+  max-width: 350px; font-size: 36px;
+}
+main.content .landing .section-links a {
+  font-size: 25px; padding: 20px 0px;
+}
+main.content .landing .small-links a {
+  padding: 12px 0px; font-size: 16px;
+}
+main.content .landing .further h2 {
+  font-size: 29px;
+}
+main.content .landing .target-link {
+  font-size: 26px;
+}
+main.content .landing .footer {
+  flex-direction: column; align-items: flex-start; padding: 22px 7%;
+}
+main.content .landing .footer p:last-child {
+  text-align: left;
+  }
+}
+@media (max-width: 380px) {
+
+
+main.content .landing h1 {
+  font-size: 50px;
+}
+main.content .landing .subtitle {
+  font-size: 19px;
+}
+main.content .landing .summary-button {
+  gap: 16px; font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  main.content .landing a {
+  transition: color 0.15s, background-color 0.15s;
+  }
 }
 @media print {
   .navbar, #TOC, .page-footer, .anchorjs-link { display: none !important; }

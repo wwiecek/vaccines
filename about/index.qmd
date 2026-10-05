@@ -4,6 +4,8 @@ pagetitle: "About"
 
 # About {#about}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 *This is the first draft of a shallow investigation report commissioned by Open Philanthropy. If you have access to it, I'll be very grateful for comments and suggestions, which you can make directly in this doc.*
 
 *This is a public document (although I have not posted it anywhere) and you're welcome to cite it.*
@@ -23,3 +25,5 @@ pagetitle: "About"
 Witold Więcek
 
 June 2024
+
+This document is a product of independent research and does not represent the views of Open Philanthropy (now Coefficient Giving) or the Center for Global Development.

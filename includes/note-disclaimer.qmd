@@ -1,0 +1,3 @@
+::: {.note-disclaimer}
+These notes are based on a shallow investigation into optimal dosing conducted in 2023–2024. This material may not be up to date and is still being revised by the author (autumn 2026).
+:::

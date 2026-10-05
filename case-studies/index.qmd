@@ -4,6 +4,8 @@ pagetitle: "Introducing four case studies"
 
 # Introducing four case studies {#introducing-four-case-studies}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 I include four recent case studies where optimal dosing has been implemented or seriously considered (focusing on fractionation). Reading the individual sections containing case studies first will be more informative and give you more background. However, it is not an essential place to start, so for now I just summarise them in very basic terms, so that readers who want to skip them can move to sections on biology, implementation, benefits etc.
 
 It's best to categorise these case studies by use case. I focus on four diseases here to give enough context for what follows, but I will discuss about fifteen different diseases throughout this document.

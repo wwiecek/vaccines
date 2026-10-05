@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - downloads/fractional-dosing-of-vaccines.pdf
+    - research-agenda/*.html
   render:
     - index.qmd
     - overview/*.qmd
@@ -12,7 +13,7 @@ project:
     - about/*.qmd
 
 website:
-  title: "Fractional dosing of vaccines"
+  title: "Optimal dosing of vaccines"
   navbar:
     background: dark
     collapse: true
@@ -50,15 +51,15 @@ website:
       - text: Research agenda
         menu:
           - text: Conclusions and next steps
-            href: research-agenda/index.qmd
+            href: research-agenda/index.qmd#conclusions-and-next-steps
           - text: Projects
-            href: research-agenda/projects.qmd
+            href: research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now
           - text: Knowledge gaps
-            href: research-agenda/knowledge-gaps.qmd
+            href: research-agenda/index.qmd#what-i-still-dont-understand
           - text: Future pathways
-            href: research-agenda/future-pathways.qmd
+            href: research-agenda/index.qmd#what-to-do-next
           - text: Reasons for scepticism
-            href: research-agenda/reservations.qmd
+            href: research-agenda/index.qmd#five-reasons-to-be-negative-about-these-proposals
       - text: About
         href: about/index.qmd
   search:
@@ -79,8 +80,8 @@ format:
     reference-location: margin
     page-layout: article
     grid:
-      sidebar-width: 190px
-      body-width: 740px
+      sidebar-width: 160px
+      body-width: 940px
       margin-width: 270px
-      gutter-width: 36px
+      gutter-width: 28px
     link-external-newwindow: true

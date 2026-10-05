@@ -4,6 +4,8 @@ pagetitle: "Case study: mpox vaccine"
 
 # Case study: mpox vaccine {#case-study-mpox-vaccine}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 In a sudden public health emergency caused by mpox in 2022-23 there was not enough supply of the only mpox vaccine (Jynneos/Imvanex, made by Bavarian Nordic) to immunise the at-risk population (men who have sex with men). Unlike other case studies presented, this affected all countries, e.g., in the US over 3mln doses were needed to vaccinate high-risk population and the estimated shortage was 50%. UK had a stockpile of 50,000 and moved to order 150,000 ([source](https://ukhsa.blog.gov.uk/2022/10/28/answering-questions-on-monkeypox-vaccination/)). It's safe to assume that in other countries the shortages would be larger.
 
 Jynneos/Imvanex (live smallpox and mpox vaccine) was initially approved for SC injection in two doses. The fractional dosing approach is to give two 1/5 doses (0.1mL instead of 0.5mL) intradermally. This is a "regular" vaccination, just done at 5-15 degree angle and using a smaller needle and syringe.

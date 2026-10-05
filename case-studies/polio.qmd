@@ -4,6 +4,8 @@ pagetitle: "Case study: inactivated polio vaccine"
 
 # Case study: inactivated polio vaccine {#case-study-inactivated-polio-vaccine}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 There is no cure for polio, but mass vaccination since the mid-20th century has eradicated the disease in many countries. Since 1988 the goal has been a complete eradication of polio. This was achieved using the live-attenuated (Sabin) oral polio vaccination (OPV)[^1]; for an overview see Tevi-Benissan et al. (2017). However, OPV can undergo genetic changes during intestinal replication, resulting in vaccine derived polioviruses and is capable of causing paralytic polio[^2]. 
 
 A viable alternative to OPV which does not suffer from that problem is an inactivated polio vaccine (IPV). However, producing IPV requires careful biosafety measures, which makes it more expensive. Okayasu et al. (2017) report that supply was less than half of the initial commitment made in 2014. Around that time, IPV cost (procured via UNICEF) was 20 times higher than OPV. The total costs of including IPV in routine immunisation (alone or in combination with OPV) are roughly 3-5 times higher than OPV.[^3] For cost projections that I cite see Thompson and Kalkowska (2021). 

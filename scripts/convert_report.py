@@ -11,6 +11,7 @@ import subprocess
 import zipfile
 from pathlib import Path
 
+from prepare_notes import prepare_notes
 
 SOURCE = Path("Shallow investigation into vaccine optimisation (draft).docx")
 
@@ -171,3 +172,6 @@ for path, start, end in PAGES:
 # The report's introductory author and method notes precede its old TOC.
 render_page("about/index.qmd", [{"t": "Header", "c": [1, ["about", [], []],
     [{"t": "Str", "c": "About"}]]}] + blocks[:positions["table-of-contents"]])
+
+# Keep the published note structure and notices after regeneration.
+prepare_notes()

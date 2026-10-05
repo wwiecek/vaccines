@@ -4,6 +4,8 @@ pagetitle: "Executive summary"
 
 # Executive summary {#executive-summary}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 ## Introducing the problem {#introducing-the-problem}
 
 These are the problems we want to solve:

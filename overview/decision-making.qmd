@@ -4,6 +4,8 @@ pagetitle: "Examples of how optimisation decisions are made"
 
 # Examples of how optimisation decisions are made {#examples-of-how-optimisation-decisions-are-made}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 Here, I want to provide a few thoughts about how decisions on optimisation were reached. These are not comprehensive case studies and there is some repetition of information about COVID here from other chapters. Unlike other chapters, this one is largely a personal view and I'm sure many experts may see this differently.
 
 I will talk about COVID and influenza. For polio and yellow fever endorsements, see the relevant case studies to understand how decisions were reached. I would have liked to also investigate the case of mpox further (to understand how the FDA's approval of lower dose was triggered), but when writing this chapter I have not been able to schedule meetings with relevant experts.

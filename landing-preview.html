@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Optimal dosing of vaccines — landing page preview</title>
+  <style>
+    /* Separate layout proposal; all presentation is contained in this file. */
+    :root {
+      --navy: #10232d;
+      --paper: #f4f2ea;
+      --mint: #a5d8cb;
+      --ink: #203137;
+      --rule: #c8d0c9;
+      --link: #087b72;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: system-ui, sans-serif;
+    }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--mint); outline-offset: 5px;
+    }
+    .skip-link {
+      position: absolute; top: -100px; left: 20px; z-index: 10;
+      padding: 12px; background: var(--paper); color: var(--navy);
+    }
+    .skip-link:focus { top: 12px; }
+    .topbar {
+      background: var(--navy); color: var(--paper);
+      border-bottom: 1px solid #456068;
+    }
+    .navbar {
+      width: 100%; margin: auto; min-height: 65px;
+      padding: 12px 3%; display: flex; align-items: center; gap: 32px;
+    }
+    .brand {
+      font-size: 19px; font-weight: 750; letter-spacing: -.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links > a, .nav-links summary {
+      font-size: 14px; text-decoration: none; cursor: pointer;
+      color: #c6d1d1;
+    }
+    .nav-links .active, .nav-links a:hover, .nav-links summary:hover {
+      color: var(--mint);
+    }
+    .nav-links details { position: relative; }
+    .nav-links summary { list-style: none; }
+    .nav-links summary::-webkit-details-marker { display: none; }
+    .nav-links summary::after { content: '⌄'; margin-left: 6px; }
+    .dropdown {
+      position: absolute; top: 30px; left: -12px; z-index: 5;
+      min-width: 250px; padding: 7px; background: var(--paper);
+      border: 1px solid var(--rule); border-radius: 2px;
+      box-shadow: 0 14px 28px #10232d24;
+    }
+    .dropdown a {
+      display: block; padding: 10px; font-size: 14px;
+      text-decoration: none; color: var(--ink);
+    }
+    .dropdown a:hover { background: #d4eee5; color: var(--navy); }
+    .menu-toggle {
+      display: none; margin-left: auto; padding: 8px 12px;
+      border: 1px solid #69858a; border-radius: 2px;
+      background: transparent; color: var(--paper); font: inherit;
+      cursor: pointer;
+    }
+    .layout {
+      width: 100%; margin: auto;
+      display: grid; grid-template-columns: minmax(0, 1.85fr) repeat(2, minmax(0, 1.075fr));
+      min-height: calc(100svh - 152px);
+    }
+    .intro {
+      padding: clamp(36px, 4vw, 60px) clamp(24px, 3vw, 60px)
+        clamp(36px, 4vw, 60px) clamp(68px, 8.4vw, 164px);
+      background: var(--navy); color: var(--paper);
+    }
+    .eyebrow {
+      margin: 0 0 27px; color: var(--mint);
+      font-size: 11px; font-weight: 750; line-height: 1.7;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 0; max-width: none;
+      font: 400 clamp(28px, 3.05vw, 60px)/1.1 Georgia, serif;
+      letter-spacing: -.065em;
+      white-space: nowrap;
+      margin-right: calc(-1 * clamp(24px, 3vw, 60px));
+    }
+    h1 em { color: var(--mint); font-weight: 400; }
+    h1 span { margin-left: .12em; }
+    .subtitle {
+      max-width: none; margin: 24px 0 25px;
+      font-size: clamp(14px, 1.38vw, 25px); line-height: 1.4;
+      white-space: nowrap;
+      margin-right: calc(-1 * clamp(24px, 3vw, 60px));
+    }
+    .summary-button {
+      display: inline-flex; align-items: center; gap: 24px;
+      padding: 13px 17px; background: #d4eee5; color: var(--navy);
+      font-size: 13px; font-weight: 750; text-decoration: none;
+    }
+    .summary-button:hover { background: var(--paper); }
+    .letter {
+      max-width: 680px; margin-top: 31px;
+      font-size: clamp(16px, 1.15vw, 18px); line-height: 1.6;
+      font-style: italic;
+      color: #d5dfdc;
+    }
+    .letter p { margin: 0 0 15px; }
+    .letter .signature {
+      margin: 18px 0 24px; color: var(--mint); font-style: normal;
+    }
+    .pdf-block { padding-top: 19px; border-top: 1px solid #536a70; }
+    .pdf-link {
+      display: inline-flex; gap: 22px; color: #d4eee5;
+      font-size: 14px; font-weight: 650;
+    }
+    .pdf-link:hover { color: white; }
+    .pdf-note {
+      max-width: 430px; margin: 10px 0 0;
+      color: #b2c5c4; font-size: 12px; line-height: 1.6;
+    }
+    .basics, .further { padding: clamp(36px, 4vw, 66px) 30px 35px; }
+    .basics {
+      padding-left: clamp(40px, 4.8vw, 92px);
+      padding-right: clamp(40px, 4.8vw, 92px); background: #dfe6de;
+    }
+    .further {
+      padding-left: calc(30px + 2vw);
+      padding-right: clamp(76px, 8vw, 154px); background: #ecebe5;
+    }
+    .basics .eyebrow, .further .eyebrow { color: #4b756b; }
+    h2 {
+      margin: 0 0 30px;
+      font: 400 clamp(28px, 2.45vw, 38px)/1.1 Georgia, serif;
+      letter-spacing: -.045em;
+    }
+    .section-links { border-top: 1px solid #8aa99c; }
+    .section-links a {
+      display: grid; grid-template-columns: 1fr auto; align-items: baseline;
+      gap: 7px 14px; padding: 16px 0; border-bottom: 1px solid #8aa99c;
+      font: 400 clamp(20px, 1.7vw, 27px)/1.2 Georgia, serif;
+      letter-spacing: -.025em; text-decoration: none;
+    }
+    .topic-description {
+      grid-column: 1 / -1; color: #52635e;
+      font: 400 13.5px/1.45 system-ui, sans-serif; letter-spacing: normal;
+    }
+    .section-note {
+      margin: -3px 0 12px; color: #596a66;
+      font-size: 13px; line-height: 1.45;
+    }
+    .section-links a:hover, .small-links a:hover, .target-link:hover {
+      color: var(--link);
+    }
+    .arrow { flex-shrink: 0; font: 500 14px system-ui, sans-serif; }
+    .target-link {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; padding-bottom: 24px; margin-bottom: 27px;
+      border-bottom: 1px solid #b9c1ba;
+      font: 400 23px/1.2 Georgia, serif;
+      letter-spacing: -.025em; text-decoration: none;
+    }
+    .further h2 { margin-bottom: 14px; font-size: 25px; }
+    .small-links { display: grid; }
+    .small-links a {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; padding: 9px 0; font-size: 14px; line-height: 1.45;
+      text-decoration: none;
+    }
+    .research { margin-top: 30px; padding-top: 25px; border-top: 1px solid #b9c1ba; }
+    .footer {
+      width: 100%; margin: auto; min-height: 86px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px 30px; padding: 24px 6vw 24px 7vw;
+      border-top: 2px solid #88b8aa; background: var(--navy);
+      color: #b2c5c4; font-size: 12px; line-height: 1.6;
+    }
+    .footer p { margin: 0; }
+    .footer p:first-child { color: var(--mint); white-space: nowrap; }
+    .footer p:last-child { max-width: 780px; text-align: right; }
+    @media (max-width: 1100px) {
+      .navbar { gap: 24px; }
+      .nav-links { gap: 15px; }
+      .brand { font-size: 17px; }
+    }
+    @media (min-width: 1101px) and (max-height: 900px) {
+      .intro, .basics, .further { padding-top: 30px; padding-bottom: 30px; }
+      .eyebrow { margin-bottom: 18px; }
+      .subtitle { margin: 18px 0 20px; }
+      .letter { margin-top: 24px; font-size: 16px; line-height: 1.55; }
+      .letter p { margin-bottom: 12px; }
+      .letter .signature { margin: 14px 0 19px; }
+      .pdf-block { padding-top: 16px; }
+      .section-links a { padding: 13px 0; }
+      .target-link { padding-bottom: 14px; margin-bottom: 16px; }
+      .further h2 { margin-bottom: 10px; }
+      .small-links a { padding-top: 6px; padding-bottom: 6px; }
+      .research { margin-top: 18px; padding-top: 14px; }
+    }
+    @media (min-width: 1101px) and (max-height: 760px) {
+      .intro, .basics, .further { padding-top: 23px; padding-bottom: 23px; }
+      .eyebrow { margin-bottom: 14px; }
+      .subtitle { margin: 14px 0 16px; }
+      .summary-button { padding-top: 11px; padding-bottom: 11px; }
+      .letter { margin-top: 18px; line-height: 1.5; }
+      .basics h2 { margin-bottom: 22px; }
+      .section-links a { padding: 11px 0; }
+      .topic-description { font-size: 13px; line-height: 1.4; }
+      .letter p { margin-bottom: 10px; }
+      .letter .signature { margin: 12px 0 15px; }
+      .pdf-block { padding-top: 12px; }
+      .target-link { margin-bottom: 12px; }
+      .small-links a { padding-top: 4px; padding-bottom: 4px; }
+    }
+    @media (max-width: 1100px) {
+      .navbar { flex-wrap: wrap; padding: 14px 5%; gap: 16px; }
+      .brand { flex: 1; min-width: 0; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; width: 100%; align-items: stretch; gap: 0;
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links > a, .nav-links summary { display: block; padding: 12px 0; }
+      .dropdown { position: static; box-shadow: none; margin-bottom: 8px; }
+      .layout { display: block; min-height: auto; }
+      .intro, .basics, .further { padding: 40px 7%; }
+      h1 { font-size: clamp(54px, 10vw, 80px); white-space: normal; margin-right: 0; }
+      h1 em, h1 span { display: block; }
+      h1 span { margin-left: 0; }
+      .subtitle { font-size: 21px; white-space: normal; margin-right: 0; }
+      .letter { font-size: 17px; }
+      .topic-description { font-size: 15px; }
+      .section-note { font-size: 14px; }
+      .eyebrow { margin-bottom: 22px; }
+      h2 { max-width: 350px; font-size: 36px; }
+      .section-links a { font-size: 25px; padding: 20px 0; }
+      .small-links a { padding: 12px 0; font-size: 16px; }
+      .further h2 { font-size: 29px; }
+      .target-link { font-size: 26px; }
+      .footer { flex-direction: column; align-items: flex-start; padding: 22px 7%; }
+      .footer p:last-child { text-align: left; }
+    }
+    @media (max-width: 380px) {
+      .brand { max-width: 210px; font-size: 16px; }
+      .menu-toggle { padding: 7px 9px; font-size: 14px; }
+      h1 { font-size: 50px; }
+      .subtitle { font-size: 19px; }
+      .summary-button { gap: 16px; font-size: 12px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      a { transition: color .15s, background-color .15s; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="landing-preview.html">Optimal dosing of vaccines</a>
+      <button class="menu-toggle" type="button" aria-expanded="false"
+              aria-controls="nav-links" hidden>Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a class="active" href="landing-preview.html" aria-current="page">Home</a>
+        <details>
+          <summary>Overview</summary>
+          <div class="dropdown">
+            <a href="_site/overview/index.html">Executive summary</a>
+            <a href="_site/overview/biology.html">Biology</a>
+            <a href="_site/overview/vaccine-development.html">Vaccine development</a>
+            <a href="_site/overview/practical-implementation.html">Practical implementation</a>
+            <a href="_site/overview/population-benefits.html">Population benefits</a>
+            <a href="_site/overview/decision-making.html">Decision-making</a>
+          </div>
+        </details>
+        <a href="_site/vaccines/index.html">Vaccines</a>
+        <details>
+          <summary>Case studies</summary>
+          <div class="dropdown">
+            <a href="_site/case-studies/index.html">Introducing the case studies</a>
+            <a href="_site/case-studies/covid.html">COVID</a>
+            <a href="_site/case-studies/mpox.html">Mpox</a>
+            <a href="_site/case-studies/polio.html">Polio</a>
+            <a href="_site/case-studies/yellow-fever.html">Yellow fever</a>
+          </div>
+        </details>
+        <details>
+          <summary>Research agenda</summary>
+          <div class="dropdown">
+            <a href="_site/research-agenda/index.html#conclusions-and-next-steps">Conclusions and next steps</a>
+            <a href="_site/research-agenda/index.html#four-potential-projects-that-could-be-done-right-now">Projects</a>
+            <a href="_site/research-agenda/index.html#what-i-still-dont-understand">Knowledge gaps</a>
+            <a href="_site/research-agenda/index.html#what-to-do-next">Future pathways</a>
+            <a href="_site/research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism</a>
+          </div>
+        </details>
+        <a href="_site/about/index.html">About</a>
+      </div>
+    </nav>
+  </header>
+  <main class="layout" id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A research investigation by Witold Więcek</p>
+      <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
+      <p class="subtitle">Changing vaccine doses to protect more people</p>
+      <a class="summary-button" href="_site/overview/index.html">
+        Read the executive summary <span aria-hidden="true">↗</span>
+      </a>
+      <div class="letter">
+        <p>For many vaccines, supply is often insufficient to vaccinate everyone
+          who needs them. Optimising doses has saved lives during outbreaks,
+          but both the science and decision-making around optimisation remain
+          poorly understood. I hope these notes are helpful to people interested
+          in working on this problem.</p>
+        <p>This is a shallow investigation into the optimal use of vaccines,
+          written in early 2024, with some subsequent revisions.</p>
+        <p class="signature">Witold Więcek</p>
+      </div>
+      <div class="pdf-block">
+        <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf"
+           type="application/pdf" download>
+          Read the whole report as PDF <span aria-hidden="true">↓</span>
+        </a>
+        <p class="pdf-note">The PDF contains the same information as this website.
+          Choose whichever format you prefer.</p>
+      </div>
+    </section>
+    <section class="basics" aria-labelledby="basics-title">
+      <p class="eyebrow">Understand the problem</p>
+      <h2 id="basics-title">Basics of optimal dosing</h2>
+      <nav class="section-links" aria-label="Basics of optimal dosing">
+        <a href="_site/overview/biology.html"><span>Biology</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Why can a lower dose prove just as effective?
+            Dose response, correlates of protection, and increasing gaps between doses.</span></a>
+        <a href="_site/overview/vaccine-development.html"><span>Vaccine development</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">How do we determine the optimal dose during trials?
+            Dose selection models and vaccine makers’ incentives.</span></a>
+        <a href="_site/overview/practical-implementation.html"><span>Practical implementation</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Syringes, vials, intradermal delivery: how to deliver lower doses.</span></a>
+        <a href="_site/overview/population-benefits.html"><span>Population benefits</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">What models say about the potential to save lives.
+            Epidemiological modelling and the impact of delivering doses earlier in an outbreak.</span></a>
+        <a href="_site/overview/decision-making.html"><span>Decision-making</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Practical examples of why changing doses is difficult,
+            even during outbreaks. Public health bodies, WHO, and programmatic feasibility.</span></a>
+      </nav>
+    </section>
+    <aside class="further" aria-label="Targets, case studies and research agenda">
+      <p class="eyebrow">Explore the evidence</p>
+      <a class="target-link" href="_site/vaccines/index.html">
+        Finding targets for optimisation <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <section aria-labelledby="cases-title">
+        <h2 id="cases-title">Case studies</h2>
+        <p class="section-note">Examples of doses modified to expand coverage.</p>
+        <nav class="small-links" aria-label="Case studies">
+          <a href="_site/case-studies/covid.html">COVID <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/mpox.html">Mpox <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/polio.html">Polio <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/case-studies/yellow-fever.html">Yellow fever <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+      <section class="research" aria-labelledby="research-title">
+        <h2 id="research-title">Research agenda</h2>
+        <p class="section-note">Practical next steps.</p>
+        <nav class="small-links" aria-label="Research agenda">
+          <a href="_site/research-agenda/index.html#conclusions-and-next-steps">Conclusions and next steps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#four-potential-projects-that-could-be-done-right-now">Potential projects <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#what-i-still-dont-understand">Knowledge gaps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#what-to-do-next">Future pathways <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="_site/research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+    </aside>
+  </main>
+  <footer class="footer">
+    <p>© 2026 Witold Więcek</p>
+    <p>Based on research projects funded by Open Philanthropy (now Coefficient Giving)
+      and the Center for Global Development.<br>
+      This document is a product of independent research and does not represent
+      the views of these organisations.</p>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('#nav-links');
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    const menus = document.querySelectorAll('.nav-links details');
+    menus.forEach(menu => menu.addEventListener('toggle', () => {
+      if (menu.open) menus.forEach(other => {
+        if (other !== menu) other.open = false;
+      });
+    }));
+    document.addEventListener('click', event => {
+      menus.forEach(menu => {
+        if (!menu.contains(event.target)) menu.open = false;
+      });
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const openMenu = [...menus].find(menu => menu.open);
+      if (openMenu) {
+        openMenu.open = false;
+        openMenu.querySelector('summary').focus();
+      } else if (links.classList.contains('is-open')) {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Menu';
+        toggle.focus();
+      }
+    });
+  </script>
+</body>
+</html>

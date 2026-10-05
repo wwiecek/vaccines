@@ -4,6 +4,8 @@ pagetitle: "How large are health benefits from optimisation?"
 
 # How large are health benefits from optimisation? {#how-large-are-health-benefits-from-optimisation}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 In this section I try to develop a sense of how large benefits of optimal regimens can be. I cover three things. First, I briefly talk about what types of optimisation are of interest to decision makers and how it is modelled. Second, I talk through some notable estimates in the literature, to give us a sense of how large benefits can be. Third, I point out some reasons for skepticism. I then try to summarise what we know.
 
 *To keep the length of references manageable, I provide references for what I consider the most worthwhile reading material. Relatively less important papers are referenced as URLs.*

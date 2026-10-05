@@ -4,6 +4,8 @@ pagetitle: "Practical aspects of changing dose: syringes, vials, and intradermal
 
 # Practical aspects of changing dose: syringes, vials, and intradermal delivery {#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 In the case studies of polio and yellow fever fractionation we saw that a standard dose of 0.5mL was swapped for 0.1mL. In some other applications even lower doses were considered. How is that done in practice? Does splitting the "full" dose into N doses automatically mean you can vaccinate N times more people? To answer these types of questions, there are several topics it's good to get familiar with: what syringes are used to vaccinate, how splitting of vials is achieved, and intradermal vaccination.
 
 ## Syringes and wastage {#syringes-and-wastage}

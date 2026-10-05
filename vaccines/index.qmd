@@ -4,6 +4,8 @@ pagetitle: "Finding targets for optimisation; disease-specific summaries"
 
 # Finding targets for optimisation; disease-specific summaries {#finding-targets-for-optimisation-disease-specific-summaries}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 ## Is it *worth it* to optimise any vaccine? {#is-it-worth-it-to-optimise-any-vaccine}
 
 To begin to answer this question, synthesising information from all previous sections, I first create a longlist of questions that we should ask before exploring optimisation for any vaccine/disease combination. **These are not sufficient conditions, nor are they necessary.** We should think of them as so-called "enablers": the more of these conditions are obtained, the more we should consider prioritising a given vaccine for optimisation.
@@ -167,4 +169,4 @@ Recommendation: there has been a lot of focus on improving malaria vaccines and 
 ## Further reading
 
 - [Introducing four case studies](../case-studies/index.qmd)
-- [Four potential projects that could be done right now](../research-agenda/projects.qmd)
+- [Four potential projects that could be done right now](../research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now)

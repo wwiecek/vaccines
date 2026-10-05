@@ -1,6 +1,6 @@
 ---
-pagetitle: "Fractional dosing of vaccines"
-title: "Fractional dosing of vaccines"
+pagetitle: "Optimal dosing of vaccines"
+title: "Optimal dosing of vaccines"
 title-block-style: none
 page-layout: full
 toc: false
@@ -8,92 +8,85 @@ toc: false
 
 ```{=html}
 <div class="landing">
-  <header class="landing-hero">
-    <div class="landing-inner">
-      <p class="eyebrow">A research report by Witold Więcek</p>
-      <div class="hero-grid">
-        <h1>Fractional dosing <em>of vaccines</em></h1>
-        <div class="hero-aside">
-          <p>What if a different vaccine dose or schedule could protect
-            more people?</p>
-          <a class="hero-link" href="overview/index.html">
-            Read the executive summary <span aria-hidden="true">↗</span>
-          </a>
-          <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf"
-             type="application/pdf" download>
-            Download the complete report (PDF) <span aria-hidden="true">↓</span>
-          </a>
-          <p class="hero-meta">An investigation into evidence,
-            implementation, and the limits of optimisation.<br>
-            Draft · June 2024</p>
-        </div>
+<div class="layout" id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A research investigation by Witold Więcek</p>
+      <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
+      <p class="subtitle">Changing vaccine doses to protect more people</p>
+      <a class="summary-button" href="overview/index.html">
+        Read the executive summary <span aria-hidden="true">↗</span>
+      </a>
+      <div class="letter">
+        <p>For many vaccines, supply is often insufficient to vaccinate everyone
+          who needs them. Optimising doses has saved lives during outbreaks,
+          but both the science and decision-making around optimisation remain
+          poorly understood. I hope these notes are helpful to people interested
+          in working on this problem.</p>
+        <p>This is a shallow investigation into the optimal use of vaccines,
+          written in early 2024, with some subsequent revisions.</p>
+        <p class="signature">Witold Więcek</p>
       </div>
-      <div class="hero-rule">
-        <span>Evidence and mechanisms</span>
-        <span>Case studies</span>
-        <span>Research priorities</span>
-      </div>
-    </div>
-  </header>
-
-  <section class="landing-index" aria-labelledby="explore-title">
-    <div class="landing-inner">
-      <div class="index-head">
-        <p class="eyebrow">Explore the report</p>
-        <h2 id="explore-title">Where to begin</h2>
-      </div>
-      <div class="chapter-grid">
-        <a class="chapter" href="overview/index.html">
-          <span class="chapter-number">01 / Overview</span>
-          <h3>Why change the dose?</h3>
-          <p>Biology, development, delivery, and population benefit.</p>
-          <span class="chapter-arrow" aria-hidden="true">↗</span>
+      <div class="pdf-block">
+        <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf" type="application/pdf" download="">
+          Read the whole report as PDF <span aria-hidden="true">↓</span>
         </a>
-        <a class="chapter" href="vaccines/index.html">
-          <span class="chapter-number">02 / Vaccines</span>
-          <h3>Where might it matter?</h3>
-          <p>Short assessments across infectious diseases.</p>
-          <span class="chapter-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="chapter" href="case-studies/index.html">
-          <span class="chapter-number">03 / Case studies</span>
-          <h3>What has been tried?</h3>
-          <p>COVID, mpox, polio, and yellow fever.</p>
-          <span class="chapter-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="chapter" href="research-agenda/index.html">
-          <span class="chapter-number">04 / Research agenda</span>
-          <h3>What should we test?</h3>
-          <p>Possible projects, gaps, and reasons for scepticism.</p>
-          <span class="chapter-arrow" aria-hidden="true">↗</span>
-        </a>
+        <p class="pdf-note">The PDF contains the same information as this website.
+          Choose whichever format you prefer.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="landing-guide" aria-labelledby="guide-title">
-    <div class="landing-inner guide-grid">
-      <div>
-        <p class="eyebrow">The central question</p>
-        <h2 id="guide-title">A fixed supply need not mean a fixed number
-          of people protected.</h2>
-        <p>Dose, timing, and delivery affect individual immune responses
-          and the reach of a vaccination programme. Finding better regimens
-          requires biological evidence, practical feasibility, and decisions
-          that weigh population benefits against uncertainty.</p>
-      </div>
-      <nav class="guide-links" aria-label="Read the overview">
-        <a href="overview/biology.html">Biology <span aria-hidden="true">↗</span></a>
-        <a href="overview/vaccine-development.html">Vaccine development
-          <span aria-hidden="true">↗</span></a>
-        <a href="overview/practical-implementation.html">Practical implementation
-          <span aria-hidden="true">↗</span></a>
-        <a href="overview/population-benefits.html">Population benefits
-          <span aria-hidden="true">↗</span></a>
-        <a href="overview/decision-making.html">Decision-making
-          <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="basics" aria-labelledby="basics-title">
+      <p class="eyebrow">Understand the problem</p>
+      <h2 id="basics-title">Basics of optimal dosing</h2>
+      <nav class="section-links" aria-label="Basics of optimal dosing">
+        <a href="overview/biology.html"><span>Biology</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Why can a lower dose prove just as effective?
+            Dose response, correlates of protection, and increasing gaps between doses.</span></a>
+        <a href="overview/vaccine-development.html"><span>Vaccine development</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">How do we determine the optimal dose during trials?
+            Dose selection models and vaccine makers’ incentives.</span></a>
+        <a href="overview/practical-implementation.html"><span>Practical implementation</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Syringes, vials, intradermal delivery: how to deliver lower doses.</span></a>
+        <a href="overview/population-benefits.html"><span>Population benefits</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">What models say about the potential to save lives.
+            Epidemiological modelling and the impact of delivering doses earlier in an outbreak.</span></a>
+        <a href="overview/decision-making.html"><span>Decision-making</span> <span class="arrow" aria-hidden="true">↗</span>
+          <span class="topic-description">Practical examples of why changing doses is difficult,
+            even during outbreaks. Public health bodies, WHO, and programmatic feasibility.</span></a>
       </nav>
-    </div>
-  </section>
+    </section>
+    <aside class="further" aria-label="Targets, case studies and research agenda">
+      <p class="eyebrow">Explore the evidence</p>
+      <a class="target-link" href="vaccines/index.html">
+        Finding targets for optimisation <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <section aria-labelledby="cases-title">
+        <h2 id="cases-title">Case studies</h2>
+        <p class="section-note">Examples of doses modified to expand coverage.</p>
+        <nav class="small-links" aria-label="Case studies">
+          <a href="case-studies/covid.html">COVID <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="case-studies/mpox.html">Mpox <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="case-studies/polio.html">Polio <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="case-studies/yellow-fever.html">Yellow fever <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+      <section class="research" aria-labelledby="research-title">
+        <h2 id="research-title">Research agenda</h2>
+        <p class="section-note">Practical next steps.</p>
+        <nav class="small-links" aria-label="Research agenda">
+          <a href="research-agenda/index.html#conclusions-and-next-steps">Conclusions and next steps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="research-agenda/index.html#four-potential-projects-that-could-be-done-right-now">Potential projects <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="research-agenda/index.html#what-i-still-dont-understand">Knowledge gaps <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="research-agenda/index.html#what-to-do-next">Future pathways <span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism <span class="arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+    </aside>
+  </div><footer class="footer">
+    <p>© 2026 Witold Więcek</p>
+    <p>Based on research projects funded by Open Philanthropy (now Coefficient Giving)
+      and the Center for Global Development.<br>
+      This document is a product of independent research and does not represent
+      the views of these organisations.</p>
+  </footer>
 </div>
 ```

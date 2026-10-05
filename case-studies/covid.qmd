@@ -4,6 +4,8 @@ pagetitle: "Case study: fractional dosing of COVID vaccines"
 
 # Case study: fractional dosing of COVID vaccines {#case-study-fractional-dosing-of-covid-vaccines}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 ***Important note:** this is the first case study I drafted for this report and it's a bit dated/too basic; I wanted to focus on other new material rather than refresh it. Other sections of the report have much more relevant information on COVID, so I'd simply encourage reading other sections first. **Lastly, this is about 2021; I talk about the important case of lowering doses of boosters for Moderna mRNA vaccines elsewhere in the report.***
 
 ## Scale of shortage of COVID vaccines {#scale-of-shortage-of-covid-vaccines}

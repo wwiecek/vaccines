@@ -4,6 +4,8 @@ pagetitle: "Vaccine development perspective"
 
 # Vaccine development perspective {#vaccine-development-perspective}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 In the chapter on biology of optimal dosing I spoke about some of the mechanisms relevant to optimisation, but largely taking the perspective of already-existing vaccines. But what happens when a new candidate vaccine is developed, tested in animals, first tested in humans, and then goes through multi-stage clinical development? At each stage, how are the decisions made on what doses and schedules to use? If that process is efficient, we would expect newly-approved vaccines to be close to optimal. But we know from the case studies, that this isn't always the case. Therefore it's worth to describe this process.
 
 ## Dose setting for (cancer) drugs: some interesting parallels {#dose-setting-for-cancer-drugs-some-interesting-parallels}
@@ -101,4 +103,4 @@ Desikan, Rajat, Massimiliano Germani, Piet H. van der Graaf, and Mindy Magee. 20
 ## Further reading
 
 - [Biology of optimal dosing](biology.qmd)
-- [Four potential projects that could be done right now](../research-agenda/projects.qmd)
+- [Four potential projects that could be done right now](../research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now)

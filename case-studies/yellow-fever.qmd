@@ -4,6 +4,8 @@ pagetitle: "Case study: yellow fever"
 
 # Case study: yellow fever {#case-study-yellow-fever}
 
+{{< include ../includes/note-disclaimer.qmd >}}
+
 Yellow fever (YF) is endemic in most of Sub-Saharan Africa and South America (tropics and sub-tropics. YF is transmitted by *Aedes aegypti* and has a high reproductive number. There are 200,000 cases per year, 90% in Africa, with up to 80,000 deaths, although [estimates](https://pubmed.ncbi.nlm.nih.gov/24800812/) are imprecise.
 
 WHO recommends vaccinating infants (9-12 months, given together with measles vaccine) against YF in endemic countries. It's a simple live attenuated 17D vaccine (in use since 1938, developed by Max Thiler at Rockefeller Foundation), costing about a dollar per dose.
