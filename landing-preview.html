@@ -42,9 +42,9 @@
       text-decoration: none;
     }
     .navbar { flex-wrap: nowrap; }
-    .nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
-    .nav-links > a[href="_site/vaccines/index.html"]::before {
-      content: '·'; margin: 0 16px 0 4px; color: var(--mint);
+    .nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; }
+    .nav-links > a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"])::before {
+      content: '·'; margin: 0 10px 0 2px; color: var(--mint);
     }
     .nav-links > a, .nav-links summary {
       font-size: 12px; white-space: nowrap; text-decoration: none; cursor: pointer;
@@ -262,7 +262,18 @@
     @media (prefers-reduced-motion: no-preference) {
       a { transition: color .15s, background-color .15s; }
     }
-  </style>
+
+    body { display: flex; flex-direction: column; min-height: 100svh; background: var(--navy); }
+    .layout { flex: 1; min-height: 0; }
+    .intro { display: flex; flex-direction: column; }
+    .intro > .summary-button { align-self: flex-start; }
+    .landing-art { display: none; width: clamp(210px,17vw,280px); max-width: 100%; padding-top: 56px; margin: auto auto 20px; }
+    .landing-art svg { display: block; width: 100%; aspect-ratio: 1; }
+    .response-band { fill: var(--mint); opacity: .17; }
+    .response-curve { fill: none; stroke: var(--mint); stroke-width: 1.8; }
+    .response-point { fill: var(--mint); }
+    @media (min-width: 1101px) { .landing-art { display: block; } }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -304,7 +315,7 @@
       </div>
     </nav>
   </header>
-  <main class="layout" id="main">
+  <main class="layout landing" id="main">
     <section class="intro" aria-labelledby="title">
       <p class="eyebrow">A research investigation by Witold Więcek</p>
       <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
@@ -329,6 +340,13 @@
         </a>
         <p class="pdf-note">The PDF contains the same information as this website.
           Choose whichever format you prefer.</p>
+      </div>
+      <div class="landing-art" aria-hidden="true">
+        <svg viewBox="0 0 280 280" focusable="false">
+          <path class="response-band"></path>
+          <path class="response-curve"></path>
+          <circle class="response-point" r="4"></circle>
+        </svg>
       </div>
     </section>
     <section class="basics" aria-labelledby="basics-title">
@@ -420,5 +438,61 @@
       }
     });
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const landing = document.querySelector(".landing");
+  if (!landing) return;
+  const header = document.querySelector("#quarto-header") || document.querySelector("body > header");
+  function sizeHeader() {
+    document.documentElement.style.setProperty("--landing-header-height", `${header.getBoundingClientRect().height}px`);
+  }
+  new ResizeObserver(sizeHeader).observe(header);
+  sizeHeader();
+
+  const art = landing.querySelector(".landing-art");
+  if (!art) return;
+  const sigmoid = (x, steepness, midpoint) => 1 / (1 + Math.exp(-steepness * (x - midpoint)));
+  function response(x, steepness = 11, midpoint = .49) {
+    const start = sigmoid(0, steepness, midpoint);
+    return (sigmoid(x, steepness, midpoint) - start) /
+      (sigmoid(1, steepness, midpoint) - start);
+  }
+  const point = (x, y) => [20 + 240 * x, 260 - 240 * y];
+  function curve(steepness, midpoint, reverse = false) {
+    return Array.from({length: 101}, (_, i) => {
+      const x = reverse ? 1 - i / 100 : i / 100;
+      const [px, py] = point(x, response(x, steepness, midpoint));
+      return `${i === 0 && !reverse ? "M" : "L"}${px.toFixed(2)},${py.toFixed(2)}`;
+    }).join(" ");
+  }
+  art.querySelector(".response-band").setAttribute("d", curve(14, .40) + " " + curve(7, .57, true) + "Z");
+  art.querySelector(".response-curve").setAttribute("d", curve(11, .49));
+  const dot = art.querySelector(".response-point");
+  const desktop = matchMedia("(min-width: 1101px)");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  let frame, elapsed = 0, last = 0;
+  function position(x) {
+    const [px, py] = point(x, response(x));
+    dot.setAttribute("cx", px);
+    dot.setAttribute("cy", py);
+  }
+  function animate(time) {
+    if (last && !document.hidden) elapsed += Math.min(time - last, 100);
+    last = time;
+    position(.5 - .43 * Math.cos(elapsed / 16000 * 2 * Math.PI));
+    frame = requestAnimationFrame(animate);
+  }
+  function motion() {
+    cancelAnimationFrame(frame);
+    last = 0;
+    position(.5);
+    if (desktop.matches && !reduced.matches) frame = requestAnimationFrame(animate);
+  }
+  desktop.addEventListener("change", motion);
+  reduced.addEventListener("change", motion);
+  motion();
+});
+</script>
+
 </body>
 </html>

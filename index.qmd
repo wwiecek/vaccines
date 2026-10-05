@@ -33,6 +33,13 @@ toc: false
         <p class="pdf-note">The PDF contains the same information as this website.
           Choose whichever format you prefer.</p>
       </div>
+      <div class="landing-art" aria-hidden="true">
+        <svg viewBox="0 0 280 280" focusable="false">
+          <path class="response-band"></path>
+          <path class="response-curve"></path>
+          <circle class="response-point" r="4"></circle>
+        </svg>
+      </div>
     </section>
     <section class="basics" aria-labelledby="basics-title">
       <p class="eyebrow">Understand the problem</p>

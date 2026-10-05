@@ -71,6 +71,8 @@ format:
     include-after-body:
       - includes/reading-progress.html
       - includes/next-section.html
+      - includes/note-attribution.html
+      - includes/landing-accent.html
       - includes/footnote-placement.html
     toc: true
     toc-location: left
