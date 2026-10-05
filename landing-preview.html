@@ -43,7 +43,7 @@
     }
     .navbar { flex-wrap: nowrap; }
     .nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; }
-    .nav-links > a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"])::before {
+    .nav-links > a:is([href$="about/index.html"], [href$="overview/biology.html"], [href*="vaccines/"])::before {
       content: '·'; margin: 0 10px 0 2px; color: var(--mint);
     }
     .nav-links > a, .nav-links summary {

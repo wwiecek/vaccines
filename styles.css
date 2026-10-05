@@ -93,10 +93,10 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
   .navbar .navbar-brand { font-size: 1rem; }
   .navbar .navbar-nav { flex-wrap: nowrap; gap: 0; }
   .navbar .nav-link { white-space: nowrap; padding-inline: .45rem; }
-  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"])) {
+  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href*="vaccines/"])) {
     display: flex; align-items: center; margin-left: .5rem;
   }
-  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"]))::before {
+  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href*="vaccines/"]))::before {
     content: "·"; color: var(--mint); margin-right: .75rem;
   }
 }
@@ -638,8 +638,8 @@ main.content .landing .response-point { fill: var(--mint); }
 @media (min-width: 1101px) { main.content .landing .landing-art { display: block; } }
 @media (min-width: 1200px) and (max-width: 1399px) {
   .navbar .nav-link { font-size: .74rem; padding-inline: .3rem; }
-  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"])) { margin-left: .2rem; }
-  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href$="vaccines/index.html"]))::before { margin-right: .45rem; }
+  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href*="vaccines/"])) { margin-left: .2rem; }
+  .navbar .nav-item:has(> a:is([href$="about/index.html"], [href$="overview/biology.html"], [href*="vaccines/"]))::before { margin-right: .45rem; }
 }
 .note-attribution {
   margin-top: 2.5rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
