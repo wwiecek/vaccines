@@ -57,6 +57,7 @@ def prepare_notes():
                  *Path("research-agenda").glob("*.qmd"),
                  *Path("about").glob("*.qmd")]:
         content = page.read_text()
+        content = re.sub(r"Table [12]:", "Table:", content)
         for slug, anchor in AGENDA_SECTIONS.items():
             content = re.sub(
                 rf"research-agenda/{slug}\.qmd(?:#([^)]*))?",

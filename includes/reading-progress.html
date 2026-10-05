@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let pending = false;
   function update() {
+    const navbar = document.querySelector("#quarto-header");
+    const headerBottom = Math.max(0, navbar?.getBoundingClientRect().bottom || 0);
+    progress.style.setProperty("--progress-top", `${headerBottom}px`);
     const total = document.documentElement.scrollHeight - innerHeight;
     progress.hidden = total <= 0;
     const percent = total > 0 ? Math.min(100, 100 * scrollY / total) : 100;
@@ -28,6 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
   addEventListener("scroll", requestUpdate, { passive: true });
   addEventListener("resize", requestUpdate);
   addEventListener("load", requestUpdate);
+  const main = document.querySelector("main.content");
+  const sidebar = document.querySelector("#quarto-sidebar");
+  function alignContents() {
+    if (!sidebar || !main) return;
+    sidebar.style.setProperty("--toc-offset", "0px");
+    if (innerWidth < 992) return;
+    const firstText = main.querySelector("p:not(.note-disclaimer p)");
+    if (!firstText) return;
+    const content = document.querySelector("#quarto-content");
+    const offset = firstText.getBoundingClientRect().top -
+      content.getBoundingClientRect().top -
+      parseFloat(getComputedStyle(content).paddingTop);
+    sidebar.style.setProperty("--toc-offset", `${Math.max(0, offset)}px`);
+  }
+  addEventListener("load", alignContents);
+  addEventListener("resize", alignContents);
+  document.fonts?.ready.then(alignContents);
+  // Headroom can hide the navbar without a further scroll event.
+  const header = document.querySelector("#quarto-header");
+  if (header) new MutationObserver(requestUpdate).observe(header, {
+    attributes: true, attributeFilter: ["class", "style"]
+  });
+  header?.addEventListener("transitionend", requestUpdate);
+  alignContents();
   update();
 });
 </script>

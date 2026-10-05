@@ -86,7 +86,7 @@ It is obviously important to consider systemic changes and economic incentives. 
 
 What makes for a good target?
 
-I briefly synthesise information from all earlier sections in [Table 2: factors that make a vaccine worth optimising](../vaccines/index.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
+I briefly synthesise information from all earlier sections in [Table: factors that make a vaccine worth optimising](../vaccines/index.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
 
 +-----------------------------------------------------------------------+---------------------------------------+----------------------------------------------------+
 | Individual benefits                                                   | Population benefits                   | Feasible implementation                            |

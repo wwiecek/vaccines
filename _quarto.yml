@@ -20,20 +20,20 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: Overview
-        menu:
-          - text: Executive summary
-            href: overview/index.qmd
-          - text: Biology
-            href: overview/biology.qmd
-          - text: Vaccine development
-            href: overview/vaccine-development.qmd
-          - text: Practical implementation
-            href: overview/practical-implementation.qmd
-          - text: Population benefits
-            href: overview/population-benefits.qmd
-          - text: Decision-making
-            href: overview/decision-making.qmd
+      - text: About
+        href: about/index.qmd
+      - text: Executive summary
+        href: overview/index.qmd
+      - text: Biology
+        href: overview/biology.qmd
+      - text: Vaccine development
+        href: overview/vaccine-development.qmd
+      - text: Practical implementation
+        href: overview/practical-implementation.qmd
+      - text: Population benefits
+        href: overview/population-benefits.qmd
+      - text: Decision-making
+        href: overview/decision-making.qmd
       - text: Vaccines
         href: vaccines/index.qmd
       - text: Case studies
@@ -60,8 +60,6 @@ website:
             href: research-agenda/index.qmd#what-to-do-next
           - text: Reasons for scepticism
             href: research-agenda/index.qmd#five-reasons-to-be-negative-about-these-proposals
-      - text: About
-        href: about/index.qmd
   search:
     location: navbar
     type: overlay
@@ -80,7 +78,7 @@ format:
     reference-location: margin
     page-layout: article
     grid:
-      sidebar-width: 160px
+      sidebar-width: 250px
       body-width: 940px
       margin-width: 270px
       gutter-width: 28px

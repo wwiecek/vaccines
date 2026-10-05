@@ -41,7 +41,11 @@
       font-size: 19px; font-weight: 750; letter-spacing: -.04em;
       text-decoration: none;
     }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .navbar { flex-wrap: wrap; }
+    .nav-links { display: flex; align-items: center; gap: 16px; width: 100%; flex-wrap: wrap; }
+    .nav-links > a[href="_site/vaccines/index.html"]::before {
+      content: '·'; margin: 0 16px 0 4px; color: var(--mint);
+    }
     .nav-links > a, .nav-links summary {
       font-size: 14px; text-decoration: none; cursor: pointer;
       color: #c6d1d1;
@@ -268,17 +272,13 @@
               aria-controls="nav-links" hidden>Menu</button>
       <div class="nav-links" id="nav-links">
         <a class="active" href="landing-preview.html" aria-current="page">Home</a>
-        <details>
-          <summary>Overview</summary>
-          <div class="dropdown">
-            <a href="_site/overview/index.html">Executive summary</a>
-            <a href="_site/overview/biology.html">Biology</a>
-            <a href="_site/overview/vaccine-development.html">Vaccine development</a>
-            <a href="_site/overview/practical-implementation.html">Practical implementation</a>
-            <a href="_site/overview/population-benefits.html">Population benefits</a>
-            <a href="_site/overview/decision-making.html">Decision-making</a>
-          </div>
-        </details>
+        <a href="_site/about/index.html">About</a>
+        <a href="_site/overview/index.html">Executive summary</a>
+        <a href="_site/overview/biology.html">Biology</a>
+        <a href="_site/overview/vaccine-development.html">Vaccine development</a>
+        <a href="_site/overview/practical-implementation.html">Practical implementation</a>
+        <a href="_site/overview/population-benefits.html">Population benefits</a>
+        <a href="_site/overview/decision-making.html">Decision-making</a>
         <a href="_site/vaccines/index.html">Vaccines</a>
         <details>
           <summary>Case studies</summary>
@@ -300,7 +300,6 @@
             <a href="_site/research-agenda/index.html#five-reasons-to-be-negative-about-these-proposals">Reasons for scepticism</a>
           </div>
         </details>
-        <a href="_site/about/index.html">About</a>
       </div>
     </nav>
   </header>

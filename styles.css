@@ -73,6 +73,28 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
   font-family: system-ui, sans-serif;
   font-size: .78rem;
   line-height: 1.4;
+  padding-top: 0;
+}
+@media (min-width: 992px) {
+  #quarto-sidebar {
+    padding: 0 0 0 8px !important;
+    height: fit-content !important;
+    margin-top: var(--toc-offset, 0px);
+  }
+  .navbar > .container-fluid { flex-wrap: wrap !important; }
+  .navbar .navbar-brand-container {
+    order: 1; margin-left: 0 !important; margin-right: auto !important;
+  }
+  #quarto-header #quarto-search { order: 2 !important; margin-left: auto; }
+  .navbar .quarto-navbar-tools { order: 3; }
+  .navbar #navbarCollapse { order: 5; flex-basis: 100%; }
+  .navbar .navbar-nav { flex-wrap: wrap; gap: .1rem .3rem; }
+  .navbar .nav-item:has(> a[href$="vaccines/index.html"]) {
+    display: flex; align-items: center; margin-left: .5rem;
+  }
+  .navbar .nav-item:has(> a[href$="vaccines/index.html"])::before {
+    content: "·"; color: var(--mint); margin-right: .75rem;
+  }
 }
 #TOC #toc-title {
   color: #647572;
@@ -133,14 +155,15 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
 
 /* Date and scope of the evidence, consistently shown on every note. */
 main.content .note-disclaimer {
-  margin: -1rem 0 2.2rem;
-  padding: 1.1rem 1.4rem;
-  border-left: 3px solid var(--mint);
-  background: var(--navy);
-  color: #d5dfdc;
-  font: .87rem/1.6 system-ui, sans-serif;
+  margin: 2rem 0 1.2rem;
+  padding: 1.4rem 1.7rem;
+  border-left: 3px solid #5cae9c;
+  background: #e4ebe4;
+  color: var(--ink);
+  font: italic 1rem/1.65 Georgia, "Times New Roman", serif;
 }
 main.content .note-disclaimer p { margin: 0; }
+main.content .note-disclaimer + section > h2:first-child { margin-top: 1.5rem; }
 
 /* Tables and figures can use the right margin on desktop. */
 main.content table {
@@ -208,11 +231,11 @@ main.content section[id^="references"] a { overflow-wrap: anywhere; }
 #reading-progress {
   position: fixed;
   z-index: 2000;
-  top: 0;
+  top: var(--progress-top, 0px);
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--mint);
+  height: 5px;
+  background: var(--navy);
   transform: scaleX(0);
   transform-origin: left;
   pointer-events: none;
