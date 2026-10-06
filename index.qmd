@@ -10,7 +10,6 @@ toc: false
 <div class="landing">
 <div class="layout" id="main">
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">A research investigation by Witold Więcek</p>
       <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
       <p class="subtitle">Changing vaccine doses to protect more people</p>
       <a class="summary-button" href="overview/index.html">
@@ -18,19 +17,25 @@ toc: false
       </a>
       <div class="letter">
         <p>For many vaccines, supply is often insufficient to vaccinate everyone
-          who needs them. Optimising doses has saved lives during outbreaks,
-          but both the science and decision-making around optimisation remain
-          poorly understood. I hope these notes are helpful to people interested
-          in working on this problem.</p>
-        <p>This is a shallow investigation into the optimal use of vaccines,
-          written in early 2024, with some subsequent revisions. All of the words
-          on this web page are written by the author, with AI used for fact
+          who needs them. Adjusting vaccine doses has saved lives during outbreaks,
+          but both the science of dosing and decision-making around optimisation remain
+          poorly understood.</p>
+
+        <p>This webpage is supposed to be an accessible introduction to the topic.
+		  The material is divided into topic and you don't have to read it in
+		  order. Information is compiled from a few white papers and
+		  journal publications I wrote on optimal dosing of vaccines.
+          A lot of this material was written in early 2024 and I am
+		  working on updating it. </p>
+
+		<p> All of the words
+          on this web page were written by me, with AI used for fact
           checking and presentation.</p>
         <p class="signature">Witold Więcek</p>
       </div>
       <div class="pdf-block">
         <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf" type="application/pdf" download="">
-          Read the whole report as PDF <span aria-hidden="true">↓</span>
+          Read the whole handbook as PDF <span aria-hidden="true">↓</span>
         </a>
         <p class="pdf-note">The PDF contains the same information as this website.
           Choose whichever format you prefer.</p>

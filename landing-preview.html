@@ -269,7 +269,7 @@
     .intro > .summary-button { align-self: flex-start; }
     .landing-art {
       display: none; width: clamp(210px,17vw,280px); max-width: 100%;
-      position: relative; flex: 1; min-height: 0; padding: 0; margin: 12px auto 0;
+      position: relative; flex: 1; min-height: 0; padding: 0; margin: 12px auto 0; opacity: .6;
     }
     .landing-art svg {
       display: block; position: absolute; width: 100%; height: 100%;
@@ -280,6 +280,7 @@
     .response-point { fill: var(--mint); }
     @media (min-width: 1101px) { .landing-art { display: block; } }
 @media (min-width: 1101px) and (max-height: 900px) {
+  .landing-art { margin-top: 0; }
   .basics { padding-inline: clamp(28px, 2.5vw, 48px); }
   .basics h2 { font-size: 30px; margin-bottom: 20px; }
   .section-links a { padding-block: 9px; font-size: 22px; gap: 5px 12px; }
@@ -302,6 +303,7 @@
   .footer { padding-block: 12px; min-height: 64px; }
 }
 @media (min-width: 1101px) and (max-height: 760px) {
+  .letter { font-size: 15.5px; line-height: 1.4; margin-top: 12px; }
   .section-links a { padding-block: 5px; font-size: 19px; }
   .topic-description { font-size: 12.5px; line-height: 1.35; }
 }
@@ -349,7 +351,6 @@
   </header>
   <main class="layout landing" id="main">
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">A research investigation by Witold Więcek</p>
       <h1 id="title"><em>Optimal dosing</em> <span>of vaccines</span></h1>
       <p class="subtitle">Changing vaccine doses to protect more people</p>
       <a class="summary-button" href="_site/overview/index.html">
@@ -357,20 +358,25 @@
       </a>
       <div class="letter">
         <p>For many vaccines, supply is often insufficient to vaccinate everyone
-          who needs them. Optimising doses has saved lives during outbreaks,
-          but both the science and decision-making around optimisation remain
-          poorly understood. I hope these notes are helpful to people interested
-          in working on this problem.</p>
-        <p>This is a shallow investigation into the optimal use of vaccines,
-          written in early 2024, with some subsequent revisions. All of the words
-          on this web page are written by the author, with AI used for fact
+          who needs them. Adjusting vaccine doses has saved lives during outbreaks,
+          but both the science of dosing and decision-making around optimisation remain
+          poorly understood.</p>
+
+        <p>This webpage is supposed to be an accessible introduction to the topic.
+		  The material is divided into topic and you don't have to read it in
+		  order. Information is compiled from a few white papers and
+		  journal publications I wrote on optimal dosing of vaccines.
+          A lot of this material was written in early 2024 and I am
+		  working on updating it. </p>
+
+		<p> All of the words
+          on this web page were written by me, with AI used for fact
           checking and presentation.</p>
         <p class="signature">Witold Więcek</p>
       </div>
       <div class="pdf-block">
-        <a class="pdf-link" href="downloads/fractional-dosing-of-vaccines.pdf"
-           type="application/pdf" download>
-          Read the whole report as PDF <span aria-hidden="true">↓</span>
+        <a class="pdf-link" href="_site/downloads/fractional-dosing-of-vaccines.pdf" type="application/pdf" download="">
+          Read the whole handbook as PDF <span aria-hidden="true">↓</span>
         </a>
         <p class="pdf-note">The PDF contains the same information as this website.
           Choose whichever format you prefer.</p>
