@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/vaccine-development.html]
 pagetitle: "Vaccine development perspective"
 ---
 
@@ -104,5 +105,5 @@ Desikan, Rajat, Massimiliano Germani, Piet H. van der Graaf, and Mindy Magee. 20
 
 ## Further reading
 
-- [Biology of optimal dosing](biology.qmd)
-- [Four potential projects that could be done right now](../research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now)
+- [Biology of optimal dosing](03-biology.qmd)
+- [Four potential projects that could be done right now](14-research-agenda.qmd#four-potential-projects-that-could-be-done-right-now)

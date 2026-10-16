@@ -1,4 +1,5 @@
 ---
+aliases: [/case-studies/covid.html]
 pagetitle: "Case study: fractional dosing of COVID vaccines"
 ---
 
@@ -124,5 +125,5 @@ Yang, Bingyi, Xiaotong Huang, Huizhi Gao, Nancy H. Leung, Tim K. Tsang, and Benj
 
 ## Further reading
 
-- [How optimisation decisions are made](../overview/decision-making.qmd)
-- [Health benefits from optimisation](../overview/population-benefits.qmd)
+- [How optimisation decisions are made](07-decision-making.qmd)
+- [Health benefits from optimisation](06-population-benefits.qmd)

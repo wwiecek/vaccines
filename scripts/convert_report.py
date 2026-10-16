@@ -18,39 +18,39 @@ SOURCE = Path("Shallow investigation into vaccine optimisation (draft).docx")
 # The boundaries are Pandoc's heading IDs in the DOCX, not line numbers. Each
 # source note is rendered separately so its tables and footnotes remain local.
 PAGES = [
-    ("overview/index.qmd", "executive-summary", "introducing-four-case-studies"),
-    ("case-studies/index.qmd", "introducing-four-case-studies", "biology-of-optimal-dosing"),
-    ("overview/biology.qmd", "biology-of-optimal-dosing", "vaccine-development-perspective"),
-    ("overview/vaccine-development.qmd", "vaccine-development-perspective", "practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery"),
-    ("overview/practical-implementation.qmd", "practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery", "how-large-are-health-benefits-from-optimisation"),
-    ("overview/population-benefits.qmd", "how-large-are-health-benefits-from-optimisation", "examples-of-how-optimisation-decisions-are-made"),
-    ("overview/decision-making.qmd", "examples-of-how-optimisation-decisions-are-made", "finding-targets-for-optimisation-disease-specific-summaries"),
-    ("vaccines/index.qmd", "finding-targets-for-optimisation-disease-specific-summaries", "conclusions-and-next-steps"),
-    ("research-agenda/index.qmd", "conclusions-and-next-steps", "four-potential-projects-that-could-be-done-right-now"),
-    ("research-agenda/projects.qmd", "four-potential-projects-that-could-be-done-right-now", "what-i-still-dont-understand"),
-    ("research-agenda/knowledge-gaps.qmd", "what-i-still-dont-understand", "what-to-do-next"),
-    ("research-agenda/future-pathways.qmd", "what-to-do-next", "five-reasons-to-be-negative-about-these-proposals"),
-    ("research-agenda/reservations.qmd", "five-reasons-to-be-negative-about-these-proposals", "case-study-fractional-dosing-of-covid-vaccines"),
-    ("case-studies/covid.qmd", "case-study-fractional-dosing-of-covid-vaccines", "case-study-mpox-vaccine"),
-    ("case-studies/mpox.qmd", "case-study-mpox-vaccine", "case-study-inactivated-polio-vaccine"),
-    ("case-studies/polio.qmd", "case-study-inactivated-polio-vaccine", "case-study-yellow-fever"),
-    ("case-studies/yellow-fever.qmd", "case-study-yellow-fever", None),
+    ("notes/02-summary.qmd", "executive-summary", "introducing-four-case-studies"),
+    ("notes/09-case-studies.qmd", "introducing-four-case-studies", "biology-of-optimal-dosing"),
+    ("notes/03-biology.qmd", "biology-of-optimal-dosing", "vaccine-development-perspective"),
+    ("notes/04-vaccine-development.qmd", "vaccine-development-perspective", "practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery"),
+    ("notes/05-practical-implementation.qmd", "practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery", "how-large-are-health-benefits-from-optimisation"),
+    ("notes/06-population-benefits.qmd", "how-large-are-health-benefits-from-optimisation", "examples-of-how-optimisation-decisions-are-made"),
+    ("notes/07-decision-making.qmd", "examples-of-how-optimisation-decisions-are-made", "finding-targets-for-optimisation-disease-specific-summaries"),
+    ("notes/08-vaccines.qmd", "finding-targets-for-optimisation-disease-specific-summaries", "conclusions-and-next-steps"),
+    ("notes/14-research-agenda.qmd", "conclusions-and-next-steps", "four-potential-projects-that-could-be-done-right-now"),
+    ("notes/research-agenda-projects.qmd", "four-potential-projects-that-could-be-done-right-now", "what-i-still-dont-understand"),
+    ("notes/research-agenda-knowledge-gaps.qmd", "what-i-still-dont-understand", "what-to-do-next"),
+    ("notes/research-agenda-future-pathways.qmd", "what-to-do-next", "five-reasons-to-be-negative-about-these-proposals"),
+    ("notes/research-agenda-reservations.qmd", "five-reasons-to-be-negative-about-these-proposals", "case-study-fractional-dosing-of-covid-vaccines"),
+    ("notes/10-covid.qmd", "case-study-fractional-dosing-of-covid-vaccines", "case-study-mpox-vaccine"),
+    ("notes/11-mpox.qmd", "case-study-mpox-vaccine", "case-study-inactivated-polio-vaccine"),
+    ("notes/12-polio.qmd", "case-study-inactivated-polio-vaccine", "case-study-yellow-fever"),
+    ("notes/13-yellow-fever.qmd", "case-study-yellow-fever", None),
 ]
 
 RELATED = {
-    "overview/index.qmd": ["case-studies/index.qmd", "research-agenda/index.qmd"],
-    "case-studies/index.qmd": ["case-studies/covid.qmd", "case-studies/mpox.qmd", "case-studies/polio.qmd", "case-studies/yellow-fever.qmd"],
-    "overview/biology.qmd": ["overview/vaccine-development.qmd", "vaccines/index.qmd"],
-    "overview/vaccine-development.qmd": ["overview/biology.qmd", "research-agenda/projects.qmd"],
-    "overview/practical-implementation.qmd": ["case-studies/mpox.qmd", "case-studies/yellow-fever.qmd"],
-    "overview/population-benefits.qmd": ["overview/decision-making.qmd", "case-studies/covid.qmd"],
-    "overview/decision-making.qmd": ["overview/population-benefits.qmd", "case-studies/covid.qmd"],
-    "vaccines/index.qmd": ["case-studies/index.qmd", "research-agenda/projects.qmd"],
-    "research-agenda/index.qmd": ["research-agenda/projects.qmd", "research-agenda/knowledge-gaps.qmd", "research-agenda/future-pathways.qmd", "research-agenda/reservations.qmd"],
-    "case-studies/covid.qmd": ["overview/decision-making.qmd", "overview/population-benefits.qmd"],
-    "case-studies/mpox.qmd": ["overview/practical-implementation.qmd", "vaccines/index.qmd"],
-    "case-studies/polio.qmd": ["vaccines/index.qmd", "overview/practical-implementation.qmd"],
-    "case-studies/yellow-fever.qmd": ["overview/population-benefits.qmd", "vaccines/index.qmd"],
+    "notes/02-summary.qmd": ["notes/09-case-studies.qmd", "notes/14-research-agenda.qmd"],
+    "notes/09-case-studies.qmd": ["notes/10-covid.qmd", "notes/11-mpox.qmd", "notes/12-polio.qmd", "notes/13-yellow-fever.qmd"],
+    "notes/03-biology.qmd": ["notes/04-vaccine-development.qmd", "notes/08-vaccines.qmd"],
+    "notes/04-vaccine-development.qmd": ["notes/03-biology.qmd", "notes/research-agenda-projects.qmd"],
+    "notes/05-practical-implementation.qmd": ["notes/11-mpox.qmd", "notes/13-yellow-fever.qmd"],
+    "notes/06-population-benefits.qmd": ["notes/07-decision-making.qmd", "notes/10-covid.qmd"],
+    "notes/07-decision-making.qmd": ["notes/06-population-benefits.qmd", "notes/10-covid.qmd"],
+    "notes/08-vaccines.qmd": ["notes/09-case-studies.qmd", "notes/research-agenda-projects.qmd"],
+    "notes/14-research-agenda.qmd": ["notes/research-agenda-projects.qmd", "notes/research-agenda-knowledge-gaps.qmd", "notes/research-agenda-future-pathways.qmd", "notes/research-agenda-reservations.qmd"],
+    "notes/10-covid.qmd": ["notes/07-decision-making.qmd", "notes/06-population-benefits.qmd"],
+    "notes/11-mpox.qmd": ["notes/05-practical-implementation.qmd", "notes/08-vaccines.qmd"],
+    "notes/12-polio.qmd": ["notes/08-vaccines.qmd", "notes/05-practical-implementation.qmd"],
+    "notes/13-yellow-fever.qmd": ["notes/06-population-benefits.qmd", "notes/08-vaccines.qmd"],
 }
 
 
@@ -159,7 +159,7 @@ def render_page(path, page_blocks):
     rendered = re.sub(r"\[([^\[\]]+)\]\{\.underline\}", r"\1", rendered)
     # Google Docs supplied these placeholder targets without real URLs.
     rendered = re.sub(r"\[([^\[\]]+)\]\(about:blank\)", r"\1", rendered)
-    if path == "overview/decision-making.qmd":
+    if path == "notes/07-decision-making.qmd":
         rendered = re.sub(r"(?m)^References$", "## References {#references-7}", rendered)
     if path in RELATED:
         links = [f"- [{titles[p]}]({os.path.relpath(p, Path(path).parent)})"
@@ -176,7 +176,7 @@ for path, start, end in PAGES:
     render_page(path, blocks[positions[start]:positions[end] if end else None])
 
 # The report's introductory author and method notes precede its old TOC.
-render_page("about/index.qmd", [{"t": "Header", "c": [1, ["about", [], []],
+render_page("notes/01-about.qmd", [{"t": "Header", "c": [1, ["about", [], []],
     [{"t": "Str", "c": "About"}]]}] + blocks[:positions["table-of-contents"]])
 
 # Keep the published note structure and notices after regeneration.

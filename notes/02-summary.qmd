@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/index.html]
 pagetitle: "Executive summary"
 ---
 
@@ -26,43 +27,43 @@ In this report I explain how optimisation works in biological, practical and pol
 
 ## How dose and schedule optimisation works {#how-dose-and-schedule-optimisation-works}
 
-> Section: [Introducing four case studies](../case-studies/index.qmd#introducing-four-case-studies)
+> Section: [Introducing four case studies](09-case-studies.qmd#introducing-four-case-studies)
 >
 > Case study appendices:
 
-- [Case study: mpox vaccine](../case-studies/mpox.qmd#case-study-mpox-vaccine)
+- [Case study: mpox vaccine](11-mpox.qmd#case-study-mpox-vaccine)
 
-- [Case study: yellow fever](../case-studies/yellow-fever.qmd#case-study-yellow-fever)
+- [Case study: yellow fever](13-yellow-fever.qmd#case-study-yellow-fever)
 
-- [Case study: polio](../case-studies/polio.qmd#case-study-inactivated-polio-vaccine)
+- [Case study: polio](12-polio.qmd#case-study-inactivated-polio-vaccine)
 
-- [Case study: COVID](../case-studies/covid.qmd#case-study-fractional-dosing-of-covid-vaccines)
+- [Case study: COVID](10-covid.qmd#case-study-fractional-dosing-of-covid-vaccines)
 
 I start with four specific examples, addressing the problems I opened this summary with. In a pandemic context, for COVID vaccines, fractionation was discussed but not implemented. However, many countries decided to change gaps between doses. For yellow fever and mpox vaccines we saw rapid and successful switch to lower doses during outbreaks/ epidemics where the stockpiles were not sufficient. For inactivated polio vaccines (IPV), there was a persistent shortage of the vaccine and many countries rolled out partial doses.
 
 An important common feature of these optimisation problems is that they may sometimes make trade-offs for immediate individual benefits, i.e. more protection, for public health benefits (smaller overall health burden). Prioritising access to first doses of vaccines to extend coverage to more people is an obvious example.[^3]
 
-> Section: [Biology of optimal dosing](biology.qmd#biology-of-optimal-dosing)
+> Section: [Biology of optimal dosing](03-biology.qmd#biology-of-optimal-dosing)
 
 However, it is not all about trade-offs: sometimes dropping dose or extending gaps can *improve* immune response, something we know empirically. One mechanism that could explain success of lower doses and extended gaps is affinity maturation: less antigen may lead to selection of higher-affinity B cells and hence better long-term immune response. I explain this at length in the note. However, the mechanisms underlying dose optimization are disease- and platform-specific and often not fully understood. I offer a broad categorisation of vaccines into three groups based on character of protection and immune memory.
 
-> Section: [Vaccine development perspective](vaccine-development.qmd#vaccine-development-perspective)
+> Section: [Vaccine development perspective](04-vaccine-development.qmd#vaccine-development-perspective)
 
 I also investigate the perspective of development of new vaccines. How do researchers make decisions about doses and their timing in the first place? Initially, the developers look for the optimal trade-off between immunogenicity and reactogenicity, testing a few human subjects at a time. Unlike in drug development the world of vaccines seems to be much more heuristics-driven and I try to contrast the two. De-escalation studies seem to be rare. It's also interesting to note that there is much less regulatory guidance on any of this than in drugs.
 
 When moving to large scale trials, generally there seem to be strong commercial incentives to go with the highest tolerated dose. Lastly, I found some literature on using mathematical and statistical models to improve development process, including dosing choices; this is promising, but right now their role in development is limited.
 
-> Section: [Practical aspects of changing dose](practical-implementation.qmd#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery)
+> Section: [Practical aspects of changing dose](05-practical-implementation.qmd#practical-aspects-of-changing-dose-syringes-vials-and-intradermal-delivery)
 
 For fractionation, there are practical considerations around syringes, vial usage, administration techniques and training to deliver doses. Most crucially, precision dosing requires a particular type of syringe and/or needle. How many doses can be extracted depends on the size of vials. Intradermal (ID) delivery is often used for lower doses, because it can elicit strong immune responses with smaller amounts of antigen, but it's more difficult to carry out. Several technologies have been developed to address this, including adapters for regular syringes, new-generation jet injectors, but cost-effectiveness and feasibility of these needs to be investigated further.
 
-> Section: [Health benefits from optimisation](population-benefits.qmd#how-large-are-health-benefits-from-optimisation)
+> Section: [Health benefits from optimisation](06-population-benefits.qmd#how-large-are-health-benefits-from-optimisation)
 
 Solutions that can speed up access to vaccines have an obvious potential to save significant numbers of lives or infections and, by proxy, help avoid or shorten lockdowns and associated economic burden in pandemics. These conclusions are backed by an array of epidemiological models. I look at a range of modelling papers to get a general sense of the magnitude of benefits that different types of optimisation can yield.
 
 There is often a very simple rule of thumb: for vaccines where protection from disease is all-or-nothing (you either get protection or you don't), it makes sense to use lower doses if fold reduction in dose exceeds fold reduction in protection in disease. In practice this has to be weighed against factors such as individual willingness to get vaccinated with a less potent vaccine on the one hand and epidemiological effects (vaccine may break transmission) on the other.
 
-> Section: [How optimisation decisions are made](decision-making.qmd#examples-of-how-optimisation-decisions-are-made)
+> Section: [How optimisation decisions are made](07-decision-making.qmd#examples-of-how-optimisation-decisions-are-made)
 
 However, in the real world this type of benefit modelling is often moot: rather than focusing on trade-offs, the regulators and public health decision makers demand no loss of individual efficacy and safety. This disconnect is more pronounced for fractionation and less for extending gaps. I try to discuss the factors driving decision makers by showing three examples. I make some tentative points on what more I think would be needed to change their mind.
 
@@ -86,7 +87,7 @@ It is obviously important to consider systemic changes and economic incentives. 
 
 What makes for a good target?
 
-I briefly synthesise information from all earlier sections in [Factors that make a vaccine worth optimising](../vaccines/index.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
+I briefly synthesise information from all earlier sections in [Factors that make a vaccine worth optimising](08-vaccines.qmd#table-2-factors-that-make-a-vaccine-worth-optimising), which is copied here in a heavily abbreviated form.
 
 +-----------------------------------------------------------------------+---------------------------------------+----------------------------------------------------+
 | Individual benefits                                                   | Population benefits                   | Feasible implementation                            |
@@ -104,11 +105,11 @@ These are explained in the full table.
 
 None of these are necessary conditions: they simply allow us to create rough rank ordering of vaccines to consider for optimisation, where several of these factors occur all at once. For example, a funder could focus on seeking out vaccines that have (1) limited supply, (2) no negative data on immunogenicity of lower doses.
 
-> Section: [Short assessments for most common diseases](../vaccines/index.qmd#short-assessments-for-most-common-diseases)
+> Section: [Short assessments for most common diseases](08-vaccines.qmd#short-assessments-for-most-common-diseases)
 
 Having summarised these general principles, I then provide two types of summaries. First, I run through a list of fifteen diseases/vaccines and make some tentative observations on the current value of optimisation and state of the research. Overall, I find that there are several important vaccines where optimisation has not been widely implemented, seems promising, and potentially has large benefits. In particular I'd suggest looking at cholera, pneumococcus, malaria, TB, and rotavirus.
 
-> Section: [Conclusions and next steps](../research-agenda/index.qmd#conclusions-and-next-steps)
+> Section: [Conclusions and next steps](14-research-agenda.qmd#conclusions-and-next-steps)
 
 To finish, I make some more general recommendations. I list four immediate follow-up projects, which are mainly secondary research and dissemination of ideas: not particularly exciting on the surface, but driven by the observation that optimisation is an underexplored area. My proposals include proof-of-concepts for better trials, connecting particular groups of experts, specific reviews of evidence aimed at making decision makers familiar and comfortable with these ideas, and sponsoring dose de-escalation research.
 
@@ -122,5 +123,5 @@ I also identify several larger areas for primary research, commercialisation, an
 
 ## Further reading
 
-- [Introducing four case studies](../case-studies/index.qmd)
-- [Conclusions and next steps](../research-agenda/index.qmd)
+- [Introducing four case studies](09-case-studies.qmd)
+- [Conclusions and next steps](14-research-agenda.qmd)

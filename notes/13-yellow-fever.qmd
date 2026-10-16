@@ -1,4 +1,5 @@
 ---
+aliases: [/case-studies/yellow-fever.html]
 pagetitle: "Case study: yellow fever"
 ---
 
@@ -88,5 +89,5 @@ Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fracti
 
 ## Further reading
 
-- [Health benefits from optimisation](../overview/population-benefits.qmd)
-- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
+- [Health benefits from optimisation](06-population-benefits.qmd)
+- [Finding targets for optimisation; disease-specific summaries](08-vaccines.qmd)

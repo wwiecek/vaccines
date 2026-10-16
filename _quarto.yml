@@ -6,11 +6,7 @@ project:
     - research-agenda/*.html
   render:
     - index.qmd
-    - overview/*.qmd
-    - vaccines/*.qmd
-    - case-studies/*.qmd
-    - research-agenda/*.qmd
-    - about/*.qmd
+    - notes/*.qmd
 
 website:
   title: "Optimal dosing of vaccines"
@@ -22,45 +18,45 @@ website:
       - text: Home
         href: index.qmd
       - text: About
-        href: about/index.qmd
+        href: notes/01-about.qmd
       - text: Summary
-        href: overview/index.qmd
+        href: notes/02-summary.qmd
       - text: Biology
-        href: overview/biology.qmd
+        href: notes/03-biology.qmd
       - text: Development
-        href: overview/vaccine-development.qmd
+        href: notes/04-vaccine-development.qmd
       - text: Implementation
-        href: overview/practical-implementation.qmd
+        href: notes/05-practical-implementation.qmd
       - text: Benefits
-        href: overview/population-benefits.qmd
+        href: notes/06-population-benefits.qmd
       - text: Decision-making
-        href: overview/decision-making.qmd
+        href: notes/07-decision-making.qmd
       - text: Vaccines
-        href: vaccines/index.qmd
+        href: notes/08-vaccines.qmd
       - text: Case studies
         menu:
           - text: Introducing the case studies
-            href: case-studies/index.qmd
+            href: notes/09-case-studies.qmd
           - text: COVID
-            href: case-studies/covid.qmd
+            href: notes/10-covid.qmd
           - text: Mpox
-            href: case-studies/mpox.qmd
+            href: notes/11-mpox.qmd
           - text: Polio
-            href: case-studies/polio.qmd
+            href: notes/12-polio.qmd
           - text: Yellow fever
-            href: case-studies/yellow-fever.qmd
+            href: notes/13-yellow-fever.qmd
       - text: Research agenda
         menu:
           - text: Conclusions and next steps
-            href: research-agenda/index.qmd#conclusions-and-next-steps
+            href: notes/14-research-agenda.qmd#conclusions-and-next-steps
           - text: Projects
-            href: research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now
+            href: notes/14-research-agenda.qmd#four-potential-projects-that-could-be-done-right-now
           - text: Knowledge gaps
-            href: research-agenda/index.qmd#what-i-still-dont-understand
+            href: notes/14-research-agenda.qmd#what-i-still-dont-understand
           - text: Future pathways
-            href: research-agenda/index.qmd#what-to-do-next
+            href: notes/14-research-agenda.qmd#what-to-do-next
           - text: Reasons for scepticism
-            href: research-agenda/index.qmd#five-reasons-to-be-negative-about-these-proposals
+            href: notes/14-research-agenda.qmd#five-reasons-to-be-negative-about-these-proposals
   search:
     location: navbar
     type: overlay

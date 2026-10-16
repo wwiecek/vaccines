@@ -7,7 +7,7 @@ import json
 import re
 from pathlib import Path
 
-from report_order import pages
+from report_order import legacy_urls, pages
 
 
 AGENDA_SECTIONS = {
@@ -29,24 +29,26 @@ NOTE_TITLES = {
         "How optimisation decisions are made",
 }
 NOTE_SUBTITLES = {
-    "overview/biology.qmd": "Why can a lower dose prove just as effective?",
-    "overview/vaccine-development.qmd":
+    "notes/03-biology.qmd": "Why can a lower dose prove just as effective?",
+    "notes/04-vaccine-development.qmd":
         "How do we determine the optimal dose during trials?",
-    "overview/practical-implementation.qmd":
+    "notes/05-practical-implementation.qmd":
         "Syringes, vials and intradermal delivery",
-    "overview/population-benefits.qmd":
+    "notes/06-population-benefits.qmd":
         "What models say about the potential to save lives",
-    "overview/decision-making.qmd":
+    "notes/07-decision-making.qmd":
         "Why changing doses is difficult, even during outbreaks",
 }
 
 
 def prepare_notes():
-    agenda = Path("research-agenda/index.qmd")
-    if Path("research-agenda/projects.qmd").exists():
+    agenda = Path("notes/14-research-agenda.qmd")
+    if Path("notes/research-agenda-projects.qmd").exists():
         parts = []
         for slug in ["index", *AGENDA_SECTIONS]:
-            content = Path(f"research-agenda/{slug}.qmd").read_text()
+            page = (agenda if slug == "index" else
+                    Path(f"notes/research-agenda-{slug}.qmd"))
+            content = page.read_text()
             content = re.sub(r"\A---\n.*?\n---\n", "", content,
                              count=1, flags=re.S)
             content = re.sub(r"\n## Further reading\n.*", "", content,
@@ -59,29 +61,26 @@ def prepare_notes():
                           '# Research agenda {#research-agenda}\n\n' +
                           "\n\n".join(parts) + "\n")
         for slug in AGENDA_SECTIONS:
-            Path(f"research-agenda/{slug}.qmd").unlink()
+            Path(f"notes/research-agenda-{slug}.qmd").unlink()
 
+    Path("research-agenda").mkdir(exist_ok=True)
     for slug, anchor in AGENDA_SECTIONS.items():
         Path(f"research-agenda/{slug}.html").write_text(f'''<!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="0; url=index.html#{anchor}">
+  <meta http-equiv="refresh" content="0; url=../notes/14-research-agenda.html#{anchor}">
   <title>Research agenda</title>
 </head>
 <body>
-  <p>This section is now part of the <a href="index.html#{anchor}">research agenda</a>.</p>
-  <script>location.replace('index.html' + (location.hash || '#{anchor}'));</script>
+  <p>This section is now part of the <a href="../notes/14-research-agenda.html#{anchor}">research agenda</a>.</p>
+  <script>location.replace('../notes/14-research-agenda.html' + (location.hash || '#{anchor}'));</script>
 </body>
 </html>
 ''')
 
-    for page in [*Path("overview").glob("*.qmd"),
-                 *Path("case-studies").glob("*.qmd"),
-                 *Path("vaccines").glob("*.qmd"),
-                 *Path("research-agenda").glob("*.qmd"),
-                 *Path("about").glob("*.qmd")]:
+    for page in Path("notes").glob("*.qmd"):
         content = page.read_text()
         for old, new in NOTE_TITLES.items():
             content = content.replace(old, new)
@@ -89,12 +88,12 @@ def prepare_notes():
         for title in ["immune memory and optimisation goals",
                       "factors that make a vaccine worth optimising"]:
             content = content.replace(title, title[0].upper() + title[1:])
-        subtitle = NOTE_SUBTITLES.get(str(page))
+        subtitle = NOTE_SUBTITLES.get(page.as_posix())
         if subtitle and "{.note-subtitle}" not in content:
             content = re.sub(r"(?m)^(# .+)$",
                              r"\1\n\n*[" + subtitle + "]{.note-subtitle}*",
                              content, count=1)
-        if page == Path("vaccines/index.qmd"):
+        if page == Path("notes/08-vaccines.qmd"):
             # Converted grid-table column boundaries are inconsistent. Use a
             # pipe table so every criterion remains in its intended column.
             match = re.search(r"(?m)^\+-.*?^\+=[^\n]*\+", content, re.S)
@@ -106,19 +105,22 @@ def prepare_notes():
                 content = content[:match.start()] + "\n".join(rows) + content[match.end():]
         for slug, anchor in AGENDA_SECTIONS.items():
             content = re.sub(
-                rf"research-agenda/{slug}\.qmd(?:#([^)]*))?",
-                lambda m: f"research-agenda/index.qmd#{m[1] or anchor}",
+                rf"research-agenda-{slug}\.qmd(?:#([^)]*))?",
+                lambda m: f"14-research-agenda.qmd#{m[1] or anchor}",
                 content)
         notice = "{{< include ../includes/note-disclaimer.qmd >}}"
         if notice not in content:
             content = re.sub(r"(?m)^(# .+)$", r"\1\n\n" + notice,
                              content, count=1)
-        if (page == Path("about/index.qmd") and
+        if (page == Path("notes/01-about.qmd") and
                 "product of independent research" not in content):
             content += ("\nThis document is a product of independent research and "
                         "does not represent the views of Open Philanthropy "
                         "(now Coefficient Giving) or the Center for Global "
                         "Development.\n")
+        alias = legacy_urls[page.as_posix()]
+        if "aliases:" not in content:
+            content = content.replace("---\n", f"---\naliases: [{alias}]\n", 1)
         page.write_text(content)
 
     # Keep the website's linear reading route in the complete report's order.

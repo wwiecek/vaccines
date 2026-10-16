@@ -1,4 +1,5 @@
 ---
+aliases: [/vaccines/index.html]
 pagetitle: "Finding targets for optimisation; disease-specific summaries"
 ---
 
@@ -133,7 +134,7 @@ Recommendation: given associated burden, these two items may be "nice to haves" 
 
 I provide a case study on fractional dosing of COVID vaccines and use COVID as a running example in chapters on modelling benefits and biology. The potential for optimisation is very large, but the SARS-CoV-2 R&D is by far the most resource-intensive R&D domain in vaccine development. New boosters from Moderna have already dropped doses by a factor of 10.
 
-Recommendation: I don't think there is a research agenda for COVID specifically, but there is value in detailed retrospective analysis of conditions needed for endorsement of lower doses in pandemic. See some ideas in [decision making on optimal dosing](../overview/decision-making.qmd#examples-of-how-optimisation-decisions-are-made).
+Recommendation: I don't think there is a research agenda for COVID specifically, but there is value in detailed retrospective analysis of conditions needed for endorsement of lower doses in pandemic. See some ideas in [decision making on optimal dosing](07-decision-making.qmd#examples-of-how-optimisation-decisions-are-made).
 
 ### influenza {#influenza}
 
@@ -149,7 +150,7 @@ Recommendation: Understand national strategies against pandemic influenza, as th
 
 - RTS,S is being rolled out, typically with 3 initial doses and 4th dose later. [Difficulties with malaria vaccine rollout](https://www.ft.com/content/0f19c56f-69ab-4898-9f7e-c6dcb7c34a95) have been reported on widely. There are supply and demand problems and logistical issues (cold chain storage is required, children need to be followed up for all four doses). That means that optimising schedules or manipulating doses is very valuable, but also has to happen against the backdrop of all these issues. Worth looking at new [WHO position paper (May 2024)](https://www.who.int/publications/i/item/who-wer-9919-225-248).
 
-- RTS,S has moderate efficacy. In [modeling health benefits of optimal dosing](../overview/population-benefits.qmd#how-large-are-health-benefits-from-optimisation) I gave examples of how timing of 4th dose appropriately could increase benefits by 25-75%. There is a lot of research on delayed fractional dose. I also talk about mechanisms in [biology of optimal dosing](../overview/biology.qmd#biology-of-optimal-dosing).
+- RTS,S has moderate efficacy. In [modeling health benefits of optimal dosing](06-population-benefits.qmd#how-large-are-health-benefits-from-optimisation) I gave examples of how timing of 4th dose appropriately could increase benefits by 25-75%. There is a lot of research on delayed fractional dose. I also talk about mechanisms in [biology of optimal dosing](03-biology.qmd#biology-of-optimal-dosing).
 
 - Given low effectiveness of what's currently available, new vaccines may be crucial.[^12] There are [over 50 vaccine candidates](https://www.nature.com/articles/d41573-023-00119-4), [six in clinical trials](https://www.bio.org/sites/default/files/2024-01/The-State-of-Innovation-in-Vaccines-and-Prophylactic-Antibodies-for-Infectious-Diseases.pdf), but malaria is a tough target, especially given limited correlates of protection. It's also worth also remembering that RTS,S was developed in 1980s; the focus in malaria should be on market design, as per this [excellent summary](https://worksinprogress.co/issue/why-we-didnt-get-a-malaria-vaccine-sooner/).
 
@@ -181,5 +182,5 @@ Recommendation: there has been a lot of focus on improving malaria vaccines and 
 
 ## Further reading
 
-- [Introducing four case studies](../case-studies/index.qmd)
-- [Four potential projects that could be done right now](../research-agenda/index.qmd#four-potential-projects-that-could-be-done-right-now)
+- [Introducing four case studies](09-case-studies.qmd)
+- [Four potential projects that could be done right now](14-research-agenda.qmd#four-potential-projects-that-could-be-done-right-now)

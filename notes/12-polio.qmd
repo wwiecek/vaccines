@@ -1,4 +1,5 @@
 ---
+aliases: [/case-studies/polio.html]
 pagetitle: "Case study: inactivated polio vaccine"
 ---
 
@@ -72,5 +73,5 @@ Thompson, Kimberly M., and Dominika A. Kalkowska. 2021. "Potential Future Use, C
 
 ## Further reading
 
-- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
-- [Practical aspects of changing dose](../overview/practical-implementation.qmd)
+- [Finding targets for optimisation; disease-specific summaries](08-vaccines.qmd)
+- [Practical aspects of changing dose](05-practical-implementation.qmd)

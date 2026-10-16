@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/decision-making.html]
 pagetitle: "How optimisation decisions are made"
 ---
 
@@ -116,5 +117,5 @@ Schnyder, Jenny L., Cornelis A. De Pijper, Hannah M. Garcia Garrido, Joost G. Da
 
 ## Further reading
 
-- [Health benefits from optimisation](population-benefits.qmd)
-- [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)
+- [Health benefits from optimisation](06-population-benefits.qmd)
+- [Case study: fractional dosing of COVID vaccines](10-covid.qmd)

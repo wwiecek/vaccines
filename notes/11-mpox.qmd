@@ -1,4 +1,5 @@
 ---
+aliases: [/case-studies/mpox.html]
 pagetitle: "Case study: mpox vaccine"
 ---
 
@@ -52,5 +53,5 @@ However, there has been a lot of modelling of mpox outbreaks in the US done by a
 
 ## Further reading
 
-- [Practical aspects of changing dose](../overview/practical-implementation.qmd)
-- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
+- [Practical aspects of changing dose](05-practical-implementation.qmd)
+- [Finding targets for optimisation; disease-specific summaries](08-vaccines.qmd)

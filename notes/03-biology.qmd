@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/biology.html]
 pagetitle: "Biology of optimal dosing"
 ---
 
@@ -148,5 +149,5 @@ Sanchez, Sarah, Nicole Palacio, Tanushree Dangi, Thomas Ciucci, and Pablo Penalo
 
 ## Further reading
 
-- [Vaccine development perspective](vaccine-development.qmd)
-- [Finding targets for optimisation; disease-specific summaries](../vaccines/index.qmd)
+- [Vaccine development perspective](04-vaccine-development.qmd)
+- [Finding targets for optimisation; disease-specific summaries](08-vaccines.qmd)

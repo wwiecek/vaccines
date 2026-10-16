@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/population-benefits.html]
 pagetitle: "Health benefits from optimisation"
 ---
 
@@ -186,5 +187,5 @@ Wu, Joseph T., Corey M. Peak, Gabriel M. Leung, and Marc Lipsitch. 2016. "Fracti
 
 ## Further reading
 
-- [How optimisation decisions are made](decision-making.qmd)
-- [Case study: fractional dosing of COVID vaccines](../case-studies/covid.qmd)
+- [How optimisation decisions are made](07-decision-making.qmd)
+- [Case study: fractional dosing of COVID vaccines](10-covid.qmd)

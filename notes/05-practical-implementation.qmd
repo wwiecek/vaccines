@@ -1,4 +1,5 @@
 ---
+aliases: [/overview/practical-implementation.html]
 pagetitle: "Practical aspects of changing dose"
 ---
 
@@ -130,5 +131,5 @@ Strauss, Kenneth, André van Zundert, Anders Frid, and Vincenzo Costigliola. 200
 
 ## Further reading
 
-- [Case study: mpox vaccine](../case-studies/mpox.qmd)
-- [Case study: yellow fever](../case-studies/yellow-fever.qmd)
+- [Case study: mpox vaccine](11-mpox.qmd)
+- [Case study: yellow fever](13-yellow-fever.qmd)
