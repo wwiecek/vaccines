@@ -113,11 +113,25 @@ def prepare_notes():
             content = re.sub(r"(?m)^(# .+)$", r"\1\n\n" + notice,
                              content, count=1)
         if (page == Path("notes/01-about.qmd") and
-                "product of independent research" not in content):
-            content += ("\nThis document is a product of independent research and "
-                        "does not represent the views of Open Philanthropy "
-                        "(now Coefficient Giving) or the Center for Global "
-                        "Development.\n")
+                "## Using and citing this report" not in content):
+            content += """
+
+## Using and citing this report
+
+Most of this report was written in 2023–2024. It is not fully up to date and
+is being revised.
+
+The report is licensed under [Creative Commons Attribution 4.0 International
+(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), unless otherwise
+indicated. Third-party material retains its original terms.
+
+Cite as Więcek, W. (2026). Optimal dosing of vaccines.
+<https://witold.xyz/vaccines/>
+
+This document is a product of independent research and does not represent the
+views of Open Philanthropy (now Coefficient Giving) or the Center for Global
+Development.
+"""
         alias = legacy_urls[page.as_posix()]
         if "aliases:" not in content:
             content = content.replace("---\n", f"---\naliases: [{alias}]\n", 1)

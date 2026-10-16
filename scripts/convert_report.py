@@ -154,7 +154,8 @@ def render_page(path, page_blocks):
 
     walk(page_blocks, edit)
     rendered = subprocess.check_output([
-        "pandoc", "-f", "json", "-t", "markdown-auto_identifiers", "--wrap=none"
+        "pandoc", "-f", "json", "-t", "markdown-auto_identifiers",
+        "--wrap=auto", "--columns=80", "--reference-location=block"
     ], input=json.dumps({**doc, "blocks": page_blocks}).encode()).decode()
     rendered = re.sub(r"\[([^\[\]]+)\]\{\.underline\}", r"\1", rendered)
     # Google Docs supplied these placeholder targets without real URLs.
@@ -164,7 +165,14 @@ def render_page(path, page_blocks):
     if path in RELATED:
         links = [f"- [{titles[p]}]({os.path.relpath(p, Path(path).parent)})"
                  for p in RELATED[path]]
-        rendered += "\n## Further reading\n\n" + "\n".join(links) + "\n"
+        references = re.search(r"(?m)^(#{2,3}) References(?: .*)?$", rendered)
+        level = references[1] if references else "##"
+        reading = f"{level} Further reading\n\n" + "\n".join(links) + "\n\n"
+        if references:
+            rendered = (rendered[:references.start()] + reading +
+                        rendered[references.start():])
+        else:
+            rendered += "\n" + reading
     page_title = titles.get(path, "About")
     rendered = f"---\npagetitle: {json.dumps(page_title, ensure_ascii=False)}\n---\n\n" + rendered
     target = Path(path)

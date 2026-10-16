@@ -1,6 +1,6 @@
 # Vaccine optimisation report website
 
-This is a Quarto website built from *Shallow investigation into vaccine optimisation (draft).docx*. The DOCX is the source for the report text; the QMD pages are organised as standalone notes in `notes/`. Their two-digit filename prefixes follow the navigation bar, including the case-study menu order. `index.qmd` is the hand-edited landing page; `styles.css` contains presentation rules. `landing-preview.html` retains the separately reviewable version of the landing page. The top menus link to report chapters, while "On this page" links to headings within an article. `includes/footnote-placement.html` aligns margin footnotes with their references on wide screens; on narrow screens, the notes follow their paragraphs. Margin notes are shown in full up to ten lines unless they would crowd the next note or a wide table or figure. Tables and figures can extend into the right margin on desktop; notes are positioned around them.
+This is a Quarto website built from *Shallow investigation into vaccine optimisation (draft).docx*. The DOCX is the source for the report text; the QMD pages are organised as standalone notes in `notes/`. Their two-digit filename prefixes follow the navigation bar, including the case-study menu order. Prose uses hard line breaks at about 80 columns; footnote definitions follow their citing paragraph (or complete list), and further-reading links precede references. `index.qmd` is the hand-edited landing page; `styles.css` contains presentation rules. `landing-preview.html` retains the separately reviewable version of the landing page. The top menus link to report chapters, while "On this page" links to headings within an article. `includes/footnote-placement.html` aligns margin footnotes with their references on wide screens; on narrow screens, the notes follow their paragraphs. Margin notes are shown in full up to ten lines unless they would crowd the next note or a wide table or figure. Tables and figures can extend into the right margin on desktop; notes are positioned around them.
 
 `landing-visual-options.html` is a self-contained comparison of five optional landing-page accents. Buttons 1–5 switch the visual, the placement selector moves it between columns, and the motion button pauses the looping curves. The visuals are schematic design studies. The live landing page now uses a text-free, square version of option 5 on desktop; it is hidden on mobile and honours reduced-motion preferences. `includes/landing-accent.html` draws and animates that curve.
 
@@ -20,3 +20,10 @@ and `assets/image3.png`, each below 200 kB. Run
 `python3 scripts/optimise_illustrations.py` (requires Pillow) after replacing an
 original to regenerate these web versions. DOCX conversion preserves these
 replacements; the PDF uses the full-resolution originals.
+
+## Licence
+
+© 2026 Witold Więcek. Unless otherwise indicated, original material in this
+repository is licensed under [Creative Commons Attribution 4.0 International
+(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The full licence is
+in [LICENSE](LICENSE). Third-party material retains its original terms.

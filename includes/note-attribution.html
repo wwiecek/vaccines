@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".landing")) return;
   const footer = document.createElement("footer");
   footer.className = "note-attribution";
-  footer.innerHTML = `<p>© 2026 Witold Więcek</p>
+  footer.innerHTML = `<p>© 2026 Witold Więcek<br>
+      Cite as Więcek, W. (2026). Optimal dosing of vaccines. <a href="https://witold.xyz/vaccines/">https://witold.xyz/vaccines/</a><br>
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
     <p>Based on research projects funded by Open Philanthropy (now Coefficient Giving)
-      and the Center for Global Development.</p>
-    <p>This document is a product of independent research and does not represent
+      and the Center for Global Development.<br>
+      This document is a product of independent research and does not represent
       the views of these organisations.</p>`;
   document.querySelector("main.content")?.append(footer);
 });

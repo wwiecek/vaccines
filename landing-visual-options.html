@@ -188,8 +188,8 @@
       color: #b2c5c4; font-size: 12px; line-height: 1.6;
     }
     .footer p { margin: 0; }
-    .footer p:first-child { color: var(--mint); white-space: nowrap; }
-    .footer p:last-child { max-width: 780px; text-align: right; }
+    .footer p:first-child { flex: 1; min-width: 0; color: var(--mint); }
+    .footer p:last-child { flex: 1; max-width: 780px; text-align: right; }
     @media (max-width: 1100px) {
       .navbar { gap: 24px; }
       .nav-links { gap: 15px; }
@@ -404,7 +404,9 @@
     </aside>
   </main>
   <footer class="footer">
-    <p>© 2026 Witold Więcek</p>
+    <p>© 2026 Witold Więcek<br>
+      Cite as Więcek, W. (2026). Optimal dosing of vaccines. <a href="https://witold.xyz/vaccines/">https://witold.xyz/vaccines/</a><br>
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
     <p>Based on research projects funded by Open Philanthropy (now Coefficient Giving)
       and the Center for Global Development.<br>
       This document is a product of independent research and does not represent
