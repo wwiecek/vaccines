@@ -751,7 +751,7 @@ main.content .note-attribution a { color: inherit; }
   }
   body:not(:has(.landing)) .navbar-brand {
     display: block; overflow: hidden; text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; margin-right: 0;
   }
   body:not(:has(.landing)) .navbar-toggler { order: 0; padding: .25rem; }
   body:not(:has(.landing)) .quarto-navbar-tools { order: 2; }
