@@ -730,10 +730,33 @@ main.content .note-attribution a { color: inherit; }
   color: #e6ecea; cursor: pointer; font: .78rem/1.25 system-ui, sans-serif;
   margin-inline: .4rem; padding: .4rem .6rem; white-space: nowrap;
 }
+.theme-toggle-icon { display: none; }
 .theme-toggle:hover { background: #ffffff1f; }
 .theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 @media (min-width: 1200px) and (max-width: 1399px) {
   .theme-toggle { max-width: 60px; white-space: normal; font-size: .72rem; }
+}
+
+/* Collapsed navigation keeps the brand and compact controls on one row. */
+@media (max-width: 1199px) {
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; padding: 7px; margin-inline: 2px; border: 0;
+  }
+  .theme-toggle-icon { display: block; flex: none; }
+  .theme-toggle-label { display: none; }
+  body:not(:has(.landing)) .navbar-container { column-gap: .25rem; }
+  body:not(:has(.landing)) .navbar-brand-container {
+    order: 1; flex: 1; min-width: 0; margin-inline: 0 !important;
+  }
+  body:not(:has(.landing)) .navbar-brand {
+    display: block; overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  body:not(:has(.landing)) .navbar-toggler { order: 0; padding: .25rem; }
+  body:not(:has(.landing)) .quarto-navbar-tools { order: 2; }
+  body:not(:has(.landing)) #quarto-search { order: 3; }
+  body:not(:has(.landing)) .navbar-collapse { order: 4; flex-basis: 100%; }
 }
 
 body.quarto-dark:not(:has(.landing)) {

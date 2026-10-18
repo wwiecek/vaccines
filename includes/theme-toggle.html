@@ -16,7 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle = document.createElement('button');
       toggle.type = 'button';
       toggle.className = 'theme-toggle';
-      toggle.textContent = 'Toggle theme';
+      toggle.setAttribute('aria-label', 'Toggle theme');
+      toggle.title = 'Toggle theme';
+      toggle.innerHTML = `<svg class="theme-toggle-icon" width="20" height="20"
+          viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="10" cy="10" r="8" fill="white" stroke="white" />
+        <path d="M10 2a8 8 0 0 0 0 16Z" fill="black" />
+      </svg><span class="theme-toggle-label">Toggle theme</span>`;
       toggle.addEventListener('click', () => {
         window.quartoToggleColorScheme();
         sync();
