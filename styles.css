@@ -161,8 +161,8 @@ main.content table { font-family: system-ui, sans-serif; font-size: .9rem; }
 
 /* Date and scope of the evidence, consistently shown on every note. */
 main.content .note-disclaimer {
-  margin: 2rem 0 1.2rem;
-  padding: 1.4rem 1.7rem;
+  margin: 1rem 0 1.2rem;
+  padding: 1rem 1.7rem;
   border-left: 3px solid #5cae9c;
   background: #e4ebe4;
   color: var(--ink);
@@ -207,7 +207,12 @@ main.content figure figcaption { font: .83rem/1.5 system-ui, sans-serif; }
   .margin-note-toggle { display: none; }
 }
 aside.footnotes, .margin-sidebar .footnotes { border-top: 1px solid var(--rule); padding-top: .55rem; }
-.footnote-ref { color: var(--link); font-family: system-ui, sans-serif; font-size: .7em; font-weight: 700; }
+.footnote-ref {
+  color: var(--link); font-family: system-ui, sans-serif;
+  font-size: .72em; font-weight: 750; margin-inline: .06em;
+}
+/* Avoid shrinking the number twice: the link already sets its size. */
+.footnote-ref sup { font-size: 1em; }
 .footnote-back { color: var(--link); }
 
 /* Keep the source lists visually distinct from the article text. */
@@ -608,7 +613,7 @@ main.content .implementation-figure {
 /* Note titles form a distinct heading above the quieter subtitle. */
 body:not(:has(.landing)) main.content h1 { color: #245c56; }
 main.content p:has(.note-subtitle) {
-  margin: -1.1rem 0 1.8rem;
+  margin: -1.1rem 0 .8rem;
   font: 1.05rem/1.5 system-ui, sans-serif; color: #526b65;
 }
 @media (min-width: 992px) {
@@ -621,7 +626,7 @@ main.content p:has(.note-subtitle) {
   body:not(:has(.landing)) main.content h1 { margin-left: -90px; }
 }
 @media (max-width: 767px) {
-  main.content p:has(.note-subtitle) { margin: -.2rem 0 1.2rem; font-size: .95rem; }
+  main.content p:has(.note-subtitle) { margin: -.2rem 0 .6rem; font-size: .95rem; }
 }
 body:has(.landing) main.content { margin-bottom: 0 !important; }
 body:has(.landing) #quarto-content { padding-bottom: 0 !important; }
@@ -750,3 +755,16 @@ body.quarto-dark main.content table tbody tr:nth-child(even) { background: #2635
 
 /* Keep dark lettering in scientific illustrations readable in dark mode. */
 body.quarto-dark .paper-figure { background: #f4f2ea; }
+
+/* Reading details occupy the existing space above each long note's title. */
+main.content p.note-reading-info {
+  height: 0; margin: 0; position: relative; top: .2rem;
+  color: var(--ink); opacity: .75;
+  font: .75rem/1.4 system-ui, sans-serif;
+}
+@media (min-width: 992px) {
+  main.content p.note-reading-info { text-align: center; }
+}
+@media (max-width: 767px) {
+  main.content p.note-reading-info { top: -1.2rem; }
+}

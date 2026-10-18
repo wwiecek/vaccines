@@ -1,5 +1,5 @@
-# Plot antibody responses relative to each vaccine's approved dose, with a
-# pooled Hill curve. Save web and vector copies using the notes' light palette.
+# Compare antibody responses before and after normalising to the approved
+# dose. Save web and vector copies using the notes' light palette and font.
 library(tidyverse)
 library(ggrepel)
 
@@ -28,6 +28,7 @@ pal <- c(
 )
 background <- "#F4F2EA"
 ink <- "#203137"
+plot_font <- "Georgia"
 
 d2 <- d |>
   group_by(vaccine) |>
@@ -57,23 +58,49 @@ fit <- nls(
 curve <- tibble(dose = exp(seq(log(0.2), log(6), length.out = 300)))
 curve$response <- predict(fit, newdata = curve)
 
-plot <- ggplot() +
-  geom_hline(yintercept = 1, linetype = 3, colour = "#83938B") +
+# Keep the measured and normalised responses on separate y scales.
+plot_data <- bind_rows(
+  d |> mutate(panel = "Relative to convalescent serum", response = nab,
+              x_plot = dose),
+  d2 |> mutate(panel = "Relative to approved dose")
+) |>
+  mutate(panel = factor(panel, levels = c(
+    "Relative to convalescent serum", "Relative to approved dose"
+  )))
+curve <- curve |>
+  mutate(panel = factor("Relative to approved dose",
+                        levels = levels(plot_data$panel)))
+
+plot <- ggplot(plot_data, aes(x_plot, response, colour = vaccine)) +
   geom_vline(xintercept = 1, linetype = 3, colour = "#83938B") +
-  geom_line(data = curve, aes(dose, response), linewidth = 1, colour = ink) +
-  geom_point(data = d2, aes(x_plot, response, colour = vaccine), size = 3) +
-  geom_text_repel(
-    data = d2, aes(x_plot, response, label = vaccine, colour = vaccine),
-    size = 3, family = "DejaVu Sans", seed = 1, show.legend = FALSE
+  geom_hline(
+    data = distinct(curve, panel) |> mutate(response = 1),
+    aes(yintercept = response), linetype = 3, colour = "#83938B"
   ) +
+  geom_line(
+    data = filter(plot_data, panel == "Relative to convalescent serum"),
+    aes(group = vaccine), linewidth = 0.7
+  ) +
+  geom_line(
+    data = curve, aes(dose, response), inherit.aes = FALSE,
+    linewidth = 1, colour = ink
+  ) +
+  geom_point(size = 3) +
+  geom_text_repel(
+    data = filter(plot_data, panel == "Relative to approved dose", dose != 1),
+    aes(label = vaccine), size = 3, family = "DejaVu Sans", seed = 1,
+    show.legend = FALSE
+  ) +
+  facet_wrap(~ panel, nrow = 1, scales = "free_y") +
+  expand_limits(y = 0) +
   scale_x_log10(breaks = c(0.25, 0.5, 1, 2, 5)) +
   scale_colour_manual(values = pal) +
   labs(
     x = "Dose relative to approved dose",
-    y = "Immune response relative to approved dose",
+    y = "Neutralising antibody response",
     colour = NULL
   ) +
-  theme_minimal(base_size = 12, base_family = "DejaVu Sans") +
+  theme_minimal(base_size = 13, base_family = plot_font) +
   theme(
     plot.background = element_rect(fill = background, colour = NA),
     panel.background = element_rect(fill = background, colour = NA),
@@ -81,13 +108,15 @@ plot <- ggplot() +
     panel.grid.minor = element_blank(),
     text = element_text(colour = ink),
     axis.text = element_text(colour = ink),
+    strip.text = element_text(colour = ink, size = 13),
+    panel.spacing = unit(1.5, "lines"),
     legend.position = "bottom",
     legend.background = element_rect(fill = background, colour = NA),
     legend.key = element_rect(fill = background, colour = NA),
     plot.margin = margin(14, 20, 12, 10)
   )
 
-ggsave("assets/immune_response.png", plot, width = 8, height = 5,
+ggsave("assets/immune_response.png", plot, width = 11, height = 5,
        dpi = 180, device = ragg::agg_png, bg = background)
-ggsave("assets/immune_response.pdf", plot, width = 8, height = 5,
+ggsave("assets/immune_response.pdf", plot, width = 11, height = 5,
        device = grDevices::cairo_pdf, bg = background)

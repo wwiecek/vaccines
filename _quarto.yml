@@ -68,6 +68,8 @@ format:
       dark: [cosmo, includes/dark.scss]
     respect-user-color-scheme: true
     include-in-header: includes/theme-metadata.html
+    filters:
+      - includes/reading-info.lua
     css: styles.css
     include-after-body:
       - includes/theme-toggle.html

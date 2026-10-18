@@ -29,7 +29,8 @@ repository is licensed under [Creative Commons Attribution 4.0 International
 in [LICENSE](LICENSE). Third-party material retains its original terms.
 
 The site favicon is `assets/favicon.ico` (16, 32 and 48 px), derived from
-`assets/favicon_large.png`. `assets/favicon.png` is the 32 px PNG version.
+`assets/favicon_large.png`, cropped to leave a narrow transparent margin
+around the vial. `assets/favicon.png` is the 32 px PNG version.
 
 Individual notes offer a saved light/dark preference through the navbar's
 "Toggle theme" button; the homepage keeps its fixed palette. Native
@@ -39,3 +40,10 @@ you change themes, reload once to let it detect the native theme.
 The first biology illustration uses its full-resolution transparent PNG to
 preserve smooth shading. The Yang illustration uses a compressed transparent
 PNG; its full-resolution source is retained alongside it in `assets/`.
+
+Long notes show their word count (rounded to the nearest 100) and an estimated
+reading time above the title. `includes/reading-info.lua` calculates both
+when Quarto builds the HTML, counting the note and its footnotes but excluding
+references, further reading and shared notices. It assumes 200 words per minute
+and omits About, the case-study introduction and notes below 500 words. These
+details appear only on the website.

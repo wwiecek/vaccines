@@ -43,21 +43,39 @@ counter-intuitive to you, you may want to read that first. Here I will try to
 cover the basics of biological mechanisms. Let's start by getting a bit more 
 precise about the terms. Let's talk about response curves and types of response.
 
-> **What is an immune response?**
+> **What is an immune response to vaccine?**
 >
-> *Vaccines mostly induce adaptive immune responses. Within adaptive immunity,
-> we distinguish two mechanisms: humoral and cellular. Humoral is
+> *Vaccines mostly induce **adaptive immune responses**. Within adaptive immunity,
+> we distinguish two mechanisms: **humoral** and **cellular**. Humoral is
 > antibody-mediated, involves B cells, plasma cells, and antibodies they
 > produce. T cells do not produce antibodies, but can attack infected cells or
-> help other immune cells; this is cellular immunity.*
+> help other immune cells; this is cellular immunity.[^mrnadose]*
 >
 > *Antibodies allow for neutralising pathogens before they enter cells
-> (sterilising immunity). They are the key mechanism in vaccination and also
+> (that could lead to **sterilising immunity**). They are the key mechanism in 
+> vaccination and also
 > easier to measure, hence vaccine developers often focus on them. Typically
 > vaccines rely primarily on antibody-induced protection. Many
-> vaccines also induce a T cell response; however, it is harder to measure and
+> vaccines also induce a T-cell response; however, it is harder to measure and
 > we understand it less well.*
+>
+> *We should also differentiate between sites of immunity.
+> Typically we will be talking about measurement of antibodies in blood, 
+> but for a respiratory infection like Covid or flu 
+> **mucosal immunity** in airways may prevent infection altogether. For oral 
+> cholera and polio vaccines intestinal mucosa is the target.
+>
+> *I also talk about **correlates of protection** in this chapter. That is a 
+> marker that * statistically * predicts protection against infection/disease.
+> Correlates can be identified with different stringency, as the name implies.
+> Typically we first test a promising vaccine for efficacy and establish 
+> CoP's based on the trial results.
 
+[^mrnadose]:First, however, the immune system needs an **antigen**; the way it is 
+"presented" is specfic to a vaccine platform. E.g. in mRNA cells are 
+instructed to produce antigen. Lipid nanoparticles that mRNA uses play role in
+both delivery and stimulation of immune system. The relationship between administered 
+dose, antigen exposure and immune response is therefore more complicated.
 
 ## Immune response vs efficacy; shapes of response
 
@@ -87,6 +105,8 @@ certain point increasing the dose led to a *weaker* immune response?[^simpl]
    For example, imagine two levels of antibodies initially giving 100% efficacy, 
    but only the higher dose giving lifetime protection against disease.
    Remember as well that we are dealing with statistical relationships. 
+   Moreover, the pathogens themselves evolve over time, so we have to 
+   consider many curves specific to many different variants.
    Lastly, there is going to be considerable variability across people, 
    and sometimes also considerable variability in the amount of antigen in
    a set quantity of vaccine. 
@@ -124,7 +144,12 @@ We see here an example of the general principle that for a given vaccine
 many doses tested in trials can lie either on "top" of the S or close to it. 
 Remember, however, that these are merely model predictions and that this 
 figure focuses on the magnitude of short-term efficacy, not durability of 
-protection.
+protection.[^muco]
+
+[^muco]:Note as well that such a model is for antibody measurements in blood. 
+These are the most useful predictors of protection in this context, but 
+they do not capture mucosal or cellular immunity. So a dose may have high efficacy 
+against symptomatic disease, but low protection against infection or transmission.
 
 
 
@@ -145,6 +170,8 @@ for it.
 - In **TB vaccines** early human trials and animal data,
   Billeskov et al. (2018), Rhodes et al (2016) and Luabeya et al. (2015)
   have shown worsening of immune response with higher dose.
+  The first of the three actually showed worsening of _protection_
+  with higher dose, albeit in mice.
   This was for candidate vaccines which were discontinued, not 
   for the ones currently in development.
 
@@ -165,17 +192,19 @@ let's say a few things about multi-dose vaccines.
 Many vaccines require multiple prime and booster doses.[^5] Continuing with
 our Covid-19 example, the Astrazeneca vaccine (two-dose) trials measured 
 higher efficacy for patients who were
-given a lower dose and longer gap between two doses. This also mapped to
-antibody response. In general, many studies of different COVID vaccines have
+given a lower dose and longer gap between two doses. (The consensus was that it
+was the gap rather than dose that drove higher efficacy.) This preference 
+for longer gaps could also be seen in antibody response data. 
+In general, many studies of different COVID vaccines have
 found that longer gaps (without change in dose) between 2 doses (not just of AZ
 vaccine) [led to more robust
 responses](https://doi.org/10.1016/j.cell.2021.10.011); [ditto for third
 dose](https://www.cell.com/cell/fulltext/S0092-8674(22)01251-X).[^6]
 
-[^5]: In the context of COVID, "prime and boost" is used in reference to first
+[^5]: In the context of the Covid example here, "prime and boost" is used in reference to first
     and second dose, but it can also refer to priming with two doses and a later
-    3rd booster dose. Many multiple-dose vaccines are given in childhood. In
-    that context I believe "prime" doses are the ones given within the first 6
+    3rd booster dose. Many multi-dose vaccines are given in childhood. In
+    that context "prime" doses would typically be the ones given within the first 6
     months of life. A single vaccine can have multiple priming doses (and no
     booster doses).
 
@@ -188,25 +217,22 @@ dose](https://www.cell.com/cell/fulltext/S0092-8674(22)01251-X).[^6]
 Unlike fractionation of a single dose, this mechanism of increased gaps leading
 to better response was not surprising to experts. Nor is it a mechanism limited 
 to COVID; we will show a few more examples soon. In general terms, when a priming 
-dose of a vaccine is administered, it triggers an initial immune response, 
-activating various parts of the immune system. Following this
-activation, the immune cells enter a refractory period, during which they are
-less responsive to further stimulation by the same antigen. This refractory
-period serves as a protective mechanism to prevent excessive immune activation
+dose of a vaccine is administered, it triggers an initial immune response.
+Following this, immune responses continue developing over weeks/months. 
+B cells undergo affinity maturation (more on that below) and memory B cells and 
+plasma cells are generated. Following this stimulation of immune system it also
+enters a refractory period---this is to prevent excessive immune activation
 and potential harm to the host.
 
 To maximize the benefit of a booster dose, it should be administered after the
-immune system has recovered from the refractory period and has generated a pool
-of memory B and T cells, a quantity which is highly specific to each
-vaccine. Consequently, administering a booster dose too early, while the immune
-system is still in the refractory state, may not elicit a robust secondary
-response. This also means that dosing of boosters can be lower than dosing of
-prime dose. We will return to this in a moment.
+immune system has generated a pool of memory B and T cells, a period which 
+is highly specific to each vaccine. Consequently, administering a booster 
+dose too early may not elicit  a robust secondary response. This also suggests 
+that dosing of boosters will generally differ from dosing of the first dose. 
+We will return to this in a moment.
 
 
-
-
-## Possible mechanisms for high efficacy of low dose {#possible-mechanisms}
+## Does low dose give higher quality antibodies? {#b-cell-selection-stringency-hypothesis}
 
 > What follows is definitely beyond my understanding of the immune system and is
 > simply based on rather shallow exploration of existing literature. However, I
@@ -216,11 +242,7 @@ prime dose. We will return to this in a moment.
 > elude direct observation, so we have to rely on theory and computer modeling.
 > Treat all of what follows as hypotheticals of varying quality.
 
-
-
-### B cell selection stringency hypothesis {#b-cell-selection-stringency-hypothesis}
-
-Staying with COVID example, a modeling study by Garg et al. (2021) suggests a
+Staying with the earlier Covid examples, a modeling study by Garg et al. (2021) suggests a
 possible explanation for the mechanism observed in the AZ study, which extends
 beyond delayed booster and also applies to lower doses. It can be most simply
 summarised as a quantity-quality trade-off that occurs in germinal centers,
@@ -228,12 +250,12 @@ i.e. the locations where antigens are presented to B cells, which then leads to
 production of memory B cells and long-lived plasma cells (residing in bone
 marrow).
 
-In that (generic, non-COVID-specific) process of affinity maturation, as B cells
+In that (generic, i.e. non-Covid-specific) process of affinity maturation, as B cells
 proliferate, they undergo [somatic
 hypermutation](https://en.wikipedia.org/wiki/Somatic_hypermutation) and then
 [clonal selection](https://en.wikipedia.org/wiki/Clonal_selection). This second
 step is crucial. When there is a lot of antigen, B cells with both moderate and
-high affinity will bind to it. When the prime dose is lower, then fewer B cells
+high affinity will bind to it. Hypothetically, when the prime dose is lower, then fewer B cells
 are selected, but they are on average higher affinity, leading to a stronger
 immune response (higher quality antibodies) from those cells when antigen is
 encountered again.[^8] 
@@ -262,14 +284,23 @@ no sense of how to generalise from isolated examples to other cases, although
 there is no reason why it should be seen as COVID-specific. For multi-dose
 vaccination regimens, it is even less clear what happens to this mechanism,
 since we do not know whether boosting leads to formation of new germinal centers
-or modulation of existing ones. 
+or modulation of existing ones.[^boost]
 
-To summarise, let's reiterate three points. - First, these issues are very
+[^boost]:ChatGPT contradicts me here, saying: "Human studies now show that booster 
+vaccination can stimulate new germinal-centre reactions and recruit existing memory 
+B cells into further rounds of maturation. (Alsoussi et al. 2023) What remains 
+uncertain is how antigen dose and timing determine the magnitude, composition and eventual 
+protective value of these responses." 
+
+Before we move on, let me reiterate two points:
+
+- First, these issues are very
 complex and not only beyond my own understanding, but also not well understood
-by the experts. - Second, while I often focus on COVID examples (because they
+by the experts. 
+- Second, while I often focus on COVID examples (because they
 are salient), the mechanisms likely apply in many different diseases.
 
-### Immune memory, previous exposure {#immune-memory-previous-exposure}
+## Immune memory, previous exposure {#immune-memory-previous-exposure}
 
 The main conclusion from the previous section, however, is that we should
 consider lowering dosage of priming and boosting doses as two separate
@@ -289,11 +320,12 @@ the effectiveness of vaccines may be highly dependent on history of previous
 infections, as was the case with COVID-19.[^9]
 
 [^9]: For example, Mateus et al. (2021) found that pre-existing cross reactive T
-    cells enhanced the efficacy of lower dose of Moderna's mRNA vaccine. There
+    cells enhanced immunogenicity of lower dose of Moderna's mRNA vaccine. There
     are many papers on prior infections, e.g. [Reynolds et al
     (2021)](https://www.science.org/doi/full/10.1126/science.abh1282) and, as I
-    discuss in chapter on modeling health benefits of optimal dosing, this was
-    translated into models.
+    discuss in the chapter on 
+	[modeling health benefits of optimal dosing](06-population-benefits.qmd), 
+	this was translated into models of benefits.
 
 
 However, for natural immunity, the factors that determine this are complex and
@@ -314,7 +346,7 @@ generalise this across pathogens, it's just an example.[^10]
     and difficulty in creating a universal influenza vaccine that could work
     against the conserved part of the virus.
 
-### Other ideas: anti-vector immunity, interactions with adjuvants, heterologous boost {#other-ideas-anti-vector-immunity-interactions-with-adjuvants-heterologous-boost}
+## Other ideas: anti-vector immunity, interactions with adjuvants, heterologous boost {#other-ideas-anti-vector-immunity-interactions-with-adjuvants-heterologous-boost}
 
 There are three more concepts that bear at least mentioning, but which I did not
 have time to cover under this initial exploration:
@@ -338,9 +370,9 @@ have time to cover under this initial exploration:
 - In **adjuvanted vaccines**, these mechanisms are further complicated by
   interaction of the vaccine with its adjuvant. Intuitively, given a potent
   adjuvant, the immune response may be less responsive to changes in dose
-  compared to the same vaccine given without adjuvant. However, that's another
-  topic I'd need to get more expert opinion on. For now I am just noting my
-  ignorance.
+  compared to the same vaccine given without adjuvant. Dosing studies 
+  often have to vary both the antigen and the adjuvant. See, for example,
+  dose ranging trials for M72 TB vaccine and its AS01 adjuvant.
 
 [^11]: AstraZeneca vaccine used two doses with the same adenovirus, but the
     Russian Sputnik V vaccine, also two-dose, used Ad5 and Ad26, presumably to
@@ -353,7 +385,7 @@ have time to cover under this initial exploration:
     Nowadays, I think general consensus seems to be that heterologous boosting
     with a good quality vaccine is a good idea.
 
-### Extra example: malaria and RTS,S {#extra-example-malaria-and-rtss}
+## Extra example: malaria and RTS,S {#extra-example-malaria-and-rtss}
 
 Let's look at another example that shows increasing gaps and smaller
 doses at the same time can lead to better responses. That is the case in RTS,S
@@ -380,39 +412,58 @@ beginning of discussion in (Das et al. 2021).[^14]
     Institute](https://www.nature.com/articles/s41598-021-90290-8#:~:text=Efficacy%20of%20RTS%2CS%20can,combined%20with%20ChAd63%E2%80%94MVA%20ME.),
     but this is in mice.
 
-## Immune memory and optimisation goals {#table-1-immune-memory-and-optimisation-goals}
+## Which vaccines are fractionation candidates? {#table-1-immune-memory-and-optimisation-goals}
 
 Given the above, can we classify vaccines/diseases according to how lower doses
 are expected to perform? Clearly the mechanisms that favour lower doses or
-alternative vaccination regimens are highly variable, depending on
+alternative vaccination regimens are highly variable, depending on platform,
 pathogen/antigen/epitope complexity, the type of immune machinery that they
 produce, and history of natural exposures. For COVID, it has been sufficient for
 vaccines to present a spike protein antigen and neutralising antibodies
-correlated well to protection from disease. This meant that some generalisable
+correlated very well to protection from disease. This meant that some generalisable
 inferences about impact of lowering doses could be made even early on in the
-pandemic. 
+pandemic, as we've seen in the initial example in this chapter.
 
 Still, since we've been focusing on immune memory, for general interest it may
 be instructive to delineate three groups of diseases based on that distinction,
 which I borrow from an excellent summary article by Pollard and Bijker (2021).
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Mechanism                                                                                                                                                                                            Examples                                                                                                                                                                                 Hypothetical goal of optimisation approach
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
-  **Long-lasting protection**. Antibody levels stay high enough to be protective long-term, sometimes lifetime                                                                                         yellow fever ("only 12 known cases of yellow fever post-vaccination have been identified, after 600 million doses have been dispensed" per WHO), varicella zoster, measles-mumps, HPV?   Finding the right dose to induce protection; can involve lowering doses, for vaccines that already tend to work well
++--------------------------------------+-----------------------------------+----------------------+
+| Mechanism                            | Examples                          | Hypothetical goal of |
+|                                      |                                   | optimisation         |
+|                                      |                                   | approach             |
++:=====================================+:==================================+:=====================+
+| **Long-lasting protection**.         | yellow fever ("only 12 known      | Finding the right    |
+| Antibody levels stay high enough to  | cases of yellow fever             | dose to induce       |
+| be protective long-term, sometimes   | post-vaccination have been        | protection; can      |
+| lifetime                             | identified, after 600 million     | involve lowering     |
+|                                      | doses have been dispensed" per    | doses, for vaccines  |
+|                                      | WHO), measles-mumps, maybe HPV?   | that already tend to |
+|                                      |                                   | work well            |
++--------------------------------------+-----------------------------------+----------------------+
+| **Memory-dependent protection.**     | hepatitis B, polio                | Optimising for high  |
+| Antibody levels drop over time but   |                                   | quality memory,      |
+| when exposed, the incubation period  |                                   | e.g. via timing of   |
+| is long enough for immune memory to  |                                   | doses                |
+| kick in and offer protection         |                                   |                      |
++--------------------------------------+-----------------------------------+----------------------+
+| **Short-term antibody-dependent      | influenza, pertussis (acellular), | Achieving high       |
+| protection.** Antibody levels drop   | SARS-CoV-2, cholera               | initial levels of    |
+| rapidly, and the pathogen's          |                                   | antibodies; public   |
+| incubation period is too short for   |                                   | health trade-offs to |
+| memory responses to be fully         |                                   | maximise protection  |
+| protective.                          |                                   |                      |
++--------------------------------------+-----------------------------------+----------------------+
 
-  **Memory-dependent protection.** Antibody levels drop over time but when exposed, the incubation period is long enough for immune memory to kick in and offer protection                             Hib, tetanus, diptheria, polio, pneumococcal conjugate vaccine                                                                                                                           Optimising for high quality memory, e.g. via timing of doses
+Three rather obvious caveats: 
 
-  **Short-term antibody-dependent protection.** Antibody levels drop rapidly, and the pathogen's incubation period is too short for memory responses to be fully protective. Re-vaccination required   influenza, pertussis (acellular?), SARS-CoV-2, cholera                                                                                                                                   Achieving high initial levels of antibodies; public health trade-offs to maximise protection
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Three rather obvious caveats: - It's important to note that these categories are
+- It's important to note that these categories are
 not rigid, many vaccines may exhibit characteristics of multiple groups or fall
 outside these classifications entirely. For example, hepatitis B vaccine
 requires high levels of antibodies, but is durable; malaria and BCG vaccines
-have more complicated mechanisms of protection. - The "long-lasting" category is
-of course subjective: e.g. measles protection will also disappear given enough
-time, as we've seen in recent outbreaks. - My hypothetical goals are also a bit
+have more complicated mechanisms of protection. 
+- Whether something is "long-lasting" of course depends on context/risk. 
+- My hypothetical goals are also a bit
 of splitting hairs. In each case it depends not just on the quality of the
 vaccine, but also its supply and each disease needs to be considered separately.
 
@@ -432,7 +483,7 @@ in responses.
 
 We already mentioned previous infection status as an important host factor in
 vaccine response. Another one is age. It is uncontroversial to give smaller
-doses of vaccines to children compared to adults, as their immune systems are
+doses of some vaccines to children compared to adults, as their immune systems are
 generally more responsive. So in children higher doses may lead to increased
 reactogenicity without any benefits. Conversely (and perhaps more
 interestingly), for influenza we recommend giving larger doses to the elderly
