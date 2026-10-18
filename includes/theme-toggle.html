@@ -1,0 +1,31 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const meta = document.querySelector('meta[name="color-scheme"]');
+  const sync = () => {
+    const dark = Boolean(document.querySelector('.landing')) ||
+      document.body.classList.contains('quarto-dark');
+    const scheme = dark ? 'dark' : 'light';
+    meta.content = scheme;
+    document.documentElement.style.colorScheme = scheme;
+    toggle?.setAttribute('aria-pressed', String(dark));
+  };
+  let toggle;
+  if (!document.querySelector('.landing')) {
+    const native = document.querySelector('.quarto-color-scheme-toggle');
+    if (native) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'theme-toggle';
+      toggle.textContent = 'Toggle theme';
+      toggle.addEventListener('click', () => {
+        window.quartoToggleColorScheme();
+        sync();
+      });
+      native.before(toggle);
+    }
+  }
+  new MutationObserver(sync).observe(document.body,
+    {attributes: true, attributeFilter: ['class']});
+  sync();
+});
+</script>

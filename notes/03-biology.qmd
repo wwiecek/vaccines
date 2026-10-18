@@ -67,7 +67,7 @@ need to measure both of them to know how a given dose will translate to
 efficacy. A very simplified scheme looks like this \
 (I asked AI to generate this):
 
-![](../assets/dose_response_info.png){fig-alt="An AI infographic to illustrate relationships between dose, immune response, and efficacy."}
+![](../assets/dose_response_info.png){.paper-figure fig-alt="An AI infographic to illustrate relationships between dose, immune response, and efficacy."}
 
 As I suggest on my mock inforgraphic, dose-response curves can take different shapes.
 Typically we could consider three types:
@@ -115,7 +115,7 @@ between dose, antibody responses, and efficacy measured in clinical trials.
 I won't recap these models here, but here is part of 
 a figure from Yang et al 2022 which I think tells the most relevant part of the story:
 
-![](../assets/yang_dose_response.png){width="6.486111111111111in"}
+![](../assets/yang_dose_response.png){.paper-figure width="6.486111111111111in"}
 
 ***Figure.** An illustration of an uncertain, model-derived relationship between
 dose and efficacy for COVID-19 vaccines.*

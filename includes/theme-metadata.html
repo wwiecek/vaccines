@@ -1,0 +1,15 @@
+<meta name="color-scheme" content="dark">
+<script>
+(() => {
+  // Announce the native theme early so browser extensions can recognise it.
+  let scheme = 'dark';
+  if (location.pathname.includes('/notes/')) {
+    let saved;
+    try { saved = localStorage.getItem('quarto-color-scheme'); } catch {}
+    scheme = saved === 'alternate' || (!saved &&
+      matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+  document.querySelector('meta[name="color-scheme"]').content = scheme;
+  document.documentElement.style.colorScheme = scheme;
+})();
+</script>

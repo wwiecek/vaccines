@@ -29,4 +29,12 @@ repository is licensed under [Creative Commons Attribution 4.0 International
 in [LICENSE](LICENSE). Third-party material retains its original terms.
 
 The site favicon is `assets/favicon.ico` (16, 32 and 48 px), derived from
-`assets/favicon_large.jpg`. `assets/favicon.png` is the 32 px PNG version.
+`assets/favicon_large.png`. `assets/favicon.png` is the 32 px PNG version.
+
+Individual notes offer a saved light/dark preference through the navbar's
+"Toggle theme" button; the homepage keeps its fixed palette. Native
+`color-scheme` metadata follows the active theme so Dark Reader can recognise
+it. Dark Reader checks this when a page loads; if it is already active when
+you change themes, reload once to let it detect the native theme.
+The two biology illustrations use compressed transparent PNGs, with the
+full-resolution transparent sources retained alongside them in `assets/`.

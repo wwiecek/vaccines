@@ -4,6 +4,10 @@ title: "Optimal dosing of vaccines"
 title-block-style: none
 page-layout: full
 toc: false
+format:
+  html:
+    theme: cosmo
+    respect-user-color-scheme: false
 ---
 
 ```{=html}

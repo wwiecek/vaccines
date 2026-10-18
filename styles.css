@@ -704,3 +704,49 @@ main.content .note-attribution a { color: inherit; }
   main.content .landing .section-links a { padding-block: 5px; font-size: 19px; }
   main.content .landing .topic-description { font-size: 12.5px; line-height: 1.35; }
 }
+
+/* Quarto owns theme persistence; the notes use a labelled control like BEAR. */
+.quarto-color-scheme-toggle { display: none; }
+.theme-toggle {
+  background: transparent; border: 1px solid currentColor; border-radius: 4px;
+  color: #e6ecea; cursor: pointer; font: .78rem/1.25 system-ui, sans-serif;
+  margin-inline: .4rem; padding: .4rem .6rem; white-space: nowrap;
+}
+.theme-toggle:hover { background: #ffffff1f; }
+.theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .theme-toggle { max-width: 60px; white-space: normal; font-size: .72rem; }
+}
+
+body.quarto-dark:not(:has(.landing)) {
+  --paper: #192328;
+  --ink: #e6ecea;
+  --link: #9bd6d1;
+  --rule: #415057;
+}
+body.quarto-dark main.content h1 { color: #a5d8cb; }
+body.quarto-dark main.content blockquote,
+body.quarto-dark main.content .note-disclaimer,
+body.quarto-dark main.content section[id^="references"],
+body.quarto-dark .next-section,
+body.quarto-dark .column-margin.column-container > [id^="fn"],
+body.quarto-dark main.content .mobile-note { background: #26353b; }
+body.quarto-dark main.content p:has(.note-subtitle),
+body.quarto-dark .column-margin,
+body.quarto-dark aside.footnotes,
+body.quarto-dark .margin-sidebar .footnotes,
+body.quarto-dark .next-section small,
+body.quarto-dark main.content .mobile-note { color: #bdccc7; }
+body.quarto-dark #TOC #toc-title { color: #bdccc7; }
+body.quarto-dark #TOC .nav-link { color: #bdccc7 !important; }
+body.quarto-dark #TOC .nav-link.active,
+body.quarto-dark #TOC .nav-link:hover { color: var(--link) !important; }
+body.quarto-dark main.content table { background: #202d32; }
+body.quarto-dark main.content table th { background: #30413f; }
+body.quarto-dark main.content table tbody tr:nth-child(even) { background: #26353b; }
+@media print {
+  .theme-toggle { display: none; }
+}
+
+/* Keep dark lettering in scientific illustrations readable in dark mode. */
+body.quarto-dark .paper-figure { background: #f4f2ea; }

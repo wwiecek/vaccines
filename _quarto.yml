@@ -63,9 +63,14 @@ website:
     type: overlay
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: [cosmo, includes/dark.scss]
+    respect-user-color-scheme: true
+    include-in-header: includes/theme-metadata.html
     css: styles.css
     include-after-body:
+      - includes/theme-toggle.html
       - includes/reading-progress.html
       - includes/next-section.html
       - includes/note-attribution.html
