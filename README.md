@@ -36,5 +36,6 @@ Individual notes offer a saved light/dark preference through the navbar's
 `color-scheme` metadata follows the active theme so Dark Reader can recognise
 it. Dark Reader checks this when a page loads; if it is already active when
 you change themes, reload once to let it detect the native theme.
-The two biology illustrations use compressed transparent PNGs, with the
-full-resolution transparent sources retained alongside them in `assets/`.
+The first biology illustration uses its full-resolution transparent PNG to
+preserve smooth shading. The Yang illustration uses a compressed transparent
+PNG; its full-resolution source is retained alongside it in `assets/`.

@@ -67,7 +67,7 @@ need to measure both of them to know how a given dose will translate to
 efficacy. A very simplified scheme looks like this \
 (I asked AI to generate this):
 
-![](../assets/dose_response_info.png){.paper-figure fig-alt="An AI infographic to illustrate relationships between dose, immune response, and efficacy."}
+![](../assets/dose_response_info_transparent.png){.paper-figure fig-alt="An AI infographic to illustrate relationships between dose, immune response, and efficacy."}
 
 As I suggest on my mock inforgraphic, dose-response curves can take different shapes.
 Typically we could consider three types:
