@@ -13,7 +13,7 @@ from pathlib import Path
 
 from prepare_notes import prepare_notes
 
-SOURCE = Path("Shallow investigation into vaccine optimisation (draft).docx")
+SOURCE = Path("doc/Shallow investigation into vaccine optimisation (draft).docx")
 
 # The boundaries are Pandoc's heading IDs in the DOCX, not line numbers. Each
 # source note is rendered separately so its tables and footnotes remain local.

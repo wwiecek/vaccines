@@ -174,14 +174,11 @@ it hard to deliver many doses. But this may be anecdata.
 
 > **Quick reminder on what routes different vaccines use**
 >
-> ***Mucosal**: flu (nasal), cholera and rotavirus (oral), polio (oral)*
->
-> ***Intramuscular** (most vaccines): COVID, flu, polio, hepB, DTP, HPV, PCV,
-> ...*
->
-> ***Subcutaneous** (typically live vaccines): MMR, YF, varicella, zoster*
->
-> ***Intradermal**: BCG TB, also possible for rabies*
+> - **Mucosal**: flu (nasal), cholera and rotavirus (oral), polio (oral)
+> - **Intramuscular** (most vaccines): COVID, flu, polio, hepB, DTP, HPV, PCV,
+>   ...
+> - **Subcutaneous** (typically live vaccines): MMR, YF, varicella, zoster
+> - **Intradermal**: BCG TB, also possible for rabies
 
 ## Intradermal delivery and new technologies for ID {#intradermal-delivery-and-new-technologies-for-id}
 

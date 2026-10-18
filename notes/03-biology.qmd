@@ -7,7 +7,11 @@ pagetitle: "Biology of optimal dosing"
 
 *[Why can a lower dose prove just as effective?]{.note-subtitle}*
 
-{{< include ../includes/note-disclaimer.qmd >}}
+::: {.note-disclaimer}
+These notes were originally drafted in 2023 and revised in autumn 2026.
+I am a biostatistician, not an immunologist, so treat this as only a 
+very basic introduction to a very complex topic.
+:::
 
 ## Basic rationale {#basic-rationale}
 
@@ -15,68 +19,31 @@ There are five groups of factors that determine the vaccine's effect. The first
 and most obvious to focus on is the antigen. Then there are (2) the mode of
 delivery, i.e. how the antigen is "packaged", but also where it is
 delivered[^1], (3) vaccination regimen/schedule, (4) adjuvants, (5) host factors
-(e.g. age). For simplicity, I will start discussing the lower doses and then
+(e.g. age). I will focus on lowering the amount of antigen and then 
 touch on points 2-5 as we go.[^2]
 
-[^1]: To complicate this even further, this category also includes additional
+[^1]: This category also includes additional
     factors such as stabilisation of the structure of the antigen (to make it
     persist longer) and the number of epitopes (valency), which is beyond my
-    simple understanding of immune responses.
+    simple understanding of immune responses, so I won't cover it.
 
-[^2]: I do not really discuss the route of administration here. It is
-    well-established that using ID delivery may produce comparable immune
-    responses at lower doses than IM/SC injections, as I discuss in how change
-    in dosing is implemented in practice. In this section I am talking about an
-    apple-to-apple comparison, i.e. what happens when vaccines are administered
+[^2]: I talk a bit about the route of administration in another chapter. 
+    It is well-established that using intradermal (ID) delivery may produce 
+	comparable immune responses at lower doses than the deeper IM/SC injections. 
+	In this section I am talking about an apple-to-apple comparison, 
+	i.e. what happens when vaccines are administered
     using the same route. You can find more examples of increased immunogenicity
-    from switching to ID delivery in e.g. fractional dosing of polio vaccine.
+    from switching to ID delivery in case studies, e.g. 
+	fractional dosing of polio or mpox vaccines.
 
-That the lower doses are sometimes found to be non-inferior is not surprising:
-it is typical in clinical trials to set the "full" doses at the maximum
-tolerated level. In other words, when the dose-response curve is S-shaped, the
-developers may end up setting the default dose at the top part of the S, the
-"saturated" part of the response curve. A smaller dose then may have a very
-similar response. For a graphical illustration of this idea, see a model of
-fractionation of COVID-19 vaccines
-[here](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-022-02600-0/figures/2);
-pasting the relevant part of the figure:
+That the lower doses are sometimes found to be non-inferior should not be surprising.
+In [vaccine development perspective](04-vaccine-development.qmd) chapter I discuss
+the reasons why vaccine makers are incentivised to test high doses. If that feels 
+counter-intuitive to you, you may want to read that first. Here I will try to 
+cover the basics of biological mechanisms. Let's start by getting a bit more 
+precise about the terms. Let's talk about response curves and types of response.
 
-![](../assets/image2.png){width="6.486111111111111in" height="1.7895833333333333in"}
-
-***Figure.** An illustration of an uncertain, model-derived relationship for
-COVID-19 vaccines. You can ignore the implications for COVID, the general point
-is that for a given vaccine many lower doses can lie either on "top" of the S or
-close to it. (For more on COVID specifically, also see [this
-study](https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(22)00390-1/fulltext).)
-Also note that this figure focuses on the magnitude of immediate response, but
-durability of protection is also an important consideration: again, this is
-intended as a generic illustration of saturating curves.*
-
-But must the dose-response curve be *non-decreasing* in dose? What if past a
-certain point increasing the dose led to a *weaker* immune response? Such a
-claim may sound counterintuitive but it has been suggested in certain
-settings. On the other hand, the claim that extending gaps between two doses can
-lead to better immune response is, as far as I know, not controversial to any
-experts.
-
-In this chapter I talk about the mechanisms. In the next chapter I bring in some
-perspectives from clinical development.
-
-## Possible mechanisms {#possible-mechanisms}
-
-What follows is definitely beyond my understanding of the immune system and is
-simply based on rather shallow exploration of existing literature. However, I
-believe it is fair to say that for many of these mechanisms there is no
-consensus among immunologists which would be grounded in hard empirical
-facts. Since observing certain mechanisms (especially in humans) is either
-impossible or just very hard to do, some of this is grounded in theory and
-computer modeling.[^3]
-
-[^3]: To make an obvious point, this problem is compounded further when we don't
-    understand correlates of protection, as is the case in, e.g., malaria, TB,
-    HIV.
-
-> **Recap of a few basic terms before we proceed**
+> **What is an immune response?**
 >
 > *Vaccines mostly induce adaptive immune responses. Within adaptive immunity,
 > we distinguish two mechanisms: humoral and cellular. Humoral is
@@ -86,28 +53,124 @@ computer modeling.[^3]
 >
 > *Antibodies allow for neutralising pathogens before they enter cells
 > (sterilising immunity). They are the key mechanism in vaccination and also
-> easier to measure, hence vaccine developers often focus on them.* *All
-> vaccines except BCG rely* mainly *on antibody-based protection.* *Many
+> easier to measure, hence vaccine developers often focus on them. Typically
+> vaccines rely primarily on antibody-induced protection. Many
 > vaccines also induce a T cell response; however, it is harder to measure and
-> we understand it less well.*[^4]
+> we understand it less well.*
 
-[^4]: "T-cell-inducing" vaccines are "vaccines designed to induce CD4+ and/or
-    CD8+ T cells of sufficient magnitude and necessary phenotype or effector
-    function that directly contribute to pathogen clearance via cell-mediated
-    effector mechanisms, rather than only CD4+ T-cell help for B cells leading
-    to protective antibody responses" These are especially a promising area for
-    malaria research.
 
-### Gaps between doses {#gaps-between-doses}
+## Immune response vs efficacy; shapes of response
 
-Many vaccines require multiple prime and booster doses.[^5] For COVID-19 the
-2-dose Astrazeneca vaccine trials measured higher efficacy for patients who were
+I use the term "response" freely, but in vaccine development we establish
+two responses: first immunological and then protection from disease. We 
+need to measure both of them to know how a given dose will translate to 
+efficacy. A very simplified scheme looks like this \
+(I asked AI to generate this):
+
+![](../assets/dose_response_info.png){fig-alt="An AI infographic to illustrate relationships between dose, immune response, and efficacy."}
+
+As I suggest on my mock inforgraphic, dose-response curves can take different shapes.
+Typically we could consider three types:
+
+- concave,
+- S-shaped,
+- peaked.
+
+Since we are talking about potential benefits from decreasing doses, the 
+most important distinction to us is between peaked and the other two.
+Must the dose-response curve be *non-decreasing* in dose? What if past a
+certain point increasing the dose led to a *weaker* immune response?[^simpl]
+
+[^simpl]:Thinking about dose response as a single 2D curve, like in my examples, 
+   is useful for intuitions, but also simplifies things too much. The most
+   important is that we should imagine evolution of the curves **over time**.
+   For example, imagine two levels of antibodies initially giving 100% efficacy, 
+   but only the higher dose giving lifetime protection against disease.
+   Remember as well that we are dealing with statistical relationships. 
+   Lastly, there is going to be considerable variability across people, 
+   and sometimes also considerable variability in the amount of antigen in
+   a set quantity of vaccine. 
+   
+
+
+## Covid example: from dose to immune reponse to efficacy
+
+Let's see this relationship on an example that will be familiar to us all. 
+Below is a heavily simplified illustration of doses vs antibody responses
+in early Covid-19 vaccines, where the y axis has been standardised by comparing
+it to antibody level in people with natural Covid-19 infections.[^covidex]
+It's hard to compare against vaccines, so in the right panel I normalise 
+the graph so that the dose used in Phase 3 trials has efficacy of 1. 
+I draw a hypothtetical S-shape there, just for illustration.
+
+[^covidex]: Three publications that are relevant to this mini-example are 
+Khoury et al 2021, Yang et al 2022 and Rhodes et al 2022.
+
+![](../assets/immune_response.png){fig-alt="A simplified example of immune dose-response curves for Covid-19 vaccines."}
+
+Early in the pandemic researchers understood that neutralising antibodies 
+were a good correlate of protection against Covid. This meant we could use 
+statistical models of the two relationships in my earlier graph:
+between dose, antibody responses, and efficacy measured in clinical trials. 
+I won't recap these models here, but here is part of 
+a figure from Yang et al 2022 which I think tells the most relevant part of the story:
+
+![](../assets/yang_dose_response.png){width="6.486111111111111in"}
+
+***Figure.** An illustration of an uncertain, model-derived relationship between
+dose and efficacy for COVID-19 vaccines.*
+
+We see here an example of the general principle that for a given vaccine 
+many doses tested in trials can lie either on "top" of the S or close to it. 
+Remember, however, that these are merely model predictions and that this 
+figure focuses on the magnitude of short-term efficacy, not durability of 
+protection.
+
+
+
+### Are peaked immune response curves possible?
+
+Earlier I mentioned peaked curves: ones where giving more dose leads to lower
+immune response. Such a claim may sound counterintuitive but we can find some evidence
+for it.
+
+- In **adenoviral-vector vaccines** review by Benest et al (2020) 
+  191 immune-response sets were analysed. Its usually hard to tell
+  saturating and peaked responses apart, but where it is possible,
+  "evidence towards a peaked adenoviral dose-response curve occurred 
+  five times more frequently than for a saturating curve".[^fewauthors]
+- In **Covid-19** Rhodes et al (2022) did similar modeling
+  of 30 immune response datasets and found a mix of peaked and saturating
+  curves. 
+- In **TB vaccines** early human trials and animal data,
+  Billeskov et al. (2018), Rhodes et al (2016) and Luabeya et al. (2015)
+  have shown worsening of immune response with higher dose.
+  This was for candidate vaccines which were discontinued, not 
+  for the ones currently in development.
+
+[^fewauthors]:Note that the publications I list largely come from
+   the same group of researchers. You may want to discount the evidence
+   slightly for that reason, but I personally think this demonstrates
+   how underexplored the topic of dose-response shapes is.
+
+I think this provides us with enough empirical evidence to at least 
+question whether a higher dose is more effective at preventing disease.
+But what is the underlying reason for why this may occur? Before we talk about that,
+let's say a few things about multi-dose vaccines.
+
+
+
+## Gaps between doses {#gaps-between-doses}
+
+Many vaccines require multiple prime and booster doses.[^5] Continuing with
+our Covid-19 example, the Astrazeneca vaccine (two-dose) trials measured 
+higher efficacy for patients who were
 given a lower dose and longer gap between two doses. This also mapped to
 antibody response. In general, many studies of different COVID vaccines have
 found that longer gaps (without change in dose) between 2 doses (not just of AZ
 vaccine) [led to more robust
 responses](https://doi.org/10.1016/j.cell.2021.10.011); [ditto for third
-dose](https://www.cell.com/cell/fulltext/S0092-8674(22)01251-X).[^6] [^7]
+dose](https://www.cell.com/cell/fulltext/S0092-8674(22)01251-X).[^6]
 
 [^5]: In the context of COVID, "prime and boost" is used in reference to first
     and second dose, but it can also refer to priming with two doses and a later
@@ -122,17 +185,11 @@ dose](https://www.cell.com/cell/fulltext/S0092-8674(22)01251-X).[^6] [^7]
     to more people ("First Doses First"), and risk of mutations. See the section
     on modeling health benefits of optimal dosing.
 
-[^7]: Sanchez et al. (2021) discuss how in 2-dose COVID Ad5 (used in Russian and
-    Chinese vaccines) a lower initial dose led to better response following the
-    boost. They also find very low doses of antigen generating protection from
-    severe COVID. This may be due to response to vector, which I discuss later,
-    but it's worth investigating this further, since it's usually the booster
-    where we would drop the dose, not the prime. More on that below.
-
-This was not surprising to experts, nor is it a mechanism limited to COVID; we
-will show a few more examples soon. In general terms, when a priming dose of a
-vaccine is administered, it triggers an initial immune response, activating
-various parts of the immune system (more on that below). Following this
+Unlike fractionation of a single dose, this mechanism of increased gaps leading
+to better response was not surprising to experts. Nor is it a mechanism limited 
+to COVID; we will show a few more examples soon. In general terms, when a priming 
+dose of a vaccine is administered, it triggers an initial immune response, 
+activating various parts of the immune system. Following this
 activation, the immune cells enter a refractory period, during which they are
 less responsive to further stimulation by the same antigen. This refractory
 period serves as a protective mechanism to prevent excessive immune activation
@@ -145,6 +202,21 @@ vaccine. Consequently, administering a booster dose too early, while the immune
 system is still in the refractory state, may not elicit a robust secondary
 response. This also means that dosing of boosters can be lower than dosing of
 prime dose. We will return to this in a moment.
+
+
+
+
+## Possible mechanisms for high efficacy of low dose {#possible-mechanisms}
+
+> What follows is definitely beyond my understanding of the immune system and is
+> simply based on rather shallow exploration of existing literature. However, I
+> believe it is fair to say that for many of these mechanisms there is no
+> consensus among immunologists which would be grounded in hard empirical
+> facts. Immunology is not only very difficult, but also many relevant mechanisms
+> elude direct observation, so we have to rely on theory and computer modeling.
+> Treat all of what follows as hypotheticals of varying quality.
+
+
 
 ### B cell selection stringency hypothesis {#b-cell-selection-stringency-hypothesis}
 
@@ -223,12 +295,11 @@ infections, as was the case with COVID-19.[^9]
     discuss in chapter on modeling health benefits of optimal dosing, this was
     translated into models.
 
+
 However, for natural immunity, the factors that determine this are complex and
 disease-specific. One mechanism is over-stimulation in previously primed
-individuals. For example, in post-exposure TB vaccination (for a candidate
-vaccine H56, which subsequently stopped development at Phase 2), Billeskov et
-al. (2018) have shown worsening of immune response with dose  (based on
-empirical data, although in mice) where T cells primed by prior TB exposure were
+individuals. For example, in post-exposure TB vaccination that I mentioned earlier
+(Billeskov et al. 2018) T cells primed by prior TB exposure were
 highly susceptible to over-stimulation. The findings there underscore the
 importance of carefully optimising antigen doses, especially for therapeutic
 vaccination of previously exposed/primed individuals, in order to induce T cells
@@ -284,8 +355,7 @@ have time to cover under this initial exploration:
 
 ### Extra example: malaria and RTS,S {#extra-example-malaria-and-rtss}
 
-To better illustrate some of these points and to move focus away from solely
-COVID, let's look at another example that shows increasing gaps and smaller
+Let's look at another example that shows increasing gaps and smaller
 doses at the same time can lead to better responses. That is the case in RTS,S
 and malaria. As nicely summarised in a short editorial by McCall, Yap, and
 Bousema (2020), the series of the initial three RTS,S doses may work better if
@@ -379,6 +449,11 @@ benefits of optimal dosing.
 
 ### References {#references}
 
+Benest, John, Sophie Rhodes, Sara Afrough, Thomas Evans, and Richard White.
+2020. "Response Type and Host Species May Be Sufficient to Predict Dose-Response
+Curve Shape for Adenoviral Vector Vaccines." *Vaccines* 8 (2): 155.
+<https://doi.org/10.3390/vaccines8020155>.
+
 Billeskov, Rolf, Thomas Lindenstrøm, Joshua Woodworth, Cristina Vilaplana,
 Pere-Joan Cardona, Joseph P. Cassidy, Rasmus Mortensen, Else Marie Agger, and
 Peter Andersen. 2018. "High Antigen Dose Is Detrimental to Post-Exposure Vaccine
@@ -402,6 +477,19 @@ Antigen Dose Exert Distinct Influences on CD4 T-cell Differentiation."
 *Proceedings of the National Academy of Sciences of the United States of
 America* 111 (41): 14852--57. <https://doi.org/10.1073/pnas.1403271111>.
 
+Khoury, David S., Deborah Cromer, Arnold Reynaldi, Timothy E. Schlub, Adam
+K. Wheatley, Jennifer A. Juno, Kanta Subbarao, Stephen J. Kent, James
+A. Triccas, and Miles P. Davenport. 2021. "Neutralizing Antibody Levels Are
+Highly Predictive of Immune Protection from Symptomatic SARS-CoV-2 Infection."
+*Nature Medicine* 27 (7):
+1205--11. <https://doi.org/10.1038/s41591-021-01377-8>.
+
+Luabeya, Angelique Kany Kany, Benjamin M. N. Kagina, Michele D. Tameris, Hennie
+Geldenhuys, Soren T. Hoff, Zhongkai Shi, Ingrid Kromann, et al. 2015.
+"First-in-Human Trial of the Post-Exposure Tuberculosis Vaccine H56:IC31 in
+Mycobacterium tuberculosis Infected and Non-Infected Healthy Adults." *Vaccine*
+33 (33): 4130--40. <https://doi.org/10.1016/j.vaccine.2015.06.051>.
+
 Mateus, Jose, Jennifer M. Dan, Zeli Zhang, Carolyn Rydyznski Moderbacher,
 Marshall Lammers, Benjamin Goodwin, Alessandro Sette, Shane Crotty, and Daniela
 Weiskopf. 2021. "Low-Dose mRNA-1273 COVID-19 Vaccine Generates Durable Memory
@@ -417,7 +505,30 @@ Pollard, Andrew J., and Else M. Bijker. 2021. "A Guide to Vaccinology: From
 Basic Principles to New Developments." *Nature Reviews Immunology* 21 (2):
 83--100. <https://doi.org/10.1038/s41577-020-00479-7>.
 
+Rhodes, Sophie J., Andrea Zelmer, Gwenan M. Knight, Satria Arief Prabowo, Lisa
+Stockdale, Thomas G. Evans, Thomas Lindenstrøm, Richard G. White, and Helen
+Fletcher. 2016. "The TB Vaccine H56+IC31 Dose-Response Curve Is Peaked Not
+Saturating: Data Generation for New Mathematical Modelling Methods to Inform
+Vaccine Dose Decisions." *Vaccine* 34 (50): 6285--91.
+<https://doi.org/10.1016/j.vaccine.2016.10.060>.
+
+Rhodes, Sophie, Neal Smith, Thomas Evans, and Richard White. 2022. "Identifying
+COVID-19 Optimal Vaccine Dose Using Mathematical Immunostimulation/Immunodynamic
+Modelling." *Vaccine* 40 (49): 7032--41.
+<https://doi.org/10.1016/j.vaccine.2022.10.012>.
+
 Sanchez, Sarah, Nicole Palacio, Tanushree Dangi, Thomas Ciucci, and Pablo
 Penaloza-MacMaster. 2021. "Fractionating a COVID-19 Ad5-vectored Vaccine
 Improves Virus-Specific Immunity." *Science Immunology* 6 (66):
 eabi8635. <https://doi.org/10.1126/sciimmunol.abi8635>.
+
+Yang, Bingyi, Xiaotong Huang, Huizhi Gao, Nancy H. Leung, Tim K. Tsang, and
+Benjamin J. Cowling. 2022. "Immunogenicity, Efficacy, and Safety of SARS-CoV-2
+Vaccine Dose Fractionation: A Systematic Review and Meta-Analysis." *BMC
+Medicine* 20 (1): 409. <https://doi.org/10.1186/s12916-022-02600-0>.
+
+Yang, Zhi-Rong, Yi-Wen Jiang, Fu-Xiao Li, Di Liu, Teng-Fei Lin, Zi-Yi Zhao,
+Chang Wei, et al. 2023. "Efficacy of SARS-CoV-2 Vaccines and the Dose–Response
+Relationship with Three Major Antibodies: A Systematic Review and Meta-Analysis
+of Randomised Controlled Trials." *The Lancet Microbe* 4 (4): e236--46.
+<https://doi.org/10.1016/S2666-5247(22)00390-1>.

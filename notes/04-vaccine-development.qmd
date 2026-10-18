@@ -9,14 +9,24 @@ pagetitle: "Vaccine development perspective"
 
 {{< include ../includes/note-disclaimer.qmd >}}
 
-In the chapter on biology of optimal dosing I spoke about some of the mechanisms
-relevant to optimisation, but largely taking the perspective of already-existing
-vaccines. But what happens when a new candidate vaccine is developed, tested in
+In the [chapter on biology](03-biology.qmd) of optimal dosing I spoke about some of the mechanisms
+relevant to optimisation, but I didn't really talk about how the dose is
+decided on in practice or what drives it. 
+What happens when a new candidate vaccine is developed, tested in
 animals, first tested in humans, and then goes through multi-stage clinical
 development? At each stage, how are the decisions made on what doses and
-schedules to use? If that process is efficient, we would expect newly-approved
-vaccines to be close to optimal. But we know from the case studies, that this
-isn't always the case. Therefore it's worth to describe this process.
+schedules to use? 
+
+The short version of the story is that generally in clinical development 
+it is advantageous to developers to set doses at the "maximum tolerated 
+level" (although that is a term typically used for drugs). 
+Developers do not want to risk going into large-scale, expensive trials with anything
+less than maximum possible efficacy, even if they do have some information that
+a smaller dose could have produced a same or very similar response.
+For that reason, when the dose-response curve is S-shaped, the
+developers may end up setting the default dose at the top part of the S, the
+"saturated" part of the response curve. This creates an opportunity for reducing doses 
+in the future. Read on for slightly more in-depth commentary.
 
 ## Dose setting for (cancer) drugs: some interesting parallels {#dose-setting-for-cancer-drugs-some-interesting-parallels}
 
@@ -43,7 +53,7 @@ regulators on how to do it.
 
 But the MTD approach only makes sense so long as the response and toxicity
 actually go up with increasing dose (and ideally, for a statistician, they go up
-*steeply*, because you can only test in a few humans). This is usually not the
+*steeply*, because you can only test in a few humans). This is usually _not_ the
 case for more complicated modern cancer drugs, such as immunotherapies. They
 target cancers more specifically, working through more complicated mechanisms
 and traditional methods are bound to suggest doses that are too

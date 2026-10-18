@@ -10,6 +10,7 @@ project:
 
 website:
   title: "Optimal dosing of vaccines"
+  favicon: assets/favicon.ico
   navbar:
     background: dark
     collapse: true
