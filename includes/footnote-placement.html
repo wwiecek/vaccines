@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const figure = image.closest(".quarto-figure") || image.parentElement;
     figure.classList.add(location.pathname.endsWith("/05-practical-implementation.html")
       ? "implementation-figure" : "wide-media");
-    image.style.width = "100%";
-    image.style.height = "auto";
+    if (!image.classList.contains("r-figure")) {
+      image.style.width = "100%";
+      image.style.height = "auto";
+    }
   }
 
   const seen = new Set();

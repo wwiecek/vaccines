@@ -29,6 +29,9 @@ pal <- c(
 background <- "#F4F2EA"
 ink <- "#203137"
 plot_font <- "Georgia"
+plot_width <- 1048
+plot_height <- 600
+plot_dpi <- 96
 
 d2 <- d |>
   group_by(vaccine) |>
@@ -116,7 +119,13 @@ plot <- ggplot(plot_data, aes(x_plot, response, colour = vaccine)) +
     plot.margin = margin(14, 20, 12, 10)
   )
 
-ggsave("assets/immune_response.png", plot, width = 11, height = 5,
-       dpi = 180, device = ragg::agg_png, bg = background)
-ggsave("assets/immune_response.pdf", plot, width = 11, height = 5,
+# Generate at the intended web dimensions; the SVG stays crisp on all screens.
+ggsave("assets/immune_response.svg", plot,
+       width = plot_width / plot_dpi, height = plot_height / plot_dpi,
+       device = svglite::svglite, bg = background)
+ggsave("assets/immune_response.png", plot,
+       width = plot_width, height = plot_height, units = "px", dpi = plot_dpi,
+       device = ragg::agg_png, bg = background)
+ggsave("assets/immune_response.pdf", plot,
+       width = plot_width / plot_dpi, height = plot_height / plot_dpi,
        device = grDevices::cairo_pdf, bg = background)

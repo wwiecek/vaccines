@@ -38,6 +38,11 @@ a { text-underline-offset: 4px; }
 
 /* Article pages use the left column for contents and the right for footnotes. */
 #quarto-content { padding-top: 3.5rem; }
+body:not(:has(.landing)) #quarto-content { padding-top: 1.25rem; }
+body:not(:has(.landing)) #quarto-content main.content {
+  margin-top: .5rem; padding-top: 7px;
+}
+body:not(:has(.landing)) main.content h1 { margin-top: 1rem; }
 main.content { font-family: Georgia, "Times New Roman", serif; font-size: 1.09rem; line-height: 1.77; }
 main.content h1, main.content h2, main.content h3, main.content h4 {
   color: var(--ink);
@@ -186,6 +191,7 @@ main.content table td, main.content table th {
 main.content table tbody tr:nth-child(even) { background: #eef1e9; }
 main.content table p:last-child { margin-bottom: 0; }
 main.content figure img { width: 100%; height: auto; }
+main.content img.r-figure { width: auto; max-width: 100%; height: auto; }
 main.content figure figcaption { font: .83rem/1.5 system-ui, sans-serif; }
 @media (min-width: 1200px) {
   body:not(:has(.landing)) main.content .wide-media {
@@ -596,7 +602,9 @@ main.content .implementation-figure {
   .navbar .navbar-brand { font-size: .84rem; letter-spacing: -.025em; }
   .navbar .navbar-brand-container { margin-right: .3rem !important; min-width: 0; }
   body:not(:has(.landing)) #quarto-content { padding-top: 1.1rem; }
-  body:not(:has(.landing)) main.content { padding-top: 0; margin-top: 0; }
+  body:not(:has(.landing)) #quarto-content main.content {
+    padding-top: 0; margin-top: 0;
+  }
   body:not(:has(.landing)) #title-block-header:empty { display: none; }
   body:not(:has(.landing)) main.content h1 {
     font-size: 1.9rem; margin-top: 0; margin-bottom: 1rem;
@@ -758,7 +766,7 @@ body.quarto-dark .paper-figure { background: #f4f2ea; }
 
 /* Reading details occupy the existing space above each long note's title. */
 main.content p.note-reading-info {
-  height: 0; margin: 0; position: relative; top: .2rem;
+  height: 0; margin: 0; position: relative; top: -.35rem;
   color: var(--ink); opacity: .75;
   font: .75rem/1.4 system-ui, sans-serif;
 }

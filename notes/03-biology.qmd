@@ -126,7 +126,7 @@ I draw a hypothtetical S-shape there, just for illustration.
 [^covidex]: Three publications that are relevant to this mini-example are 
 Khoury et al 2021, Yang et al 2022 and Rhodes et al 2022.
 
-![](../assets/immune_response.png){fig-alt="A simplified example of immune dose-response curves for Covid-19 vaccines."}
+![](../assets/immune_response.svg){.r-figure fig-alt="A simplified example of immune dose-response curves for Covid-19 vaccines."}
 
 Early in the pandemic researchers understood that neutralising antibodies 
 were a good correlate of protection against Covid. This meant we could use 
@@ -232,7 +232,7 @@ that dosing of boosters will generally differ from dosing of the first dose.
 We will return to this in a moment.
 
 
-## Does low dose give higher quality antibodies? {#b-cell-selection-stringency-hypothesis}
+## Possible mechanism: B-cell selection {#b-cell-selection-stringency-hypothesis}
 
 > What follows is definitely beyond my understanding of the immune system and is
 > simply based on rather shallow exploration of existing literature. However, I
@@ -412,7 +412,7 @@ beginning of discussion in (Das et al. 2021).[^14]
     Institute](https://www.nature.com/articles/s41598-021-90290-8#:~:text=Efficacy%20of%20RTS%2CS%20can,combined%20with%20ChAd63%E2%80%94MVA%20ME.),
     but this is in mice.
 
-## Which vaccines are fractionation candidates? {#table-1-immune-memory-and-optimisation-goals}
+## Which vaccines make for good fractionation candidates? {#table-1-immune-memory-and-optimisation-goals}
 
 Given the above, can we classify vaccines/diseases according to how lower doses
 are expected to perform? Clearly the mechanisms that favour lower doses or
@@ -491,12 +491,6 @@ population to overcome immunosenescence and improve vaccine efficacy. Similar
 schemes could also be considered in diseases with steep increase in risks with
 age, such as COVID. I return to this idea in the section on modeling health
 benefits of optimal dosing.
-
-### Further reading
-
-- [Vaccine development perspective](04-vaccine-development.qmd)
-- [Finding targets for optimisation; disease-specific
-  summaries](08-vaccines.qmd)
 
 ### References {#references}
 
