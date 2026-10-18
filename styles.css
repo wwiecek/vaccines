@@ -679,6 +679,12 @@ main.content .note-attribution p { margin: 0; }
 main.content .note-attribution p:first-child { flex: 1; min-width: 0; }
 main.content .note-attribution p:last-child { flex: 1; max-width: 780px; text-align: right; }
 main.content .note-attribution a { color: inherit; }
+@media (min-width: 1200px) {
+  main.content .note-attribution {
+    grid-column: screen-start-inset / screen-end-inset;
+  }
+  main.content .note-attribution p:last-child { flex: 1.4; }
+}
 @media (max-width: 767px) {
   .note-attribution { flex-direction: column; align-items: flex-start; }
   main.content .note-attribution p:last-child { text-align: left; }
