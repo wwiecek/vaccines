@@ -39,6 +39,9 @@ a { text-underline-offset: 4px; }
 /* Article pages use the left column for contents and the right for footnotes. */
 #quarto-content { padding-top: 3.5rem; }
 body:not(:has(.landing)) #quarto-content { padding-top: .75rem; }
+@media (min-width: 992px) {
+  body:not(:has(.landing)) #quarto-content { padding-top: 2.25rem; }
+}
 body:not(:has(.landing)) #quarto-content main.content {
   margin-top: 0; padding-top: 0;
 }
